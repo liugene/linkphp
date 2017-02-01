@@ -1,1 +1,1 @@
-# LinkPHP   应用公共配置目录
+# LinkPHP 聽 妗嗘灦搴旂敤鍏叡閰嶇疆鐩綍
