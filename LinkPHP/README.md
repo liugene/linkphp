@@ -1,1 +1,1 @@
-# LinkPHP  框架系统核心目录
+# LinkPHP  妗嗘灦鏍稿績鐩綍
