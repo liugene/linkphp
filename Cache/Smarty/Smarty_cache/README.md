@@ -1,1 +1,1 @@
-# LinkPHP  SmartyÄ£°åÒıÇæ»º´æÄ¿Â¼
+# LinkPHP  Smartyæ¨¡æ¿å¼•æ“ç¼“å­˜ç›®å½•
