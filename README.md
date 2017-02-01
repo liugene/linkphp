@@ -40,46 +40,85 @@ BUG反馈：www.linkphp.cn
 
 
 ## **App目录**
+
 ├─App 应用目录
+
 │  ├─Index                 默认模块目录(可配置更换目录名称)
+
 │  │  ├─Conf             模块扩展配置目录
+
 │  │  ├─Controller    控制器目录
+
 │  │  ├─Model          模型目录
+
 │  │  ├─View             视图目录
+
 │  ├─Common          应用公共目录
+
 │  │  ├─Controller    公共控制器目录
+
 │  │  ├─Function      站点公共函数目录
+
 │  │  ├─Model          公共模型目录
+
 │  ├─........           (可自定义添加其他模块目录)
+
 │  │  ├─Conf             模块扩展配置目录
+
 │  │  ├─Controller    控制器目录
+
 │  │  ├─Model          模型目录
+
 │  │  ├─View             视图目录
+
 
 ## **Cache目录**
+
 ├─Cachep 缓存目录
+
 │  ├─Log       日志目录
+
 │  ├─SMarty  SMarty模板引擎目录
+
 │  │  ├─Smarty_c     SMarty模板编译目录(可配置修改目录名称)
+
 │  │  ├─Smarty_cache   SMarty模板缓存目录(可配置修改目录名称)
 
+
 ## **Config 目录**
+
 ├─Config    应用公共配置目录
 
+
 ## **Public目录**
+
 ├─Public    站点公共附件目录(默认为空目录)
 
 
+
 ## **LinkPHP框架目录**
+
 ├─LinkPHP 框架系统目录
+
 │  ├─Conf          核心配置目录 
+
 │  ├─Extend      扩展目录
+
 │  ├─Function   框架公共函数目录
+
 │  ├─Lang         框架语言包目录
+
 │  ├─Link          Link核心类库和工具类库包目录
+
 │  │  ├─Tools    核心工具类库目录
+
 │  ├─Sys            框架核心工具类库扩展目录
+
 │  ├─Template  模板引擎目录
+
 │  ├─TTFF          框架附件目录
+
 │  ├─README.txt   框架README文件
+
 │  └─LinkPHP.php 框架入口文件
+
