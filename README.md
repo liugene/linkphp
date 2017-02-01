@@ -27,11 +27,17 @@ BUG反馈：www.linkphp.cn
 ## **部署目录**
 
 ├─index.php        入口文件
+
 ├─App                  应用目录
+
 ├─Cache               缓存目录
+
 ├─Config              站点公共配置
+
 ├─Public               资源文件目录
+
 └─LinkPHP           框架目录
+
 
 ## **App目录**
 ├─App 应用目录
