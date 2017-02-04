@@ -69,8 +69,8 @@
   }
   
   //display方法调用SMarty模板配置类
-  protected function display(){
-    $tempfile =  CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
+  protected function display($tempfile=''){
+    $tempfile = $tempfile='' ? CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX') : $tempfile;
     switch(C('DEFAULT_TEMP_TYPE')){
         case 0:
         $this->_view->display();
