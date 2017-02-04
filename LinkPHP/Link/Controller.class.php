@@ -14,19 +14,36 @@
 
  namespace Link;
  class Controller{
+    
     /**
- * 封装一个跳转功能
- * 公共跳转
- * 该功能应该被所有的控制器动作所共享
- * 因此将该方法写在基础控制器内
- */
- /**
-  * 跳转
-  * @param $url 目标URL
-  * @param $info (可选)提示信息
-  * @param $wait (可选)等待时间
-  * @return void
-  */
+     * Smarty视图实例对象
+     * @var smarty
+     * @access protected
+     */    
+    protected $_smarty     =  null;
+    protected $_view = null;
+    
+    public function __construct(){
+        if(C('DEFAULT_TEMP_TYPE') == '0'){
+            $this->_view = new View();
+        } else {
+            $this->_smarty = new Smarty();
+        }    
+    }
+    
+    /**
+     * 封装一操作成功与操作失败跳转功能
+     * 公共跳转
+     * 该功能应该被所有的控制器动作所共享
+     * 因此将该方法写在基础控制器内
+     */
+    /**
+     * 跳转
+     * @param $url 目标URL
+     * @param $info (可选)提示信息
+     * @param $wait (可选)等待时间
+     * @return void
+     */
   protected function success($url,$info=null,$wait=3){
     if (is_null($info)){
         header('location:' . $url);
@@ -53,15 +70,13 @@
   
   //display方法调用SMarty模板配置类
   protected function display(){
+    $tempfile =  CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
     switch(C('DEFAULT_TEMP_TYPE')){
         case 0:
-        $tpl = new \Link\View();
-        header('Content-Type:text/html;charset=utf8');
-        $tpl->display();
+        $this->_view->display();
         break;
         case 1:
-        $smarty = new \Link\Smarty();
-        $smarty->fech();
+        $this->_smarty->fetch($tempfile);
         break;
     }
   }
