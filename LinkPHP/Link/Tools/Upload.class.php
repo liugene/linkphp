@@ -26,8 +26,8 @@ class Upload{
     private $_prefix;
     private $_error;
     
-    public function getError(){
-        return $this->getError();
+    public function getError($message){
+        return $this->_error = $message;
     }
     
     public function __construct(){
@@ -58,31 +58,23 @@ class Upload{
     public function uploadOne($file){
         //是否存在错误
         if ($file['error'] != 0){
-            echo '上传出错';
+            $this->getError('上传出错');
             return false;
         }
         //大小
-        $max_size = 1024*1024; //最大尺寸
-        if ($file['size'] > $max_size){
-            echo '上传文件过大';
+        if ($file['size'] > $this->_max_size){
+            $this->getError('上传文件过大');
             return false;
         }
         
         //类型
         //保证修改允许的后缀名，就可以影响带$allow_ext_list，$allow_mime_list
         //设置一个后缀名与mime的映射元素
-        $type_map = array(
-           '.png' => array('image/png','image/x-png'),
-           '.jpg' => array('image/jpeg','image/pjpeg'),
-           '.jpeg' => array('image/jpeg','image/pjpeg'),
-           '.gif' => array('image/gif'),
-        );
         //后缀从原始文件名中提取
         
-        $allow_ext_list = array('.png','.gif','.jpg');
         $ext = strtolower(strrchr($file['name'],'.'));
-        if (!in_array($ext,$allow_ext_list)){
-            echo '上传文件类型不合法';
+        if (!in_array($ext,$this->_allow_ext_list)){
+            $this->getError('上传文件类型不合法');
             return false;
         }
         //MIME,type元素
@@ -90,12 +82,12 @@ class Upload{
        $allow_mime_list = array();
        foreach($allow_ext_list as $value) {
           //得到每个后缀
-          $allow_mime_list = array_merge($allow_mime_list,$type_map[$value]);
+          $allow_mime_list = array_merge($allow_mime_list,$this->_type_map[$value]);
        }
           //去重复
           $allow_mime_list = array_unique($allow_mime_list);
         if (!in_array($file['type'],$allow_mime_list)){
-            echo '上传文件类型不合法';
+            $this->getError('上传文件类型不合法');
             return false;
         }
         
@@ -108,7 +100,7 @@ class Upload{
         $upload_path = './';
         //创建子目录
         $subdir = data('YmdH') . '/';
-        if (is_dir($upload_path . $subdir)) {//检测子目录是否存在
+        if (!is_dir($upload_path . $subdir)) {//检测子目录是否存在
            //不存在
            mkdir($upload_path . $subdir);
             
@@ -123,7 +115,7 @@ class Upload{
             return $subdir . $filename;
         } else {
             //移动失败
-            echo '移动失败';
+            $this->getError('移动失败');
             return false;
         }
     }
