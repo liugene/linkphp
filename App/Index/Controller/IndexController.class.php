@@ -13,13 +13,9 @@
  */
 namespace Index\Controller;
 use Link\Controller;
-use Index\Model\IndexModel;
 class IndexController extends Controller{
     public function index(){
-        $index = new IndexModel();
-        $result = $index -> show();
-        require CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
-        //$this->display(); 
+        $this->show(); 
     }
 }
 

@@ -35,13 +35,21 @@
      }
      
      /**
-      * 模板输出方法
+      * 模板赋值输出方法
       */
      public function assign($name,$value){
         //模板赋值
         $this->_tVar[$name] = $value;
      }
      
+     /**
+      * 模板输出方法可输出HTML方法
+      */
+     public function show($content=''){
+        header('Content-Type:text/html;charset=utf8');
+        include TTFF_PATH . 'temp/appsuccess' . '.' . C('DEFAULT_THEME_SUFFIX');
+        echo $content;
+     }
  }
 
 ?>

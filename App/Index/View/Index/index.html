@@ -6,119 +6,12 @@
     <link href="Public/Default/css/index.css" type="text/css" rel="stylesheet" />
     <link href="Public/Default/css/common.css" type="text/css" rel="stylesheet" />
 
-	<title>LinkPHP首页</title>
+	<title>LinkPHP</title>
 </head>
 
 <body>
 
-<div id="lp_body">
-
-<!-- 头部开始 -->
-<?php include CURRENT_VIEW_PATH . 'Public/header.html'; ?>
-<!-- 头部结束 --> 
-
-<!-- 主内容区域开始 -->
-  <div id="lp_content">
-  <!-- 内容区域开始 -->
-   <div class="lp_center">
-    <!-- 内容区左侧开始 -->
-    <div class="lp_left">
-    
-      <div class="lp_left_find">
-       <div class="lp_left_find_text">
-        <h2>✉动态</h2>
-       </div>
-       <div class="lp_left_find_right">
-        <ul>
-         <li>
-          <a href="#">新问题</a>
-         </li>
-         <li>
-          <a href="#">讨论中</a>
-         </li>
-         <li>
-          <a href="#">已解决</a>
-         </li>
-         <li>
-          <a href="#">Bug反馈</a>
-         </li>
-        </ul>
-       </div>
-      </div>
-      <div class="lp_left_topic">
-      <!-- PHP循环语句开始 -->
-      <?php foreach($result['list'] as $k => $v):?>
-        <div class="lp_left_topic_item">
-         <div class="lp_left_topic_pic1">
-          <img src="Public/Default/images/default.png" class="lp_left_topic_pic1_img" />
-         </div>
-         <div class="lp_left_topic_topic">
-          <div class="lp_left_topic_title">
-           <h3><a href="<?php echo U('Topic','topic') . "&titleid=" . $v['id']; ?>" target="_blank"><?php echo $v['title']; ?></a></h3>
-          </div>
-         </div>
-         <div class="lp_left_topic_dec">
-          <div class="lp_left_topic_dec_item">
-           <p>发表时间:<?php echo date('Y-m-d H:i',$v['createtime']); ?></p>
-          </div>
-         </div>
-         <div class="lp_left_topic_time"></div>
-        </div>
-       <?php  endforeach;?>
-        <!-- PHP循环语句结束 -->
-      </div>
-       <div class="lp_left_page">
-       <?php if(isset($result['page'])){ ?>
-        <div class="lp_pages">
-       <p><?php echo $result['page']; ?></p>
-       </div>
-       <?php }?>
-      </div>
-    </div>
-    <!-- 内容区左侧结束 -->
-    <div class="lp_right">
-    <!-- 内容区右侧开始 -->
-      <div class="lp_right_new">
-      
-       <div class="lp_right_new_sign">
-        <h4>最新问题</h4>
-       </div>
-       <div class="lp_right_new_item">
-       <!-- foreach 开始 -->
-       <?php $i=0; foreach($result['list'] as $k => $v):{++$i; if($i == 7)break;} ?>
-        <div class="lp_right_new_item_list">
-         <p><a href="<?php echo U('Topic','topic') . "&titleid=" . $v['id']; ?>" target="_blank"><?php echo mb_substr($v['title'],0,16,'utf-8');?></a></p>
-        </div>
-        <?php endforeach; ?>
-        <!-- foreach 结束 -->
-       </div>
-      
-      </div>
-      <div class="lp_right_hot">
-      
-       <div class="lp_right_hot_sign">
-        <h4>开源笔记</h4>
-       </div>
-       <div class="lp_right_hot_item">
-        <img src="Public/Default/images/qrcode.png" style="width: 220px; height: 220px; margin-top: 20px; margin-left: 8px;"/>
-       </div>
-      
-      </div>
-    <!-- 内容区右侧结束 -->
-    </div>
-   
-   </div>
-   <!-- 内容区域结束 -->
-  </div>
-  
-  <!-- 主内容区域结束 -->
-  
-  <!-- 站点底部开始 -->
-
-<?php include CURRENT_VIEW_PATH . 'Public/footer.html'; ?>
- 
- <!-- 站点底部结束 -->
-</div>
+LinkPHP
 
 </body>
 </html>
