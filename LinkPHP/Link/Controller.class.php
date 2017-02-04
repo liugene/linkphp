@@ -78,15 +78,32 @@
     $tempfile = CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
     switch(C('DEFAULT_TEMP_TYPE')){
         case 0:
-        $this->_view->assign($name,$value);
+        $this->assign($name,$value);
         $this->_view->display($tempfile);
         break;
         case 1:
-        $this->_smarty->assign($name,$value);
+        $this->assign($name,$value);
         $this->_smarty->fetch($tempfile);
         break;
     }
   }
+  
+  /**
+   * 视图传值赋值方法
+   * @var $name
+   * @var $value
+   */
+  protected function assign($name='',$value=''){
+    switch(C('DEFAULT_TEMP_TYPE')){
+        case 0:
+        $this->_view->assign($name,$value);
+        break;
+        case 1:
+        $this->_smarty->assign($name,$value);
+        break;
+    }
+  }
+  
  } 
 
 ?>
