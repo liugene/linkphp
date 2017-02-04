@@ -25,8 +25,10 @@
     
     public function __construct(){
         if(C('DEFAULT_TEMP_TYPE') == '0'){
+            //将实例化后的VIEW 类保存到 $_view 对象中 直接使用该对象调用父类中方法对象
             $this->_view = new View();
         } else {
+            //将实例化后的smarty类保存到$_smarty 对象中  直接使用该对象调用父类中方法对象
             $this->_smarty = new Smarty();
         }    
     }
@@ -77,11 +79,15 @@
   protected function display($tempfile='',$name='',$value=''){
     $tempfile = CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
     switch(C('DEFAULT_TEMP_TYPE')){
+        //0为使用原生PHP标签嵌套
         case 0:
+        //调用赋值方法
         $this->assign($name,$value);
         $this->_view->display($tempfile);
         break;
+        //1为使用Smarty模板引擎进行嵌套
         case 1:
+        //调用Smarty模板引擎赋值方法
         $this->assign($name,$value);
         $this->_smarty->fetch($tempfile);
         break;
