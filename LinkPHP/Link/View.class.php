@@ -14,16 +14,32 @@
  
  namespace Link;
  class View{
+    
+    /**
+     * 模板输出变量
+     * @var tVar
+     * @access protected
+     */ 
+    protected $_tVar     =   array();
+    
+    /**
+     * 加载显示模板视图方法
+     */
  
-     public function display(){
+     public function display($tempfile='',$name='',$value=''){
         header('Content-Type:text/html;charset=utf8');
         //加载视图文件
+        // 模板阵列变量分解成为独立变量
+        extract($this->_tVar);
         include CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
      }
      
-     public function assign($filename, $value){
+     /**
+      * 模板输出方法
+      */
+     public function assign($name,$value){
         //模板赋值
-        
+        $this->_tVar[$name] = $value;
      }
      
  }

@@ -69,11 +69,17 @@
   }
   
   //display方法调用SMarty模板配置类
+  /**
+   * @param [string] $tempfile 模板视图
+   * @var $name 
+   * @var $value 赋值变量
+   */
   protected function display($tempfile='',$name='',$value=''){
     $tempfile = CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
     switch(C('DEFAULT_TEMP_TYPE')){
         case 0:
-        $this->_view->display();
+        $this->_view->assign($name,$value);
+        $this->_view->display($tempfile);
         break;
         case 1:
         $this->_smarty->assign($name,$value);
