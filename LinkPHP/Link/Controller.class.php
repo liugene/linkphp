@@ -69,13 +69,14 @@
   }
   
   //display方法调用SMarty模板配置类
-  protected function display($tempfile=''){
-    $tempfile = $tempfile='' ? CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX') : $tempfile;
+  protected function display($tempfile='',$name='',$value=''){
+    $tempfile = CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
     switch(C('DEFAULT_TEMP_TYPE')){
         case 0:
         $this->_view->display();
         break;
         case 1:
+        $this->_smarty->assign($name,$value);
         $this->_smarty->fetch($tempfile);
         break;
     }
