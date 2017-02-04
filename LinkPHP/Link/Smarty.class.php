@@ -14,15 +14,16 @@
  
  namespace Link; 
  class Smarty{
-    public function fech(){
-        require LINKPHP_PATH . 'Template/Smarty/Smarty' . EXT;
+    public function fetch($tempfile){
+        include LINKPHP_PATH . 'Template/Smarty/Smarty' . EXT;
         $smarty = new \Smarty();
-        var_dump($smarty);
         $smarty->caching = C('TEMP_CACHE'); //设置是否启用缓存
-        $smarty->template_dir = CURRENT_VIEW_PATH;
-        $smarty->compile_dir = CACHE_PATH . 'Smarty/Smarty_c';
-        $smarty->cache_dir = CACHE_PATH . 'Smarty/Smarty_cache';
-        $smarty->display('Index/index.html');
+        $smarty->setTemplateDir(CURRENT_VIEW_PATH);
+        $smarty->setCompileDir(CACHE_PATH . 'Smarty/Smarty_c'); //Smarty模板引擎模板编译目录
+        $smarty->setCacheDir(CACHE_PATH . 'Smarty/Smarty_cache'); //Smarty模板引擎模板缓存目录
+        $smarty->setLeftDelimiter('<{'); //设置Smarty模板引擎视图中左结束符号
+        $smarty->setRightDelimiter('}>'); //设置Smarty
+        $smarty->display($tempfile);
     }
  }
 

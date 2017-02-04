@@ -16,8 +16,9 @@
  class View{
  
      public function display(){
+        header('Content-Type:text/html;charset=utf8');
         //加载视图文件
-        require CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
+        include CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION . '.' . C('DEFAULT_THEME_SUFFIX');
      }
      
      public function assign($filename, $value){
