@@ -6,6 +6,7 @@
  * Date: 2017/2/16
  * Time: 11:14
  */
+namespace Sys/Db;
 class MssqlDB
 {
     /**
