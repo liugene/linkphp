@@ -2,161 +2,164 @@
 
 /**
  * --------------------------------------------------*
- *  LhinkPHP×ñÑ­Apache2¿ªÔ´Ğ­Òé·¢²¼  Link ALL Thing  *
+ *  LhinkPHPéµå¾ªApache2å¼€æºåè®®å‘å¸ƒ  Link ALL Thing  *
  * --------------------------------------------------*
  *  @author LiuJun     Mail-To:liujun2199@vip.qq.com *
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *           LinkPHP¿ò¼ÜVerify ÑéÖ¤ÂëÊµÏÖÀà          *
+ *           LinkPHPæ¡†æ¶Verify éªŒè¯ç å®ç°ç±»          *
  * --------------------------------------------------*
  */
- 
- class Verify{
-    //×ÖÌåÎÄ¼ş
-    private $_fontfile = '';
-    //×ÖÌå´óĞ¡
-    private $_size = 20;
-    //»­²¼¿í¶È
-    private $_width = 120;
-    //»­²¼¸ß¶È
-    private $_height = 40;
-    //ÑéÖ¤Âë³¤¶È
-    private $_length = 4;
-    //»­²¼×ÊÔ´
-    private $_image = null;
-    //¸ÉÈÅÔªËØ
-    //Ñ©»¨¸öÊı
-    private $_snow = 0;
-    //ÏñËØ¸öÊı
-    private $_pixel = 0;
-    //ÏßÌõÊı
-    private $_line = 0;
-    
-    public function __construct($config = array()){
-        if(is_array($config)&&count($config)>0){
-            //¼ì²â×ÖÌåÎÄ¼şÊÇ·ñ´æÔÚ²¢ÇÒ¿Ì¶È
-            if(isset($config['fontfile'])&&is_file($config['fontfile'])&&is_readable($config['fontfile'])){
-                $this->_fontfile = $config['fontfile'];
-            } else {
-                return false;
-            }
-            //¼ì²âÊÇ·ñÉèÖÃ»­²¼¿í
-            if(isset($config['width'])&&$config['width']>0){
-                $this->_width = (int)$config['width'];
-            }
-            //¼ì²âÊÇ·ñÉèÖÃ»­²¼¸ß
-            if(isset($config['height'])&&$config['height']>0){
-                $this->_height = (int)$config['height'];
-            }
-            //¼ì²âÊÇ·ñÉèÖÃÑéÖ¤Âë³¤¶È
-            if(isset($config['length'])&&$config['length']>0){
-                $this->_length = (int)$config['length'];
-            }
-            //ÅäÖÃ¸ÉÈÅÔªËØ
-            if(isset($config['snow'])&&$config['snow']>0){
-                $this->_snow = (int)$config['snow'];
-            }
-            if(isset($config['fixel'])&&$config['fixel']>0){
-                $this->_fixel = (int)$config['fixel'];
-            }
-            if(isset($config['line'])&&$config['line']>0){
-                $this->_line = (int)$config['line'];
-            }
-            $this->_image = imagecreatetruecolor($this-_width, $this->_height);
-        } else {
-            return FALSE;
-        }
-    }
-    public function getVerify(){
-        /**
-         * µÃµ½ÑéÖ¤Âë
-         */
-        $white = imagecolorallocate();
-        //Ìî³ä¾ØĞÎ
-        imagefilledrectangke($this->_image, 0, 0, $this->_width, $this->_height, $width);
-        //Éú³ÉÑéÖ¤Âë
-        $str = $this->_generateStr($this->$length);
-        if(false === $str){
-            return FALSE;
-        }
-        $fontfile = $this->fontfile;
-        //»æÖÆÑéÖ¤Âë
-        for($i=0;$i<$this->_length;$i++){
-            $size = $this->_size;
-            $angle = mt_rand(-30,30);
-            $x = ceil($this->_width/$this->_length)*$i+mt_rand(5,10);
-            $y = ceil($this->_height/1.5);
-            $color = $this->_getRandColor();
-            $text = $str{$i};
-            imagettftext($this->_image, $size, $angle, $x, $y, $color, $fontfile, $test);
-        }
-        //Ñ©»¨¡¢ÏñËØ¡¢Ïß¶Î
-        if($this->_snow){
-            //Ê¹ÓÃÑ©»¨µ±×ö¸ÉÈÅÔªËØ
-            $this->getSnow();
-        } else {
-            if($this->_pixel){
-                $this->_getPixel();
-            }
-            if($this->_line){
-                $this->_getLine();
-            }
-        }
-        //Êä³öÍ¼Ïñ
-        header('Content-Type:image/png');
-        imagepng($this->_image);
-        imagedestroy($this->_image);
-    }
-    /**
-     * ²úÉúÑéÖ¤Âë×Ö·û
-     * @param integer $length ÑéÖ¤Âë³¤¶È
-     * @param string Ëæ»ú×Ö·û
-     */
-    private function _generateStr($length=4){
-        if($length<1 || $length>30){
-            return FALSE;
-        }
-        $chars = arrat(
-        'a','b','c','d','f','g','2','3','4');
-        $str = join('',array_rand(array_filp($chars),$length));
-        return $str;
-    }
-    /**
-     * ²úÉúÑ©»¨
-     * @return 
-     */
-     private function _getsnow(){
-        for($i=1;$i<=$this->_snow;$i++){
-            imagestring($this->_image, mt_rand(1,5), mt_rand(0,$this->_width), mt_rand(0,$this->_height),
-             '*', $this->getRandcolor());
-        }
-     }
-     /**
-      * »æÖÆÏñËØ
-      * @return
-      */
-     private function _getPixel(){
-        for($i=1;$i<=$this->_pixel;$i++){
-            imagesetpixel($this->_image, mt_rand(0,$this->_width), mt_rand(0,$this->_height), $this->_getRandColor());
-        }
-     }
-     /**
-      * »æÖÆÏß¶Î
-      * @return
-      */
-     private function _getLine(){
-        for($i=1;$i<=$this->_line;$i++){
-            imageline($this->_image, mt_rand(0,$this->_width), mt_rand(0,$this->_height), mt_rand(0,$this->_width), mt_rand(0,$this->_height), $this->_getRandColor());
-        }
-     }
-     /**
-      * Ëæ»úÑÕÉ«
-      * @return
-      */
-     private function _getRandColor(){
-        return imagecolorallocate($this->_image, mt_rand(0,255), t_rand(0,255), mt_rand(0,255));
-        
-     }
- }
+
+  class Verify{
+      //å­—ä½“æ–‡ä»¶
+      private $_fontfile = '';
+      //å­—ä½“å¤§å°
+      private $_size = 20;
+      //ç”»å¸ƒå®½åº¦
+      private $_width = 120;
+      //ç”»å¸ƒé«˜åº¦
+      private $_height = 40;
+      //éªŒè¯ç é•¿åº¦
+      private $_length = 4;
+      //ç”»å¸ƒèµ„æº
+      private $_image = null;
+      //å¹²æ‰°å…ƒç´ 
+      //é›ªèŠ±ä¸ªæ•°
+      private $_snow = 0;
+      //åƒç´ ä¸ªæ•°
+      private $_pixel = 0;
+      //çº¿æ¡æ•°
+      private $_line = 0;
+
+      public function __construct($config = array()){
+          if(is_array($config)&&count($config)>0){
+              //æ£€æµ‹å­—ä½“æ–‡ä»¶æ˜¯å¦å­˜åœ¨å¹¶ä¸”åˆ»åº¦
+              if(isset($config['fontfile'])&&is_file($config['fontfile'])&&is_readable($config['fontfile'])){
+                  $this->_fontfile = $config['fontfile'];
+              } else {
+                  return false;
+              }
+              //æ£€æµ‹æ˜¯å¦è®¾ç½®ç”»å¸ƒå®½
+              if(isset($config['width'])&&$config['width']>0){
+                  $this->_width = (int)$config['width'];
+              }
+              //æ£€æµ‹æ˜¯å¦è®¾ç½®ç”»å¸ƒé«˜
+              if(isset($config['height'])&&$config['height']>0){
+                  $this->_height = (int)$config['height'];
+              }
+              //æ£€æµ‹æ˜¯å¦è®¾ç½®éªŒè¯ç é•¿åº¦
+              if(isset($config['length'])&&$config['length']>0){
+                  $this->_length = (int)$config['length'];
+              }
+              //é…ç½®å¹²æ‰°å…ƒç´ 
+              if(isset($config['snow'])&&$config['snow']>0){
+                  $this->_snow = (int)$config['snow'];
+              }
+              if(isset($config['fixel'])&&$config['fixel']>0){
+                  $this->_fixel = (int)$config['fixel'];
+              }
+              if(isset($config['line'])&&$config['line']>0){
+                  $this->_line = (int)$config['line'];
+              }
+              $this->_image = imagecreatetruecolor($this-_width, $this->_height);
+          } else {
+              return FALSE;
+          }
+      }
+      public function getVerify(){
+          /**
+           * å¾—åˆ°éªŒè¯ç 
+           */
+          $white = imagecolorallocate();
+          //å¡«å……çŸ©å½¢
+          imagefilledrectangke($this->_image, 0, 0, $this->_width, $this->_height, $width);
+          //ç”ŸæˆéªŒè¯ç 
+          $str = $this->_generateStr($this->$length);
+          if(false === $str){
+              return FALSE;
+          }
+          $fontfile = $this->fontfile;
+          //ç»˜åˆ¶éªŒè¯ç 
+          for($i=0;$i<$this->_length;$i++){
+              $size = $this->_size;
+              $angle = mt_rand(-30,30);
+              $x = ceil($this->_width/$this->_length)*$i+mt_rand(5,10);
+              $y = ceil($this->_height/1.5);
+              $color = $this->_getRandColor();
+              $text = $str{$i};
+              imagettftext($this->_image, $size, $angle, $x, $y, $color, $fontfile, $test);
+          }
+          //é›ªèŠ±ã€åƒç´ ã€çº¿æ®µ
+          if($this->_snow){
+              //ä½¿ç”¨é›ªèŠ±å½“åšå¹²æ‰°å…ƒç´ 
+              $this->getSnow();
+          } else {
+              if($this->_pixel){
+                  $this->_getPixel();
+              }
+              if($this->_line){
+                  $this->_getLine();
+              }
+          }
+          //è¾“å‡ºå›¾åƒ
+          header('Content-Type:image/png');
+          imagepng($this->_image);
+          imagedestroy($this->_image);
+      }
+
+      /**
+       * äº§ç”ŸéªŒè¯ç å­—ç¬¦
+       * @param integer $length éªŒè¯ç é•¿åº¦
+       * @param string éšæœºå­—ç¬¦
+       * @return bool|string
+       */
+      private function _generateStr($length=4){
+          if($length<1 || $length>30){
+              return FALSE;
+          }
+          $chars = arrat(
+              'a','b','c','d','f','g','2','3','4');
+          $str = join('',array_rand(array_filp($chars),$length));
+          return $str;
+      }
+
+      /**
+       * äº§ç”Ÿé›ªèŠ±
+       */
+      private function _getsnow(){
+          for($i=1;$i<=$this->_snow;$i++){
+              imagestring($this->_image, mt_rand(1,5), mt_rand(0,$this->_width), mt_rand(0,$this->_height),
+                  '*', $this->getRandcolor());
+          }
+      }
+
+      /**
+       * ç»˜åˆ¶åƒç´ 
+       */
+      private function _getPixel(){
+          for($i=1;$i<=$this->_pixel;$i++){
+              imagesetpixel($this->_image, mt_rand(0,$this->_width), mt_rand(0,$this->_height), $this->_getRandColor());
+          }
+      }
+
+      /**
+       * ç»˜åˆ¶çº¿æ®µ
+       */
+      private function _getLine(){
+          for($i=1;$i<=$this->_line;$i++){
+              imageline($this->_image, mt_rand(0,$this->_width), mt_rand(0,$this->_height), mt_rand(0,$this->_width), mt_rand(0,$this->_height), $this->_getRandColor());
+          }
+      }
+
+      /**
+       * éšæœºé¢œè‰²
+       * @return int
+       */
+      private function _getRandColor(){
+          return imagecolorallocate($this->_image, mt_rand(0,255), t_rand(0,255), mt_rand(0,255));
+
+      }
+  }
 ?>
