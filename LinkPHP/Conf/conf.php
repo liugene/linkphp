@@ -31,6 +31,7 @@
   'DEFAULT_PLATFORM'   => 'Index',  //默认模块名
   'DEFAULT_CONTROLLER' => 'Index',  //默认控制器
   'DEFAULT_ACTION'     => 'index',  //默认操作方法
+  'URL_MODULE'         => '1',      //URL模式 0普通模式 1 pathinfo模式 2 rewrite模式
   
   
   //默认视图文件配置

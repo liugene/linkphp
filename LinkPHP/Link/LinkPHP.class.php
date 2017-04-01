@@ -22,8 +22,8 @@ class Link{
         static::_initErrorHandler();
         //加载LinkPHP框架系统、应用公共函数
         static::_initLinkFunc();
-        //初始化分发参数
-        static::_initDispatchParam();
+        //路由参数初始化
+        static::_initRouter();
         //声明当前平平路径
         static::_initPlatformPathConst();
         //注册命名空间第三方类库加载方法
@@ -42,35 +42,7 @@ class Link{
         require CORE_PATH . 'ErrorHandler' . EXT;
         set_error_handler(array('ErrorHandler','linkErrorFunc'));
      }
-     
-    
-    /**
-     * 初始化分发参数 
-     */
-     static private function _initDispatchParam(){
-        //确定分发参数
-        //默认操作平台
-        $default_platform = C('DEFAULT_PLATFORM');
-        //默认控制器
-        $default_controller = C('DEFAULT_CONTROLLER');
-        //默认操作方法
-        $default_action = C('DEFAULT_ACTION');
-        //定义常量保存操作平台
-        define('PLATFORM',isset($_GET[C('VAR_PLATFORM')]) ? ucfirst($_GET[C('VAR_PLATFORM')]) : $default_platform);
-        //定义常量保存控制器
-        define('CONTROLLER',isset($_GET[C('VAR_CONTROLLER')]) ? ucfirst($_GET[C('VAR_CONTROLLER')]) : $default_controller);
-        //定义常量保存操作方法
-        define('ACTION',isset($_GET[C('VAR_ACTION')]) ? $_GET[C('VAR_ACTION')] : $default_action);
-     }
-    /**
-     * 声明当前平台路径常量
-     */
-     static private function _initPlatformPathConst(){
-        define('CURRENT_CONTROLLER_PATH',APPLICATION_PATH . PLATFORM . '/Controller/');
-        define('CURRENT_MODEL_PATH', APPLICATION_PATH . PLATFORM . '/Model/');
-        define('CURRENT_VIEW_PATH', APPLICATION_PATH . PLATFORM . '/View/');
-        
-     }  
+
     /**
      * 加载LinkPHP框架系统函数库
      */
@@ -80,8 +52,27 @@ class Link{
         //加载LinkPHP框架应用函数库
         require APPLICATION_PATH . 'Common/Function/functions.php';
      }
-     
-   /**
+
+    /**
+     * 路由模式生成URL
+     */
+    static private function _initRouter()
+    {
+        require 'Router' . EXT;
+        new Router();
+    }
+
+    /**
+     * 声明当前平台路径常量
+     */
+    static private function _initPlatformPathConst(){
+        define('CURRENT_CONTROLLER_PATH',APPLICATION_PATH . PLATFORM . '/Controller/');
+        define('CURRENT_MODEL_PATH', APPLICATION_PATH . PLATFORM . '/Model/');
+        define('CURRENT_VIEW_PATH', APPLICATION_PATH . PLATFORM . '/View/');
+
+    }
+
+    /**
     * 命名空间第三方类库自动加载方法
     * @param string $class_name  实例化的类名
     */ 
@@ -169,11 +160,11 @@ class Link{
      */
     static private function _initAutoload(){
         spl_autoload_register(array(__CLASS__,'userAutoload'));
-    } 
+    }
 
-  /**
-   * 分发请求
-   */
+    /**
+     * 分发请求
+     */
     static private function _dispatch(){
         //实例化控制器类
         $controller_name = PLATFORM . '\\' . 'Controller' . '\\' . CONTROLLER . 'Controller';
