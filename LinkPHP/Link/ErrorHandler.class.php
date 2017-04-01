@@ -23,7 +23,7 @@
      * @param [string] $line 错误行
      */
    static public function linkErrorFunc($error,$msg,$filename,$line){
-        
+
         switch($error){
             //错误级别：提醒
             case E_NOTICE:
@@ -40,7 +40,7 @@
             //错误级别：致命错误
             case E_ERROR:
             case E_USER_ERROR:
-            return $this->dealError();
+            return static::dealError();
             break;
             default:
             $error_type='UNKNOWN ERROR';
@@ -59,6 +59,11 @@ EOT;
         require TTFF_PATH . 'temp/error' . '.' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
+
+     static public function dealError()
+     {
+         return false;
+     }
  }
 
 
