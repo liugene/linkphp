@@ -42,7 +42,7 @@
  
  //加载LinkPHP框架核心初始化类
  require CORE_PATH . 'LinkPHP' . EXT;
- Link::start();
+ Link\Link::start();
 
 
 ?>
