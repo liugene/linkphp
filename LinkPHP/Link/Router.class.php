@@ -54,7 +54,6 @@
              case 1:
                  $dispatch = explode('/',trim($url,'/'));
                  if(in_array('index.php',$dispatch)){
-                     if($dispatch>1){}
                      $param['platform'] = isset($dispatch['1']) ? $dispatch['1'] : '';
                      $param['controller'] = isset($dispatch['2']) ? $dispatch['2'] : '';
                      $param['action'] = isset($dispatch['3']) ? $dispatch['3'] : '';
@@ -78,19 +77,20 @@
       */
      static public function initDispatchParamByNomal(){
          //定义常量保存操作平台
-         define('PLATFORM',isset($_GET[C('VAR_PLATFORM')]) ? ucfirst($_GET[C('VAR_PLATFORM')]) : self::$_default_platform);
+         define('PLATFORM',isset($_GET[C('VAR_PLATFORM')]) ? ucfirst($_GET[C('VAR_PLATFORM')]) : static::$_default_platform);
          //定义常量保存控制器
-         define('CONTROLLER',isset($_GET[C('VAR_CONTROLLER')]) ? ucfirst($_GET[C('VAR_CONTROLLER')]) : self::$_default_controller);
+         define('CONTROLLER',isset($_GET[C('VAR_CONTROLLER')]) ? ucfirst($_GET[C('VAR_CONTROLLER')]) : static::$_default_controller);
          //定义常量保存操作方法
-         define('ACTION',isset($_GET[C('VAR_ACTION')]) ? $_GET[C('VAR_ACTION')] : self::$_default_action);
+         define('ACTION',isset($_GET[C('VAR_ACTION')]) ? $_GET[C('VAR_ACTION')] : static::$_default_action);
      }
      static public function initDispatchParamByPathInfo($param){
+         //dump(isset($param['action']));die;
          //定义常量保存操作平台
-         define('PLATFORM',is_null($param['platform']) ? ucfirst($param['platform']) : self::$_default_platform);
+         define('PLATFORM',isset($param['platform'])&&$param['platform']!='' ? ucfirst($param['platform']) : static::$_default_platform);
          //定义常量保存控制器
-         define('CONTROLLER',is_null($param['controller']) ? ucfirst($param['controller']) : self::$_default_controller);
+         define('CONTROLLER',isset($param['controller'])&&$param['controller']!='' ? ucfirst($param['controller']) : static::$_default_controller);
          //定义常量保存操作方法
-         define('ACTION',is_null($param['action']) ? $param['action'] : self::$_default_action);
+         define('ACTION',isset($param['action'])&&$param['action']!='' ? $param['action'] : static::$_default_action);
      }
  }
 

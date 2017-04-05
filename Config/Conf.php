@@ -14,13 +14,13 @@
 
 return array(
 
-   'HOST'     => 'localhost', //一般不需要修改
-   'PORT'     => '3306', //默认即可
-   'DBUSER'   => 'root', //数据库用户名
-   'DBPWD'    => 'root', //数据库密码
-   'CHARSET'  => 'utf8', //数据库编码
-   'DBNAME'   => 'linkphp', //数据库名称
-   'DBPREFIX' => 'lp_', //数据库表前缀
+    'HOST'     => 'localhost', //一般不需要修改
+    'PORT'     => '3306', //默认即可
+    'DBUSER'   => 'root', //数据库用户名
+    'DBPWD'    => 'root', //数据库密码
+    'CHARSET'  => 'utf8', //数据库编码
+    'DBNAME'   => 'linkphp', //数据库名称
+    'DBPREFIX' => 'lp_', //数据库表前缀
 
 );
 
