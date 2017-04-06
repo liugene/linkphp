@@ -99,7 +99,7 @@ function C($name, $value = null){
     $p = is_null($p) ? $platform : $p;
     $c = is_null($c) ? $_GET[C('VAR_CONTROLLER')] : ucfirst($c);
     $a = is_null($a) ? $_GET[C('VAR_ACTION')] : ucfirst($a);
-    $url = 'index.php?p=' . $p . '&c=' . $c . '&a=' . strtolower($a);
+    $url = 'index.php?' . C('VAR_PLATFORM') . '=' . $p . '&' . C('VAR_CONTROLLER') . '=' . $c . '&' . C('VAR_ACTION') . '=' . strtolower($a);
 
     return $url;
  }

@@ -44,9 +44,9 @@
          $param = array(
              'platform'   => '',
              'controller' => '',
-             'action'     => '',
-             'param'      => array( )
+             'action'     => ''
          );
+         $url=preg_replace('/\.html$/','',$url);
          switch($this->_url_module){
              case 0:
                  static::initDispatchParamByNomal();
@@ -58,11 +58,13 @@
                      $param['controller'] = isset($dispatch['2']) ? $dispatch['2'] : '';
                      $param['action'] = isset($dispatch['3']) ? $dispatch['3'] : '';
                      static::initDispatchParamByPathInfo($param);
+                     static::getValue($url,4);
                  } else {
                      $param['platform'] = isset($dispatch['0']) ? $dispatch['0'] : '';
                      $param['controller'] = isset($dispatch['1']) ? $dispatch['1'] : '';
                      $param['action'] = isset($dispatch['2']) ? $dispatch['2'] : '';
                      static::initDispatchParamByPathInfo($param);
+                     static::getValue($url,3);
                  }
                  $this->_url = $param;
                  break;
@@ -73,9 +75,24 @@
      }
 
      /**
+      * 循环取出pathinfo模式下GET传值
+      */
+     static private function getValue($url,$start)
+     {
+         $get = explode('/',trim($url,'/'));
+         if(count($get)>3){
+             $param = array_slice($get,$start);
+             for($i=0;$i<count($param);$i+=2){
+                 $_GET[$param[$i]] = $param[$i+1];
+             }
+             return $_GET;
+         }
+     }
+
+     /**
       * 初始化分发参数
       */
-     static public function initDispatchParamByNomal(){
+     static private function initDispatchParamByNomal(){
          //定义常量保存操作平台
          define('PLATFORM',isset($_GET[C('VAR_PLATFORM')]) ? ucfirst($_GET[C('VAR_PLATFORM')]) : static::$_default_platform);
          //定义常量保存控制器
@@ -83,7 +100,7 @@
          //定义常量保存操作方法
          define('ACTION',isset($_GET[C('VAR_ACTION')]) ? $_GET[C('VAR_ACTION')] : static::$_default_action);
      }
-     static public function initDispatchParamByPathInfo($param){
+     static private function initDispatchParamByPathInfo($param){
          //dump(isset($param['action']));die;
          //定义常量保存操作平台
          define('PLATFORM',isset($param['platform'])&&$param['platform']!='' ? ucfirst($param['platform']) : static::$_default_platform);
@@ -92,6 +109,7 @@
          //定义常量保存操作方法
          define('ACTION',isset($param['action'])&&$param['action']!='' ? $param['action'] : static::$_default_action);
      }
+
  }
 
 
