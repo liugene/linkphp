@@ -42,14 +42,17 @@ class Link
      static private function _initErrorHandler()
      {
         require CORE_PATH . 'ErrorHandler' . EXT;
+         //捕获普通自定义处理方法
         set_error_handler(array('ErrorHandler','linkErrorFunc'));
+         //捕获致命错误自定义处理方法
+        register_shutdown_function(array('ErrorHandler','dealFatalError'));
      }
 
     /**
      * 注册命名空间第三方类库加载方法
      * 注册控制器模型类自动加载
      */
-    static public function _initAutoload()
+    static private function _initAutoload()
     {
         require CORE_PATH . 'Autoload' . EXT;
         spl_autoload_register(array('Autoload', 'namespaceAutoload'));

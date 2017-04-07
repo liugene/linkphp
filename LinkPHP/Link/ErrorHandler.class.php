@@ -36,33 +36,57 @@
             case E_USER_WARNING:
             $error_type = 'WARNING';
             break;
-            
-            //错误级别：致命错误
-            case E_ERROR:
-            case E_USER_ERROR:
-            return static::dealError();
-            break;
             default:
             $error_type='UNKNOWN ERROR';
             return FALSE;
             break;
         }
-        $datatime = date('Y-m-d H:i:s',time());
+        $datetime = date('Y-m-d H:i:s',time());
         $message = <<<EOT
-        出现{$error_type}错误:<br />
-        产生{$error_type}错误文件:{$filename}<br />
-        产生{$error_type}错误信息:{$msg}<br />
-        产生{$error_type}错误信息行:{$line}<br />
-        产生错误时间:{$datatime}<br />
+        <B>出现{$error_type}错误&nbsp:</B><br /><br />
+        <B>产生{$error_type}错误文件&nbsp:</B> &nbsp&nbsp {$filename}<br /><br />
+        <B>产生{$error_type}错误信息&nbsp:</B> &nbsp&nbsp {$msg}<br /><br />
+        <B>产生{$error_type}错误信息行&nbsp:</B> &nbsp&nbsp {$line}<br /><br />
+        <B>产生错误时间&nbsp:</B> &nbsp&nbsp {$datetime}<br />
         
 EOT;
+        header("Content-type:text/html;charset=utf-8");
         require TTFF_PATH . 'temp/error' . '.' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
 
-     static public function dealError()
+     /**
+      * 致命错误捕获
+      * */
+     static public function dealFatalError()
      {
-         return false;
+         $error = error_get_last();
+         $trace = debug_backtrace();
+         switch($error['type']){
+             //错误级别：致命错误
+             case E_PARSE:
+             case E_CORE_ERROR:
+             case E_COMPILE_ERROR:
+             case E_ERROR:
+             case E_USER_ERROR:
+             $error_type='Fatal Error';
+             $datetime = date('Y-m-d H:i:s',time());
+             $message = <<<EOT
+        <B>出现{$error_type}错误&nbsp:</B><br /><br />
+        <B>产生{$error_type}错误文件&nbsp:</B> &nbsp&nbsp {$error['file']}<br /><br />
+        <B>产生{$error_type}错误信息&nbsp:</B> &nbsp&nbsp {$error['message']}<br /><br />
+        <B>产生{$error_type}错误信息行&nbsp:</B> &nbsp&nbsp {$error['line']}<br /><br />
+        <B>错误跟踪&nbsp:</B> &nbsp&nbsp <br /><br />
+        类名&nbsp: &nbsp&nbsp {$trace[0]['class']}<br /><br />
+        方法名&nbsp: &nbsp&nbsp {$trace[0]['function']}<br /><br />
+        调用类型&nbsp: &nbsp&nbsp {$trace[0]['type']}<br /><br />
+
+EOT;
+             header("Content-type:text/html;charset=utf-8");
+             require TTFF_PATH . 'temp/fatalerror' . '.' . C('DEFAULT_THEME_SUFFIX');
+             die;
+             break;
+         }
      }
  }
 

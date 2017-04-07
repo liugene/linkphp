@@ -69,7 +69,7 @@
                  $this->_url = $param;
                  break;
              case 2:
-                 $this->_url = '';
+                 static::initDispatchParamByNomal();
                  break;
          }
      }

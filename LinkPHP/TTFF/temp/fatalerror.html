@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <meta name="LinkPHP" content="LiuJun" />
+
+    <title>LinkPHP运行致命错误调试  LinkPHP框架|linkphp.cn</title>
+    <style>
+        body{
+            margin: 0 auto;
+            padding: 0;
+            background-color: #CDCDCD;
+        }
+        *{
+            font-size: 16px;
+            color: #666;
+            font-family: 'Helvetica Neue', 'STHeiti', '微软雅黑', 'Microsoft YaHei', Helvetica,Arial,sans-serif;;
+        }
+        #lp_error_body{
+            width: 100%;
+            height: auto;
+            background-color: #CDCDCD;
+            overflow: hidden;
+        }
+        .lp_error_center{
+            width: 980px;
+            height: auto;
+            background-color: #E6E6E6;
+            margin: 80PX auto;
+            border-radius: 25px;
+            text-align: center;
+        }
+        .lp_error_top{
+            line-height: 80px;
+            width: 680px;
+            height: 80px;
+            margin: 0 auto;
+        }
+        .lp_error_top p{
+            font-size: 26px;
+        }
+        .lp_error_content{
+            padding-bottom: 20px;
+        }
+        .lp_error_list{
+            width: 960px;
+            text-align: left;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: #CDCDCD;
+            overflow: hidden;
+        }
+        .lp_error_list p{
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="lp_error_body">
+    <div class="lp_error_center">
+        <div class="lp_error_top">
+            <p>:( &nbsp; &nbsp; 运行出现<?php echo $error_type; ?>错误 &nbsp; &nbsp; &nbsp;  QAQ~</p>
+        </div>
+        <div class="lp_error_content">
+            <div class="lp_error_list">
+                <p> <?php echo $message;
+                echo "<B>定位跟踪:</B><br /><br />";
+                debug_print_backtrace();
+                echo "<br /><br /><B>发生错误时间:</B> &nbsp &nbsp $datetime";?> </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
