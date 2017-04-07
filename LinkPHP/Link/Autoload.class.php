@@ -14,6 +14,30 @@
 
  class Autoload
  {
+
+     static public function toolClassAutoload($class_name)
+     {
+         //先处理确定的（框架内的核心工具类）
+         //类名与类文件映射数组
+         $LinkPHP_class_list = array(
+             //'类名' => '类文件地址'
+             'MysqlDB'           => CORE_PATH . 'Tools/' . 'MysqlDB' . EXT,
+             'Page'              => CORE_PATH . 'Tools/' . 'Page' . EXT,
+             'Image'             => CORE_PATH . 'Tools/' . 'Image' . EXT,
+             'Verify'            => CORE_PATH . 'Tools/' . 'Verify' . EXT,
+             'Session'           => CORE_PATH . 'Tools/' . 'Session' . EXT,
+             'Curl'              => CORE_PATH . 'Tools/' . 'Curl' .EXT,
+             'WeiXin'            => CORE_PATH . 'Tools/' . 'WeiXin' . EXT,
+             'Upload'            => CORE_PATH . 'Tools/' . 'Upload' . EXT,
+             'SendMail'          => CORE_PATH . 'Tools/' . 'SendMail' . EXT,
+         );
+         //判断是否为核心工具类
+         if(isset($LinkPHP_class_list[$class_name])){
+             //是核心工具类
+             require $LinkPHP_class_list[$class_name];
+         }
+     }
+
      /**
       * 命名空间第三方类库自动加载方法
       * @param string $class_name  实例化的类名
@@ -60,29 +84,10 @@
       */
      static public function userAutoload($class_name)
      {
-         //先处理确定的（框架内的核心工具类）
-         //类名与类文件映射数组
-         $LinkPHP_class_list = array(
-             //'类名' => '类文件地址'
-             'MysqlDB'           => CORE_PATH . 'Tools/' . 'MysqlDB' . EXT,
-             'Page'              => CORE_PATH . 'Tools/' . 'Page' . EXT,
-             'Image'             => CORE_PATH . 'Tools/' . 'Image' . EXT,
-             'Verify'            => CORE_PATH . 'Tools/' . 'Verify' . EXT,
-             'Session'           => CORE_PATH . 'Tools/' . 'Session' . EXT,
-             'Curl'              => CORE_PATH . 'Tools/' . 'Curl' .EXT,
-             'WeiXin'            => CORE_PATH . 'Tools/' . 'WeiXin' . EXT,
-             'Upload'            => CORE_PATH . 'Tools/' . 'Upload' . EXT,
-             'SendMail'          => CORE_PATH . 'Tools/' . 'SendMail' . EXT,
-         );
 
-         //判断是否为核心工具类
-         if(isset($LinkPHP_class_list[$class_name])){
-             //是核心工具类
-             require $LinkPHP_class_list[$class_name];
-         }
          //判断是否为可增加(控制器类，模型类)
          //控制器类截取后10个匹配Controller
-         elseif(substr($class_name,-10) == 'Controller'){
+         if(substr($class_name,-10) == 'Controller'){
              $filename = str_replace('\\', '/', $class_name);
              require APPLICATION_PATH . $filename . EXT;
 

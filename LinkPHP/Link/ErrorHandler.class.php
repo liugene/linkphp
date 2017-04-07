@@ -46,12 +46,11 @@
         <B>出现{$error_type}错误&nbsp:</B><br /><br />
         <B>产生{$error_type}错误文件&nbsp:</B> &nbsp&nbsp {$filename}<br /><br />
         <B>产生{$error_type}错误信息&nbsp:</B> &nbsp&nbsp {$msg}<br /><br />
-        <B>产生{$error_type}错误信息行&nbsp:</B> &nbsp&nbsp {$line}<br /><br />
-        <B>产生错误时间&nbsp:</B> &nbsp&nbsp {$datetime}<br />
-        
+        <B>产生{$error_type}错误信息行&nbsp:</B> &nbsp&nbsp {$line}
+
 EOT;
         header("Content-type:text/html;charset=utf-8");
-        require TTFF_PATH . 'temp/error' . '.' . C('DEFAULT_THEME_SUFFIX');
+        require TTFF_PATH . 'temp/error' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
 
@@ -79,14 +78,32 @@ EOT;
         <B>错误跟踪&nbsp:</B> &nbsp&nbsp <br /><br />
         类名&nbsp: &nbsp&nbsp {$trace[0]['class']}<br /><br />
         方法名&nbsp: &nbsp&nbsp {$trace[0]['function']}<br /><br />
-        调用类型&nbsp: &nbsp&nbsp {$trace[0]['type']}<br /><br />
+        调用类型&nbsp: &nbsp&nbsp {$trace[0]['type']}
 
 EOT;
              header("Content-type:text/html;charset=utf-8");
-             require TTFF_PATH . 'temp/fatalerror' . '.' . C('DEFAULT_THEME_SUFFIX');
+             require TTFF_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
              die;
              break;
          }
+     }
+
+     static public function dealException($e)
+     {
+         $datetime = date('Y-m-d H:i:s',time());
+         $info = $e->getMessage();
+         $trace = $e->getTraceAsString();
+         $line = $e->getLine();
+         $file = $e->getFile();
+         $message = <<<EOT
+        <B>{$info}错误&nbsp:</B><br /><br />
+        <B>产生{$info}错误文件&nbsp:</B> &nbsp&nbsp {$file}<br /><br />
+        <B>产生{$info}错误信息行&nbsp:</B> &nbsp&nbsp {$line}
+
+EOT;
+         header("Content-type:text/html;charset=utf-8");
+         require TTFF_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
+         die;
      }
  }
 

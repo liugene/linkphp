@@ -15,7 +15,7 @@ namespace Index\Controller;
 use Link\Controller;
 class IndexController extends Controller{
     public function index(){
-        $this->show(); 
+        $this->show();
     }
 }
 

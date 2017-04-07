@@ -42,10 +42,12 @@ class Link
      static private function _initErrorHandler()
      {
         require CORE_PATH . 'ErrorHandler' . EXT;
-         //捕获普通自定义处理方法
-        set_error_handler(array('ErrorHandler','linkErrorFunc'));
-         //捕获致命错误自定义处理方法
+        //捕获致命错误自定义处理方法
         register_shutdown_function(array('ErrorHandler','dealFatalError'));
+        //捕获普通自定义处理方法
+        set_error_handler(array('ErrorHandler','linkErrorFunc'));
+        //捕获异常自定义处理方法
+        set_exception_handler(array('ErrorHandler','dealException'));
      }
 
     /**
@@ -55,6 +57,7 @@ class Link
     static private function _initAutoload()
     {
         require CORE_PATH . 'Autoload' . EXT;
+        spl_autoload_register(array('Autoload', 'toolClassAutoload'));
         spl_autoload_register(array('Autoload', 'namespaceAutoload'));
         spl_autoload_register(array('Autoload','userAutoload'));
     }

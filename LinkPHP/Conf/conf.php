@@ -37,7 +37,7 @@
   //默认视图文件配置
   'DEFAULT_TEMP_THEME'   => 'Default',
   'DEFAULT_TEMP_TYPE'    => '0', //默认模板引擎,0=>LinkPHP默认原生PHP,1=>Smarty模板引擎
-  'DEFAULT_THEME_SUFFIX' => 'html',  //默认视图文件后缀 
+  'DEFAULT_THEME_SUFFIX' => '.html',  //默认视图文件后缀
   'TEMP_CACHE'           => 'FALSE', //是否开启模板缓存
   'SET_LEFT_LIMITER'     => '<{',  //设置模板引擎左侧解析标签
   'SET_RIGHT_LIMITER'    => '}>',  //设置模板引擎右侧解析标签
