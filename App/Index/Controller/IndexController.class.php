@@ -15,6 +15,8 @@ namespace Index\Controller;
 use Link\Controller;
 class IndexController extends Controller{
     public function index(){
+        $re = new \Common\Controller\Mongo();
+        dump($re);die;
         $this->show();
     }
 }
