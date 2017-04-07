@@ -25,13 +25,29 @@
      //分发方法
      private function _dispatch()
      {
+         $dir = APPLICATION_PATH . PLATFORM . '/' . 'Controller';
+         //判断模块是否存在
+         if(!is_dir($dir)){
+             //抛出异常
+             throw new \Exception("无法加载模块");
+         }
          //实例化控制器类
          $controller_name = PLATFORM . '\\' . 'Controller' . '\\' . CONTROLLER . 'Controller';
-         //实例化
-         $controller = new $controller_name();
+         $filename = APPLICATION_PATH . PLATFORM . '/' . 'Controller' . '/' . CONTROLLER . 'Controller' . EXT;
+         if(file_exists($filename)){
+             $controller = new $controller_name();
+         } else {
+             //抛出异常
+             throw new \Exception("无法加载控制器");
+         }
          //调用方法
          $action_name = ACTION;
-         $controller -> $action_name();
+         if(method_exists($controller,$action_name)){
+             $controller -> $action_name();
+         } else {
+             //抛出异常
+             throw new \Exception("无法加载方法");
+         }
      }
  }
 
