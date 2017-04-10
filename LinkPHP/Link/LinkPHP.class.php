@@ -57,8 +57,11 @@ class Link
     static private function _initAutoload()
     {
         require CORE_PATH . 'Autoload' . EXT;
+        //注册工具类自动自动加载
         spl_autoload_register(array('Autoload', 'toolClassAutoload'));
+        //注册命名空间类自动加载
         spl_autoload_register(array('Autoload', 'namespaceAutoload'));
+        //注册系统核心扩展类自动加载
         spl_autoload_register(array('Autoload','userAutoload'));
     }
 
@@ -78,6 +81,7 @@ class Link
      */
     static private function _initRouter()
     {
+        //实例化路由类
         new Router();
     }
 
@@ -86,8 +90,11 @@ class Link
      */
     static private function _initPlatformPathConst()
     {
+        //定义控制器路径常量
         define('CURRENT_CONTROLLER_PATH',APPLICATION_PATH . PLATFORM . '/Controller/');
+        //定义模型路径常量
         define('CURRENT_MODEL_PATH', APPLICATION_PATH . PLATFORM . '/Model/');
+        //定义视图路径常量
         define('CURRENT_VIEW_PATH', APPLICATION_PATH . PLATFORM . '/View/');
 
     }
@@ -97,6 +104,7 @@ class Link
      */
     static private function _dispatch()
     {
+        //实例化分发类
         new Dispatch();
     }
 

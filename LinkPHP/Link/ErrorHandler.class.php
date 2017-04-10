@@ -88,6 +88,9 @@ EOT;
          }
      }
 
+     /**
+     *自定义异常错误处理函数
+     */
      static public function dealException($e)
      {
          $datetime = date('Y-m-d H:i:s',time());
