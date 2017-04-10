@@ -21,7 +21,7 @@
      */ 
     protected $_tVar     =   array();
     
-    public function fetch($tempfile){
+    public function init($tempfile){
         include LINKPHP_PATH . 'Template/Smarty/Smarty' . EXT;
         $smarty = new \Smarty();
         $smarty->caching = C('TEMP_CACHE'); //设置是否启用缓存

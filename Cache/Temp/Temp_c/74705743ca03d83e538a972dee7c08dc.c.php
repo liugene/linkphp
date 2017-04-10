@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<{$linkphp}>
+<?php echo $linkphp; ?>
 
 </body>
 </html>

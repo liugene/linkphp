@@ -10,7 +10,8 @@
 </head>
 
 <body>
-<{$linkphp}>
+{$linkpsp}
+LinkPHP
 
 </body>
 </html>
