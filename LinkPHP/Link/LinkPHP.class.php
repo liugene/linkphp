@@ -57,6 +57,8 @@ class Link
     static private function _initAutoload()
     {
         require CORE_PATH . 'Autoload' . EXT;
+        //注册系统自动加载
+        spl_autoload_register(array('Autoload', 'LinkSystemAutoload'));
         //注册工具类自动自动加载
         spl_autoload_register(array('Autoload', 'toolClassAutoload'));
         //注册命名空间类自动加载

@@ -12,6 +12,30 @@
  */
 class Autoload
 {
+    /**
+     * 系统自动加载方法
+    */
+    static public function LinkSystemAutoload($class_name)
+    {
+        $name = strstr($class_name, '\\', true);
+        if($name == 'LinkSystem'){
+            $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . '.System.php';
+            //判断文件是否存在
+            if(file_exists($filename)){
+                //存在引入
+                //Link系统目录下面的命名空间自动定位
+                require $filename;
+            } else {
+                //不存在
+                //抛出异常
+                throw new \Exception("无法加载系统类");
+            }
+        }
+    }
+
+    /**
+     * 核心工具类自动加载方法
+     * */
     static public function toolClassAutoload($class_name)
     {
         //先处理确定的（框架内的核心工具类）

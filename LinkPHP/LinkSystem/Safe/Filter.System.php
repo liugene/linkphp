@@ -8,18 +8,10 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                 框架默认控制器                    *
+ *               LinkPHP系统表单过滤                 *
  * --------------------------------------------------*
  */
-namespace Index\Controller;
-use Link\Controller;
-class IndexController extends Controller{
-    public function index(){
-        $test = 'Linkphp.cn-LinkPHP创建成功';
-        $this->assign('linkphp',$test);
-        $this->display();
-        //$this->show();
-    }
-}
 
-?>
+ namespace LinkSystem\Safe;
+ class Filter
+ {}

@@ -6,7 +6,7 @@
     <link href="Public/Default/css/index.css" type="text/css" rel="stylesheet" />
     <link href="Public/Default/css/common.css" type="text/css" rel="stylesheet" />
 
-	<title>LinkPHP</title>
+	<title><?php echo $linkphp; ?></title>
 </head>
 
 <body>
