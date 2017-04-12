@@ -15,9 +15,9 @@
  class Router
  {
      //url模式
-     private $_url_module;
+     static private $_url_module;
      //请求参数
-     private $_url = array();
+     static private $_url = array();
      //默认操作平台
      static private $_default_platform;
      //默认控制器
@@ -27,19 +27,19 @@
 
 
      //路由类构造函数
-     public function __construct()
+     static public function run()
      {
-         $this->_url_module = C('URL_MODULE');
+         static::$_url_module = C('URL_MODULE');
          static::$_default_platform = C('DEFAULT_PLATFORM');
          static::$_default_controller = C('DEFAULT_CONTROLLER');
          static::$_default_action = C('DEFAULT_ACTION');
-         $this->initUrlParam($_SERVER['REQUEST_URI']);
+         static::initUrlParam($_SERVER['REQUEST_URI']);
      }
 
      /**
       * URL参数匹配
       */
-     public function initUrlParam($url)
+     static private function initUrlParam($url)
      {
          $param = array(
              'platform'   => '',
@@ -47,7 +47,7 @@
              'action'     => ''
          );
          $url=preg_replace('/\.html$/','',$url);
-         switch($this->_url_module){
+         switch(static::$_url_module){
              case 0:
                  static::initDispatchParamByNomal();
                  break;
@@ -66,7 +66,7 @@
                      static::initDispatchParamByPathInfo($param);
                      static::getValue($url,3);
                  }
-                 $this->_url = $param;
+                 static::$_url = $param;
                  break;
              case 2:
                  static::initDispatchParamByNomal();

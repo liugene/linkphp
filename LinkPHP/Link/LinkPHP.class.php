@@ -20,13 +20,15 @@ class Link
      */
      static public function start()
      {
-        
+
         //运行自定义错误处理方式
         static::_initErrorHandler();
         //注册自动加载方法
         static::_initAutoload();
         //加载LinkPHP框架系统、应用公共函数
         static::_initLinkFunc();
+        //加载系统引擎机制
+        static::_initEngine();
         //路由参数初始化
         static::_initRouter();
         //声明当前平平路径
@@ -68,6 +70,14 @@ class Link
     }
 
     /**
+     * 加载系统引擎机制
+     */
+    static private function _initEngine()
+    {
+        \LinkSystem\Core\Engine::run();
+    }
+
+    /**
      * 加载LinkPHP框架系统函数库
      */
     static private function _initLinkFunc()
@@ -84,7 +94,7 @@ class Link
     static private function _initRouter()
     {
         //实例化路由类
-        new Router();
+        Router::run();
     }
 
     /**
@@ -106,8 +116,8 @@ class Link
      */
     static private function _dispatch()
     {
-        //实例化分发类
-        new Dispatch();
+        //实例化分发类调用run方法
+        Dispatch::run();
     }
 
 }

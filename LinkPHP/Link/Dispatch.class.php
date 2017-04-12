@@ -17,13 +17,13 @@
  {
 
      //分发类构造函数
-     public function __construct()
+     static public function run()
      {
-         $this->_dispatch();
+         static::_dispatch();
      }
 
      //分发方法
-     private function _dispatch()
+     static private function _dispatch()
      {
          $dir = APPLICATION_PATH . PLATFORM . '/' . 'Controller';
          //判断模块是否存在

@@ -37,6 +37,8 @@
                  //不存在令牌文本域则创建表单令牌文本域
                  preg_match('#<\/form>#',$content,$match);
                  $content = str_replace($match[0],$input.$match[0],$content);
+                 //将token保存session用于验证
+                 $_SESSION[$token_name] = $token;
              }
              file_put_contents($filename,$content);
          }

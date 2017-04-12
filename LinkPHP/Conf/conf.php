@@ -53,6 +53,9 @@
   //系统安全配置
   'TOKEN_TURN_ON'        => 'TRUE', //是否打开表单令牌验证
 
+  //系统引擎配置
+  'SESSION_ON'           => 'TRUE', //是否开启SESSION机制
+
  );
 
 
