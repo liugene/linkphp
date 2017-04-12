@@ -8,12 +8,12 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *               LinkPHP系统安全核心                 *
+ *                    系统日志类                     *
  * --------------------------------------------------*
  */
 
- namespace LinkSystem\Safe;
- class Core
+ namespace LinkSystem\Log;
+ class Log
  {}
 
 

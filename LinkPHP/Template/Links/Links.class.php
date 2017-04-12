@@ -81,3 +81,6 @@
          $this->_tVar[$name] = $value;
      }
  }
+
+
+?>

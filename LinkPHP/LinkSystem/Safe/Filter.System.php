@@ -15,3 +15,6 @@
  namespace LinkSystem\Safe;
  class Filter
  {}
+
+
+ ?>

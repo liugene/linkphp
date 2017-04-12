@@ -70,14 +70,6 @@ class Link
     }
 
     /**
-     * 加载系统引擎机制
-     */
-    static private function _initEngine()
-    {
-        \LinkSystem\Core\Engine::run();
-    }
-
-    /**
      * 加载LinkPHP框架系统函数库
      */
     static private function _initLinkFunc()
@@ -86,6 +78,14 @@ class Link
         require LINKPHP_PATH . 'Function/' . 'functions.php';
         //加载LinkPHP框架应用函数库
         require APPLICATION_PATH . 'Common/Function/functions.php';
+    }
+
+    /**
+     * 加载系统引擎机制
+     */
+    static private function _initEngine()
+    {
+        \LinkSystem\Core\Engine::run();
     }
 
     /**
