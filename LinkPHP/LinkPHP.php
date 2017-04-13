@@ -38,6 +38,10 @@
  define('EXTEND_PATH', LINKPHP_PATH . 'Extend/');
  //定义LinkPHP框架附件目录常量
  define('TTFF_PATH',LINKPHP_PATH . 'TTFF/');
+
+ //系统可变常量
+ defined('CREATE_SQLVI_ON') or define('CREATE_SQLVI_ON','FALSE'); //开启视图索引创建
+ defined('APP_DEBUG') or define('APP_DEBUG','FALSE'); //开启站点调试
  
  
  //加载LinkPHP框架核心初始化类

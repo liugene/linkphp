@@ -8,16 +8,22 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                   站点入口文件                    *
+ *               LinkPHP系统视图索引                 *
  * --------------------------------------------------*
  */
 
+ namespace LinkSystem\SQL;
+ use Common\SQLVI\CVSQLVI;
+ use Common\SQLVI\CISQLVI;
+ class SQLVI
+ {
+     static public function run()
+     {
+         if(CREATE_SQLVI_ON == 'TRUE'){
+             CVSQLVI::run();
+             CISQLVI::run();
+         }
+     }
+ }
 
- //加载LinkPHP框架入口文件
- require './LinkPHP/LinkPHP.php';
-
-//只需要这么一句话就可以运行 !><!
-//是不是很轻便呀 喵~
- 
-
-?>
+ ?>

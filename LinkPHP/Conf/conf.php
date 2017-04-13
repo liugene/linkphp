@@ -56,6 +56,9 @@
   //系统引擎配置
   'SESSION_ON'           => 'TRUE', //是否开启SESSION机制
 
+  //数据库扩展支持
+  'CREATE_SQLVI_ON'             => 'TRUE', //是否开启视图索引创建功能，默认开启
+
  );
 
 

@@ -29,6 +29,8 @@ class Link
         static::_initLinkFunc();
         //加载系统引擎机制
         static::_initEngine();
+        //加载系统视图索引
+        static::_initSQLVI();
         //路由参数初始化
         static::_initRouter();
         //声明当前平平路径
@@ -86,6 +88,14 @@ class Link
     static private function _initEngine()
     {
         \LinkSystem\Core\Engine::run();
+    }
+
+    /**
+     * 加载系统数据库视图索引
+     */
+    static private function _initSQLVI()
+    {
+        \LinkSystem\SQL\SQLVI::run();
     }
 
     /**

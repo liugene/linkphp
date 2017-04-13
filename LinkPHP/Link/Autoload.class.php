@@ -130,7 +130,7 @@ class Autoload
                 } else {
                     //不存在
                     //抛出异常
-                    throw new \Exception("无法加载框架第三方扩展控制器模型类");
+                    throw new \Exception("无法加载框架站点公共控制器类");
                 }
             }
             elseif(substr($class_name, -5) == 'Model'){
@@ -144,7 +144,19 @@ class Autoload
                 } else {
                     //不存在
                     //抛出异常
-                    throw new \Exception("无法加载框架第三方扩展控制器模型类");
+                    throw new \Exception("无法加载框架站点公共模型类");
+                }
+            }
+            elseif(substr($class_name,-5) == 'SQLVI'){
+                $filename = APPLICATION_PATH . str_replace('\\', '/', $class_name) . '.SQLVI.php';
+                //判断文件是否存在
+                if(file_exists($filename)){
+                    //存在引入
+                    require APPLICATION_PATH . str_replace('\\', '/', $class_name) . '.SQLVI.php';
+                } else {
+                    //不存在
+                    //抛出异常
+                    throw new \Exception("无法加载框架站点公共数据库视图索引类");
                 }
             }
         }
