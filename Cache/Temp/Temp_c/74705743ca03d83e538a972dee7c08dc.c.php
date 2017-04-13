@@ -12,6 +12,6 @@
 <body>
 <?php echo $linkphp; ?>
     <form>
-	<input type="hidden" name="md5" value="md5920f06e2bebea1b5eb336ac6b5f585b9" /></form>
+	<input type="hidden" name="md5" value="md558fe83dfe9bc75ab70313c88c060b98b" /></form>
 </body>
 </html>
