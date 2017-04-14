@@ -103,6 +103,27 @@ function C($name, $value = null){
 
     return $url;
  }
+
+ /**
+  * L方法 获取系统语言包
+  */
+ function L($language){
+     switch(C('DEFAULT_LANGUAGE')){
+         case 'cn':
+             $conf = require LINKPHP_PATH . 'Lang/cn.Lang.php';
+             break;
+         case 'tw':
+             $conf = require LINKPHP_PATH . 'Lang/tw.Lang.php';
+             break;
+         case 'en':
+             $conf = require LINKPHP_PATH . 'Lang/en.Lang.php';
+             break;
+         default:
+             $conf = require LINKPHP_PATH . 'Lang/cn.Lang.php';
+             break;
+     }
+     return $conf[$language];
+ }
  
  //打印函数
  function dump($var){

@@ -42,6 +42,7 @@
  //系统可变常量
  defined('CREATE_SQLVI_ON') or define('CREATE_SQLVI_ON','FALSE'); //开启视图索引创建
  defined('APP_DEBUG') or define('APP_DEBUG','FALSE'); //开启站点调试
+ defined('SYSTEM_LANGUAGE') or define('SYSTEM_LANGUAGE','');
  
  
  //加载LinkPHP框架核心初始化类

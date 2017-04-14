@@ -45,6 +45,9 @@
   
   //扩展配置开关
   'EXTEND_MODEL_CONFIG'  => 'FALSE',
+
+  //系统语言包设置
+  'DEFAULT_LANGUAGE'     => 'cn', //设置系统语言'cn'简体中文,'tw'繁体中文,'en'英语。默认中文
   
   
   //站点调试
