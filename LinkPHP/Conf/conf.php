@@ -57,7 +57,10 @@
   'SESSION_ON'           => 'TRUE', //是否开启SESSION机制
 
   //数据库扩展支持
-  'CREATE_SQLVI_ON'             => 'TRUE', //是否开启视图索引创建功能，默认开启
+  'CREATE_SQLVI_ON'      => 'TRUE', //是否开启视图索引创建功能，默认开启
+
+  //系统常用路径设置
+  'LOG_PATH'             => CACHE_PATH  . 'Log/', //系统日志存储路径
 
  );
 
