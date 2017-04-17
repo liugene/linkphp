@@ -31,7 +31,7 @@
         //加载视图文件
         // 模板阵列变量分解成为独立变量
         extract($this->_tVar);
-        include CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX');
+        require CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX');
      }
      
      /**
@@ -47,7 +47,7 @@
       */
      public function show($content=''){
         header('Content-Type:text/html;charset=utf8');
-        include TTFF_PATH . 'temp/appsuccess' . C('DEFAULT_THEME_SUFFIX');
+        require TTFF_PATH . 'temp/appsuccess' . C('DEFAULT_THEME_SUFFIX');
         echo $content;
      }
  }

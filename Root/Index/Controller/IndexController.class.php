@@ -15,6 +15,8 @@ namespace Index\Controller;
 use Link\Controller;
 class IndexController extends Controller{
     public function index(){
+        echo LINKPHP_VERSION;
+        echo '<br />';
         $test = 'Linkphp.cn-LinkPHP创建成功';
         $this->assign('linkphp',$test);
         $this->display();

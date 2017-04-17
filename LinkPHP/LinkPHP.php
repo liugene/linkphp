@@ -14,6 +14,8 @@
  
  //类文件后缀常量
  const EXT = '.class.php';
+ //版本信息
+ define('LINKPHP_VERSION','1.0.0');
  //声明路径常量
  //目录基础常量的定义
  define('ROOT_PATH',getCWD() . '/');

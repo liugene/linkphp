@@ -19,7 +19,7 @@
 
      public function __construct()
      {
-         include LINKPHP_PATH . 'Template/Links/Links' . EXT;
+         require LINKPHP_PATH . 'Template/Links/Links' . EXT;
          $this->_links = new \Links();
      }
 

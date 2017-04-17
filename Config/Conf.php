@@ -2,25 +2,25 @@
 
 /**
  * --------------------------------------------------*
- *  LhinkPHP��ѭApache2��ԴЭ�鷢��  Link ALL Thing  *
+ *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
  * --------------------------------------------------*
  *  @author LiuJun     Mail-To:liujun2199@vip.qq.com *
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                  վ�㹫�������ļ�                 *
+ *                  站点公共配置文件                 *
  * --------------------------------------------------*
  */
 
 return array(
 
-    'HOST'     => 'localhost', //һ�㲻��Ҫ�޸�
-    'PORT'     => '3306', //Ĭ�ϼ���
-    'DBUSER'   => 'root', //���ݿ��û���
-    'DBPWD'    => 'root', //���ݿ�����
-    'CHARSET'  => 'utf8', //���ݿ����
-    'DBNAME'   => 'linkphp', //���ݿ�����
-    'DBPREFIX' => 'lp_', //���ݿ��ǰ׺
+    'HOST'     => 'localhost', //一般不需要修改
+    'PORT'     => '3306', //默认即可
+    'DBUSER'   => 'root', //数据库用户名
+    'DBPWD'    => 'root', //数据库密码
+    'CHARSET'  => 'utf8', //数据库编码
+    'DBNAME'   => 'linkphp', //数据库名称
+    'DBPREFIX' => 'lp_', //数据库表前缀
 
 );
 

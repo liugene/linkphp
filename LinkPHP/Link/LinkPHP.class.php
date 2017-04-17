@@ -39,7 +39,7 @@ class Link
         static::_dispatch();
 
      }
-     
+
      /**
       * 自定义错误信息触发器
       */
