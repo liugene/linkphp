@@ -17,11 +17,11 @@
  //声明路径常量
  //目录基础常量的定义
  define('ROOT_PATH',getCWD() . '/');
- define('APPLICATION_PATH', ROOT_PATH . 'App/');
+ define('APPLICATION_PATH', ROOT_PATH . 'Root/');
  //定义缓存目录常量
- define('CACHE_PATH', ROOT_PATH . 'Cache/');
+ define('CACHE_PATH', ROOT_PATH . 'Data/');
  //定义公共附件目录常量
- define('__PUBLIC__', ROOT_PATH . 'Public/');
+ define('__ATTACH__', CACHE_PATH . 'Attachment/');
  //定义LinkPHP框架目录常量
  define('LINKPHP_PATH', ROOT_PATH . 'LinkPHP/');
  //定义LinkPHP框架核心类目录常量
