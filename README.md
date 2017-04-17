@@ -29,20 +29,18 @@ BUG反馈：www.linkphp.cn
 
 ├─index.php        入口文件
 
-├─App                  应用目录
+├─Root                  应用目录
 
-├─Cache               缓存目录
+├─Data               缓存目录
 
 ├─Config              站点公共配置
-
-├─Public               资源文件目录
 
 └─LinkPHP           框架目录
 
 
-## **App目录**
+## **Root目录**
 
-├─App 应用目录
+├─Root 应用目录
 
 │  ├─Index                 默认模块目录(可配置更换目录名称)
 
@@ -73,28 +71,24 @@ BUG反馈：www.linkphp.cn
 │  │  ├─View             视图目录
 
 
-## **Cache目录**
+## **Data目录**
 
-├─Cachep 缓存目录
+├─Data 缓存目录
+
+│  ├─Attachment    站点公共附件目录(默认为空目录)
 
 │  ├─Log       日志目录
 
-│  ├─SMarty  SMarty模板引擎目录
+│  ├─Temp  模板编译缓存目录
 
-│  │  ├─Smarty_c     SMarty模板编译目录(可配置修改目录名称)
+│  │  ├─Temp_c     模板编译目录(可配置修改目录名称)
 
-│  │  ├─Smarty_cache   SMarty模板缓存目录(可配置修改目录名称)
+│  │  ├─Temp_cache   模板缓存目录(可配置修改目录名称)
 
 
 ## **Config 目录**
 
 ├─Config    应用公共配置目录
-
-
-## **Public目录**
-
-├─Public    站点公共附件目录(默认为空目录)
-
 
 
 ## **LinkPHP框架目录**
@@ -112,6 +106,8 @@ BUG反馈：www.linkphp.cn
 │  ├─Link          Link核心类库和工具类库包目录
 
 │  │  ├─Tools    核心工具类库目录
+
+│  ├─System         系统核心目录
 
 │  ├─Sys            框架核心工具类库扩展目录
 
