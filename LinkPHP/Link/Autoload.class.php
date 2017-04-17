@@ -18,7 +18,7 @@ class Autoload
     static public function LinkSystemAutoload($class_name)
     {
         $name = strstr($class_name, '\\', true);
-        if($name == 'LinkSystem'){
+        if($name == 'System'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . '.System.php';
             //判断文件是否存在
             if(file_exists($filename)){
@@ -78,7 +78,7 @@ class Autoload
                 throw new \Exception("无法加载框架核心类");
             }
         }
-        elseif($name == 'Sys'){
+        elseif($name == 'Helper'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){

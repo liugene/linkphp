@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace LinkSystem\Log;
+ namespace System\Log;
  class Log
  {
      static public function save($message)

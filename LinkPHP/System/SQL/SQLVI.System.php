@@ -8,17 +8,22 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                  MongoDB扩展类                    *
+ *               LinkPHP系统视图索引                 *
  * --------------------------------------------------*
  */
- 
- namespace Sys\Db;
- class MongoDB{
-    public function test(){
-        echo '<br />MongoDB扩展类<br />';
-    }
+
+ namespace System\SQL;
+ use Common\SQLVI\CVSQLVI;
+ use Common\SQLVI\CISQLVI;
+ class SQLVI
+ {
+     static public function run()
+     {
+         if(CREATE_SQLVI_ON == 'TRUE'){
+             CVSQLVI::run();
+             CISQLVI::run();
+         }
+     }
  }
 
-
-
-?>
+ ?>

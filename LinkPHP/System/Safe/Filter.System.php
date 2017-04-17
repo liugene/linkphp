@@ -8,23 +8,13 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *               LinkPHP系统引擎机制                 *
+ *               LinkPHP系统表单过滤                 *
  * --------------------------------------------------*
  */
 
- namespace LinkSystem\Core;
- class Engine
- {
-     static public function run()
-     {
-         /**
-          * 开启session机制
-          */
-         if(C('SESSION_ON')){
-             session_start();
-         }
-     }
- }
+ namespace System\Safe;
+ class Filter
+ {}
 
 
  ?>

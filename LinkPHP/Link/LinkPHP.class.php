@@ -87,7 +87,7 @@ class Link
      */
     static private function _initEngine()
     {
-        \LinkSystem\Core\Engine::run();
+        \System\Core\Engine::run();
     }
 
     /**
@@ -95,7 +95,7 @@ class Link
      */
     static private function _initSQLVI()
     {
-        \LinkSystem\SQL\SQLVI::run();
+        \System\SQL\SQLVI::run();
     }
 
     /**
