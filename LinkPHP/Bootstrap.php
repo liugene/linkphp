@@ -8,17 +8,11 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                   站点入口文件                    *
+ *                 LinkPHP框架启动文件               *
  * --------------------------------------------------*
  */
 
-
- //加载LinkPHP框架入口文件
- require './LinkPHP/LinkPHP.php';
- require './LinkPHP/Bootstrap.php';
-
- //只需要这么一句话就可以运行 !><!
- //是不是很轻便呀 喵~
- 
-
-?>
+ require VENDOR_PATH . 'autoload.php';
+ //加载LinkPHP框架核心初始化类
+ require CORE_PATH . 'LinkPHP' . EXT;
+ Link\Link::start();
