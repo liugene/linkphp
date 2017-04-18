@@ -110,16 +110,16 @@ function C($name, $value = null){
  function L($language){
      switch(C('DEFAULT_LANGUAGE')){
          case 'cn':
-             $conf = require LINKPHP_PATH . 'Lang/cn.Lang.php';
+             $conf = require INC_PATH . 'Lang/cn.Lang.php';
              break;
          case 'tw':
-             $conf = require LINKPHP_PATH . 'Lang/tw.Lang.php';
+             $conf = require INC_PATH . 'Lang/tw.Lang.php';
              break;
          case 'en':
-             $conf = require LINKPHP_PATH . 'Lang/en.Lang.php';
+             $conf = require INC_PATH . 'Lang/en.Lang.php';
              break;
          default:
-             $conf = require LINKPHP_PATH . 'Lang/cn.Lang.php';
+             $conf = require INC_PATH . 'Lang/cn.Lang.php';
              break;
      }
      return $conf[$language];

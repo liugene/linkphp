@@ -77,7 +77,7 @@ class Link
     static private function _initLinkFunc()
     {
         //加载LinkPHP框架系统函数
-        require LINKPHP_PATH . 'Function/' . 'functions.php';
+        require FUNCTION_PATH . 'functions.php';
         //加载LinkPHP框架应用函数库
         require APPLICATION_PATH . 'Common/Function/functions.php';
     }

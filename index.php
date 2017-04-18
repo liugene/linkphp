@@ -13,8 +13,8 @@
  */
 
 
- //加载LinkPHP框架入口文件
- require './LinkPHP/LinkPHP.php';
+ //加载LinkPHP框架常量文件
+ require './LinkPHP/Define.php';
  //加载LinkPHP框架启动文件
  require './LinkPHP/Bootstrap.php';
 

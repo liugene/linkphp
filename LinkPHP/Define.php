@@ -28,22 +28,24 @@
  define('__ATTACH__', CACHE_PATH . 'Attachment/');
  //定义LinkPHP框架目录常量
  define('LINKPHP_PATH', ROOT_PATH . 'LinkPHP/');
+ //定义LinkPHP框架包含目录常量
+ define('INC_PATH', LINKPHP_PATH . 'Inc/');
  //定义LinkPHP框架核心类目录常量
  define('CORE_PATH', LINKPHP_PATH . 'Link/');
  //定义LinkPHP框架语言目录常量
- define('LANG_PATH', LINKPHP_PATH . 'Lang/');
+ define('LANG_PATH', INC_PATH . 'Lang/');
  //定义LinkPHP框架工具助手目录常量
  define('HELPER_PATH', LINKPHP_PATH . 'Helper/');
  //定义LinkPHP框架公共函数目录常量
- define('FUNCTION_PATH', LINKPHP_PATH . 'Function/');
+ define('FUNCTION_PATH', INC_PATH . 'Function/');
  //定义LinkPHP框架公共配置目录常量
- define('CONF_PATH', LINKPHP_PATH . 'Conf/');
+ define('CONF_PATH', INC_PATH . 'Conf/');
  //定义LinkPHP框架应用公共配置目录常量
  define('APPCONF_PATH', ROOT_PATH . 'Inc/Config/');
  //定义LinkPHP框架扩展类库目录常量
  define('EXTEND_PATH', LINKPHP_PATH . 'Extend/');
  //定义LinkPHP框架附件目录常量
- define('TTFF_PATH',LINKPHP_PATH . 'TTFF/');
+ define('TTFF_PATH',INC_PATH . 'TTFF/');
 
  //系统可变常量
  defined('CREATE_SQLVI_ON') or define('CREATE_SQLVI_ON','FALSE'); //开启视图索引创建

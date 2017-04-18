@@ -84,7 +84,7 @@
    */
   protected function display($tempfile='',$name='',$value=''){
     $tempfile = CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX');
-    if(C('TOKEN_TURN_ON')){
+    if(C('TOKEN_TURN_ON') == 'TRUE'){
         $token = new \System\Safe\Token();
         $token->init($tempfile);
     }
