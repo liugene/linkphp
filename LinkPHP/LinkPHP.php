@@ -30,6 +30,8 @@
  define('CORE_PATH', LINKPHP_PATH . 'Link/');
  //定义LinkPHP框架语言目录常量
  define('LANG_PATH', LINKPHP_PATH . 'Lang/');
+ //定义LinkPHP框架工具助手目录常量
+ define('HELPER_PATH', LINKPHP_PATH . 'Helper/');
  //定义LinkPHP框架公共函数目录常量
  define('FUNCTION_PATH', LINKPHP_PATH . 'Function/');
  //定义LinkPHP框架公共配置目录常量

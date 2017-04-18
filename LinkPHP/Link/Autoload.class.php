@@ -42,15 +42,15 @@ class Autoload
         //类名与类文件映射数组
         $LinkPHP_class_list = array(
             //'类名' => '类文件地址'
-            'Db'           => CORE_PATH . 'Tools/' . 'Db' . EXT,
-            'Page'              => CORE_PATH . 'Tools/' . 'Page' . EXT,
-            'Image'             => CORE_PATH . 'Tools/' . 'Image' . EXT,
-            'Verify'            => CORE_PATH . 'Tools/' . 'Verify' . EXT,
-            'Session'           => CORE_PATH . 'Tools/' . 'Session' . EXT,
-            'Curl'              => CORE_PATH . 'Tools/' . 'Curl' .EXT,
-            'WeiXin'            => CORE_PATH . 'Tools/' . 'WeiXin' . EXT,
-            'Upload'            => CORE_PATH . 'Tools/' . 'Upload' . EXT,
-            'SendMail'          => CORE_PATH . 'Tools/' . 'SendMail' . EXT,
+            'Db'           => HELPER_PATH . 'Db/' . 'Db' . EXT,
+            'Page'              => HELPER_PATH . 'Page/' . 'Page' . EXT,
+            'Image'             => HELPER_PATH . 'Image/' . 'Image' . EXT,
+            'Verify'            => HELPER_PATH . 'Verify/' . 'Verify' . EXT,
+            'Session'           => HELPER_PATH . 'Session/' . 'Session' . EXT,
+            'Curl'              => HELPER_PATH . 'Curl/' . 'Curl' .EXT,
+            'WeiXin'            => HELPER_PATH . 'WeiXin/' . 'WeiXin' . EXT,
+            'Upload'            => HELPER_PATH . 'Uploads/' . 'Upload' . EXT,
+            'SendMail'          => HELPER_PATH . 'SendMail/' . 'SendMail' . EXT,
         );
         //判断是否为核心工具类
         if(isset($LinkPHP_class_list[$class_name])){

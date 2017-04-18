@@ -11,7 +11,7 @@
  *            Sql server srv数据库扩展类             *
  * --------------------------------------------------*
  */
-namespace Helper\Db;
+namespace Helper\Db\Type;
 class Sqlsrv
 {
     /**

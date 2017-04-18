@@ -23,7 +23,7 @@
  * @param $result [string] MySQL连接资源集
  */
 
-namespace Helper\Db;
+namespace Helper\Db\Type;
 class Mysql
 {
 

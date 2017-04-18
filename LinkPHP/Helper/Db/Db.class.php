@@ -8,17 +8,24 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                  MongoDB扩展类                    *
+ *               LinkPHP框架数据库操作类             *
  * --------------------------------------------------*
  */
- 
- namespace Helper\Db;
- class MongoDB{
-    public function test(){
-        echo '<br />MongoDB扩展类<br />';
-    }
+
+ class Db
+ {
+
+     /**
+      * 检测数据库类型
+      */
+     static public function run($config){
+         switch(C('DB_TYPE')){
+             case 'mysql':
+                 new Helper\Db\Type\Mysql($config);
+                 break;
+             case 'Sqlsrv':
+                 new Helper\Db\Type\Sqlsrv($config);
+                 break;
+         }
+     }
  }
-
-
-
-?>
