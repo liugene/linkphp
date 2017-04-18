@@ -23,7 +23,8 @@
  * @param $result [string] MySQL连接资源集
  */
 
-class mysqlDB
+namespace Helper\Db;
+class Mysql
 {
 
     private $_host;

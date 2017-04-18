@@ -42,7 +42,7 @@ class Autoload
         //类名与类文件映射数组
         $LinkPHP_class_list = array(
             //'类名' => '类文件地址'
-            'MysqlDB'           => CORE_PATH . 'Tools/' . 'MysqlDB' . EXT,
+            'Db'           => CORE_PATH . 'Tools/' . 'Db' . EXT,
             'Page'              => CORE_PATH . 'Tools/' . 'Page' . EXT,
             'Image'             => CORE_PATH . 'Tools/' . 'Image' . EXT,
             'Verify'            => CORE_PATH . 'Tools/' . 'Verify' . EXT,

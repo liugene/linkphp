@@ -35,7 +35,7 @@
          'DBNAME'  => C('DBNAME'),
         );
         if(!isset($this->_dao)){
-            $dao = new \MysqlDB($config);
+            $dao = \Db::run($config);
             $dao->connect();
             $this->_dao = $dao;
         }

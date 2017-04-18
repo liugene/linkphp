@@ -23,6 +23,7 @@
    'CHARSET'  => 'utf8', //数据库编码
    'DBNAME'   => '', //数据库名称
    'DBPREFIX' => '', //数据库表前缀
+   'DB_TYPE'  => 'mysql', //数据库类型 默认Mysql
   
   //默认分发参数配置
   'VAR_PLATFORM'       => 'p',      //默认传递模块名
@@ -54,7 +55,7 @@
   'APP_DEBUG'            => 'TRUE', //是否打开调试功能
 
   //系统安全配置
-  'TOKEN_TURN_ON'        => 'TRUE', //是否打开表单令牌验证
+  'TOKEN_TURN_ON'        => 'FALSE', //是否打开表单令牌验证
 
   //系统引擎配置
   'SESSION_ON'           => 'TRUE', //是否开启SESSION机制
