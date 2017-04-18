@@ -15,9 +15,10 @@
 
  //加载LinkPHP框架入口文件
  require './LinkPHP/LinkPHP.php';
+ //加载LinkPHP框架启动文件
  require './LinkPHP/Bootstrap.php';
 
- //只需要这么一句话就可以运行 !><!
+ //只需要这么两句话就可以运行 !><!
  //是不是很轻便呀 喵~
  
 
