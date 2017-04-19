@@ -8,24 +8,25 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                 框架默认控制器                    *
+ *                  LinkPHP框架钩子类                *
  * --------------------------------------------------*
  */
-namespace Index\Controller;
-use Link\Controller;
-use H;
-use S;
-class IndexController extends Controller{
-    public function index(){
-        H::name();
-        S::name();
-        echo LINKPHP_VERSION;
-        echo '<br />';
-        $test = 'Linkphp.cn-LinkPHP创建成功';
-        $this->assign('linkphp',$test);
-        $this->display();
-        //$this->show();
-    }
-}
+
+ namespace Link;
+ class Hooks
+ {
+
+     /*
+      * 程序运行前方法实现
+      * */
+     static public function runBefore(){}
+
+
+     /*
+      * 程序运行后方法实现
+      * */
+     static public function runAfter(){}
+
+ }
 
 ?>

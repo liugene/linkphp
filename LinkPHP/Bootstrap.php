@@ -12,7 +12,33 @@
  * --------------------------------------------------*
  */
 
+ /**
+  * 加载Composer自动加载
+  */
  require VENDOR_PATH . 'autoload.php';
- //加载LinkPHP框架核心初始化类
+
+ /**
+  * 引入H.php助手类
+  */
+ require LINKPHP_PATH . 'H.php';
+
+ /**
+  * 注册助手类自动加载方法
+  */
+ H::register('helperNamespace');
+
+ /**
+  * 引入S.php系统内部类
+  */
+ require LINKPHP_PATH . 'S.php';
+
+ /**
+  * 注册系统内部类自动加载方法
+  */
+ S::register('systemrNamespace');
+
+ /**
+  * 加载LinkPHP框架核心初始化类
+  */
  require CORE_PATH . 'LinkPHP' . EXT;
  Link\Link::start();

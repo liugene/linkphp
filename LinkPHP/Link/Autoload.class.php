@@ -12,6 +12,21 @@
  */
 class Autoload
 {
+
+    /**
+     * 自动加载注册方法
+     */
+    static public function register($namespace)
+    {
+        if(is_array($namespace)){
+            foreach($namespace as $k => $v){
+                spl_autoload_register(array(__CLASS__, $v));
+            }
+        } else {
+            spl_autoload_register(array(__CLASS__, $namespace));
+        }
+    }
+
     /**
      * 系统自动加载方法
     */

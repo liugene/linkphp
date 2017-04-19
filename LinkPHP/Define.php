@@ -24,6 +24,8 @@
  define('VENDOR_PATH', ROOT_PATH . 'vendor/');
  //定义缓存目录常量
  define('CACHE_PATH', ROOT_PATH . 'Data/');
+ //定义应用公共目录常量
+ define('COMMON_PATH', APPLICATION_PATH . 'Common/');
  //定义公共附件目录常量
  define('__ATTACH__', CACHE_PATH . 'Attachment/');
  //定义LinkPHP框架目录常量
