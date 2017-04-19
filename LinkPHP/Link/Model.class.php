@@ -33,6 +33,7 @@
          'DBPWD'   => C('DBPWD'), //数据库密码
          'CHARSET' => C('CHARSET'),
          'DBNAME'  => C('DBNAME'),
+         'DBPREFIX'=> C('DBPREFIX'),
         );
         if(!isset($this->_dao)){
             $dao = \Db::run($config);

@@ -21,10 +21,10 @@
      static public function run($config){
          switch(C('DB_TYPE')){
              case 'mysql':
-                 new Helper\Db\Type\Mysql($config);
+                 return new Helper\Db\Type\Mysql($config);
                  break;
-             case 'Sqlsrv':
-                 new Helper\Db\Type\Sqlsrv($config);
+             case 'sqlsrv':
+                 return new Helper\Db\Type\Sqlsrv($config);
                  break;
          }
      }

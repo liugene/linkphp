@@ -23,7 +23,7 @@
    'CHARSET'  => 'utf8', //数据库编码
    'DBNAME'   => '', //数据库名称
    'DBPREFIX' => '', //数据库表前缀
-   'DB_TYPE'  => 'mysql', //数据库类型 默认Mysql
+   'DB_TYPE'  => 'sqlsrv', //数据库类型 默认Mysql
   
   //默认分发参数配置
   'VAR_PLATFORM'       => 'p',      //默认传递模块名

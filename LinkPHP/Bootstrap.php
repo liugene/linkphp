@@ -38,6 +38,16 @@
  S::register('systemrNamespace');
 
  /**
+  * 引入Q.php系统内部类
+  */
+ require LINKPHP_PATH . 'Q.php';
+
+ /**
+  * 注册系统内部类自动加载方法
+  */
+ Q::register('ORMNamespace');
+
+ /**
   * 加载LinkPHP框架核心初始化类
   */
  require CORE_PATH . 'LinkPHP' . EXT;

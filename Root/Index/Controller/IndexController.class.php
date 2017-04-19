@@ -15,10 +15,13 @@ namespace Index\Controller;
 use Link\Controller;
 use H;
 use S;
+use Q;
 class IndexController extends Controller{
     public function index(){
+        new \Link\Model();
         H::name();
         S::name();
+        Q::name();
         echo LINKPHP_VERSION;
         echo '<br />';
         $test = 'Linkphp.cn-LinkPHP创建成功';

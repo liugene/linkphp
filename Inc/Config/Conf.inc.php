@@ -14,13 +14,13 @@
 
 return array(
 
-    'HOST'     => 'localhost', //一般不需要修改
-    'PORT'     => '3306', //默认即可
-    'DBUSER'   => 'root', //数据库用户名
-    'DBPWD'    => 'root', //数据库密码
+    'HOST'     => '47.52.30.103', //一般不需要修改
+    'PORT'     => '1433', //默认即可
+    'DBUSER'   => 'sa', //数据库用户名
+    'DBPWD'    => 'JRadmin123', //数据库密码
     'CHARSET'  => 'utf8', //数据库编码
-    'DBNAME'   => 'linkphp', //数据库名称
-    'DBPREFIX' => 'lp_', //数据库表前缀
+    'DBNAME'   => 'AEGCRM', //数据库名称
+    'DBPREFIX' => 'AEG_', //数据库表前缀
 
 );
 

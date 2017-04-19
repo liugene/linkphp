@@ -61,7 +61,7 @@ class Sqlsrv
     }
 
     //数据库链接方法
-    private function connect()
+    public function connect()
     {
         $info = array("UID"=>$this->_dbuser,"PWD"=>$this->_dbpwd,"DataBase"=>$this->_dbname);
         $this->_result = sqlsrv_connect($this->_host,$info);
