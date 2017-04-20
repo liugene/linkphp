@@ -4,56 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bef20e1ca06eac6c027a5bc95193a923",
+    "content-hash": "530b9925ddcb019642e82f713dada2be",
     "packages": [
         {
-            "name": "monolog/monolog",
-            "version": "1.0.2",
+            "name": "linkphp/link-orm",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "b704c49a3051536f67f2d39f13568f74615b9922"
+                "url": "https://github.com/osnote/linkorm.git",
+                "reference": "47eee632bdc1fa5a88768d364144d19a7cce0642"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b704c49a3051536f67f2d39f13568f74615b9922",
-                "reference": "b704c49a3051536f67f2d39f13568f74615b9922",
+                "url": "https://api.github.com/repos/osnote/linkorm/zipball/47eee632bdc1fa5a88768d364144d19a7cce0642",
+                "reference": "47eee632bdc1fa5a88768d364144d19a7cce0642",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": "^5.3.3 || ^7.0"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Monolog": "src/"
+                "psr-4": {
+                    "linkphp\\link-orm\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "GBPL-2.1"
             ],
             "authors": [
                 {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be",
-                    "role": "Developer"
+                    "name": "latham",
+                    "email": "liujun2199@vip.qq.com"
                 }
             ],
-            "description": "Logging for PHP 5.3",
-            "homepage": "http://github.com/Seldaek/monolog",
+            "description": "php ORM数据库关系框架 ",
             "keywords": [
-                "log",
-                "logging"
+                "linkphporm",
+                "orm",
+                "phporm"
             ],
-            "time": "2011-10-24T09:39:02+00:00"
+            "time": "2017-04-20 02:54:53"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "linkphp/link-orm": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

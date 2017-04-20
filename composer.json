@@ -1,4 +1,5 @@
 {
   "require":{
+    "linkphp/link-orm":"dev-master"
   }
 }
