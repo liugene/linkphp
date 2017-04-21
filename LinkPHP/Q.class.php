@@ -22,12 +22,12 @@
      static private function ORMNamespace($classname)
      {
          if($classname == 'Q'){
-             $filename = LINKPHP_PATH . $classname . 'php';
+             $filename = LINKPHP_PATH . $classname . EXT;
              //判断文件是否存在
              if(file_exists($filename)){
                  //存在引入
                  //第三方扩展类库Extend/Library 目录下面的命名空间自动定位
-                 require LINKPHP_PATH . $classname . 'php';
+                 require LINKPHP_PATH . $classname . EXT;
              } else {
                  //不存在
                  //抛出异常

@@ -18,7 +18,8 @@ use S;
 use Q;
 class IndexController extends Controller{
     public function index(){
-        new \Link\Model();
+        $model = new \Link\Model();
+        dump($model);
         H::name();
         S::name();
         Q::name();
