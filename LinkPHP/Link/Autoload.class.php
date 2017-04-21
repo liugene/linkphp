@@ -35,7 +35,9 @@ class Autoload
         $name = strstr($class_name, '\\', true);
         if($name == 'System'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . '.System.php';
-            //判断文件是否存在
+            /**
+             * 判断文件是否存在
+             */
             if(file_exists($filename)){
                 //存在引入
                 //Link系统目录下面的命名空间自动定位
@@ -53,8 +55,10 @@ class Autoload
      * */
     static public function toolClassAutoload($class_name)
     {
-        //先处理确定的（框架内的核心工具类）
-        //类名与类文件映射数组
+        /**
+         * 先处理确定的（框架内的核心工具类）
+         * 类名与类文件映射数组
+         */
         $LinkPHP_class_list = array(
             //'类名' => '类文件地址'
             'Db'           => HELPER_PATH . 'Db/' . 'Db' . EXT,
@@ -106,19 +110,6 @@ class Autoload
                 throw new \Exception("无法加载框架系统核心扩展类");
             }
         }
-        elseif(in_array($name, array('Org', 'Com', 'Vender'))){
-            $filename = EXTEND_PATH . 'Library/' . str_replace('\\', '/', $class_name) . EXT;
-            //判断文件是否存在
-            if(file_exists($filename)){
-                //存在引入
-                //第三方扩展类库Extend/Library 目录下面的命名空间自动定位
-                require EXTEND_PATH . 'Library/' . str_replace('\\', '/', $class_name) . EXT;
-            } else {
-                //不存在
-                //抛出异常
-                throw new \Exception("无法加载框架第三方扩展类");
-            }
-        }
         elseif(in_array($name, array('Controller', 'Model'))){
             $filename = EXTEND_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
@@ -133,7 +124,9 @@ class Autoload
             }
         }
         elseif($name == 'Common'){
-            //站点公共控制器模型类
+            /**
+             * 站点公共控制器模型类
+             */
             if(substr($class_name, -10) == 'Controller'){
                 $filename = APPLICATION_PATH . str_replace('\\', '/', $class_name) . EXT;
                 //判断文件是否存在

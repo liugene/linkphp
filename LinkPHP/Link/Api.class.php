@@ -8,17 +8,12 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                第三方扩展类库文件                 *
+ *                     API基类                       *
  * --------------------------------------------------*
  */
- 
- namespace Org;
- class Org{
-    public function test(){
-        echo '<br />123';
-    }
- }
 
+ namespace Link;
+ class Api{}
 
 
 ?>
