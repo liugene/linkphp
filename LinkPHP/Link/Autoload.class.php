@@ -110,6 +110,19 @@ class Autoload
                 throw new \Exception("无法加载框架系统核心扩展类");
             }
         }
+        elseif($name == 'Server'){
+            $filename = SERVER_PATH  . str_replace('\\', '/', $class_name) . EXT;
+            //判断文件是否存在
+            if(file_exists($filename)){
+                //存在引入
+                //第三方扩展类库Extend/Library 目录下面的命名空间自动定位
+                require SERVER_PATH  . str_replace('\\', '/', $class_name) . EXT;
+            } else {
+                //不存在
+                //抛出异常
+                throw new \Exception("无法加载框架服务层接口类");
+            }
+        }
         elseif(in_array($name, array('Controller', 'Model'))){
             $filename = EXTEND_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
@@ -124,9 +137,7 @@ class Autoload
             }
         }
         elseif($name == 'Common'){
-            /**
-             * 站点公共控制器模型类
-             */
+            //站点公共控制器模型类
             if(substr($class_name, -10) == 'Controller'){
                 $filename = APPLICATION_PATH . str_replace('\\', '/', $class_name) . EXT;
                 //判断文件是否存在
