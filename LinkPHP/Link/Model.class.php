@@ -13,41 +13,31 @@
  */
  
  namespace Link;
- use link\orm\db;
+ use link\orm\parsers;
  class Model {
     
+
+    protected $_parsers;
     
-    
-    protected $_dao; //存储dao对象的属性，可以在子类中进行访问，使用dao对象
-    
-    /**
-     * 初始化DAO
-     */
-     
-     protected function _initDAO(){
-        
-        //初始化mySQL
-        $config = array(
-         'HOST'    => C('HOST'), //一般不需要修改
-         'PORT'    => C('PORT'), //默认即可
-         'DBUSER'  => C('DBUSER'), //数据库用户名
-         'DBPWD'   => C('DBPWD'), //数据库密码
-         'CHARSET' => C('CHARSET'),
-         'DBNAME'  => C('DBNAME'),
-         'DBPREFIX'=> C('DBPREFIX'),
-        );
-        if(!isset($this->_dao)){
-            $dao = db::run($config);
-            $dao->connect();
-            $this->_dao = $dao;
-        }
-        return $this->_dao;
-     }
-     
+
      public function __construct(){
-        
-        //初始化DAO
-        $this -> _initDAO();
+
+         $this->_parsers = new parsers();
+     }
+
+     public function where($condition)
+     {
+         return $this->_parsers->where($condition);
+     }
+
+     public function field($field)
+     {
+         return $this->_parsers->field($field);
+     }
+
+     public function table($tablename)
+     {
+         return $this->_parsers->table($tablename);
      }
      
      //数据库添加add操作语句
@@ -101,26 +91,7 @@
         //返回数据语句执行结果影响的表ID
         return $result;
      }
-     
-     
-     //条件查询语句封装方法获取查询所有数据
-    /**
-     * @param $type [string] 要执行查询的字段或者表达式 默认为查询表内所有符合条件字段
-     * @param $tbname [string] 要执行查询的表名 必须传入
-     * @param $where [string] 要执行的查询where条件 可选
-     */
-     public function select($columnname='*',$tbname,$condition=''){
-        $tbname = C('DBPREFIX') . $tbname;
-        $condition = $condition ? ' WHERE ' . $condition : NULL;
-        $sql = "SELECT $columnname FROM $tbname $condition ";
-        $result = $this->_dao->select($sql);
-        if($result){
-            return $result;
-        } else {
-            return FALSE;
-        }
-    }
-    
+
      
      /**
       * @param $columnname [string] 字段或者表达式 可选参数

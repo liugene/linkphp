@@ -19,6 +19,7 @@ use Q;
 class IndexController extends Controller{
     public function index(){
         $model = new \Link\Model();
+        $model = $model->where('where id>35')->field('id')->table('AEG_orders')->find();
         dump($model);
         H::name();
         S::name();
