@@ -1,28 +1,70 @@
 [
     {
+        "name": "linkphp/link-route",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/osnote/linkroute.git",
+            "reference": "fcb8a8c105bea22b46ffbba191a4bf674149d239"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/osnote/linkroute/zipball/fcb8a8c105bea22b46ffbba191a4bf674149d239",
+            "reference": "fcb8a8c105bea22b46ffbba191a4bf674149d239",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3.3 || ^7.0"
+        },
+        "time": "2017-04-24T08:31:25+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "linkphp\\link-route\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GBPL-2.1"
+        ],
+        "authors": [
+            {
+                "name": "latham",
+                "email": "liujun2199@vip.qq.com"
+            }
+        ],
+        "description": "php 路由组件 ",
+        "keywords": [
+            "route",
+            "路由"
+        ]
+    },
+    {
         "name": "linkphp/link-orm",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/osnote/linkorm.git",
-            "reference": "47eee632bdc1fa5a88768d364144d19a7cce0642"
+            "reference": "c0f4789114e238227a65edb4f5035cfa54515757"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/osnote/linkorm/zipball/47eee632bdc1fa5a88768d364144d19a7cce0642",
-            "reference": "47eee632bdc1fa5a88768d364144d19a7cce0642",
+            "url": "https://api.github.com/repos/osnote/linkorm/zipball/c0f4789114e238227a65edb4f5035cfa54515757",
+            "reference": "c0f4789114e238227a65edb4f5035cfa54515757",
             "shasum": ""
         },
         "require": {
             "php": "^5.3.3 || ^7.0"
         },
-        "time": "2017-04-20T02:54:53+00:00",
+        "time": "2017-04-25T01:35:25+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
             "psr-4": {
-                "linkphp\\link-orm\\": "src"
+                "link\\orm\\": "src"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -40,6 +82,49 @@
             "linkphporm",
             "orm",
             "phporm"
+        ]
+    },
+    {
+        "name": "linkphp/link-api",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/osnote/linkapi.git",
+            "reference": "17c9d3c8fbad7c35f5001614aaaa8fa367cae792"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/osnote/linkapi/zipball/17c9d3c8fbad7c35f5001614aaaa8fa367cae792",
+            "reference": "17c9d3c8fbad7c35f5001614aaaa8fa367cae792",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3.3 || ^7.0"
+        },
+        "time": "2017-04-25T01:34:39+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "link\\api\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GBPL-2.1"
+        ],
+        "authors": [
+            {
+                "name": "latham",
+                "email": "liujun2199@vip.qq.com"
+            }
+        ],
+        "description": "php api框架组件 ",
+        "keywords": [
+            "api",
+            "phpapi",
+            "restfulapi"
         ]
     }
 ]

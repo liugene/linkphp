@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'linkphp\\link-orm\\' => array($vendorDir . '/linkphp/link-orm/src'),
+    'linkphp\\link-route\\' => array($vendorDir . '/linkphp/link-route/src'),
+    'link\\orm\\' => array($vendorDir . '/linkphp/link-orm/src'),
+    'link\\api\\' => array($vendorDir . '/linkphp/link-api/src'),
 );

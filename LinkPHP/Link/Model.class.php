@@ -13,6 +13,7 @@
  */
  
  namespace Link;
+ use link\orm\db;
  class Model {
     
     
@@ -36,7 +37,7 @@
          'DBPREFIX'=> C('DBPREFIX'),
         );
         if(!isset($this->_dao)){
-            $dao = \Db::run($config);
+            $dao = db::run($config);
             $dao->connect();
             $this->_dao = $dao;
         }

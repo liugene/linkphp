@@ -9,14 +9,24 @@ class ComposerStaticInit1cafa3975d5df25c883ebd0a1cf5a73b
     public static $prefixLengthsPsr4 = array (
         'l' => 
         array (
-            'linkphp\\link-orm\\' => 17,
+            'linkphp\\link-route\\' => 19,
+            'link\\orm\\' => 9,
+            'link\\api\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'linkphp\\link-orm\\' => 
+        'linkphp\\link-route\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linkphp/link-route/src',
+        ),
+        'link\\orm\\' => 
         array (
             0 => __DIR__ . '/..' . '/linkphp/link-orm/src',
+        ),
+        'link\\api\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linkphp/link-api/src',
         ),
     );
 

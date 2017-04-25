@@ -61,7 +61,6 @@ class Autoload
          */
         $LinkPHP_class_list = array(
             //'类名' => '类文件地址'
-            'Db'           => HELPER_PATH . 'Db/' . 'Db' . EXT,
             'Page'              => HELPER_PATH . 'Page/' . 'Page' . EXT,
             'Image'             => HELPER_PATH . 'Image/' . 'Image' . EXT,
             'Verify'            => HELPER_PATH . 'Verify/' . 'Verify' . EXT,
