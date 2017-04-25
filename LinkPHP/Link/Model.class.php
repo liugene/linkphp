@@ -20,52 +20,39 @@
     protected $_parsers;
     
 
-     public function __construct(){
+     public function __construct()
+     {
 
+         /**
+          * 实例化linkorm解释器
+          */
          $this->_parsers = new parsers();
      }
 
+     /**
+      * 数据库连贯操作where方法
+      */
      public function where($condition)
      {
          return $this->_parsers->where($condition);
      }
 
+     /**
+      * 数据库连贯操作field方法
+      */
      public function field($field)
      {
          return $this->_parsers->field($field);
      }
 
+     /**
+      * 数据库连贯操作table方法
+      */
      public function table($tablename)
      {
          return $this->_parsers->table($tablename);
      }
-     
-     //数据库添加add操作语句
-     /**
-      * @param $tbname [string] 数据表名称，不需要传入表前缀
-      * @param $fileds [string][array] 数据表字段 可以传入字符串以及数组传入数组时值不需要传入
-      * @param $value [string] 数据表插入值 当字段为数组时，该值无需传入
-      * @return boolean 返回数据语句执行结果布尔值
-      */
-     public function add($tbname,$fileds=null,$value=null){
-        //将传入的表名用C方法在配置获取表前缀自动添加
-        $tbname = C('DBPREFIX') . $tbname;
-        //判断传入的字段是否为数组
-        if(is_array($fileds)){
-            //是数组将键名以及值用','拼接成字符串形式
-                $value = implode('\',\'', array_values($fileds));
-                $fileds = implode(',', array_keys($fileds));
-                //拼接数据库插入语句
-                $sql = "INSERT INTO $tbname ( $fileds ) VALUES ( '$value' )";
-        } else {
-            //字段为字符串是直接拼接数据库插入语句
-            $sql = "INSERT INTO $tbname ( $fileds ) VALUES ( \"$value\" )";
-        }
-        $result = $this->_dao->query($sql);
-        //返回数据语句执行结果[boolean]
-        return $result;
-     }
-     
+
      /**
       * @param $tbname [string] 数据表名称，不需要传入表前缀
       * @param $fileds [string][array] 数据表字段 可以传入字符串以及数组传入数组时值不需要传入
@@ -92,25 +79,7 @@
         return $result;
      }
 
-     
-     /**
-      * @param $columnname [string] 字段或者表达式 可选参数
-      * @param $tbname [string] 需要执行查询的表名
-      * @param [string] $condition 执行查询的where条件
-      */
-     //数据库查询find方法
-     //返回查询结果集中一条关联数组
-     public function find($columnname='*',$tbname,$condition=''){
-        $tbname = C('DBPREFIX') . $tbname;
-        $condition = $condition ? ' WHERE ' . $condition : NULL;
-        $sql = "SELECT $columnname FROM $tbname $condition";
-        $result = $this->_dao->find($sql);
-        if($result){
-            return $result;
-        } else {
-            return $result;
-        }
-     }
+
      
      //数据库删除delect方法
      public function delect(){
