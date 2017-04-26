@@ -13,17 +13,11 @@
  */
 namespace Index\Controller;
 use Link\Controller;
-use H;
-use S;
-use Q;
 class IndexController extends Controller{
     public function index(){
         $model = new \Link\Model();
         $mode = $model->field('id,cid,expoid,memo,orderstatus')->table('AEG_orders')->select();
         dump($mode);
-        H::name();
-        S::name();
-        Q::name();
         echo '<br />';
         echo LINKPHP_VERSION;
         //$test = 'Linkphp.cn-LinkPHP创建成功';

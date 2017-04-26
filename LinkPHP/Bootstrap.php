@@ -19,36 +19,6 @@
  require VENDOR_PATH . 'autoload.php';
 
  /**
-  * 引入H.php助手类
-  */
- require LINKPHP_PATH . 'H' . EXT;
-
- /**
-  * 注册助手类自动加载方法
-  */
- H::register('helperNamespace');
-
- /**
-  * 引入S.php系统内部类
-  */
- require LINKPHP_PATH . 'System/' . 'S' . EXT;
-
- /**
-  * 注册系统内部类自动加载方法
-  */
- S::register('systemrNamespace');
-
- /**
-  * 引入Q.php系统内部类
-  */
- require LINKPHP_PATH . 'Q' . EXT;
-
- /**
-  * 注册系统内部类自动加载方法
-  */
- Q::register('ORMNamespace');
-
- /**
   * 加载LinkPHP框架核心初始化类
   */
  require CORE_PATH . 'LinkPHP' . EXT;
