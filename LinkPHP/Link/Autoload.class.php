@@ -64,7 +64,6 @@ class Autoload
             'Page'              => HELPER_PATH . 'Page/' . 'Page' . EXT,
             'Image'             => HELPER_PATH . 'Image/' . 'Image' . EXT,
             'Verify'            => HELPER_PATH . 'Verify/' . 'Verify' . EXT,
-            'Session'           => HELPER_PATH . 'Session/' . 'Session' . EXT,
             'Curl'              => HELPER_PATH . 'Curl/' . 'Curl' .EXT,
             'WeiXin'            => HELPER_PATH . 'WeiXin/' . 'WeiXin' . EXT,
             'Upload'            => HELPER_PATH . 'Uploads/' . 'Upload' . EXT,

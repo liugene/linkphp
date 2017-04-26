@@ -12,6 +12,7 @@
  * --------------------------------------------------*
  */
 
+namespace System\Session;
 class Session{
     private $_dao;
     

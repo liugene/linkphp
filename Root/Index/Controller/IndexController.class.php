@@ -20,15 +20,15 @@ class IndexController extends Controller{
     public function index(){
         $model = new \Link\Model();
         $mode = $model->field('id,cid,expoid,memo,orderstatus')->table('AEG_orders')->select();
-        dump($mode);die;
+        dump($mode);
         H::name();
         S::name();
         Q::name();
-        echo LINKPHP_VERSION;
         echo '<br />';
-        $test = 'Linkphp.cn-LinkPHP创建成功';
-        $this->assign('linkphp',$test);
-        $this->display();
+        echo LINKPHP_VERSION;
+        //$test = 'Linkphp.cn-LinkPHP创建成功';
+        //$this->assign('linkphp',$test);
+        //$this->display();
         //$this->show();
     }
 }

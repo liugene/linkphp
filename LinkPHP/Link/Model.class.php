@@ -14,44 +14,8 @@
  
  namespace Link;
  use link\orm\parsers;
- class Model {
-    
-
-    protected $_parsers;
-    
-
-     public function __construct()
-     {
-
-         /**
-          * 实例化linkorm解释器
-          */
-         $this->_parsers = new parsers();
-     }
-
-     /**
-      * 数据库连贯操作where方法
-      */
-     public function where($condition)
-     {
-         return $this->_parsers->where($condition);
-     }
-
-     /**
-      * 数据库连贯操作field方法
-      */
-     public function field($field)
-     {
-         return $this->_parsers->field($field);
-     }
-
-     /**
-      * 数据库连贯操作table方法
-      */
-     public function table($tablename)
-     {
-         return $this->_parsers->table($tablename);
-     }
+ class Model extends parsers
+ {
 
      /**
       * @param $tbname [string] 数据表名称，不需要传入表前缀
