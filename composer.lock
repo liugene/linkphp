@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/osnote/linkorm.git",
-                "reference": "c0f4789114e238227a65edb4f5035cfa54515757"
+                "reference": "54a412a6618ce3e650c74951e70aed1047d451d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osnote/linkorm/zipball/c0f4789114e238227a65edb4f5035cfa54515757",
-                "reference": "c0f4789114e238227a65edb4f5035cfa54515757",
+                "url": "https://api.github.com/repos/osnote/linkorm/zipball/54a412a6618ce3e650c74951e70aed1047d451d6",
+                "reference": "54a412a6618ce3e650c74951e70aed1047d451d6",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 "orm",
                 "phporm"
             ],
-            "time": "2017-04-25 01:35:25"
+            "time": "2017-04-25 09:25:50"
         },
         {
             "name": "linkphp/link-route",
@@ -94,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/osnote/linkroute.git",
-                "reference": "fcb8a8c105bea22b46ffbba191a4bf674149d239"
+                "reference": "2c8a1117b277a877683483a41b984b500387eb98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osnote/linkroute/zipball/fcb8a8c105bea22b46ffbba191a4bf674149d239",
-                "reference": "fcb8a8c105bea22b46ffbba191a4bf674149d239",
+                "url": "https://api.github.com/repos/osnote/linkroute/zipball/2c8a1117b277a877683483a41b984b500387eb98",
+                "reference": "2c8a1117b277a877683483a41b984b500387eb98",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "linkphp\\link-route\\": "src"
+                    "link\\route\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -126,7 +126,7 @@
                 "route",
                 "路由"
             ],
-            "time": "2017-04-24 08:31:25"
+            "time": "2017-04-25 01:36:18"
         }
     ],
     "packages-dev": [],

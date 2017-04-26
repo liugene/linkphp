@@ -14,6 +14,7 @@
 
 namespace Link;
 use Autoload;
+use link\route\parsers;
 class Link
 {
     /**
@@ -46,14 +47,6 @@ class Link
          * 路由参数初始化
          */
         static::_initRouter();
-        /**
-         * 声明当前平平路径
-         */
-        static::_initPlatformPathConst();
-        /**
-         * 分发请求
-         */
-        static::_dispatch();
 
      }
 
@@ -132,38 +125,7 @@ class Link
         /**
          * 实例化路由类
          */
-        Router::run();
-    }
-
-    /**
-     * 声明当前平台路径常量
-     */
-    static private function _initPlatformPathConst()
-    {
-        /**
-         * 定义控制器路径常量
-         */
-        define('CURRENT_CONTROLLER_PATH',APPLICATION_PATH . PLATFORM . '/Controller/');
-        /**
-         * 定义模型路径常量
-         */
-        define('CURRENT_MODEL_PATH', APPLICATION_PATH . PLATFORM . '/Model/');
-        /**
-         * 定义视图路径常量
-         */
-        define('CURRENT_VIEW_PATH', APPLICATION_PATH . PLATFORM . '/View/');
-
-    }
-
-    /**
-     * 分发请求
-     */
-    static private function _dispatch()
-    {
-        /**
-         * 实例化分发类调用run方法
-         */
-        Dispatch::run();
+        parsers::start();
     }
 
 }
