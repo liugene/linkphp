@@ -15,6 +15,8 @@
 namespace Link;
 use Autoload;
 use link\route\parsers;
+use System\Core\Engine;
+use System\SQL\SQLVI;
 class Link
 {
     /**
@@ -106,7 +108,7 @@ class Link
      */
     static private function _initEngine()
     {
-        \System\Core\Engine::run();
+        Engine::run();
     }
 
     /**
@@ -114,7 +116,7 @@ class Link
      */
     static private function _initSQLVI()
     {
-        \System\SQL\SQLVI::run();
+        SQLVI::run();
     }
 
     /**
