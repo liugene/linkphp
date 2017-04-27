@@ -1,12 +1,6 @@
 ###开发使用帮助文档：http://wiki.linkphp.cn
 #### LinkPHP (临克) 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架 ，遵循Apache2开源协议发布。 开发者可以基于LinkPHP框架开发任何免费或者商用项目。
 
-<p><a href="https://packagist.org/packages/topthink/think"><img src="https://camo.githubusercontent.com/438174d2220ebe8b6fad43ab1b66f355b6e0e41f/68747470733a2f2f706f7365722e707567782e6f72672f746f707468696e6b2f7468696e6b2f646f776e6c6f616473" alt="Total Downloads" data-canonical-src="https://poser.pugx.org/topthink/think/downloads" style="max-width:100%;"></a>
-<a href="https://packagist.org/packages/topthink/think"><img src="https://camo.githubusercontent.com/01b029d088b0829e33b68d0670955443bea83fa0/68747470733a2f2f706f7365722e707567782e6f72672f746f707468696e6b2f7468696e6b2f762f737461626c65" alt="Latest Stable Version" data-canonical-src="https://poser.pugx.org/topthink/think/v/stable" style="max-width:100%;"></a>
-<a href="https://packagist.org/packages/topthink/think"><img src="https://camo.githubusercontent.com/df2890cc265e865a12bcb19c9737eeac24d158df/68747470733a2f2f706f7365722e707567782e6f72672f746f707468696e6b2f7468696e6b2f762f756e737461626c65" alt="Latest Unstable Version" data-canonical-src="https://poser.pugx.org/topthink/think/v/unstable" style="max-width:100%;"></a>
-<a href="https://packagist.org/packages/topthink/think"><img src="https://camo.githubusercontent.com/5a2add74d1bcf3adfe68a0f6fee2c661b28e74a5/68747470733a2f2f706f7365722e707567782e6f72672f746f707468696e6b2f7468696e6b2f6c6963656e7365" alt="License" data-canonical-src="https://poser.pugx.org/topthink/think/license" style="max-width:100%;"></a></p>
-
-
 <table><thead><tr><th><a href="https://travis-ci.org/doctrine/doctrine2" rel="nofollow noopener external">Master</a></th>
 <th><a href="https://github.com/doctrine/doctrine2/tree/2.5" rel="nofollow noopener external">2.5</a></th>
 </tr></thead><tbody><tr><td><a href="https://travis-ci.org/doctrine/doctrine2" rel="nofollow noopener external"><img src="https://camo.githubusercontent.com/e7918d2335138dd7ab0a64ae1d65e80970e27661/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f646f637472696e652f646f637472696e65322f6d61737465722e7376673f7374796c653d666c61742d737175617265" alt="Build status"></a></td>
