@@ -13,7 +13,9 @@
  */
 
  namespace Link;
- class Api{}
+ use link\api\linkapi;
+ class Api extends linkapi
+ {}
 
 
 ?>
