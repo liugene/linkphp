@@ -1,4 +1,4 @@
-.idea/*
-vendor/*
-Root/Index/Controller/*
-*composer.lock
+.idea/
+vendor/
+Root/Index/Controller/
+composer.lock
