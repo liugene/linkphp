@@ -34,7 +34,7 @@ class Autoload
     {
         $name = strstr($class_name, '\\', true);
         if($name == 'System'){
-            $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . '.System.php';
+            $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . SYS;
             /**
              * 判断文件是否存在
              */
