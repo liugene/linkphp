@@ -12,9 +12,9 @@
  * --------------------------------------------------*
  */
  
- namespace Common\Controller;
+ namespace App\Common\Controller;
  use Link\Controller;
- class CommonController extends Controller{
+ class Common extends Controller{
     public function test(){
         echo '<br />站点公共控制器测试方法 <br />';
     }

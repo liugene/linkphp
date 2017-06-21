@@ -35,7 +35,7 @@
                 $this->_smarty = new Smarty();
                 break;
             case 2:
-                $this->_links = new Links();
+                $this->_links = new LinkTemp();
         }
     }
     

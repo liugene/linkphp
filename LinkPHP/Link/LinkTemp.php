@@ -13,14 +13,14 @@
  */
 
  namespace Link;
- class Links
+ class LinkTemp
  {
      private $_links;
 
      public function __construct()
      {
-         require LINKPHP_PATH . 'Template/Links/Links' . EXT;
-         $this->_links = new \Links();
+         include_once LINKPHP_PATH . 'Template/Links/LinkTemp' . EXT;
+         $this->_links = new \LinkTemp();
      }
 
      /**

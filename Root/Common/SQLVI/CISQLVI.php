@@ -8,16 +8,16 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                SQL 公共视图类                 *
+ *                SQL 公共索引类                 *
  * --------------------------------------------------*
  */
 
- namespace Common\SQLVI;
- class CVSQLVI
+ namespace App\Common\SQLVI;
+ class CISQLVI
  {
      static public function run()
      {
-         //调用需要创建视图方法
+         //调用需要创建索引方法
      }
  }
 

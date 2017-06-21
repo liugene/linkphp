@@ -8,17 +8,19 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                SQL 公共索引类                 *
+ *                   站点入口文件                    *
  * --------------------------------------------------*
  */
-
- namespace Common\SQLVI;
- class CISQLVI
- {
-     static public function run()
-     {
-         //调用需要创建索引方法
-     }
+ 
+ namespace App\Common\Model;
+ use Link\Model;
+ class Common extends Model{
+    public function test(){
+        echo '<br />站点公共模型类测试方法 <br />';
+    }
  }
 
- ?>
+
+
+
+?>

@@ -8,19 +8,17 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                   站点入口文件                    *
+ *                SQL 公共视图类                 *
  * --------------------------------------------------*
  */
- 
- namespace Common\Model;
- use Link\Model;
- class CommonModel extends Model{
-    public function test(){
-        echo '<br />站点公共模型类测试方法 <br />';
-    }
+
+ namespace App\Common\SQLVI;
+ class CVSQLVI
+ {
+     static public function run()
+     {
+         //调用需要创建视图方法
+     }
  }
 
-
-
-
-?>
+ ?>

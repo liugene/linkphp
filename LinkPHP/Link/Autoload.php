@@ -139,7 +139,7 @@ class Autoload
                 throw new Exception("无法加载框架第三方扩展控制器模型类");
             }
         }
-        elseif($name == 'Common'){
+        /*elseif($name == 'Common'){
             //站点公共控制器模型类
             if(substr($class_name, -10) == 'Controller'){
                 $filename = APPLICATION_PATH . str_replace('\\', '/', $class_name) . EXT;
@@ -181,7 +181,7 @@ class Autoload
                     throw new Exception("无法加载框架站点公共数据库视图索引类");
                 }
             }
-        }
+        }*/
     }
     /**
      * 控制器模型类自动加载方法
