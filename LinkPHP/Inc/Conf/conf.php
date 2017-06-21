@@ -13,7 +13,7 @@
  */
 
  
- return array(
+ return [
   //'配置项' => '配置值'，
   //数据库默认配置
    'HOST'     => 'localhost', //一般不需要修改
@@ -66,7 +66,13 @@
   //系统常用路径设置
   'LOG_PATH'             => CACHE_PATH  . 'Log/', //系统日志存储路径
 
- );
+  //命名空间注册
+  'AUTOLOAD_NAMESPACE'   =>  [
+       'App\Index\Controller'  =>  APPLICATION_PATH . 'Index/Controller',
+      'App\Index\Model'  =>  APPLICATION_PATH . 'Index/Model',
+  ]
+
+ ];
 
 
 

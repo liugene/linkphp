@@ -14,6 +14,11 @@ class Autoload
 {
 
     /**
+     * 命名空间集合
+     */
+    static private $_map = [];
+
+    /**
      * 自动加载注册方法
      */
     static public function register($namespace)
@@ -181,7 +186,7 @@ class Autoload
     /**
      * 控制器模型类自动加载方法
      */
-    static public function userAutoload($class_name)
+    /*static public function userAutoload($class_name)
     {
         //判断是否为可增加(控制器类，模型类)
         //控制器类截取后10个匹配Controller
@@ -211,6 +216,38 @@ class Autoload
                 throw new \Exception("无法加载模型类");
             }
         }
+    }*/
+
+    /**
+     * 注册命名空间名
+     */
+    static public function namespaces($namespace)
+    {
+        //dump($namespace);die;
+        return static::$_map = $namespace;
     }
+
+    /**
+     * 加载自动类
+     */
+    static public function loaderClass($class_name)
+    {
+        $namespace = substr($class_name,0,strrpos($class_name,'\\'));
+        if(array_key_exists($namespace,static::$_map)){
+            $filename = str_replace('\\', '/', str_replace($namespace,static::$_map[$namespace],$class_name)) . EXT;
+            if(file_exists($filename)){
+                require $filename;
+            } else {
+                //不存在
+                //抛出异常
+                throw new \Exception('不存在加载类文件');
+            }
+        } else {
+            //不存在
+            //抛出异常
+            throw new \Exception("未注册命名空间");
+        }
+    }
+
 }
 ?>

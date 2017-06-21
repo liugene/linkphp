@@ -29,14 +29,14 @@ class Link
          * 运行自定义错误处理方式
          */
         static::_initErrorHandler();
+         /**
+          * 加载LinkPHP框架系统、应用公共函数
+          */
+         static::_initLinkFunc();
         /**
          * 注册自动加载方法
          */
         static::_initAutoload();
-        /**
-         * 加载LinkPHP框架系统、应用公共函数
-         */
-        static::_initLinkFunc();
         /**
          * 加载系统引擎机制
          */
@@ -73,22 +73,6 @@ class Link
      }
 
     /**
-     * 注册命名空间第三方类库加载方法
-     * 注册控制器模型类自动加载
-     */
-    static private function _initAutoload()
-    {
-        /**
-         * 加载自动加载方法
-         */
-        require CORE_PATH . 'Autoload' . EXT;
-        /**
-         * 注册自动加载方法
-         */
-        Autoload::register(array('LinkSystemAutoload','toolClassAutoload','namespaceAutoload','userAutoload'));
-    }
-
-    /**
      * 加载LinkPHP框架系统函数库
      */
     static private function _initLinkFunc()
@@ -101,6 +85,23 @@ class Link
          * 加载LinkPHP框架应用函数库
          */
         require COMMON_PATH . 'Function/functions.php';
+    }
+
+    /**
+     * 注册命名空间第三方类库加载方法
+     * 注册控制器模型类自动加载
+     */
+    static private function _initAutoload()
+    {
+        /**
+         * 加载自动加载方法
+         */
+        require CORE_PATH . 'Autoload' . EXT;
+        /**
+         * 注册自动加载方法
+         */
+        Autoload::namespaces(C('AUTOLOAD_NAMESPACE'));
+        Autoload::register(array('LinkSystemAutoload','toolClassAutoload','namespaceAutoload','loaderClass'));
     }
 
     /**
