@@ -50,7 +50,7 @@ class Autoload
             } else {
                 //不存在
                 //抛出异常
-                throw new \Exception("无法加载系统类");
+                throw new Exception("无法加载系统类");
             }
         }
     }
@@ -97,7 +97,7 @@ class Autoload
             } else {
                 //不存在
                 //抛出异常
-                throw new \Exception("无法加载框架核心类");
+                throw new Exception("无法加载框架核心类");
             }
         }
         elseif($name == 'Helper'){
@@ -110,7 +110,7 @@ class Autoload
             } else {
                 //不存在
                 //抛出异常
-                throw new \Exception("无法加载框架系统核心扩展类");
+                throw new Exception("无法加载框架系统核心扩展类");
             }
         }
         elseif($name == 'Server'){
@@ -123,7 +123,7 @@ class Autoload
             } else {
                 //不存在
                 //抛出异常
-                throw new \Exception("无法加载框架服务层接口类");
+                throw new Exception("无法加载框架服务层接口类");
             }
         }
         elseif(in_array($name, array('Controller', 'Model'))){
@@ -136,7 +136,7 @@ class Autoload
             } else {
                 //不存在
                 //抛出异常
-                throw new \Exception("无法加载框架第三方扩展控制器模型类");
+                throw new Exception("无法加载框架第三方扩展控制器模型类");
             }
         }
         elseif($name == 'Common'){
@@ -152,7 +152,7 @@ class Autoload
                 } else {
                     //不存在
                     //抛出异常
-                    throw new \Exception("无法加载框架站点公共控制器类");
+                    throw new Exception("无法加载框架站点公共控制器类");
                 }
             }
             elseif(substr($class_name, -5) == 'Model'){
@@ -166,7 +166,7 @@ class Autoload
                 } else {
                     //不存在
                     //抛出异常
-                    throw new \Exception("无法加载框架站点公共模型类");
+                    throw new Exception("无法加载框架站点公共模型类");
                 }
             }
             elseif(substr($class_name,-5) == 'SQLVI'){
@@ -178,7 +178,7 @@ class Autoload
                 } else {
                     //不存在
                     //抛出异常
-                    throw new \Exception("无法加载框架站点公共数据库视图索引类");
+                    throw new Exception("无法加载框架站点公共数据库视图索引类");
                 }
             }
         }
@@ -240,12 +240,12 @@ class Autoload
             } else {
                 //不存在
                 //抛出异常
-                throw new \Exception('不存在加载类文件');
+                throw new Exception('不存在加载类文件');
             }
         } else {
             //不存在
             //抛出异常
-            throw new \Exception("未注册命名空间");
+            throw new Exception("未注册命名空间");
         }
     }
 

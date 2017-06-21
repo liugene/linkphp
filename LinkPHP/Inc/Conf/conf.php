@@ -69,7 +69,7 @@
   //命名空间注册
   'AUTOLOAD_NAMESPACE'   =>  [
        'App\Index\Controller'  =>  APPLICATION_PATH . 'Index/Controller',
-      'App\Index\Model'  =>  APPLICATION_PATH . 'Index/Model',
+       'App\Index\Model'        =>  APPLICATION_PATH . 'Index/Model',
   ]
 
  ];
