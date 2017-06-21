@@ -16,7 +16,7 @@
  use Link\Controller;
  class Common extends Controller{
     public function test(){
-        echo '<br />站点公共控制器测试方法 <br />';
+        echo '<br />test <br />';
     }
  }
 

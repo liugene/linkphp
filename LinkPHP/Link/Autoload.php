@@ -234,7 +234,7 @@ class Autoload
     {
         $namespace = substr($class_name,0,strrpos($class_name,'\\'));
         if(array_key_exists($namespace,static::$_map)){
-            $filename = str_replace('\\', '/', str_replace($namespace,static::$_map[$namespace],$class_name)) . EXT;
+            $filename = str_replace('\\', '/', str_replace($namespace,static::$_map[$namespace][0],$class_name)) . EXT;
             if(file_exists($filename)){
                 require $filename;
             } else {
