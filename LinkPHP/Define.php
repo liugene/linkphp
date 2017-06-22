@@ -46,7 +46,7 @@
  //定义LinkPHP框架公共配置目录常量
  define('CONF_PATH', INC_PATH . 'Conf/');
  //定义LinkPHP框架应用公共配置目录常量
- define('APPCONF_PATH', ROOT_PATH . 'Inc/Config/');
+ define('APPCONF_PATH', ROOT_PATH . 'Inc/');
  //定义LinkPHP框架扩展类库目录常量
  define('EXTEND_PATH', LINKPHP_PATH . 'Extend/');
  //定义LinkPHP框架附件目录常量
