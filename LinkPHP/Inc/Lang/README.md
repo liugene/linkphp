@@ -1,1 +1,1 @@
-# LinkPHP  ���ϵͳ���԰�Ŀ¼
+# LinkPHP  系统语言文件夹
