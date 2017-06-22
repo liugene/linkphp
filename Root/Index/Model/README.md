@@ -1,1 +1,1 @@
-# LinkPHP  ģ��ģ����Ŀ¼
+# LinkPHP  Model文件夹
