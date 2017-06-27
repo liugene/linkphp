@@ -50,7 +50,7 @@ class Console
          /**
           * 加载LinkPHP框架应用函数库
           */
-         require COMMON_PATH . 'Function/functions.php';
+         require COMMON_PATH . 'Function/Common.php';
         /**
          * 注册自动加载方法
          */
