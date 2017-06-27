@@ -57,7 +57,7 @@
         header('location:' . $url);
     } else{
         //提示后，refresh：N;URL=$URL
-        include TTFF_PATH . 'temp/success' . '.' . C('DEFAULT_THEME_SUFFIX');
+        include TEMP_PATH . 'temp/success' . '.' . C('DEFAULT_THEME_SUFFIX');
         header("Refresh:$wait;URL=$url");
         //echo $info;
     }
@@ -68,7 +68,7 @@
     if (is_null($info)){
         header('location:' . $url);
     } else{
-        include TTFF_PATH . 'temp/apperror' . '.' . C('DEFAULT_THEME_SUFFIX');
+        include TEMP_PATH . 'temp/apperror' . '.' . C('DEFAULT_THEME_SUFFIX');
         //提示后，refresh：N;URL=$URL
         header("Refresh:$wait;URL=$url");
         //echo $info;

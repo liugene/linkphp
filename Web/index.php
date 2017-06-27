@@ -14,9 +14,9 @@
 
 
  //加载LinkPHP框架常量文件
- require './LinkPHP/Define.php';
+ require __DIR__ . '/../LinkPHP/Define.php';
  //加载LinkPHP框架启动文件
- require './LinkPHP/Bootstrap.php';
+ require __DIR__ . '/../LinkPHP/Bootstrap.php';
 
  //只需要这么两句话就可以运行 !><!
  //是不是很轻便呀 喵~

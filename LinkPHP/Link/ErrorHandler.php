@@ -50,7 +50,7 @@
 
 EOT;
         header("Content-type:text/html;charset=utf-8");
-        require TTFF_PATH . 'temp/error' . C('DEFAULT_THEME_SUFFIX');
+        require TEMP_PATH . 'temp/error' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
 
@@ -82,7 +82,7 @@ EOT;
 
 EOT;
              header("Content-type:text/html;charset=utf-8");
-             require TTFF_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
+             require TEMP_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
              die;
              break;
          }
@@ -105,7 +105,7 @@ EOT;
 
 EOT;
          header("Content-type:text/html;charset=utf-8");
-         require TTFF_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
+         require TEMP_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
          die;
      }
  }

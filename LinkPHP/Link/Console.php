@@ -46,7 +46,7 @@ class Console
          /**
           * 加载LinkPHP框架系统函数
           */
-         require FUNCTION_PATH . 'functions.php';
+         require LINKPHP_PATH . 'Common.php';
          /**
           * 加载LinkPHP框架应用函数库
           */

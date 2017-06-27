@@ -2,7 +2,7 @@
 
 return array(
     //默认分发参数配置
-    '__APP__'            => getCWD() . '/Root/',
+    '__APP__'            => ROOT_PATH . '/Root/',
     'VAR_PLATFORM'       => 'p',      //默认传递模块名
     'VAR_CONTROLLER'     => 'c',      //默认传递控制器名
     'VAR_ACTION'         => 'a',      //默认传递方法名

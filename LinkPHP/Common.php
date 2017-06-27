@@ -45,14 +45,14 @@ function C($name, $value = null){
         return $extend_config['extend'][strtoupper($name)];
        }
        elseif(!array_key_exists($name,$extend_config['extend'])){
-        $config['link'] = require CONF_PATH . 'conf.php';
+        $config['link'] = require LINKPHP_PATH . 'Configure.php';
         $config['common'] = require APPCONF_PATH . 'conf.php';
         $config['conf'] = array_merge($config['link'], $config['common']);
         return $config['conf'][strtoupper($name)]; 
        } 
     } else {
         if($value == null){
-            $config['link'] = require CONF_PATH . 'conf.php';
+            $config['link'] = require LINKPHP_PATH . 'Configure.php';
             $config['common'] = require APPCONF_PATH . 'Conf.php';
             $config['conf'] = array_merge($config['link'], $config['common']);
             return $config['conf'][strtoupper($name)];
@@ -71,12 +71,12 @@ function C($name, $value = null){
  */
  function CK($name,$value='false'){
     if($value == 'TRUE'){
-        $config['link'] = require CONF_PATH . 'conf.php';
+        $config['link'] = require LINKPHP_PATH . 'Configure.php';
         $config['common'] = require APPCONF_PATH . 'conf.php';
         $config['conf'] = array_merge($config['link'], $config['common']);
         return $config['conf'][strtoupper($name)];
     } else {
-        $config['link'] = require CONF_PATH . 'conf.php';
+        $config['link'] = require LINKPHP_PATH . 'Configure.php';
         $config['common'] = require APPCONF_PATH . 'conf.php';
         $config['conf'] = array_merge($config['link'], $config['common']);
         if(in_array(strtoupper($name), $config['conf'])){
