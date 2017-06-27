@@ -22,7 +22,7 @@
     protected $_tVar     =   array();
     
     public function init($tempfile){
-        include LINKPHP_PATH . 'Template/Smarty/Smarty' . EXT;
+        include EXTEND_PATH . 'Library/Smarty/Smarty' . EXT;
         $smarty = new \Smarty();
         $smarty->caching = C('TEMP_CACHE'); //设置是否启用缓存
         $smarty->setTemplateDir(CURRENT_VIEW_PATH);

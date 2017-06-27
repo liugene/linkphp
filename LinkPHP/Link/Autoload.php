@@ -10,6 +10,7 @@
  *               LinkPHP框架自动化加载类             *
  * --------------------------------------------------*
  */
+namespace Link;
 class Autoload
 {
 
@@ -221,7 +222,7 @@ class Autoload
     /**
      * 注册命名空间名
      */
-    static public function namespaces($namespace)
+    static public function addNamespace($namespace)
     {
         //dump($namespace);die;
         return static::$_map = $namespace;
@@ -247,6 +248,13 @@ class Autoload
             //抛出异常
             throw new Exception("未注册命名空间");
         }
+    }
+
+    /**
+     * 查找文件
+     */
+    static public function findFile()
+    {
     }
 
 }

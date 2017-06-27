@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
-
+ namespace Link;
  /**
   * 加载Composer自动加载
   */
@@ -21,5 +21,5 @@
  /**
   * 加载LinkPHP框架核心初始化类
   */
- require CORE_PATH . 'LinkPHP' . EXT;
- Link\Link::start();
+ require CORE_PATH . 'Console' . EXT;
+ Console::start();

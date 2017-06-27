@@ -19,7 +19,7 @@
 
      public function __construct()
      {
-         include_once LINKPHP_PATH . 'Template/Links/LinkTemp' . EXT;
+         include_once EXTEND_PATH . 'Library/LinkTemp/LinkTemp' . EXT;
          $this->_links = new \LinkTemp();
      }
 
