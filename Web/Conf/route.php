@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
     //默认分发参数配置
     '__APP__'            => ROOT_PATH . '/Root/',
     'VAR_PLATFORM'       => 'p',      //默认传递模块名
@@ -14,6 +14,6 @@ return array(
     'ROUTE_RULES'        => array(
         '/Index/Index'   =>  '/Index/Api',
     ),
-);
+]
 
 ?>
