@@ -23,4 +23,5 @@
   * 加载LinkPHP框架核心初始化类
   */
  require CORE_PATH . 'Console' . EXT;
+
  Console::start();

@@ -37,6 +37,7 @@ function error($url,$info=null,$wait=3){
  * 分组扩展配置的值不会被之后加载进来的配置值覆盖，当应用模块中的键名不存在
  * 然后加载LinkPHP框架系统配置 -> 网站公共配置
  */
+
 function C($name, $value = null){
     if(CK('EXTEND_MODEL_CONFIG', 'TRUE') == 'TRUE'){
         $platform = isset($_GET[CK('VAR_PLATFORM','TRUE')]) ? ucfirst($_GET[CK('VAR_PLATFORM','TRUE')]) : CK('DEFAULT_PLATFORM','TRUE');
