@@ -6,7 +6,7 @@
  * Time: 12:30
  */
 
- namespace App\Index\Model;
+ namespace app\index\models;
  use Link\Model;
  class Index extends Model
  {}

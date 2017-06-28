@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace App\Common\Controller;
+ namespace app\common\controllers;
  use Link\Controller;
  class Common extends Controller{
     public function test(){

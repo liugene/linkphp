@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace App\Common\Model;
+ namespace app\common\models;
  use Link\Model;
  class Common extends Model{
     public function test(){

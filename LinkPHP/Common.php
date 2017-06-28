@@ -40,7 +40,7 @@ function error($url,$info=null,$wait=3){
 function C($name, $value = null){
     if(CK('EXTEND_MODEL_CONFIG', 'TRUE') == 'TRUE'){
         $platform = isset($_GET[CK('VAR_PLATFORM','TRUE')]) ? ucfirst($_GET[CK('VAR_PLATFORM','TRUE')]) : CK('DEFAULT_PLATFORM','TRUE');
-        $extend_config['extend'] = require APPLICATION_PATH . $platform . '/Conf/conf.php';
+        $extend_config['extend'] = require APPLICATION_PATH . $platform . '/configure/conf.php';
         if(array_key_exists($name, $extend_config['extend'])){
         return $extend_config['extend'][strtoupper($name)];
        }

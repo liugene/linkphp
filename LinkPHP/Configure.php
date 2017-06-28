@@ -68,11 +68,11 @@
 
   //命名空间注册
   'AUTOLOAD_NAMESPACE'   =>  [
-       'App\Index\Controller'        =>  array(APPLICATION_PATH . 'Index/Controller'),
-       'App\Index\Model'             =>  array(APPLICATION_PATH . 'Index/Model'),
-       'App\Common\Model'            =>  array(APPLICATION_PATH . 'Common/Model'),
-       'App\Common\Controller'       =>  array(APPLICATION_PATH . 'Common/Controller'),
-       'App\Common\SQLVI'            =>  array(APPLICATION_PATH . 'Common/SQLVI'),
+       'app\index\controllers'        =>  array(APPLICATION_PATH . 'index/controllers'),
+       'app\index\models'             =>  array(APPLICATION_PATH . 'index/models'),
+       'app\common\models'            =>  array(APPLICATION_PATH . 'common/models'),
+       'app\common\controllers'       =>  array(APPLICATION_PATH . 'common/controllers'),
+       'app\common\SQLVI'            =>  array(APPLICATION_PATH . 'common/SQLVI'),
   ]
 
  ];
