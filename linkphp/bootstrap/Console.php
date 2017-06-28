@@ -45,11 +45,11 @@ class Console
          /**
           * 加载LinkPHP框架系统函数
           */
-         require LINKPHP_PATH . 'Common.php';
+         require LINKPHP_PATH . 'functions.php';
          /**
           * 加载LinkPHP框架应用函数库
           */
-         require COMMON_PATH . 'Function/Common.php';
+         require APPLICATION_PATH . 'functions.php';
         /**
          * 注册自动加载方法
          */

@@ -9,8 +9,8 @@ class Index extends Controller
         $this->assign('linkphp',$linkphp);
 		$this->display();
 		$model = new \assets\index\models\Index;
-        $model = new \assets\common\models\Common;
-        \assets\common\controllers\Common::test();
+        $model = new \assets\base\models\Common;
+        \assets\base\controllers\Common::test();
         //$model = new \assets\index\controllers\domore\Index;
 		dump($model);
 	}

@@ -70,8 +70,8 @@
   'AUTOLOAD_NAMESPACE'   =>  [
        'assets\index\controllers'        =>  array(APPLICATION_PATH . 'index/controllers'),
        'assets\index\models'             =>  array(APPLICATION_PATH . 'index/models'),
-       'assets\common\models'            =>  array(APPLICATION_PATH . 'common/models'),
-       'assets\common\controllers'       =>  array(APPLICATION_PATH . 'common/controllers'),
+       'assets\base\models'            =>  array(APPLICATION_PATH . 'base/models'),
+       'assets\base\controllers'       =>  array(APPLICATION_PATH . 'base/controllers'),
   ]
 
  ];

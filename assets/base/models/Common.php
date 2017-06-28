@@ -8,17 +8,18 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                   站点公共控制器                   *
+ *                   站点入口文件                    *
  * --------------------------------------------------*
  */
  
- namespace assets\common\controllers;
- use bootstrap\Controller;
- class Common extends Controller{
+ namespace assets\base\models;
+ use bootstrap\Model;
+ class Common extends Model{
     public function test(){
-        echo '<br />test <br />';
+        echo '<br />站点公共模型类测试方法 <br />';
     }
  }
+
 
 
 
