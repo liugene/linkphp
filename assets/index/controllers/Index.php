@@ -1,6 +1,6 @@
 <?php
 namespace app\index\controllers;
-use link\Controller;
+use bootstrap\Controller;
 class Index extends Controller
 {
 	public function index()

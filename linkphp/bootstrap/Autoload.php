@@ -10,7 +10,7 @@
  *               LinkPHP框架自动化加载类             *
  * --------------------------------------------------*
  */
-namespace link;
+namespace bootstrap;
 class Autoload
 {
 
@@ -88,7 +88,7 @@ class Autoload
     static public function namespaceAutoload($class_name)
     {
         $name = strstr($class_name, '\\', true);
-        if($name == 'link'){
+        if($name == 'bootstrap'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){

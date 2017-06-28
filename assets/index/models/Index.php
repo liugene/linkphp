@@ -7,6 +7,6 @@
  */
 
  namespace app\index\models;
- use link\Model;
+ use bootstrap\Model;
  class Index extends Model
  {}

@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace link;
+ namespace bootstrap;
 
  /**
   * 加载Composer自动加载

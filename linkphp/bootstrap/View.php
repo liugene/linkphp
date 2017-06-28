@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace link;
+ namespace bootstrap;
  class View{
     
     /**

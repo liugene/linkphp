@@ -8,25 +8,14 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                  LinkPHP框架钩子类                *
+ *                     API基类                       *
  * --------------------------------------------------*
  */
 
- namespace link;
- class Hooks
- {
+ namespace bootstrap;
+ use link\api\linkapi;
+ class Api extends linkapi
+ {}
 
-     /*
-      * 程序运行前方法实现
-      * */
-     static public function runBefore(){}
-
-
-     /*
-      * 程序运行后方法实现
-      * */
-     static public function runAfter(){}
-
- }
 
 ?>

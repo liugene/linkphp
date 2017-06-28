@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
-namespace link;
+namespace bootstrap;
 use link\route\parsers;
 use system\core\Engine;
 class Console
