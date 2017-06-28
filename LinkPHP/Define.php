@@ -26,7 +26,7 @@
  //定义Composer目录常量
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
  //定义缓存目录常量
- defined('CACHE_PATH') or define('CACHE_PATH', ROOT_PATH . 'Data/');
+ defined('CACHE_PATH') or define('CACHE_PATH', WEB_PATH . 'Data/');
  //定义应用公共目录常量
  defined('COMMON_PATH') or define('COMMON_PATH', APPLICATION_PATH . 'Common/');
  //定义公共附件目录常量
