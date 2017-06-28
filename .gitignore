@@ -1,6 +1,6 @@
 .idea/
 vendor/
-Root/Index/Controller/
-Root/Index/Model/
+assets/index/controllers/
+assets/index/models/
 composer.lock
-Data/
+web/resource/
