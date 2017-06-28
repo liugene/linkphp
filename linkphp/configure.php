@@ -68,10 +68,10 @@
 
   //命名空间注册
   'AUTOLOAD_NAMESPACE'   =>  [
-       'app\index\controllers'        =>  array(APPLICATION_PATH . 'index/controllers'),
-       'app\index\models'             =>  array(APPLICATION_PATH . 'index/models'),
-       'app\common\models'            =>  array(APPLICATION_PATH . 'common/models'),
-       'app\common\controllers'       =>  array(APPLICATION_PATH . 'common/controllers'),
+       'assets\index\controllers'        =>  array(APPLICATION_PATH . 'index/controllers'),
+       'assets\index\models'             =>  array(APPLICATION_PATH . 'index/models'),
+       'assets\common\models'            =>  array(APPLICATION_PATH . 'common/models'),
+       'assets\common\controllers'       =>  array(APPLICATION_PATH . 'common/controllers'),
   ]
 
  ];

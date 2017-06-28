@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace app\common\controllers;
+ namespace assets\common\controllers;
  use bootstrap\Controller;
  class Common extends Controller{
     public function test(){

@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace app\common\models;
+ namespace assets\common\models;
  use bootstrap\Model;
  class Common extends Model{
     public function test(){

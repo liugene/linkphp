@@ -1,5 +1,5 @@
 <?php
-namespace app\index\controllers;
+namespace assets\index\controllers;
 use bootstrap\Controller;
 class Index extends Controller
 {
@@ -8,10 +8,10 @@ class Index extends Controller
         $linkphp = 'test';
         $this->assign('linkphp',$linkphp);
 		$this->display();
-		$model = new \app\index\models\Index;
-        $model = new \app\common\models\Common;
-        \app\common\controllers\Common::test();
-        //$model = new \app\index\controllers\domore\Index;
+		$model = new \assets\index\models\Index;
+        $model = new \assets\common\models\Common;
+        \assets\common\controllers\Common::test();
+        //$model = new \assets\index\controllers\domore\Index;
 		dump($model);
 	}
 }

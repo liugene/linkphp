@@ -6,7 +6,7 @@
  * Time: 12:30
  */
 
- namespace app\index\models;
+ namespace assets\index\models;
  use bootstrap\Model;
  class Index extends Model
  {}
