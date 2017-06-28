@@ -51,7 +51,7 @@
          $pregRule_R = '#' . $this->_rightlimit . '#';
          $this->_temp_content = preg_replace($pregRule_L,'<?php echo ',$CompileFile);
          $this->_temp_content = preg_replace($pregRule_R,'; ?>',$this->_temp_content);
-         $this->_temp_c = CACHE_PATH . 'temp/temp_c/' . md5($tempfile) . '.c.php';
+         $this->_temp_c = STORAGE_PATH . 'temp/temp_c/' . md5($tempfile) . '.c.php';
          file_put_contents($this->_temp_c,$this->_temp_content);
      }
 

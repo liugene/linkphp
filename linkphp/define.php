@@ -28,6 +28,8 @@
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
  //定义缓存目录常量
  defined('CACHE_PATH') or define('CACHE_PATH', WEB_PATH . 'resource/');
+ //定义站点运行数据存储目录常量
+ defined('STORAGE_PATH') or define('STORAGE_PATH', WEB_PATH . 'storage/');
  //定义应用公共目录常量
  defined('COMMON_PATH') or define('COMMON_PATH', APPLICATION_PATH . 'common/');
  //定义公共附件目录常量
