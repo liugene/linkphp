@@ -23,7 +23,7 @@
  defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ . '/') . '/');
  //定义站点入库文件夹目录常量
  defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'web/');
- defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'root/');
+ defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'assets/');
  //定义Composer目录常量
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
  //定义缓存目录常量
