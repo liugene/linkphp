@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <meta name="LinkPHP" content="LiuJun" />
+
+    <title>系统发生错误</title>
+    <style>
+        body{
+            margin: 0 auto;
+            padding: 0;
+            background-color: #CDCDCD;
+        }
+        *{
+            font-size: 16px;
+            color: #666;
+            font-family: 'Helvetica Neue', 'STHeiti', '微软雅黑', 'Microsoft YaHei', Helvetica,Arial,sans-serif;;
+        }
+        #lp_error_body{
+            width: 100%;
+            height: auto;
+            background-color: #CDCDCD;
+            overflow: hidden;
+        }
+        .lp_error_center{
+            width: 980px;
+            height: auto;
+            background-color: #E6E6E6;
+            margin: 80PX auto;
+            border-radius: 25px;
+            text-align: center;
+        }
+        .lp_error_top{
+            line-height: 80px;
+            width: 680px;
+            height: auto;
+            margin: 0 auto;
+        }
+        .lp_error_top p{
+            font-size: 26px;
+        }
+        .lp_error_content{
+            padding-bottom: 20px;
+        }
+        .lp_error_list{
+            width: 960px;
+            text-align: left;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: #CDCDCD;
+            overflow: hidden;
+        }
+        .lp_error_list p{
+            margin: 30px;
+        }
+        .pre{
+            margin: 30px;
+        }
+        .pre pre{
+            white-space: pre-wrap; /* css-3 */
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="lp_error_body">
+    <div class="lp_error_center">
+        <div class="lp_error_top">
+            <p>:( &nbsp; &nbsp; 运行出现<?php echo $error_type; ?>错误 &nbsp; &nbsp; &nbsp;  QAQ~</p>
+        </div>
+        <div class="lp_error_content">
+            <div class="lp_error_list">
+                <p> <?php echo $message;?> </p>
+                <p> <?php echo "<B>定位跟踪:</B>"; ?></p>
+                <div class="pre"> <?php echo "<pre>"; debug_print_backtrace();echo "</pre>"; ?> </div>
+                <p> <?php echo "<B>产生错误时间:</B> &nbsp &nbsp $datetime";?> </p>
+                <p> <B>LinkPHP 1.0.0</B> &nbsp&nbsp Link All Thing; &nbsp&nbsp 专为Api而生 </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

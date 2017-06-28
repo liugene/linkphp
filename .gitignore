@@ -1,0 +1,6 @@
+.idea/
+vendor/
+Root/Index/Controller/
+Root/Index/Model/
+composer.lock
+Data/
