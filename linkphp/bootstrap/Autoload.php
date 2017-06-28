@@ -211,7 +211,6 @@ class Autoload
      */
     static public function addNamespace($namespace)
     {
-        //dump($namespace);die;
         return static::$_map = $namespace;
     }
 

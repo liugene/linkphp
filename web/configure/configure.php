@@ -13,13 +13,13 @@
  */
 
 return [
-    'HOST'     => '47.52.30.103', //一般不需要修改
-    'PORT'     => '1433', //默认即可
-    'DBUSER'   => 'sa', //数据库用户名
-    'DBPWD'    => 'JRadmin123', //数据库密码
-    'CHARSET'  => 'utf8', //数据库编码
-    'DBNAME'   => 'AEGCRM', //数据库名称
-    'DBPREFIX' => 'AEG_', //数据库表前缀
+    'host'     => '47.52.30.103', //一般不需要修改
+    'port'     => '1433', //默认即可
+    'dbuser'   => 'sa', //数据库用户名
+    'dbpwd'    => 'JRadmin123', //数据库密码
+    'charset'  => 'utf8', //数据库编码
+    'dbname'   => 'AEGCRM', //数据库名称
+    'dbprefix' => 'AEG_', //数据库表前缀
 ]
 
 ?>

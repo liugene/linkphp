@@ -39,8 +39,8 @@ function error($url,$info=null,$wait=3){
  */
 
 function C($name, $value = null){
-    if(CK('EXTEND_MODEL_CONFIG', 'TRUE') == 'TRUE'){
-        $platform = isset($_GET[CK('VAR_PLATFORM','TRUE')]) ? ucfirst($_GET[CK('VAR_PLATFORM','TRUE')]) : CK('DEFAULT_PLATFORM','TRUE');
+    if(CK('extend_model_config', 'true') == 'true'){
+        $platform = isset($_GET[CK('var_platform','true')]) ? ucfirst($_GET[CK('var_platform','true')]) : CK('default_platform','true');
         $extend_config['extend'] = require APPLICATION_PATH . $platform . '/configure.php';
         if(array_key_exists($name, $extend_config['extend'])){
         return $extend_config['extend'][strtoupper($name)];
@@ -56,7 +56,7 @@ function C($name, $value = null){
             $config['link'] = require LINKPHP_PATH . 'Configure.php';
             $config['common'] = require APPCONF_PATH . 'Configure.php';
             $config['conf'] = array_merge($config['link'], $config['common']);
-            return $config['conf'][strtoupper($name)];
+            return $config['conf'][strtolower($name)];
         } else {
             
         } 
@@ -71,11 +71,11 @@ function C($name, $value = null){
  * @return [bool] 返回检测
  */
  function CK($name,$value='false'){
-    if($value == 'TRUE'){
+    if($value == 'true'){
         $config['link'] = require LINKPHP_PATH . 'Configure.php';
         $config['common'] = require APPCONF_PATH . 'Configure.php';
         $config['conf'] = array_merge($config['link'], $config['common']);
-        return $config['conf'][strtoupper($name)];
+        return $config['conf'][strtolower($name)];
     } else {
         $config['link'] = require LINKPHP_PATH . 'Configure.php';
         $config['common'] = require APPCONF_PATH . 'Configure.php';
