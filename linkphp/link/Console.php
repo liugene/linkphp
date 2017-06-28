@@ -15,7 +15,6 @@
 namespace link;
 use link\route\parsers;
 use system\core\Engine;
-use system\sql\SQLVI;
 class Console
 {
     /**
@@ -67,10 +66,6 @@ class Console
          * 加载系统引擎机制
          */
          Engine::run();
-        /**
-         * 加载系统视图索引
-         */
-         SQLVI::run();
         /**
          * 路由参数初始化
          */

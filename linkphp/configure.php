@@ -72,7 +72,6 @@
        'app\index\models'             =>  array(APPLICATION_PATH . 'index/models'),
        'app\common\models'            =>  array(APPLICATION_PATH . 'common/models'),
        'app\common\controllers'       =>  array(APPLICATION_PATH . 'common/controllers'),
-       'app\common\SQLVI'            =>  array(APPLICATION_PATH . 'common/SQLVI'),
   ]
 
  ];
