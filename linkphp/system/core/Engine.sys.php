@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace System\Core;
+ namespace system\core;
  class Engine
  {
      static public function run()

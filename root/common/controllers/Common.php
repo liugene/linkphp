@@ -13,7 +13,7 @@
  */
  
  namespace app\common\controllers;
- use Link\Controller;
+ use link\Controller;
  class Common extends Controller{
     public function test(){
         echo '<br />test <br />';

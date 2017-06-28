@@ -12,9 +12,9 @@
  * --------------------------------------------------*
  */
 
- namespace System\SQL;
- use Common\SQLVI\CVSQLVI;
- use Common\SQLVI\CISQLVI;
+ namespace system\sql;
+ use app\common\SQLVI\CVSQLVI;
+ use app\common\SQLVI\CISQLVI;
  class SQLVI
  {
      static public function run()

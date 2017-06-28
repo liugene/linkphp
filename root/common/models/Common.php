@@ -13,7 +13,7 @@
  */
  
  namespace app\common\models;
- use Link\Model;
+ use link\Model;
  class Common extends Model{
     public function test(){
         echo '<br />站点公共模型类测试方法 <br />';

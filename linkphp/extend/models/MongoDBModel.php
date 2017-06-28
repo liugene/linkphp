@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace Model;
+ namespace models;
  class MongoDBModel{
     public function test(){
         echo '<br /> MongoDb模型扩展类';

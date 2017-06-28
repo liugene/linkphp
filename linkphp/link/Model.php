@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace Link;
+ namespace link;
  use link\orm\parsers;
  class Model extends parsers
  {

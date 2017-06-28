@@ -12,6 +12,6 @@
  * --------------------------------------------------*
  */
 
- namespace System\Cache;
+ namespace system\cache;
  class Cache
  {}

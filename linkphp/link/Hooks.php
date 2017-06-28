@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace Link;
+ namespace link;
  class Hooks
  {
 

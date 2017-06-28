@@ -10,7 +10,7 @@
  *               LinkPHP框架自动化加载类             *
  * --------------------------------------------------*
  */
-namespace Link;
+namespace link;
 class Autoload
 {
 
@@ -39,7 +39,7 @@ class Autoload
     static public function LinkSystemAutoload($class_name)
     {
         $name = strstr($class_name, '\\', true);
-        if($name == 'System'){
+        if($name == 'system'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . SYS;
             /**
              * 判断文件是否存在
@@ -67,13 +67,13 @@ class Autoload
          */
         $LinkPHP_class_list = array(
             //'类名' => '类文件地址'
-            'Page'              => HELPER_PATH . 'Page/' . 'Page' . EXT,
-            'Image'             => HELPER_PATH . 'Image/' . 'Image' . EXT,
-            'Verify'            => HELPER_PATH . 'Verify/' . 'Verify' . EXT,
-            'Curl'              => HELPER_PATH . 'Curl/' . 'Curl' .EXT,
-            'WeiXin'            => HELPER_PATH . 'WeiXin/' . 'WeiXin' . EXT,
-            'Upload'            => HELPER_PATH . 'Uploads/' . 'Upload' . EXT,
-            'SendMail'          => HELPER_PATH . 'SendMail/' . 'SendMail' . EXT,
+            'Page'              => HELPER_PATH . 'page/' . 'Page' . EXT,
+            'Image'             => HELPER_PATH . 'image/' . 'Image' . EXT,
+            'Verify'            => HELPER_PATH . 'verify/' . 'Verify' . EXT,
+            'Curl'              => HELPER_PATH . 'curl/' . 'Curl' .EXT,
+            'WeiXin'            => HELPER_PATH . 'weixin/' . 'WeiXin' . EXT,
+            'Upload'            => HELPER_PATH . 'uploads/' . 'Upload' . EXT,
+            'SendMail'          => HELPER_PATH . 'mail/' . 'SendMail' . EXT,
         );
         //判断是否为核心工具类
         if(isset($LinkPHP_class_list[$class_name])){
@@ -88,7 +88,7 @@ class Autoload
     static public function namespaceAutoload($class_name)
     {
         $name = strstr($class_name, '\\', true);
-        if($name == 'Link'){
+        if($name == 'link'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){
@@ -101,7 +101,7 @@ class Autoload
                 throw new Exception("无法加载框架核心类");
             }
         }
-        elseif($name == 'Helper'){
+        elseif($name == 'helper'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){
@@ -114,20 +114,7 @@ class Autoload
                 throw new Exception("无法加载框架系统核心扩展类");
             }
         }
-        elseif($name == 'Server'){
-            $filename = SERVER_PATH  . str_replace('\\', '/', $class_name) . EXT;
-            //判断文件是否存在
-            if(file_exists($filename)){
-                //存在引入
-                //第三方扩展类库Extend/Library 目录下面的命名空间自动定位
-                require SERVER_PATH  . str_replace('\\', '/', $class_name) . EXT;
-            } else {
-                //不存在
-                //抛出异常
-                throw new Exception("无法加载框架服务层接口类");
-            }
-        }
-        elseif(in_array($name, array('Controller', 'Model'))){
+        elseif(in_array($name, array('controllers', 'models'))){
             $filename = EXTEND_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){

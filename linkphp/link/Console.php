@@ -12,10 +12,10 @@
  * --------------------------------------------------*
  */
 
-namespace Link;
+namespace link;
 use link\route\parsers;
-use System\Core\Engine;
-use System\SQL\SQLVI;
+use system\core\Engine;
+use system\sql\SQLVI;
 class Console
 {
     /**

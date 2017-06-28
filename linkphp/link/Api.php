@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace Link;
+ namespace link;
  use link\api\linkapi;
  class Api extends linkapi
  {}

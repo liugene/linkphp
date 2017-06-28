@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace System\Safe;
+ namespace system\safe;
  class Token
  {
 

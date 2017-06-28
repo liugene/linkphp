@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace Link; 
+ namespace link;
  class Smarty{
     /**
      * 模板输出变量
