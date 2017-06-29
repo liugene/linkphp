@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace bootstrap;
+ namespace linkphp\bootstrap;
  class LinkTemp
  {
      private $_links;

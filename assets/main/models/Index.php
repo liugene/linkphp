@@ -6,7 +6,7 @@
  * Time: 12:30
  */
 
- namespace assets\index\models;
- use bootstrap\Model;
+ namespace assets\main\models;
+ use linkphp\bootstrap\Model;
  class Index extends Model
  {}

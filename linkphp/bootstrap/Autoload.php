@@ -10,7 +10,7 @@
  *               LinkPHP框架自动化加载类             *
  * --------------------------------------------------*
  */
-namespace bootstrap;
+namespace linkphp\bootstrap;
 class Autoload
 {
 

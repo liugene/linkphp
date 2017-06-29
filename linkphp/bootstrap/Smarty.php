@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace bootstrap;
+ namespace linkphp\bootstrap;
  class Smarty{
     /**
      * 模板输出变量

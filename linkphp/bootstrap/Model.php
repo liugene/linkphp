@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace bootstrap;
+ namespace linkphp\bootstrap;
  use link\orm\parsers;
  class Model extends parsers
  {

@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
-namespace bootstrap;
+namespace linkphp\bootstrap;
 use link\route\parsers;
 use system\core\Engine;
 class Console

@@ -3,5 +3,5 @@
 /**
  * LinkPHP异常处理基类
  */
-namespace bootstrap;
+namespace linkphp\bootstrap;
 class Exception extends \Exception{}

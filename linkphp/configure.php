@@ -65,10 +65,11 @@
 
   //命名空间注册
   'autoload_namespace'   =>  [
-       'assets\index\controllers'        =>  array(APPLICATION_PATH . 'index/controllers'),
-       'assets\index\models'             =>  array(APPLICATION_PATH . 'index/models'),
-       'assets\base\models'            =>  array(APPLICATION_PATH . 'base/models'),
-       'assets\base\controllers'       =>  array(APPLICATION_PATH . 'base/controllers'),
+       'assets\main\controllers'        =>  array(APPLICATION_PATH . 'main/controllers'),
+       'assets\main\models'             =>  array(APPLICATION_PATH . 'main/models'),
+       'assets\base\models'              =>  array(APPLICATION_PATH . 'base/models'),
+       'assets\base\controllers'         =>  array(APPLICATION_PATH . 'base/controllers'),
+       'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
   ]
 
  ];
