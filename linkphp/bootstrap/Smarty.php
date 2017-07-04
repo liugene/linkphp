@@ -22,7 +22,7 @@
     protected $_tVar     =   array();
     
     public function init($tempfile){
-        include EXTEND_PATH . 'library/Smarty/Smarty' . EXT;
+        include EXTEND_PATH . 'org/Smarty/Smarty' . EXT;
         $smarty = new \Smarty();
         $smarty->caching = C('TEMP_CACHE'); //设置是否启用缓存
         $smarty->setTemplateDir(CURRENT_VIEW_PATH);
