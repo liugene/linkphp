@@ -5,7 +5,7 @@ class Home extends Controller
 {
 	public function main()
     {
-        $linkphp = 'test';
+        $linkphp = 'linkphp框架';
         $this->assign('linkphp',$linkphp);
 		$this->display();
 		$model = new \assets\main\models\Index;
