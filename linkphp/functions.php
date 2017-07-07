@@ -46,15 +46,15 @@ function C($name, $value = null){
         return $extend_config['extend'][strtoupper($name)];
        }
        elseif(!array_key_exists($name,$extend_config['extend'])){
-        $config['link'] = require LINKPHP_PATH . 'Configure.php';
-        $config['common'] = require APPCONF_PATH . 'Configure.php';
+        $config['link'] = require LINKPHP_PATH . 'configure.php';
+        $config['common'] = require APPCONF_PATH . 'configure.php';
         $config['conf'] = array_merge($config['link'], $config['common']);
         return $config['conf'][strtoupper($name)]; 
        } 
     } else {
         if($value == null){
-            $config['link'] = require LINKPHP_PATH . 'Configure.php';
-            $config['common'] = require APPCONF_PATH . 'Configure.php';
+            $config['link'] = require LINKPHP_PATH . 'configure.php';
+            $config['common'] = require APPCONF_PATH . 'configure.php';
             $config['conf'] = array_merge($config['link'], $config['common']);
             return $config['conf'][strtolower($name)];
         } else {
@@ -72,13 +72,13 @@ function C($name, $value = null){
  */
  function CK($name,$value='false'){
     if($value == 'true'){
-        $config['link'] = require LINKPHP_PATH . 'Configure.php';
-        $config['common'] = require APPCONF_PATH . 'Configure.php';
+        $config['link'] = require LINKPHP_PATH . 'configure.php';
+        $config['common'] = require APPCONF_PATH . 'configure.php';
         $config['conf'] = array_merge($config['link'], $config['common']);
         return $config['conf'][strtolower($name)];
     } else {
-        $config['link'] = require LINKPHP_PATH . 'Configure.php';
-        $config['common'] = require APPCONF_PATH . 'Configure.php';
+        $config['link'] = require LINKPHP_PATH . 'configure.php';
+        $config['common'] = require APPCONF_PATH . 'configure.php';
         $config['conf'] = array_merge($config['link'], $config['common']);
         if(in_array(strtoupper($name), $config['conf'])){
             return TRUE;
