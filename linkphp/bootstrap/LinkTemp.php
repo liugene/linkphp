@@ -19,7 +19,7 @@
 
      public function __construct()
      {
-         include_once EXTEND_PATH . 'org/linkTtemp/LinkTemp' . EXT;
+         include_once EXTEND_PATH . 'org/linktemp/LinkTemp' . EXT;
          $this->_links = new \LinkTemp();
      }
 
