@@ -1,6 +1,6 @@
 <?php
 
-namespace extend\helper\sms;
+namespace extend\util\sms;
 class SendSms
 {
     public function send($config)

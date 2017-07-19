@@ -1,32 +1,33 @@
 <?php
 
+namespace extend\util\image;
 /**
  * --------------------------------------------------*
- *  LhinkPHP×ñÑ­Apache2¿ªÔ´Ð­Òé·¢²¼  Link ALL Thing  *
+ *  LhinkPHPï¿½ï¿½Ñ­Apache2ï¿½ï¿½Ô´Ð­ï¿½é·¢ï¿½ï¿½  Link ALL Thing  *
  * --------------------------------------------------*
  *  @author LiuJun     Mail-To:liujun2199@vip.qq.com *
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *               LinkPHPºËÐÄÍ¼Æ¬´¦ÀíÀà               *
+ *               LinkPHPï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½               *
  * --------------------------------------------------*
  */
  
  class Image{
     /**
-     * Ö¸¶¨Ëõ·Å±ÈÀý
-     * ×î´ó¿í¶È×î´ó¸ß¶È£¬µÈ±ÈÀýËõ·Å
-     * ¿ÉÒÔ¶ÔËõÔ¼Í¼ÎÄ¼þÌí¼ÓÇ°×º
-     * Ñ¡ÔñÊÇ·ñÉ¾³ýËõÔ¼Í¼µÄÔ´ÎÄ¼þ
+     * Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶È£ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Ô¼Í¼ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ç°×º
+     * Ñ¡ï¿½ï¿½ï¿½Ç·ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ô¼Í¼ï¿½ï¿½Ô´ï¿½Ä¼ï¿½
      */
      /**
-      * ·µ»ØÍ¼Æ¬ÐÅÏ¢
-      * @param string $filename[ÎÄ¼þÃû]
-      * @return array °üº¬Í¼Æ¬µÄ¿í¶È¡¢¸ß¶È¡¢´´½¨ºÍÊä³öµÄ×Ö·û´®ÒÔ¼°À©Õ¹Ãû
+      * ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ï¢
+      * @param string $filename[ï¿½Ä¼ï¿½ï¿½ï¿½]
+      * @return array ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Ä¿ï¿½È¡ï¿½ï¿½ß¶È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½
       */
      function getImageInfo($filename){
         if(@!$info = getimagesize($info)){
-            exit('ÎÄ¼þ²»ÊÇÕæÊµÍ¼Æ¬');
+            exit('ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÍ¼Æ¬');
         }
         $fileInfo['width'] = $info[0];
         $fileInfo['height'] = $info[1];
@@ -39,15 +40,15 @@
         return $fileInfo;
      }
      /**
-      * Éú³ÉËõÂÔÍ¼
-      * @param [string] $filename ÎÄ¼þÃû
-      * @param [string] $dest Ä¬ÈÏËõÂÔÍ¼±£´æÂ·¾¶£¬Ä¬ÈÏ±£´æÔÚthumbÄ¿Â¼ÏÂ
-      * @param [string] $pre Ä¬ÈÏÇ°×ºÎªthumb_
-      * @param [type] dst-w ×î´ó¿í¶È
-      * @param [type] dst_h ×î´ó¸ß¶È
-      * @param [float] $scale Ä¬ÈÏµÄËõ·Å±ÈÀý
-      * @param [boolean] $delSource ÊÇ·ñÉ¾³ýÔ´ÎÄ¼þµÄ±êÖ¾
-      * return [type] ·µ»Ø×îÖÕ±£´æÂ·¾¶ÒÔ¼°ÎÄ¼þÃû
+      * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
+      * @param [string] $filename ï¿½Ä¼ï¿½ï¿½ï¿½
+      * @param [string] $dest Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½thumbÄ¿Â¼ï¿½ï¿½
+      * @param [string] $pre Ä¬ï¿½ï¿½Ç°×ºÎªthumb_
+      * @param [type] dst-w ï¿½ï¿½ï¿½ï¿½ï¿½
+      * @param [type] dst_h ï¿½ï¿½ï¿½ß¶ï¿½
+      * @param [float] $scale Ä¬ï¿½Ïµï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½
+      * @param [boolean] $delSource ï¿½Ç·ï¿½É¾ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½Ä±ï¿½Ö¾
+      * return [type] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ±ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
       */
   function thumb($filename, $dest = 'thumb', $pre = 'thumb_', $dst_w = null, $dst_h = null, $scale = 0.5, $delSource = false){
      //$filename = '1.png'; 
@@ -68,14 +69,14 @@
             $dst_h = $dst_w / $ratio_orig;
         }
      } else {
-        //Ã»ÓÐÖ¸¶¨°´Ä¬ÈÏµÄËõ·Å±ÈÀý´¦Àí
+        //Ã»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ïµï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         $dst_w = ceil($src_w * $scale);
         $dst_h = ceil($src_h * $scale);
      }
      $dst_image = imagecreatetruecolor($dst_w, $dst_h);
      $src_image = $fileInfo['createForm']($filename);
      imagecopyresampled();
-     //¼ì²âÄ¿±êÄ¿Â¼ÊÇ·ñ´æÔÚ,²»´æÔÚÔò´´½¨
+     //ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ä¿Â¼ï¿½Ç·ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò´´½ï¿½
      if($dest && !file_exists($dest)){
         mkdir($dest, 0777, true);
      }
@@ -93,12 +94,12 @@
      }
      
     /**
-     * ÎÄ×ÖË®Ó¡
-     * @param [string] $filename ÎÄ¼þÃû
-     * @param [string] $fontfile ÎÄ¼þ×ÖÌå
-     * @param [string] $text Ë®Ó¡ÎÄ×Ö
-     * @param [string] $dest Ä¿±êÍ¼Æ¬±£´æÄ¿Â¼
-     * @param [string] $pre Ä¿±êÍ¼Æ¬±£´æÇ°×º
+     * ï¿½ï¿½ï¿½ï¿½Ë®Ó¡
+     * @param [string] $filename ï¿½Ä¼ï¿½ï¿½ï¿½
+     * @param [string] $fontfile ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+     * @param [string] $text Ë®Ó¡ï¿½ï¿½ï¿½ï¿½
+     * @param [string] $dest Ä¿ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
+     * @param [string] $pre Ä¿ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Ç°×º
      * @param [integer] $r
      * @param [integer] $g
      * @param [integer] $b
@@ -107,7 +108,7 @@
      * @param [integer] $size
      * @param [integer] $x
      * @param [integer] $y
-     * @return [string] Ä¿±êÎÄ¼þ±£´æÂ·¾¶ÒÔ¼°ÎÄ¼þÃû
+     * @return [string] Ä¿ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
      */
    function water_text(){  
      $filename = '1.png';
@@ -135,20 +136,20 @@
    }
    
    /**
-    * Éú³ÉÍ¼Æ¬Ë®Ó¡
-    * @param [string] $dstName Ä¿±êÍ¼Æ¬Ãû³Æ
-    * @param [string] $srcName Ô´Í¼Æ¬Ãû³Æ
+    * ï¿½ï¿½ï¿½ï¿½Í¼Æ¬Ë®Ó¡
+    * @param [string] $dstName Ä¿ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
+    * @param [string] $srcName Ô´Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
     * @param [integer] $pos
     * @param [integer] $pct
-    * @param [string] $dest Ä¿±êÍ¼Æ¬±£´æÄ¿Â¼
-    * @param [string] $pre Ä¿±êÍ¼Æ¬Ç°×º
-    * return [string] Ä¿±êÍ¼Æ¬±£´æÂ·¾¶ÒÔ¼°ÎÄ¼þÃû
+    * @param [string] $dest Ä¿ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
+    * @param [string] $pre Ä¿ï¿½ï¿½Í¼Æ¬Ç°×º
+    * return [string] Ä¿ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
     */
    function water_pic($dstName, $srcName, $pos = 0, $dest = 'Waterpic', $pre = 'waterpic_', $pct = 50){
     
     $dstName = '1.png';
     $srcName = '2.png';
-    $pos = 0; // 0,´ú±í×óÉÏ½Ç £¬1´ú±íÖÐ¼ä 2´ú±íÓÒÉÏ½Ç
+    $pos = 0; // 0,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½
     $pct = 50;
     $dest = 'Wateric';
     $pre = 'waterpic_';

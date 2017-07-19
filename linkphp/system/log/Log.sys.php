@@ -23,8 +23,8 @@
      static private function write($message)
      {
          $time = date('c');
-         $filename = date('Y-m-d');
-         $logpath = C('log_path') . $filename . '_system_log';
+         $filename = date('Y_m_d');
+         $logpath = C('log_path') . '_system_log_' . $filename;
          if(!is_dir($logpath)){
              mkdir($logpath,0755,true);
          }

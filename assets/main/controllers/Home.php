@@ -1,8 +1,8 @@
 <?php
 namespace assets\main\controllers;
 use linkphp\bootstrap\Controller;
-use extend\helper\sms\SendSms;
-use extend\helper\curl\Curl;
+use extend\util\sms\SendSms;
+use extend\util\curl\Curl;
 class Home extends Controller
 {
 	public function main()

@@ -1,5 +1,6 @@
 <?php
 
+namespace extend\util\page;
 /**
  * --------------------------------------------------*
  *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *

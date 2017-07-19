@@ -67,13 +67,6 @@ class Autoload
          */
         $LinkPHP_class_list = array(
             //'类名' => '类文件地址'
-            'Page'              => HELPER_PATH . 'page/' . 'Page' . EXT,
-            'Image'             => HELPER_PATH . 'image/' . 'Image' . EXT,
-            'Verify'            => HELPER_PATH . 'verify/' . 'Verify' . EXT,
-            'Curl'              => HELPER_PATH . 'curl/' . 'Curl' .EXT,
-            'WeiXin'            => HELPER_PATH . 'weixin/' . 'WeiXin' . EXT,
-            'Upload'            => HELPER_PATH . 'uploads/' . 'Upload' . EXT,
-            'SendMail'          => HELPER_PATH . 'mail/' . 'SendMail' . EXT,
         );
         //判断是否为核心工具类
         if(isset($LinkPHP_class_list[$class_name])){

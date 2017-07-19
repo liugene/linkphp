@@ -13,7 +13,6 @@
  */
 
  namespace linkphp\bootstrap;
-
  /**
   * 加载Composer自动加载
   */
@@ -24,6 +23,6 @@
   */
  require(CORE_PATH . 'Console' . EXT);
 
- require('extend/helper/sms/drives/alidayu/TopSdk.php');
+ require('extend/util/sms/drives/alidayu/TopSdk.php');
 
  Console::start();

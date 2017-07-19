@@ -1,6 +1,6 @@
 <?php
 
-namespace extend\helper\curl;
+namespace extend\util\curl;
 /**
  * --------------------------------------------------*
  *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
