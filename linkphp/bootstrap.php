@@ -24,4 +24,6 @@
   */
  require CORE_PATH . 'Console' . EXT;
 
+ require('extend/helper/sms/alidayu/TopSdk.php');
+
  Console::start();

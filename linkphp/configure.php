@@ -65,12 +65,21 @@
 
   //命名空间注册
   'autoload_namespace'   =>  [
-       'assets\main\controllers'        =>  array(APPLICATION_PATH . 'main/controllers'),
-       'assets\main\models'             =>  array(APPLICATION_PATH . 'main/models'),
+       'assets\main\controllers'         =>  array(APPLICATION_PATH . 'main/controllers'),
+       'assets\main\models'              =>  array(APPLICATION_PATH . 'main/models'),
        'assets\base\models'              =>  array(APPLICATION_PATH . 'base/models'),
        'assets\base\controllers'         =>  array(APPLICATION_PATH . 'base/controllers'),
        'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
-  ]
+       'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
+  ],
+
+  //第三方平台接口配置
+   'alidayu_appkey'        =>  '23470347',
+   'alidayu_appsecret'     =>  '393f29267c68f9c3a1eeac93af5cc8b7',
+   'alidayu_sign_name'     =>  'linkphp框架',
+   'alidayu_phone_number'  =>  '15558040535',
+   'alidayu_sms_id'        =>  'SMS_78400009',
+   'alidayu_sms_param'           =>  '',
 
  ];
 
