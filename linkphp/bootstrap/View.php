@@ -27,7 +27,9 @@
      */
  
      public function display($tempfile='',$name='',$value=''){
+        ob_start();
         header('Content-Type:text/html;charset=utf8');
+        ob_end_flush();
         //加载视图文件
         // 模板阵列变量分解成为独立变量
         extract($this->_tVar);
@@ -46,7 +48,9 @@
       * 模板输出方法可输出HTML方法
       */
      public function show($content=''){
+        ob_start();
         header('Content-Type:text/html;charset=utf8');
+        ob_end_flush();
         require TTFF_PATH . 'temp/appsuccess' . C('DEFAULT_THEME_SUFFIX');
         echo $content;
      }

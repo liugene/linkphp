@@ -62,7 +62,6 @@
      {
          $filename = is_null($tempfile) ? CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX') : $tempfile;
          $this->fetch($filename);
-         header('Content-Type:text/html;charset=utf8');
          //加载视图文件
          // 模板阵列变量分解成为独立变量
          extract($this->_tVar);
