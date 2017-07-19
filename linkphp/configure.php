@@ -58,7 +58,7 @@
   'token_turn_on'        => 'false', //是否打开表单令牌验证
 
   //系统引擎配置
-  'session_on'           => 'true', //是否开启SESSION机制
+  'session_on'           => 'false', //是否开启SESSION机制
 
   //系统常用路径设置
   'log_path'             => CACHE_PATH  . 'log/', //系统日志存储路径

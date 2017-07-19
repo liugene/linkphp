@@ -20,7 +20,7 @@
  define('LINKPHP_VERSION','1.0.0');
  //声明路径常量
  //目录基础常量的定义
- defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ . '/') . '/');
+ defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ ) . '/');
  //定义站点入库文件夹目录常量
  defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'web/');
  defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'assets/');
