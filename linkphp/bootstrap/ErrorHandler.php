@@ -49,9 +49,9 @@ class ErrorHandler{
         <B>产生{$error_type}错误信息行&nbsp:</B> &nbsp&nbsp {$line}
 
 EOT;
-        ob_start();
-        header("Content-type:text/html;charset=utf-8");
-        ob_end_flush();
+        //ob_start();
+        //header("Content-type:text/html;charset=utf-8");
+        //ob_end_flush();
         require TEMP_PATH . 'temp/error' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
@@ -83,9 +83,9 @@ EOT;
         调用类型&nbsp: &nbsp&nbsp {$trace[0]['type']}
 
 EOT;
-            ob_start();
-            header("Content-type:text/html;charset=utf-8");
-            ob_end_flush();
+            //ob_start();
+            //header("Content-type:text/html;charset=utf-8");
+            //ob_end_flush();
             require TEMP_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
             die;
             break;
@@ -108,9 +108,9 @@ EOT;
         <B>产生{$info}错误信息行&nbsp:</B> &nbsp&nbsp {$line}
 
 EOT;
-        ob_start();
-        header("Content-type:text/html;charset=utf-8");
-        ob_end_flush();
+        //ob_start();
+        //header("Content-type:text/html;charset=utf-8");
+        //ob_end_flush();
         require TEMP_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
         die;
     }

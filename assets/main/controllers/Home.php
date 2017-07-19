@@ -12,7 +12,7 @@ class Home extends Controller
         $this->assign('linkphp',$linkphp);
 		$this->display();
 		//$model = new \assets\main\models\Index;
-        //$model = new \assets\base\models\Common;
+        $model = new \assets\base\models\Common;
         \assets\base\controllers\Common::test();
         //$model = new \assets\main\controllers\domore\Index;
         $config['alidayu_appkey'] = C('alidayu_appkey');
@@ -28,6 +28,6 @@ class Home extends Controller
         //$curl = Curl::request('get','http://www.jd.com');
         //dump($curl);die;
         //dump($result);
-		//dump($model);
+		dump($model);
 	}
 }
