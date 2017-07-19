@@ -59,24 +59,23 @@ class Autoload
     /**
      * 核心工具类自动加载方法
      * */
-    static public function toolClassAutoload($class_name)
+    static public function classMapAutoload($class_name)
     {
         /**
          * 先处理确定的（框架内的核心工具类）
          * 类名与类文件映射数组
          */
-        $LinkPHP_class_list = array(
-            //'类名' => '类文件地址'
-        );
+        $class_map = include(LINKPHP_PATH . 'map' . EXT);
+        $linkphp_class_list = $class_map['class_autoload_map'];
         //判断是否为核心工具类
-        if(isset($LinkPHP_class_list[$class_name])){
+        if(isset($linkphp_class_list[$class_name])){
             //是核心工具类
-            require $LinkPHP_class_list[$class_name];
+            require($linkphp_class_list[$class_name]);
         }
     }
     /**
      * 命名空间第三方类库自动加载方法
-     * @param string $class_name  实例化的类名
+     * param string $class_name  实例化的类名
      */
     static public function namespaceAutoload($class_name)
     {
@@ -87,7 +86,7 @@ class Autoload
             if(file_exists($filename)){
                 //存在引入
                 //Link核心控制器link目录下面的命名空间自动定位
-                require LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
+                require($filename);
             } else {
                 //不存在
                 //抛出异常
@@ -100,7 +99,7 @@ class Autoload
             if(file_exists($filename)){
                 //存在引入
                 //系统扩展工具类LinkPHP目录下面的命名空间自动定位
-                require LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
+                require($filename);
             } else {
                 //不存在
                 //抛出异常
@@ -113,7 +112,7 @@ class Autoload
             if(file_exists($filename)){
                 //存在引入
                 //扩展控制器模型类LinkPHP 目录下面的命名空间自动定位
-                require EXTEND_PATH . str_replace('\\', '/', $class_name) . EXT;
+                require($filename);
             } else {
                 //不存在
                 //抛出异常
@@ -128,7 +127,7 @@ class Autoload
             if(file_exists($filename)){
                 //存在引入
                 //Link系统目录下面的命名空间自动定位
-                require $filename;
+                require($filename);
             } else {
                 //不存在
                 //抛出异常
@@ -231,7 +230,7 @@ class Autoload
         if(array_key_exists($namespace,static::$_map)){
             $filename = str_replace('\\', '/', str_replace($namespace,static::$_map[$namespace][0],$class_name)) . EXT;
             if(file_exists($filename)){
-                require $filename;
+                require($filename);
             } else {
                 //不存在
                 //抛出异常

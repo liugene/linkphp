@@ -61,7 +61,7 @@ class Console
           * 注册自动加载方法
           */
          Autoload::addNamespace(C('autoload_namespace'));
-         Autoload::register(array('LinkSystemAutoload','toolClassAutoload','namespaceAutoload','loaderClass'));
+         Autoload::register(array('LinkSystemAutoload','classMapAutoload','namespaceAutoload','loaderClass'));
         /**
          * 加载系统引擎机制
          */
