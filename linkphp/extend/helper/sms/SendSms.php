@@ -15,6 +15,6 @@ class SendSms
         $req->setSmsParam($config['alidayu_sms_param']);
         $req->setRecNum($config['alidayu_phone_number']);
         $req->setSmsTemplateCode($config['alidayu_sms_id']);
-        return $resp = $c->execute($req);
+        return $c->execute($req);
     }
 }
