@@ -65,7 +65,7 @@ class Autoload
          * 先处理确定的（框架内的核心工具类）
          * 类名与类文件映射数组
          */
-        $class_map = include(LINKPHP_PATH . 'map' . EXT);
+        $class_map = include(APPCONF_PATH . 'map' . EXT);
         $linkphp_class_list = $class_map['class_autoload_map'];
         //判断是否为核心工具类
         if(isset($linkphp_class_list[$class_name])){
