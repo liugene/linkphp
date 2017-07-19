@@ -15,7 +15,7 @@
  namespace system\core;
  class Engine
  {
-     static public function run()
+     static public function init()
      {
          /**
           * 开启session机制

@@ -67,7 +67,7 @@ class Console
         /**
          * 加载系统引擎机制
          */
-         Engine::run();
+         Engine::init();
 
         /**
          * 命令行模式初始化操作
@@ -77,7 +77,7 @@ class Console
         /**
          * 路由参数初始化
          */
-         parsers::start();
+         parsers::init();
 
      }
 
