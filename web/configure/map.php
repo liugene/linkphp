@@ -15,5 +15,6 @@
 return [
     'class_autoload_map' => [
         //'类名' => '类文件地址'
+        'Configure'  => CORE_PATH . 'Configure' . EXT,
     ],
 ];

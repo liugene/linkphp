@@ -7,6 +7,7 @@ class Home extends Controller
 {
 	public function main()
     {
+        //dump(\Configure::get('extend_model_config'));
         $linkphp = 'linkphp框架';
         $this->assign('linkphp',$linkphp);
 		$this->display();

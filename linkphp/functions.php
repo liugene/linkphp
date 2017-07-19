@@ -85,7 +85,7 @@ function C($name, $value = null){
         } else {
             return FALSE;
         }
-    }       
+    }
  }
  
  /**
