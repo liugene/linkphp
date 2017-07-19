@@ -2,6 +2,7 @@
 namespace assets\main\controllers;
 use linkphp\bootstrap\Controller;
 use extend\helper\sms\SendSms;
+use extend\helper\curl\Curl;
 class Home extends Controller
 {
 	public function main()
@@ -20,8 +21,12 @@ class Home extends Controller
         $config['alidayu_sms_id'] = C('alidayu_sms_id');
         $config['alidayu_sms_param'] = C('alidayu_sms_param');
         //dump($config);die;
-        $result = SendSms::send($config);
-        dump($result);
+        //$result = SendSms::send($config);
+        //$sys = \system\log\Log::save('123');
+        //dump($sys);die;
+        //$curl = Curl::request('get','http://www.jd.com');
+        //dump($curl);die;
+        //dump($result);
 		dump($model);
 	}
 }

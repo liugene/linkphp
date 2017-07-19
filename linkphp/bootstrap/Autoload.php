@@ -127,6 +127,21 @@ class Autoload
                 throw new Exception("无法加载框架第三方扩展控制器模型类");
             }
         }
+        elseif($name == 'extend'){
+            $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
+            /**
+             * 判断文件是否存在
+             */
+            if(file_exists($filename)){
+                //存在引入
+                //Link系统目录下面的命名空间自动定位
+                require $filename;
+            } else {
+                //不存在
+                //抛出异常
+                throw new Exception("无法加载扩展工具类");
+            }
+        }
         /*elseif($name == 'Common'){
             //站点公共控制器模型类
             if(substr($class_name, -10) == 'Controller'){

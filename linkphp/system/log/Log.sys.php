@@ -24,7 +24,7 @@
      {
          $time = date('c');
          $filename = date('Y-m-d');
-         $logpath = C('LOG_PATH') . $filename . '-System-Log';
+         $logpath = C('log_path') . $filename . '_system_log';
          if(!is_dir($logpath)){
              mkdir($logpath,0755,true);
          }

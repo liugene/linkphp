@@ -70,7 +70,7 @@
        'assets\base\models'              =>  array(APPLICATION_PATH . 'base/models'),
        'assets\base\controllers'         =>  array(APPLICATION_PATH . 'base/controllers'),
        'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
-       'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
+       //'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
   ],
 
   //第三方平台接口配置

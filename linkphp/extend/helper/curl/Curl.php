@@ -1,5 +1,6 @@
 <?php
 
+namespace extend\helper\curl;
 /**
  * --------------------------------------------------*
  *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
@@ -23,46 +24,24 @@
  */
 
 class Curl{
-    public function LinkCurl(){
+    public function request($type,$url){
         
         //模拟GET请求
         $curl = curl_init();
-        $url  = 'http://www.linkphp.cn';
         curl_setopt($curl,CURLOPT_URL,$url);
-        curl_exec($curl);
-        curl_close($curl);
-        
-        //模拟POST请求
-        $curl = curl_init();
-        $url = 'http://www.1.com';
-        curl_setopt($curl,CURLOPT_URL,$URL);
-        curl_setopt($curl,CURLOPT_POST,true);
-        $post_data = array('username' => 'link','password' => 'link');
-        curl_setopt($curl,CURLOPT_POSTFIELDS,$post_data);
-        curl_exec($curl);
-        curl_close($curl);
-        
+        switch($type){
+            case 'get';
+                break;
+            case 'post';
+                curl_setopt($curl,CURLOPT_POST,true);
+                $post_data = array('username' => 'link','password' => 'link');
+                curl_setopt($curl,CURLOPT_POSTFIELDS,$post_data);
+                break;
+        }
         //处理响应数据
-        $curl = curl_init();
-        $url = 'http://www.1.com';
-        curl_setopt($curl,CURLOPT_URL,$URL);
-        curl_setopt($curl,CURLOPT_POST,true);
-        $post_data = array('username' => 'link','password' => 'link');
-        curl_setopt($curl,CURLOPT_POSTFIELDS,$post_data);
         curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
         $response = curl_exec($curl);
         curl_close($curl);
-        
-        //模拟POST文件上传
-        $curl = curl_init();
-        $url  = '';
-        curl_setopt($curl,CURLOPT_URL,$url);
-        curl_setopt($curl,CURLOPT_POST,true);
-        $post_data = array('logo' => '@');
-        curl_setopt($curl,CURLOPT_POSTFIELDS,$post_data);
-        curl_exec($curl);
-        curl_close($curl);
+        return $response;
     }
 }
-
-?>
