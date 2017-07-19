@@ -17,12 +17,12 @@
  /**
   * 加载Composer自动加载
   */
- require VENDOR_PATH . 'autoload.php';
+ require(VENDOR_PATH . 'autoload.php');
 
  /**
   * 加载LinkPHP框架核心初始化类
   */
- require CORE_PATH . 'Console' . EXT;
+ require(CORE_PATH . 'Console' . EXT);
 
  require('extend/helper/sms/alidayu/TopSdk.php');
 

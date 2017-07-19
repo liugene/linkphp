@@ -26,7 +26,7 @@ class Console
         /**
          * 运行自定义错误处理方式
          */
-         require CORE_PATH . 'ErrorHandler' . EXT;
+         require(CORE_PATH . 'ErrorHandler' . EXT);
          /**
           * 捕获致命错误自定义处理方法
           */
@@ -45,18 +45,18 @@ class Console
          /**
           * 加载LinkPHP框架系统函数
           */
-         require LINKPHP_PATH . 'functions.php';
+         require(LINKPHP_PATH . 'functions.php');
          /**
           * 加载LinkPHP框架应用函数库
           */
-         require APPLICATION_PATH . 'functions.php';
+         require(APPLICATION_PATH . 'functions.php');
         /**
          * 注册自动加载方法
          */
          /**
           * 加载自动加载方法
           */
-         require CORE_PATH . 'Autoload' . EXT;
+         require(CORE_PATH . 'Autoload' . EXT);
          /**
           * 注册自动加载方法
           */
