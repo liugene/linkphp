@@ -1,0 +1,1 @@
+# LinkPHP  http请求文件存放目录
