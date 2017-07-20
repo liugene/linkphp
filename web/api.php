@@ -9,16 +9,19 @@
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               站点应用入口文件
+// |               接口应用入库文件
 // +----------------------------------------------------------------------
 
- // 定义应用目录
- define('APPLICATION_PATH', __DIR__ . '/../assets/');
- //加载LinkPHP框架常量文件
- require(dirname(__DIR__) . '/framework/define.php');
- //加载LinkPHP框架启动文件
- require(dirname(__DIR__) . '/framework/bootstrap.php');
+//开启接口应用
+define('APP_INTERFACE_ON',true);
+//定义应用名
+define('APP_NAMESPACE_NAME','api');
+// 定义接口目录
+define('APPLICATION_PATH', __DIR__ . '/../interface/');
+//加载LinkPHP框架常量文件
+require(dirname(__DIR__) . '/framework/define.php');
+//加载LinkPHP框架启动文件
+require(dirname(__DIR__) . '/framework/bootstrap.php');
 
- //只需要这么几句话就可以运行 !><!
- //是不是很轻便呀 喵~
- 
+//只需要这么几句话就可以运行 !><!
+//是不是很轻便呀 喵~

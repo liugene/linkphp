@@ -52,8 +52,8 @@ defined('EXTEND_PATH') or define('EXTEND_PATH', LINKPHP_PATH . 'extend/');
  defined('TEMP_PATH') or define('TEMP_PATH', SYSTEM_PATH . 'temp/');
 
  //系统可变常量
- defined('APP_DEBUG') or define('APP_DEBUG','FALSE'); //开启站点调试
+ defined('APP_INTERFACE_ON') or define('APP_INTERFACE_ON','FALSE'); //开启接口应用
+ defined('APP_NAMESPACE_NAME') or define('APP_NAMESPACE_NAME','assets'); //定义应用名称
+ defined('APP_DEBUG') or define('APP_DEBUG',FALSE); //开启站点调试
  defined('SYSTEM_LANGUAGE') or define('SYSTEM_LANGUAGE','');
 
-
-?>

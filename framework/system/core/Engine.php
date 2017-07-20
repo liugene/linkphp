@@ -20,7 +20,7 @@
          /**
           * 开启session机制
           */
-         if(C('session_on') == 'true'){
+         if(C('session_on')){
              session_start();
          }
      }

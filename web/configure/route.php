@@ -10,7 +10,7 @@ return [
     'default_controller' => 'home',  //默认控制器
     'default_action'     => 'main',  //默认操作方法
     'url_module'         => '1',      //URL模式 0普通模式 1 pathinfo模式 2 rewrite模式
-    'route_rules_on'     => 'TRUE',
+    'route_rules_on'     => TRUE,
     'route_rules'        => array(
         '/Index/Index'   =>  '/Index/Api',
     ),

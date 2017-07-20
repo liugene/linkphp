@@ -78,7 +78,6 @@ class Console
          * 路由参数初始化
          */
          Router::init();
-
      }
 
 }
