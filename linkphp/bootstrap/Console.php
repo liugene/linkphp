@@ -13,14 +13,14 @@
  */
 
 namespace linkphp\bootstrap;
-use link\route\parsers;
+use link\route\Router;
 use system\core\Engine;
 class Console
 {
     /**
      * 入口
      */
-     static public function start()
+     static public function init()
      {
 
         /**
@@ -77,7 +77,7 @@ class Console
         /**
          * 路由参数初始化
          */
-         parsers::init();
+         Router::init();
 
      }
 

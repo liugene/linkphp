@@ -13,8 +13,8 @@
  */
 
  namespace linkphp\bootstrap;
- use link\api\linkapi;
- class Api extends linkapi
+ use link\api\LinkApi;
+ class Api extends LinkApi
  {}
 
 

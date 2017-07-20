@@ -1,16 +1,16 @@
 <?php
 
-/**
- * --------------------------------------------------*
- *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
- * --------------------------------------------------*
- *  @author LiuJun     Mail-To:liujun2199@vip.qq.com *
- * --------------------------------------------------*
- * Copyright (c) 2017 LinkPHP. All rights reserved.  *
- * --------------------------------------------------*
- *                   公共配置文件                    *
- * --------------------------------------------------*
- */
+// +----------------------------------------------------------------------
+// | LinkPHP [ Link All Thing ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2016-2017 http://linkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liugene <liujun2199@vip.qq.com>
+// +----------------------------------------------------------------------
+// |               公共配置文件
+// +----------------------------------------------------------------------
 
  
  return [
@@ -70,6 +70,7 @@
        'assets\base\models'              =>  array(APPLICATION_PATH . 'base/models'),
        'assets\base\controllers'         =>  array(APPLICATION_PATH . 'base/controllers'),
        'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
+       'linkphp\bootstrap\command'               =>  array(LINKPHP_PATH . 'bootstrap/command'),
        //'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
   ],
 

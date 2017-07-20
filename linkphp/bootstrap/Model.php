@@ -13,8 +13,8 @@
  */
  
  namespace linkphp\bootstrap;
- use link\orm\parsers;
- class Model extends parsers
+ use link\orm\Db;
+ class Model extends Db
  {
 
      /**

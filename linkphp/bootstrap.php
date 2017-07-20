@@ -25,4 +25,4 @@
 
  require('extend/util/sms/drives/alidayu/TopSdk.php');
 
- Console::start();
+ Console::init();
