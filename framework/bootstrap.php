@@ -10,7 +10,19 @@ namespace linkphp\bootstrap;
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               中间件
+// |               LinkPHP框架启动文件
 // +----------------------------------------------------------------------
 
-class Middleware{}
+ /**
+  * 加载Composer自动加载
+  */
+ require(VENDOR_PATH . 'autoload.php');
+
+ /**
+  * 加载LinkPHP框架核心初始化类
+  */
+ require(CORE_PATH . 'Console' . EXT);
+
+ require('extend/util/sms/drives/alidayu/TopSdk.php');
+
+ Console::init();

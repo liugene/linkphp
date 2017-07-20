@@ -35,7 +35,7 @@
  //定义公共附件目录常量
  defined('__ATTACH__') or define('__ATTACH__', CACHE_PATH . 'attachment/');
  //定义LinkPHP框架目录常量
- defined('LINKPHP_PATH') or define('LINKPHP_PATH', ROOT_PATH . 'linkphp/');
+ defined('LINKPHP_PATH') or define('LINKPHP_PATH', ROOT_PATH . 'framework/');
  //定义LinkPHP框架核心类目录常量
  defined('CORE_PATH') or define('CORE_PATH', LINKPHP_PATH . 'bootstrap/');
 //定义LinkPHP框架扩展类库目录常量
@@ -52,7 +52,6 @@ defined('EXTEND_PATH') or define('EXTEND_PATH', LINKPHP_PATH . 'extend/');
  defined('TEMP_PATH') or define('TEMP_PATH', SYSTEM_PATH . 'temp/');
 
  //系统可变常量
- defined('CREATE_SQLVI_ON') or define('CREATE_SQLVI_ON','FALSE'); //开启视图索引创建
  defined('APP_DEBUG') or define('APP_DEBUG','FALSE'); //开启站点调试
  defined('SYSTEM_LANGUAGE') or define('SYSTEM_LANGUAGE','');
 

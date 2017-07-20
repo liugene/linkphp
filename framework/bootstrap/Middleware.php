@@ -1,7 +1,6 @@
 <?php
 
 namespace linkphp\bootstrap;
-use linkphp\bootstrap\command\Output;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -11,20 +10,8 @@ use linkphp\bootstrap\command\Output;
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               命令行类
+// |               中间件
 // +----------------------------------------------------------------------
 
-class Command
-{
-    static public function init()
-    {
-        if(isset($_SERVER['SHELL'])){
-            if($_SERVER['argc'] == 1){
-                Output::main();
-            } else {
-                Output::noFound();
-            }
-            exit;
-        }
-    }
-}
+class Middleware
+{}

@@ -1,6 +1,7 @@
-#!/usr/bin/env php
 <?php
 
+namespace linkphp\bootstrap;
+use linkphp\bootstrap\cli\command\Output;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -10,11 +11,20 @@
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               命令行入口文件
+// |               命令行类
 // +----------------------------------------------------------------------
 
-//加载LinkPHP框架常量文件
-require('framework/define.php');
-//加载LinkPHP框架启动文件
-require('framework/bootstrap.php');
-//这是命令行执行入口文件
+class Command
+{
+    static public function init()
+    {
+        if(isset($_SERVER['SHELL'])){
+            if($_SERVER['argc'] == 1){
+                Output::main();
+            } else {
+                Output::noFound();
+            }
+            exit;
+        }
+    }
+}

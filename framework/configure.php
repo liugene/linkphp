@@ -70,7 +70,7 @@
        'assets\base\models'              =>  array(APPLICATION_PATH . 'base/models'),
        'assets\base\controllers'         =>  array(APPLICATION_PATH . 'base/controllers'),
        'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
-       'linkphp\bootstrap\command'               =>  array(LINKPHP_PATH . 'bootstrap/command'),
+       'linkphp\bootstrap\cli\command'               =>  array(LINKPHP_PATH . 'bootstrap/cli/command'),
        //'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
   ],
 

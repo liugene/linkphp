@@ -8,21 +8,25 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                 LinkPHP框架启动文件               *
+ *                  LinkPHP框架钩子类                *
  * --------------------------------------------------*
  */
 
  namespace linkphp\bootstrap;
- /**
-  * 加载Composer自动加载
-  */
- require(VENDOR_PATH . 'autoload.php');
+ class Hook
+ {
 
- /**
-  * 加载LinkPHP框架核心初始化类
-  */
- require(CORE_PATH . 'Console' . EXT);
+     /*
+      * 程序运行前方法实现
+      * */
+     static public function runBefore(){}
 
- require('extend/util/sms/drives/alidayu/TopSdk.php');
 
- Console::init();
+     /*
+      * 程序运行后方法实现
+      * */
+     static public function runAfter(){}
+
+ }
+
+?>
