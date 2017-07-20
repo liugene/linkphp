@@ -2,7 +2,6 @@
   "require":{
     "linkphp/link-orm":"dev-master",
     "linkphp/link-api":"dev-master",
-    "linkphp/link-route":"dev-master",
     "phpunit/phpunit": "4.8.*"
   }
 }
