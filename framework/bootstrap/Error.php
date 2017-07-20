@@ -1,28 +1,51 @@
 <?php
 
-/**
- * --------------------------------------------------*
- *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
- * --------------------------------------------------*
- *  @author LiuJun     Mail-To:liujun2199@vip.qq.com *
- * --------------------------------------------------*
- * Copyright (c) 2017 LinkPHP. All rights reserved.  *
- * --------------------------------------------------*
- *            LinkPHP框架自定义错误处理器            *
- * --------------------------------------------------*
- */
+namespace linkphp\bootstrap;
+// +----------------------------------------------------------------------
+// | LinkPHP [ Link All Thing ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2016-2017 http://linkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liugene <liujun2199@vip.qq.com>
+// +----------------------------------------------------------------------
+// |               配置类
+// +----------------------------------------------------------------------
 
-class ErrorHandler{
+use linkphp\bootstrap\handle\ErrorHandler;
+
+class Error
+{
+
+    //错误处理类注册
+    static public function register()
+    {
+        /**
+         * 捕获致命错误自定义处理方法
+         */
+        register_shutdown_function([__CLASS__,'dealFatalError']);
+
+        /**
+         * 捕获普通自定义处理方法
+         */
+        set_error_handler([__CLASS__,'dealNormalError']);
+
+        /**
+         * 捕获异常自定义处理方法
+         */
+        set_exception_handler([__CLASS__,'dealException']);
+    }
 
 
-    /**
+    /*
      * 自定义错误处理方法
      * @param [string] $error 错误级别
      * @param [string] $msg 错误信息
      * @param [string] $filename 错误文件
      * @param [string] $line 错误行
-     */
-    static public function linkErrorFunc($error,$msg,$filename,$line){
+     **/
+    static public function dealNormalError($error,$msg,$filename,$line){
 
         switch($error){
             //错误级别：提醒
@@ -83,12 +106,12 @@ EOT;
         调用类型&nbsp: &nbsp&nbsp {$trace[0]['type']}
 
 EOT;
-            //ob_start();
-            //header("Content-type:text/html;charset=utf-8");
-            //ob_end_flush();
-            require TEMP_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
-            die;
-            break;
+                //ob_start();
+                //header("Content-type:text/html;charset=utf-8");
+                //ob_end_flush();
+                require TEMP_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
+                die;
+                break;
         }
     }
 
@@ -114,8 +137,5 @@ EOT;
         require TEMP_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
+
 }
-
-
-
-?>

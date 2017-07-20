@@ -73,6 +73,7 @@
        'api\main\models'              =>  array(APPLICATION_PATH . 'main/models'),
        'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
        'linkphp\bootstrap\router'               =>  array(LINKPHP_PATH . 'bootstrap/router'),
+       'linkphp\bootstrap\handle'               =>  array(LINKPHP_PATH . 'bootstrap/handle'),
        'linkphp\bootstrap\router\config'               =>  array(LINKPHP_PATH . 'bootstrap/router/config'),
        'linkphp\bootstrap\cli\command'               =>  array(LINKPHP_PATH . 'bootstrap/cli/command'),
        //'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),

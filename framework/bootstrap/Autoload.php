@@ -24,6 +24,7 @@ class Autoload
      */
     static public function register($namespace)
     {
+        static::addNamespace(C('autoload_namespace'));
         if(is_array($namespace)){
             foreach($namespace as $k => $v){
                 spl_autoload_register(array(__CLASS__, $v));
@@ -212,6 +213,19 @@ class Autoload
             }
         }
     }*/
+
+    /*
+     * composer自动加载
+     * */
+    static public function loadExtendAutoload()
+    {
+
+        /**
+         * 加载Composer自动加载
+         */
+        require(VENDOR_PATH . 'autoload.php');
+        require(LINKPHP_PATH . 'extend/util/sms/drives/alidayu/TopSdk.php');
+    }
 
     /**
      * 注册命名空间名
