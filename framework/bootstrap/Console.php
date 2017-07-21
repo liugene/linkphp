@@ -17,12 +17,14 @@ use system\core\Engine;
 
 class Console
 {
-    static public function init()
+
+    //控制台初始化
+    static public function initialize()
     {
         //加载额外文件
         static::loadCommonFile();
         //系统引擎机制初始化
-        Engine::init();
+        Engine::initialize();
         //判断运行环境模式
         static::checkEnvMode();
     }
@@ -30,7 +32,9 @@ class Console
     //加载公共文件
     static public function loadCommonFile()
     {
+        //加载框架函数文件
         static::loadFrameworkFunctionFile();
+        //自动加载应用文件列表
         static::loadApplicationDirListFile();
     }
 
@@ -66,10 +70,10 @@ class Console
         //判断是否为命令行模式
         if(IS_CLI){
             //命令行模式初始化操作
-            Command::init();
+            Command::initialize();
         } else {
             //路由初始化
-            Router::init();
+            Router::initialize();
         }
     }
 

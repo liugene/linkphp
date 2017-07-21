@@ -24,7 +24,7 @@ class Router
     /**
      * 路由解析启动
      */
-    static public function init()
+    static public function initialize()
     {
         $config = Config::get();
         Init::init($config);

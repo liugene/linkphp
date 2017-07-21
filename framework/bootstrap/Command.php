@@ -16,7 +16,7 @@ use linkphp\bootstrap\cli\command\Output;
 
 class Command
 {
-    static public function init()
+    static public function initialize()
     {
         if($_SERVER['argc'] == 1){
             Output::main();

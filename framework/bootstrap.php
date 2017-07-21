@@ -21,4 +21,4 @@ Autoload::register(array('LinkSystemAutoload','classMapAutoload','namespaceAutol
 //注册错误和异常处理机制
 Error::register();
 //控制台初始化
-Console::init();
+Console::initialize();
