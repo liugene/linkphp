@@ -23,10 +23,8 @@ class Console
         static::loadCommonFile();
         //系统引擎机制初始化
         Engine::init();
-        //路由初始化
-        Router::init();
-        //命令行模式初始化操作
-        Command::init();
+        //判断运行环境模式
+        static::checkEnv();
     }
 
     //加载公共文件
@@ -39,8 +37,8 @@ class Console
     //加载框架函数库文件
     static public function loadFrameworkFunctionFile(){
         //加载LinkPHP框架系统函数
-        if(is_file(LINKPHP_PATH . 'util.php')){
-            require(LINKPHP_PATH . 'util.php');
+        if(is_file(LINKPHP_PATH . 'functions.php')){
+            require(LINKPHP_PATH . 'functions.php');
         }
     }
 
@@ -59,6 +57,19 @@ class Console
                 }
             }
             closedir($dir);
+        }
+    }
+
+    //检测运行环境
+    static public function checkEnv()
+    {
+        //判断是否为命令行模式
+        if(IS_CLI){
+            //命令行模式初始化操作
+            Command::init();
+        } else {
+            //路由初始化
+            Router::init();
         }
     }
 

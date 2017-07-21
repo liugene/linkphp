@@ -18,13 +18,10 @@ class Command
 {
     static public function init()
     {
-        if(IS_CLI){
-            if($_SERVER['argc'] == 1){
-                Output::main();
-            } else {
-                Output::noFound();
-            }
-            exit;
+        if($_SERVER['argc'] == 1){
+            Output::main();
+        } else {
+            Output::noFound();
         }
     }
 }
