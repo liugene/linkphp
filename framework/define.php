@@ -56,4 +56,5 @@ defined('EXTEND_PATH') or define('EXTEND_PATH', LINKPHP_PATH . 'extend/');
  defined('APP_NAMESPACE_NAME') or define('APP_NAMESPACE_NAME','assets'); //定义应用名称
  defined('APP_DEBUG') or define('APP_DEBUG',FALSE); //开启站点调试
  defined('SYSTEM_LANGUAGE') or define('SYSTEM_LANGUAGE','');
+ define('IS_CLI',PHP_SAPI == 'cli' ? true : false);
 

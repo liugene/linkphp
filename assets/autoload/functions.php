@@ -1,7 +1,5 @@
 <?php
 
-namespace linkphp\bootstrap;
-use linkphp\bootstrap\cli\command\Output;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -11,20 +9,5 @@ use linkphp\bootstrap\cli\command\Output;
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               命令行类
+// |               应用公共函数文件
 // +----------------------------------------------------------------------
-
-class Command
-{
-    static public function init()
-    {
-        if(IS_CLI){
-            if($_SERVER['argc'] == 1){
-                Output::main();
-            } else {
-                Output::noFound();
-            }
-            exit;
-        }
-    }
-}

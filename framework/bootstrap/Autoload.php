@@ -24,7 +24,9 @@ class Autoload
      */
     static public function register($namespace)
     {
+        if(is_file(WEB_PATH . 'configure/map.php')){
         static::addNamespace(include(WEB_PATH . 'configure/map.php'));
+        }
         if(is_array($namespace)){
             foreach($namespace as $k => $v){
                 spl_autoload_register(array(__CLASS__, $v));
