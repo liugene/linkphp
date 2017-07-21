@@ -1,15 +1,17 @@
 <?php
-/**
- * --------------------------------------------------*
- *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
- * --------------------------------------------------*
- *  @author LiuJun     Mail-To:liujun2199@vip.qq.com *
- * --------------------------------------------------*
- * Copyright (c) 2017 LinkPHP. All rights reserved.  *
- * --------------------------------------------------*
- *               LinkPHP框架自动化加载类             *
- * --------------------------------------------------*
- */
+
+// +----------------------------------------------------------------------
+// | LinkPHP [ Link All Thing ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2016-2017 http://linkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liugene <liujun2199@vip.qq.com>
+// +----------------------------------------------------------------------
+// |               LinkPHP框架自动化加载类
+// +----------------------------------------------------------------------
+
 namespace linkphp\bootstrap;
 class Autoload
 {
@@ -96,7 +98,8 @@ class Autoload
                 throw new Exception("无法加载框架核心类");
             }
         }
-        elseif($name == 'helper'){
+        /*
+         * elseif($name == 'helper'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){
@@ -108,8 +111,9 @@ class Autoload
                 //抛出异常
                 throw new Exception("无法加载框架系统核心扩展类");
             }
-        }
-        elseif(in_array($name, array('controllers', 'models'))){
+        }*/
+        /*
+         * elseif(in_array($name, array('controllers', 'models'))){
             $filename = EXTEND_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){
@@ -122,7 +126,8 @@ class Autoload
                 throw new Exception("无法加载框架第三方扩展控制器模型类");
             }
         }
-        elseif($name == 'extend'){
+        */
+        elseif($name == 'util'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
             /**
              * 判断文件是否存在
@@ -134,7 +139,7 @@ class Autoload
             } else {
                 //不存在
                 //抛出异常
-                throw new Exception("无法加载扩展工具类");
+                throw new Exception("无法加载工具类");
             }
         }
         /*elseif($name == 'Common'){
@@ -226,7 +231,7 @@ class Autoload
          * 加载Composer自动加载
          */
         require(VENDOR_PATH . 'autoload.php');
-        require(LINKPHP_PATH . 'extend/util/sms/drives/alidayu/TopSdk.php');
+        require(LINKPHP_PATH . 'util/sms/drives/alidayu/TopSdk.php');
     }
 
     /**

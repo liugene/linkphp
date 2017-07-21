@@ -32,10 +32,10 @@
                 break;
             case 1:
                 //将实例化后的smarty类保存到$_smarty 对象中  直接使用该对象调用父类中方法对象
-                $this->_smarty = new Smarty();
+                $this->_smarty = new Smarty;
                 break;
             case 2:
-                $this->_links = new LinkTemp();
+                $this->_links = new \link\temp\LinkTemp();
         }
     }
     
@@ -105,7 +105,7 @@
         case 2:
             //调用Links模板引擎赋值方法
             $this->assign($name,$value);
-            $this->_links->init($tempfile);
+            $this->_links->display($tempfile);
             break;
     }
   }

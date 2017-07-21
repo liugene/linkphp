@@ -24,7 +24,7 @@ class Console
         //系统引擎机制初始化
         Engine::init();
         //判断运行环境模式
-        static::checkEnv();
+        static::checkEnvMode();
     }
 
     //加载公共文件
@@ -61,7 +61,7 @@ class Console
     }
 
     //检测运行环境
-    static public function checkEnv()
+    static public function checkEnvMode()
     {
         //判断是否为命令行模式
         if(IS_CLI){

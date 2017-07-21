@@ -19,10 +19,9 @@
      * @var tVar
      * @access protected
      */ 
-    protected $_tVar     =   array();
+    protected $_tVar = [];
     
     public function init($tempfile){
-        include EXTEND_PATH . 'org/smarty/Smarty' . EXT;
         $smarty = new \Smarty();
         $smarty->caching = C('TEMP_CACHE'); //设置是否启用缓存
         $smarty->setTemplateDir(CURRENT_VIEW_PATH);

@@ -10,9 +10,6 @@
       "email": "liujun2199@vip.qq.com"
     }
   ],
-  "require": {
-    "php": "^5.4 || ^7.0"
-  },
   "repositories": {
     	"packagist": {
         	"type": "composer",
@@ -20,8 +17,11 @@
     	}
 	},
   "require":{
+    "php": "^5.4 || ^7.0",
     "linkphp/link-orm":"dev-master",
     "linkphp/link-api":"dev-master",
-    "phpunit/phpunit": "4.8.*"
+    "linkphp/link-temp":"dev-master",
+    "phpunit/phpunit": "4.8.*",
+    "smarty/smarty": "^3.1"
   }
 }

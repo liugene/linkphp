@@ -39,9 +39,7 @@
  //定义LinkPHP框架核心类目录常量
  defined('CORE_PATH') or define('CORE_PATH', LINKPHP_PATH . 'bootstrap/');
 //定义LinkPHP框架扩展类库目录常量
-defined('EXTEND_PATH') or define('EXTEND_PATH', LINKPHP_PATH . 'extend/');
- //定义LinkPHP框架工具助手目录常量
- defined('HELPER_PATH') or define('HELPER_PATH', EXTEND_PATH . 'helper/');
+defined('UTIL_PATH') or define('UTIL_PATH', LINKPHP_PATH . 'util/');
  //定义LinkPHP框架应用公共配置目录常量
  defined('APPCONF_PATH') or define('APPCONF_PATH', WEB_PATH . 'configure/');
  //定义LinkPHP框架系统文件目录常量

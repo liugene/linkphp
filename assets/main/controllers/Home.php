@@ -1,8 +1,8 @@
 <?php
 namespace assets\main\controllers;
 use linkphp\bootstrap\Controller;
-use extend\util\sms\SendSms;
-use extend\util\curl\Curl;
+use util\sms\SendSms;
+use util\curl\Curl;
 class Home extends Controller
 {
 	public function main()
@@ -25,7 +25,7 @@ class Home extends Controller
         //$result = SendSms::send($config);
         //$sys = \system\log\Log::save('123');
         //dump($sys);die;
-        //$curl = Curl::request('get','http://www.jd.com');
+        //$curl = Curl::request('get','http://www.baidu.com');
         //dump($curl);die;
         //dump($result);
 		dump($model);
