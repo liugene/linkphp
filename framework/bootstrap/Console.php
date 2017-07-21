@@ -18,9 +18,9 @@ class Console
 {
     static public function init()
     {
+        Router::init();
         //命令行模式初始化操作
         Command::init();
-        Router::init();
     }
 }
 

@@ -1,4 +1,24 @@
 {
+  "name": "liugene/linkphp",
+  "type": "project",
+  "license": "Apache License 2.0",
+  "description": "php Web mvc/api¿ò¼Ü ",
+  "keywords": ["framework","linkphp","MVC","api"],
+  "authors": [
+    {
+      "name": "liugene",
+      "email": "liujun2199@vip.qq.com"
+    }
+  ],
+  "require": {
+    "php": "^5.4 || ^7.0"
+  }
+  "repositories": {
+    	"packagist": {
+        	"type": "composer",
+        	"url": "https://packagist.phpcomposer.com"
+    	}
+	},
   "require":{
     "linkphp/link-orm":"dev-master",
     "linkphp/link-api":"dev-master",

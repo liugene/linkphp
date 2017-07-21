@@ -22,12 +22,12 @@ class Home extends Controller
         $config['alidayu_sms_id'] = C('alidayu_sms_id');
         $config['alidayu_sms_param'] = C('alidayu_sms_param');
         //dump($config);die;
-        $result = SendSms::send($config);
+        //$result = SendSms::send($config);
         //$sys = \system\log\Log::save('123');
         //dump($sys);die;
         //$curl = Curl::request('get','http://www.jd.com');
         //dump($curl);die;
-        dump($result);
+        //dump($result);
 		dump($model);
 	}
 }

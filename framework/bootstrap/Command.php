@@ -18,7 +18,7 @@ class Command
 {
     static public function init()
     {
-        if(isset($_SERVER['SHELL'])){
+        if(php_sapi_name() === 'cli'){
             if($_SERVER['argc'] == 1){
                 Output::main();
             } else {
