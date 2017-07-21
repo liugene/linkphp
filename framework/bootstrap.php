@@ -22,7 +22,7 @@ require(LINKPHP_PATH . 'functions.php');
 //加载LinkPHP框架应用函数库
 require(APPLICATION_PATH . 'functions.php');
 //加载自动加载方法
-require CORE_PATH . 'Autoload.php';
+require(CORE_PATH . 'Autoload.php');
 //注册自动加载方法
 Autoload::loadExtendAutoload();
 Autoload::register(array('LinkSystemAutoload','classMapAutoload','namespaceAutoload','loaderClass'));

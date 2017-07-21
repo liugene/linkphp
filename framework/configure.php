@@ -63,22 +63,6 @@
   //系统常用路径设置
   'log_path'             => CACHE_PATH  . 'log/', //系统日志存储路径
 
-  //命名空间注册
-  'autoload_namespace'   =>  [
-       'assets\main\controllers'         =>  array(APPLICATION_PATH . 'main/controllers'),
-       'assets\main\models'              =>  array(APPLICATION_PATH . 'main/models'),
-       'assets\base\models'              =>  array(APPLICATION_PATH . 'base/models'),
-       'assets\base\controllers'         =>  array(APPLICATION_PATH . 'base/controllers'),
-       'api\main\controllers'            =>  array(APPLICATION_PATH . 'main/controllers'),
-       'api\main\models'              =>  array(APPLICATION_PATH . 'main/models'),
-       'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
-       'linkphp\bootstrap\router'               =>  array(LINKPHP_PATH . 'bootstrap/router'),
-       'linkphp\bootstrap\handle'               =>  array(LINKPHP_PATH . 'bootstrap/handle'),
-       'linkphp\bootstrap\router\config'               =>  array(LINKPHP_PATH . 'bootstrap/router/config'),
-       'linkphp\bootstrap\cli\command'               =>  array(LINKPHP_PATH . 'bootstrap/cli/command'),
-       //'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
-  ],
-
   //第三方平台接口配置
    'alidayu_appkey'        =>  '23470347',
    'alidayu_appsecret'     =>  '393f29267c68f9c3a1eeac93af5cc8b7',

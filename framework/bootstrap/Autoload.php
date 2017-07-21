@@ -24,7 +24,7 @@ class Autoload
      */
     static public function register($namespace)
     {
-        static::addNamespace(C('autoload_namespace'));
+        static::addNamespace(include(WEB_PATH . 'configure/map.php'));
         if(is_array($namespace)){
             foreach($namespace as $k => $v){
                 spl_autoload_register(array(__CLASS__, $v));
@@ -48,7 +48,7 @@ class Autoload
             if(file_exists($filename)){
                 //存在引入
                 //Link系统目录下面的命名空间自动定位
-                require $filename;
+                require($filename);
             } else {
                 //不存在
                 //抛出异常
@@ -66,7 +66,7 @@ class Autoload
          * 先处理确定的（框架内的核心工具类）
          * 类名与类文件映射数组
          */
-        $class_map = include(APPCONF_PATH . 'map' . EXT);
+        $class_map = static::$_map;
         $linkphp_class_list = $class_map['class_autoload_map'];
         //判断是否为核心工具类
         if(isset($linkphp_class_list[$class_name])){
@@ -241,8 +241,8 @@ class Autoload
     static public function loaderClass($class_name)
     {
         $namespace = substr($class_name,0,strrpos($class_name,'\\'));
-        if(array_key_exists($namespace,static::$_map)){
-            $filename = str_replace('\\', '/', str_replace($namespace,static::$_map[$namespace][0],$class_name)) . EXT;
+        if(array_key_exists($namespace,static::$_map['autoload_namespace'])){
+            $filename = str_replace('\\', '/', str_replace($namespace,static::$_map['autoload_namespace'][$namespace][0],$class_name)) . EXT;
             if(file_exists($filename)){
                 require($filename);
             } else {
@@ -265,4 +265,3 @@ class Autoload
     }
 
 }
-?>

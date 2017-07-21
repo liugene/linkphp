@@ -1,7 +1,7 @@
 {
   "name": "liugene/linkphp",
   "type": "project",
-  "license": "Apache2.0",
+  "license": "Apache2",
   "description": "php Web mvc/api框架 ",
   "keywords": ["framework","linkphp","MVC","api"],
   "authors": [
