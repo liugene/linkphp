@@ -40,15 +40,15 @@ class Router
         /**
          * 定义控制器路径常量
          */
-        define('CURRENT_CONTROLLER_PATH',$config['__APP__'] . PLATFORM . '/controllers/');
+        define('CURRENT_CONTROLLER_PATH',$config['__APP__'] . 'controllers/' . PLATFORM);
         /**
          * 定义模型路径常量
          */
-        define('CURRENT_MODEL_PATH', $config['__APP__'] . PLATFORM . '/models/');
+        define('CURRENT_MODEL_PATH', $config['__APP__'] . 'models/' . PLATFORM);
         /**
          * 定义视图路径常量
          */
-        define('CURRENT_VIEW_PATH', $config['__APP__'] . PLATFORM . '/views/');
+        define('CURRENT_VIEW_PATH', $config['__APP__'] . 'views/' . PLATFORM);
 
     }
 }

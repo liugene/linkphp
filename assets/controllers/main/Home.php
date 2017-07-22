@@ -1,5 +1,5 @@
 <?php
-namespace assets\main\controllers;
+namespace assets\controllers\main;
 use linkphp\bootstrap\Controller;
 use util\sms\SendSms;
 use util\curl\Curl;
@@ -11,10 +11,10 @@ class Home extends Controller
         $linkphp = 'linkphp框架';
         $this->assign('linkphp',$linkphp);
 		$this->display();
-		//$model = new \assets\main\models\Index;
+		//$model = new \assets\models\main\Index;
         $model = new \assets\base\models\Common;
         \assets\base\controllers\Common::test();
-        //$model = new \assets\main\controllers\domore\Index;
+        //$model = new \assets\controllers\main\domore\Index;
         $config['alidayu_appkey'] = C('alidayu_appkey');
         $config['alidayu_appsecret'] = C('alidayu_appsecret');
         $config['alidayu_sign_name'] = C('alidayu_sign_name');

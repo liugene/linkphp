@@ -15,12 +15,12 @@
 return [
     //命名空间注册
     'autoload_namespace'   =>  [
-        'assets\main\controllers'         =>  array(APPLICATION_PATH . 'main/controllers'),
-        'assets\main\models'              =>  array(APPLICATION_PATH . 'main/models'),
+        'assets\controllers\main'         =>  array(APPLICATION_PATH . 'controllers/main'),
+        'assets\models\main'              =>  array(APPLICATION_PATH . 'models/main'),
         'assets\base\models'              =>  array(APPLICATION_PATH . 'base/models'),
         'assets\base\controllers'         =>  array(APPLICATION_PATH . 'base/controllers'),
-        'api\main\controllers'            =>  array(APPLICATION_PATH . 'main/controllers'),
-        'api\main\models'              =>  array(APPLICATION_PATH . 'main/models'),
+        'api\controllers\main'            =>  array(APPLICATION_PATH . 'controllers/main'),
+        'api\models\main'              =>  array(APPLICATION_PATH . 'models/main'),
         'linkphp\bootstrap'               =>  array(LINKPHP_PATH . 'bootstrap'),
         'linkphp\bootstrap\router'               =>  array(LINKPHP_PATH . 'bootstrap/router'),
         'linkphp\bootstrap\handle'               =>  array(LINKPHP_PATH . 'bootstrap/handle'),
