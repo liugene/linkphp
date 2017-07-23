@@ -41,7 +41,7 @@ function error($url,$info=null,$wait=3){
 function C($name, $value = null){
     if(CK('extend_model_config', 'true') == 'true'){
         $platform = isset($_GET[CK('var_platform','true')]) ? ucfirst($_GET[CK('var_platform','true')]) : CK('default_platform','true');
-        $extend_config['extend'] = require APPLICATION_PATH . 'controllers' . $platform . '/configure.php';
+        $extend_config['extend'] = require APPLICATION_PATH . 'configure' . $platform . '/configure.php';
         if(array_key_exists($name, $extend_config['extend'])){
         return $extend_config['extend'][strtoupper($name)];
        }
