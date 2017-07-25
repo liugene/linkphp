@@ -12,7 +12,7 @@
 // |               trait测试
 // +----------------------------------------------------------------------
 
-namespace linkphp\traits;
+namespace linkphp\boot\traits;
 
 trait Test
 {

@@ -26,7 +26,7 @@ return [
         'linkphp\boot\handle'               =>  array(BOOT_PATH . 'boot/handle'),
         'linkphp\boot\router\config'               =>  array(BOOT_PATH . 'boot/router/config'),
         'linkphp\boot\cli\command'               =>  array(BOOT_PATH . 'boot/cli/command'),
-        'linkphp\traits'                  =>  array(BOOT_PATH . 'traits'),
+        'linkphp\boot\traits'                  =>  array(BOOT_PATH . 'boot/traits'),
         //'extend\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
     ],
     'class_autoload_map' => [
