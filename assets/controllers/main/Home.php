@@ -53,12 +53,12 @@ class Home extends Controller
 
 
         print_r($client->execute($req));*/
-        $token = LoginAuth::get('liujun');
+        /*$token = LoginAuth::get('liujun');
         $redis = new \Redis();
         //dump($redis);die;
         $redis->connect('127.0.0.1',6379);
         $redis->setex($token,3600,'liugene');
         $result = $redis->get($token);
-        dump($result);die;
+        dump($result);die;*/
 	}
 }

@@ -41,8 +41,8 @@ class Console
     //加载框架函数库文件
     static public function loadFrameworkFunctionFile(){
         //加载LinkPHP框架系统函数
-        if(is_file(LINKPHP_PATH . 'functions.php')){
-            require(LINKPHP_PATH . 'functions.php');
+        if(is_file(BOOT_PATH . 'functions.php')){
+            require(BOOT_PATH . 'functions.php');
         }
     }
 
