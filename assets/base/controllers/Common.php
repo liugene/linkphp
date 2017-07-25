@@ -15,7 +15,7 @@
  namespace assets\base\controllers;
  use linkphp\boot\Controller;
  class Common extends Controller{
-    static public function test(){
+    public function test(){
         echo '<br />test <br />';
     }
  }

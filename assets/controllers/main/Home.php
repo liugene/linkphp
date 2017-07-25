@@ -12,6 +12,7 @@ class Home extends Controller
 {
 	public function main()
     {
+        $this->test();
         //phpinfo();die;
         //dump(\Configure::get('extend_model_config'));
         //$linkphp = 'linkphp框架';

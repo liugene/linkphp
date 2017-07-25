@@ -43,7 +43,7 @@
  //定义LinkPHP框架扩展类库目录常量
  defined('UTIL_PATH') or define('UTIL_PATH', BOOT_PATH . 'util/');
  //定义LinkPHP框架附加文件目录常量
- defined('EXTRA_PATH') or define('EXTRA_PATH', BOOT_PATH . 'util/');
+ defined('EXTRA_PATH') or define('EXTRA_PATH', BOOT_PATH . 'extra/');
  //定义LinkPHP框架应用公共配置目录常量
  defined('APPCONF_PATH') or define('APPCONF_PATH', WEB_PATH . 'configure/');
  //定义LinkPHP框架系统文件目录常量

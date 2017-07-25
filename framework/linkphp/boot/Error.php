@@ -75,7 +75,8 @@ EOT;
         //ob_start();
         //header("Content-type:text/html;charset=utf-8");
         //ob_end_flush();
-        require EXTRA_PATH . 'temp/error' . C('DEFAULT_THEME_SUFFIX');
+
+        require(EXTRA_PATH . 'tpl/error' . C('default_theme_suffix'));
         die;
     }
 
@@ -109,7 +110,7 @@ EOT;
                 //ob_start();
                 //header("Content-type:text/html;charset=utf-8");
                 //ob_end_flush();
-                require EXTRA_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
+                require(EXTRA_PATH . 'tpl/fatalerror' . C('default_theme_suffix'));
                 die;
                 break;
         }
@@ -134,7 +135,7 @@ EOT;
         //ob_start();
         //header("Content-type:text/html;charset=utf-8");
         //ob_end_flush();
-        require EXTRA_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
+        require EXTRA_PATH . 'tpl/Exception' . C('default_theme_suffix');
         die;
     }
 

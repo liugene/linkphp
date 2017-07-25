@@ -14,7 +14,8 @@
 
  namespace linkphp\boot;
  class Controller{
-    
+
+     use \linkphp\traits\Test;
     /**
      * Smarty视图实例对象
      * @var smarty
