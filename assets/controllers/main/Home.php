@@ -1,6 +1,6 @@
 <?php
 namespace assets\controllers\main;
-use linkphp\bootstrap\Controller;
+use linkphp\boot\Controller;
 use util\sms\SendSms;
 use util\curl\Curl;
 use Flc\Alidayu\Client;

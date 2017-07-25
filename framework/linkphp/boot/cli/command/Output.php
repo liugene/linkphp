@@ -1,6 +1,6 @@
 <?php
 
-namespace linkphp\bootstrap\cli\command;
+namespace linkphp\boot\cli\command;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------

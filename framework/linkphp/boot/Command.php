@@ -1,6 +1,7 @@
 <?php
 
-namespace linkphp\bootstrap;
+namespace linkphp\boot;
+use linkphp\boot\cli\command\Output;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -10,8 +11,17 @@ namespace linkphp\bootstrap;
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               中间件
+// |               命令行类
 // +----------------------------------------------------------------------
 
-class Middleware
-{}
+class Command
+{
+    static public function initialize()
+    {
+        if($_SERVER['argc'] == 1){
+            Output::main();
+        } else {
+            Output::noFound();
+        }
+    }
+}

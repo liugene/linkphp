@@ -12,11 +12,11 @@
 // |               路由解释器
 // +----------------------------------------------------------------------
 
-namespace linkphp\bootstrap;
+namespace linkphp\boot;
 
-use linkphp\bootstrap\router\Init;
-use linkphp\bootstrap\router\Dispatch;
-use linkphp\bootstrap\router\config\Config;
+use linkphp\boot\router\Init;
+use linkphp\boot\router\Dispatch;
+use linkphp\boot\router\config\Config;
 
 class Router
 {

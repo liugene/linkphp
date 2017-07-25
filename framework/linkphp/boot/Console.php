@@ -12,7 +12,7 @@
 // |               框架启动调度类
 // +----------------------------------------------------------------------
 
-namespace linkphp\bootstrap;
+namespace linkphp\boot;
 use system\core\Engine;
 
 class Console

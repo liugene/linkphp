@@ -37,17 +37,21 @@
  //定义LinkPHP框架目录常量
  defined('LINKPHP_PATH') or define('LINKPHP_PATH', ROOT_PATH . 'framework/');
  //定义LinkPHP框架核心类目录常量
- defined('CORE_PATH') or define('CORE_PATH', LINKPHP_PATH . 'bootstrap/');
-//定义LinkPHP框架扩展类库目录常量
-defined('UTIL_PATH') or define('UTIL_PATH', LINKPHP_PATH . 'util/');
+ defined('CORE_PATH') or define('CORE_PATH', LINKPHP_PATH . 'linkphp/boot/');
+ //定义LinkPHP框架启动目录常量
+ defined('BOOT_PATH') or define('BOOT_PATH', LINKPHP_PATH . 'linkphp/');
+ //定义LinkPHP框架扩展类库目录常量
+ defined('UTIL_PATH') or define('UTIL_PATH', BOOT_PATH . 'util/');
+ //定义LinkPHP框架附加文件目录常量
+ defined('EXTRA_PATH') or define('EXTRA_PATH', BOOT_PATH . 'util/');
  //定义LinkPHP框架应用公共配置目录常量
  defined('APPCONF_PATH') or define('APPCONF_PATH', WEB_PATH . 'configure/');
  //定义LinkPHP框架系统文件目录常量
- defined('SYSTEM_PATH') or define('SYSTEM_PATH', LINKPHP_PATH . 'system/');
+ defined('SYSTEM_PATH') or define('SYSTEM_PATH', BOOT_PATH . 'system/');
  //定义LinkPHP框架语言目录常量
- defined('LANG_PATH') or define('LANG_PATH', SYSTEM_PATH . 'lang/');
+ defined('LANG_PATH') or define('LANG_PATH', BOOT_PATH . 'extra/lang/');
  //定义LinkPHP框架附件目录常量
- defined('TEMP_PATH') or define('TEMP_PATH', SYSTEM_PATH . 'temp/');
+ defined('TEMP_PATH') or define('TEMP_PATH', BOOT_PATH . 'extra/temp/');
 
  //系统可变常量
  defined('APP_INTERFACE_ON') or define('APP_INTERFACE_ON','FALSE'); //开启接口应用

@@ -1,6 +1,6 @@
 <?php
 
-namespace linkphp\bootstrap;
+namespace linkphp\boot;
 /**
  * --------------------------------------------------*
  *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
@@ -13,7 +13,7 @@ namespace linkphp\bootstrap;
  * --------------------------------------------------*
  */
 
-class Io{
+class Response{
     
     /**
      * 综合方式封装通信数据方法
@@ -121,4 +121,3 @@ class Io{
     }
 }
 
-?>

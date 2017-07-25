@@ -1,6 +1,6 @@
 <?php
 
-namespace linkphp\bootstrap\handle;
+namespace linkphp\boot;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -10,16 +10,8 @@ namespace linkphp\bootstrap\handle;
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               LinkPHP框架自定义错误处理器
+// |               中间件
 // +----------------------------------------------------------------------
 
-class LoadClassException
-{
-
-    //
-    static public function loadClassException(){}
-
-
-}
-
-
+class Middleware
+{}

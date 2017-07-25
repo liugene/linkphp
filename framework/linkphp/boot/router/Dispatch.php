@@ -12,7 +12,7 @@
 // |               路由分发
 // +----------------------------------------------------------------------
 
-namespace linkphp\bootstrap\router;
+namespace linkphp\boot\router;
 class Dispatch
 {
 

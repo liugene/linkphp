@@ -12,7 +12,7 @@
 // |               API基类
 // +----------------------------------------------------------------------
 
- namespace linkphp\bootstrap;
+ namespace linkphp\boot;
  use link\api\LinkApi;
  class Api extends LinkApi
  {}

@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace linkphp\bootstrap;
+ namespace linkphp\boot;
  use link\orm\Db;
  class Model extends Db
  {

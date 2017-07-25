@@ -1,5 +1,6 @@
 <?php
 
+namespace linkphp\boot;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -9,16 +10,34 @@
 // +----------------------------------------------------------------------
 // | Author: Latham <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               路由配置
+// |               依赖注入容器
 // +----------------------------------------------------------------------
 
-namespace linkphp\bootstrap\router\config;
-class Config
+class Container
 {
-    static public function get()
-    {
-        $config = require(WEB_PATH . 'configure/route.php');
-        return $config;
-    }
-}
 
+    //存储类的定义
+    static private $_definitions = [];
+
+    //存储类实例化所需要的参数
+    static private $_params = [];
+
+    //存储类与类的依赖
+    static private $_dependencies = [];
+
+
+    /*
+     * 设置依赖
+     * @param string $class 类、方法、名称
+     * @param array $defination 类、方法、定义
+     * @param array $params 类、方法初始化所需要的参数
+     * */
+
+    static public function set($class,$defination = [],$params = [])
+    {
+        static::$_params[$class] = $params;
+        static::$_definitions[$class] = $defination;
+    }
+
+
+}

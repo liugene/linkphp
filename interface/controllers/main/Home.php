@@ -12,8 +12,8 @@
 // |               接口应用默认控制器
 // +----------------------------------------------------------------------
 
-namespace api\main\controllers;
-use linkphp\bootstrap\Api;
+namespace api\controllers\main;
+use linkphp\boot\Api;
 class Home extends Api
 {
     public function main()

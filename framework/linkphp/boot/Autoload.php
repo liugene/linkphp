@@ -12,7 +12,7 @@
 // |               LinkPHP框架自动化加载类
 // +----------------------------------------------------------------------
 
-namespace linkphp\bootstrap;
+namespace linkphp\boot;
 class Autoload
 {
 
@@ -45,7 +45,7 @@ class Autoload
     {
         $name = strstr($class_name, '\\', true);
         if($name == 'system'){
-            $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . SYS;
+            $filename = BOOT_PATH . str_replace('\\', '/', $class_name) . SYS;
             /**
              * 判断文件是否存在
              */
@@ -62,12 +62,12 @@ class Autoload
     }
 
     /**
-     * 核心工具类自动加载方法
+     * 映射类自动加载方法
      * */
     static public function classMapAutoload($class_name)
     {
         /**
-         * 先处理确定的（框架内的核心工具类）
+         * 映射类自动加载方法
          * 类名与类文件映射数组
          */
         $class_map = static::$_map;
@@ -85,7 +85,7 @@ class Autoload
     static public function namespaceAutoload($class_name)
     {
         $name = strstr($class_name, '\\', true);
-        if($name == 'bootstrap'){
+        if($name == 'boot'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){
@@ -128,7 +128,7 @@ class Autoload
         }
         */
         elseif($name == 'util'){
-            $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
+            $filename = BOOT_PATH . str_replace('\\', '/', $class_name) . EXT;
             /**
              * 判断文件是否存在
              */
@@ -231,7 +231,7 @@ class Autoload
          * 加载Composer自动加载
          */
         require(VENDOR_PATH . 'autoload.php');
-        require(LINKPHP_PATH . 'util/sms/drives/alidayu/TopSdk.php');
+        require(UTIL_PATH . 'sms/drives/alidayu/TopSdk.php');
     }
 
     /**

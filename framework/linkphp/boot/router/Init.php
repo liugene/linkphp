@@ -12,7 +12,7 @@
 // |               路由
 // +----------------------------------------------------------------------
 
-namespace linkphp\bootstrap\router;
+namespace linkphp\boot\router;
 class Init
 {
     /**

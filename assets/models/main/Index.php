@@ -7,6 +7,6 @@
  */
 
  namespace assets\models\main;
- use linkphp\bootstrap\Model;
+ use linkphp\boot\Model;
  class Index extends Model
  {}

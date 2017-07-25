@@ -13,7 +13,7 @@
  */
  
  namespace assets\base\models;
- use linkphp\bootstrap\Model;
+ use linkphp\boot\Model;
  class Common extends Model{
     public function test(){
         echo '<br />站点公共模型类测试方法 <br />';

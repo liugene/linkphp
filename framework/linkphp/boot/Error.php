@@ -1,6 +1,6 @@
 <?php
 
-namespace linkphp\bootstrap;
+namespace linkphp\boot;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -13,7 +13,7 @@ namespace linkphp\bootstrap;
 // |               配置类
 // +----------------------------------------------------------------------
 
-use linkphp\bootstrap\handle\ErrorHandler;
+use linkphp\boot\handle\LoadClassException;
 
 class Error
 {
@@ -75,7 +75,7 @@ EOT;
         //ob_start();
         //header("Content-type:text/html;charset=utf-8");
         //ob_end_flush();
-        require TEMP_PATH . 'temp/error' . C('DEFAULT_THEME_SUFFIX');
+        require EXTRA_PATH . 'temp/error' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
 
@@ -109,7 +109,7 @@ EOT;
                 //ob_start();
                 //header("Content-type:text/html;charset=utf-8");
                 //ob_end_flush();
-                require TEMP_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
+                require EXTRA_PATH . 'temp/fatalerror' . C('DEFAULT_THEME_SUFFIX');
                 die;
                 break;
         }
@@ -134,7 +134,7 @@ EOT;
         //ob_start();
         //header("Content-type:text/html;charset=utf-8");
         //ob_end_flush();
-        require TEMP_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
+        require EXTRA_PATH . 'temp/Exception' . C('DEFAULT_THEME_SUFFIX');
         die;
     }
 
