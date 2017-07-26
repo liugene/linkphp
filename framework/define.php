@@ -15,6 +15,7 @@
  //类文件后缀常量
  const EXT = '.php';
  const SYS = '.php';
+ const DS = '\\';
 
  //版本信息
  define('LINKPHP_VERSION','1.0.0');

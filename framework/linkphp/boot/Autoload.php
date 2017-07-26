@@ -21,13 +21,19 @@ class Autoload
      */
     static private $_map = [];
 
+    /*排序后psr4命名空间*/
+    static private $_sort_psr4_map = [];
+
+    /*排序后psr0命名空间*/
+    static private $_sort_psr0_map = [];
+
     /**
      * 自动加载注册方法
      */
     static public function register($namespace)
     {
         if(is_file(WEB_PATH . 'configure/map.php')){
-        static::addNamespace(include(WEB_PATH . 'configure/map.php'));
+            static::addNamespace(include(WEB_PATH . 'configure/map.php'));
         }
         if(is_array($namespace)){
             foreach($namespace as $k => $v){
@@ -36,6 +42,12 @@ class Autoload
         } else {
             spl_autoload_register(array(__CLASS__, $namespace));
         }
+        //加载composer等扩展自动加载机制
+        static::loadExtendAutoload();
+        //psr4自动加载机制排序
+        static::sortPsr4ByArrAyFirstKey();
+        //psr0自动加载机制排序
+        static::sortPsr0ByArrAyFirstKey();
     }
 
     /**
@@ -230,8 +242,44 @@ class Autoload
         /**
          * 加载Composer自动加载
          */
-        require(VENDOR_PATH . 'autoload.php');
-        require(UTIL_PATH . 'sms/drives/alidayu/TopSdk.php');
+        if (is_file(VENDOR_PATH . 'composer/autoload_namespaces.php')) {
+            $class_map_psr0 = require VENDOR_PATH . 'composer/autoload_namespaces.php';
+            self::addExtendClassPsr0($class_map_psr0);
+        }
+
+        if (is_file(VENDOR_PATH . 'composer/autoload_psr4.php')) {
+            $class_map_psr4 = require VENDOR_PATH . 'composer/autoload_psr4.php';
+            static::addExtendClassPsr4($class_map_psr4);
+        }
+
+        if (is_file(VENDOR_PATH . 'composer/autoload_classmap.php')) {
+            $class_map = require VENDOR_PATH . 'composer/autoload_classmap.php';
+            if ($class_map) {
+                static::addExtendClassMap($class_map);
+            }
+        }
+
+        /*if (is_file(VENDOR_PATH . 'composer/autoload_files.php')) {
+            $includeFiles = require VENDOR_PATH . 'composer/autoload_files.php';
+            foreach ($includeFiles as $fileIdentifier => $file) {
+                require($file);
+            }
+        }*/
+    }
+
+    /*追加扩展Psr0标准类库自动加载*/
+    static private function addExtendClassPsr0($namespace){
+        static::$_map['autoload_namespace_psr0'] = array_merge(static::$_map['autoload_namespace_psr0'],$namespace);
+    }
+
+    /*追加扩展Psr4标准类库自动加载*/
+    static private function addExtendClassPsr4($namespace){
+        static::$_map['autoload_namespace_psr4'] = array_merge(static::$_map['autoload_namespace_psr4'],$namespace);
+    }
+
+    /*追加扩展标准类库自动映射自动加载*/
+    static private function addExtendClassMap($class_map){
+        static::$_map['class_autoload_map'] = array_merge(static::$_map['class_autoload_map'],$class_map);
     }
 
     /**
@@ -245,11 +293,11 @@ class Autoload
     /**
      * 加载自动类
      */
-    static public function loaderClass($class_name)
+    /*static public function loaderClass($class_name)
     {
         $namespace = substr($class_name,0,strrpos($class_name,'\\'));
-        if(array_key_exists($namespace,static::$_map['autoload_namespace'])){
-            $filename = str_replace('\\', '/', str_replace($namespace,static::$_map['autoload_namespace'][$namespace][0],$class_name)) . EXT;
+        if(array_key_exists($namespace,static::$_map['autoload_namespace_psr4'])){
+            $filename = str_replace('\\', '/', str_replace($namespace,static::$_map['autoload_namespace_psr4'][$namespace][0],$class_name)) . EXT;
             if(file_exists($filename)){
                 require($filename);
             } else {
@@ -262,6 +310,42 @@ class Autoload
             //抛出异常
             throw new Exception("未注册命名空间");
         }
+    }*/
+
+    /**
+     * 加载自动类
+     */
+    static public function loaderClass($class_name)
+    {
+        //查找psr4命名空间类
+        if(array_key_exists($class_name[0],static::$_sort_psr4_map)){
+            foreach(static::$_sort_psr4_map[$class_name[0]] as $prefix){
+                if(strpos($class_name,$prefix) === 0){
+                    $filename = str_replace('/', '\\',static::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . EXT;
+                    if(is_file($filename)){
+                        require($filename);
+                    } else {
+                        //尝试补位查找类文件
+                        $fullfilename = str_replace('/', '\\',static::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace($prefix,'\\',$class_name) . EXT;
+                        if(is_file($fullfilename)){
+                            require($fullfilename);
+                        }
+                    }
+                }
+            }
+        }
+
+        //查找psr0命名空间
+        if(array_key_exists($class_name[0],static::$_sort_psr0_map)){
+            foreach(static::$_sort_psr0_map[$class_name[0]] as $prefix){
+                if(strpos($class_name,$prefix) === 0){
+                    $filename = str_replace('/', '\\',static::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . EXT;
+                    if(is_file($filename)){
+                        require($filename);
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -269,6 +353,32 @@ class Autoload
      */
     static public function findFile()
     {
+    }
+
+    /*对psr4命名空间按照首字母升序排序*/
+    static private function sortPsr4ByArrAyFirstKey()
+    {
+        ksort(static::$_map['autoload_namespace_psr4']);
+        foreach(static::$_map['autoload_namespace_psr4'] as $key => $value){
+            $newPsr4Namespace[$key[0]][static::$_map['autoload_namespace_psr4'][$key[0]]][] = $key;
+            foreach($newPsr4Namespace[$key[0]] as $Psr4NamespaceKey => $Psr4NamespaceValue){
+                $toPsr4Namespace[$key[0]] = $Psr4NamespaceValue;
+            }
+        }
+        static::$_sort_psr4_map = $toPsr4Namespace;
+    }
+
+    /*对psr0命名空间按照首字母升序排序*/
+    static private function sortPsr0ByArrAyFirstKey()
+    {
+        ksort(static::$_map['autoload_namespace_psr0']);
+        foreach(static::$_map['autoload_namespace_psr0'] as $key => $value){
+            $newPsr0Namespace[$key[0]][static::$_map['autoload_namespace_psr0'][$key[0]]][] = $key;
+            foreach($newPsr0Namespace[$key[0]] as $Psr0NamespaceKey => $Psr0NamespaceValue){
+                $toPsr0Namespace[$key[0]] = $Psr0NamespaceValue;
+            }
+        }
+        static::$_sort_psr0_map = $toPsr0Namespace;
     }
 
 }

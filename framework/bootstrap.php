@@ -16,7 +16,6 @@ namespace linkphp\boot;
 //加载自动加载方法
 require(CORE_PATH . 'Autoload.php');
 //注册自动加载方法
-Autoload::loadExtendAutoload();
 Autoload::register(array('LinkSystemAutoload','classMapAutoload','namespaceAutoload','loaderClass'));
 //注册错误和异常处理机制
 Error::register();
