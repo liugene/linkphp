@@ -84,31 +84,31 @@
    * @ var $value 赋值变量
    */
   protected function display($tempfile='',$name='',$value=''){
-    if(C('TOKEN_TURN_ON')){
-        $tempfile = CURRENT_VIEW_PATH . '/' . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX');
-        $token = new \System\Safe\Token();
-        $token->init($tempfile);
-    }
-    switch(C('DEFAULT_TEMP_TYPE')){
-        //0为使用原生PHP标签嵌套
-        case 0:
-        //调用赋值方法
-        $this->assign($name,$value);
-        $this->_view->display($tempfile);
-        break;
-        //1为使用Smarty模板引擎进行嵌套
-        case 1:
-        //调用Smarty模板引擎赋值方法
-        $this->assign($name,$value);
-        $this->_smarty->init($tempfile);
-        break;
-        //2为使用Links模板引擎进行嵌套
-        case 2:
-            //调用Links模板引擎赋值方法
-            $this->assign($name,$value);
-            $this->_links->display($tempfile);
-            break;
-    }
+      $tempfile = $tempfile == '' ? CURRENT_VIEW_PATH . '/' . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX') : $tempfile;
+      if(C('TOKEN_TURN_ON')){
+          $token = new \System\Safe\Token();
+          $token->init($tempfile);
+      }
+      switch(C('DEFAULT_TEMP_TYPE')){
+          //0为使用原生PHP标签嵌套
+          case 0:
+          //调用赋值方法
+          $this->assign($name,$value);
+          $this->_view->display($tempfile);
+          break;
+          //1为使用Smarty模板引擎进行嵌套
+          case 1:
+          //调用Smarty模  板引擎赋值方法
+          $this->assign($name,$value);
+          $this->_smarty->init($tempfile);
+          break;
+          //2为使用Links模板引擎进行嵌套
+          case 2:
+              //调用Links模板引擎赋值方法
+              $this->assign($name,$value);
+              $this->_links->display($tempfile);
+              break;
+      }
   }
   
   /**

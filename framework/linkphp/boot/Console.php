@@ -21,47 +21,10 @@ class Console
     //控制台初始化
     static public function initialize()
     {
-        //加载额外文件
-        static::loadCommonFile();
         //系统引擎机制初始化
         Engine::initialize();
         //判断运行环境模式
         static::checkEnvMode();
-    }
-
-    //加载公共文件
-    static public function loadCommonFile()
-    {
-        //加载框架函数文件
-        static::loadFrameworkFunctionFile();
-        //自动加载应用文件列表
-        static::loadApplicationDirListFile();
-    }
-
-    //加载框架函数库文件
-    static public function loadFrameworkFunctionFile(){
-        //加载LinkPHP框架系统函数
-        if(is_file(BOOT_PATH . 'functions.php')){
-            require(BOOT_PATH . 'functions.php');
-        }
-    }
-
-    //循环加载应用自动加载目录中文件
-    static public function loadApplicationDirListFile()
-    {
-        if(is_dir(LOAD_PATH . 'auto')){
-            $dir = opendir(LOAD_PATH . 'auto');
-            //循环读取目录内的所有文件
-            while(($filename = readdir($dir)) !== false){
-                $loadfile = $filename;
-                //循环判断是否为文件
-                if(is_file(LOAD_PATH . 'auto/' . $loadfile)){
-                    //是循环载入
-                    require(LOAD_PATH . 'auto/' . $loadfile);
-                }
-            }
-            closedir($dir);
-        }
     }
 
     //检测运行环境

@@ -33,6 +33,12 @@ return [
     'autoload_namespace_psr0' => [
         //'命名空间' => '映射路径地址'
     ],
+    //指定自动加载机制排序
+    'autoload_namespace_file' => [
+        //'文件名' => '映射路径地址'
+        'app_func'                => LOAD_PATH . 'auto/functions.php',
+        'framework_func'          => BOOT_PATH . 'functions.php'
+    ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
         'Configure'  => CORE_PATH . 'Configure' . EXT,

@@ -52,6 +52,8 @@ class Autoload
         static::sortPsr4ByArrAyFirstKey();
         //psr0自动加载机制排序
         static::sortPsr0ByArrAyFirstKey();
+        //指定自动加载机制排序
+        //static::sortFileByArrAyFirstKey();
     }
 
     /*自动加载方法*/
@@ -269,12 +271,15 @@ class Autoload
             }
         }
 
-        /*if (is_file(VENDOR_PATH . 'composer/autoload_files.php')) {
+        if (is_file(VENDOR_PATH . 'composer/autoload_files.php')) {
             $includeFiles = require VENDOR_PATH . 'composer/autoload_files.php';
-            foreach ($includeFiles as $fileIdentifier => $file) {
-                require($file);
+            static::addExtendFile($includeFiles);
+            foreach (static::$_map['autoload_namespace_file'] as $fileIdentifier => $file) {
+                if(is_file($file)){
+                    __require_file($file);
+                }
             }
-        }*/
+        }
     }
 
     /*追加扩展Psr0标准类库自动加载*/
@@ -290,6 +295,11 @@ class Autoload
     /*追加扩展标准类库自动映射自动加载*/
     static private function addExtendClassMap($class_map){
         static::$_map['class_autoload_map'] = array_merge(static::$_map['class_autoload_map'],$class_map);
+    }
+
+    /*追加扩展标准类库自动映射自动加载*/
+    static private function addExtendFile($includeFiles){
+        static::$_map['autoload_namespace_file'] = array_merge(static::$_map['autoload_namespace_file'],$includeFiles);
     }
 
     /**
@@ -391,4 +401,9 @@ class Autoload
         static::$_sort_psr0_map = $toPsr0Namespace;
     }
 
+}
+
+function __require_file($filename)
+{
+    return require($filename);
 }
