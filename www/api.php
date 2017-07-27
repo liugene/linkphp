@@ -17,7 +17,7 @@ define('APP_INTERFACE_ON',true);
 //定义应用名
 define('APP_NAMESPACE_NAME','api');
 // 定义接口目录
-define('APPLICATION_PATH', __DIR__ . '/../interface/');
+define('APPLICATION_PATH', __DIR__ . '/../api/');
 //加载LinkPHP框架常量文件
 require(dirname(__DIR__) . '/framework/define.php');
 //加载LinkPHP框架启动文件

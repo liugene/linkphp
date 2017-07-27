@@ -23,7 +23,7 @@
  //目录基础常量的定义
  defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ ) . '/');
  //定义站点入库文件夹目录常量
- defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'wwwroot/');
+ defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'www/');
  //定义框架加载文件夹目录常量
  defined('LOAD_PATH') or define('LOAD_PATH',ROOT_PATH . 'loaders/');
  //定义框架运行产生文件文件夹目录常量
