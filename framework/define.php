@@ -23,14 +23,16 @@
  //目录基础常量的定义
  defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ ) . '/');
  //定义站点入库文件夹目录常量
- defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'web/');
+ defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'wwwroot/');
+ //定义框架加载文件夹目录常量
+ defined('LOAD_PATH') or define('LOAD_PATH',ROOT_PATH . 'loaders/');
+ //定义框架运行产生文件文件夹目录常量
+ defined('RUNTIME_PATH') or define('RUNTIME_PATH',ROOT_PATH . 'runtime/');
  defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'assets/');
  //定义Composer目录常量
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
  //定义缓存目录常量
- defined('CACHE_PATH') or define('CACHE_PATH', WEB_PATH . 'resource/');
- //定义站点运行数据存储目录常量
- defined('STORAGE_PATH') or define('STORAGE_PATH', WEB_PATH . 'storage/');
+ defined('CACHE_PATH') or define('CACHE_PATH', ROOT_PATH . 'resource/');
  //定义应用公共目录常量
  defined('COMMON_PATH') or define('COMMON_PATH', APPLICATION_PATH . 'common/');
  //定义公共附件目录常量
@@ -45,8 +47,6 @@
  defined('UTIL_PATH') or define('UTIL_PATH', BOOT_PATH . 'util/');
  //定义LinkPHP框架附加文件目录常量
  defined('EXTRA_PATH') or define('EXTRA_PATH', BOOT_PATH . 'extra/');
- //定义LinkPHP框架应用公共配置目录常量
- defined('APPCONF_PATH') or define('APPCONF_PATH', WEB_PATH . 'configure/');
  //定义LinkPHP框架系统文件目录常量
  defined('SYSTEM_PATH') or define('SYSTEM_PATH', BOOT_PATH . 'system/');
  //定义LinkPHP框架语言目录常量

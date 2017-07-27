@@ -49,15 +49,15 @@ class Console
     //循环加载应用自动加载目录中文件
     static public function loadApplicationDirListFile()
     {
-        if(is_dir(ROOT_PATH . 'autoload')){
-            $dir = opendir(ROOT_PATH . 'autoload');
+        if(is_dir(LOAD_PATH . 'auto')){
+            $dir = opendir(LOAD_PATH . 'auto');
             //循环读取目录内的所有文件
             while(($filename = readdir($dir)) !== false){
                 $loadfile = $filename;
                 //循环判断是否为文件
-                if(is_file(ROOT_PATH . 'autoload/' . $loadfile)){
+                if(is_file(LOAD_PATH . 'auto/' . $loadfile)){
                     //是循环载入
-                    require(ROOT_PATH . 'autoload/' . $loadfile);
+                    require(LOAD_PATH . 'auto/' . $loadfile);
                 }
             }
             closedir($dir);

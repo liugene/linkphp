@@ -36,8 +36,8 @@ class Autoload
     static public function register()
     {
         static::autoloadFunc();
-        if(is_file(WEB_PATH . 'configure/map.php')){
-            static::addNamespace(include(WEB_PATH . 'configure/map.php'));
+        if(is_file(LOAD_PATH . 'map.php')){
+            static::addNamespace(include(LOAD_PATH . 'map.php'));
         }
         if(is_array(static::$_autoload_func)){
             foreach(static::$_autoload_func as $k => $v){

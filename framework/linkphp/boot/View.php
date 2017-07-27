@@ -51,7 +51,7 @@
         //ob_start();
         //header('Content-Type:text/html;charset=utf8');
         //ob_end_flush();
-        require TTFF_PATH . 'temp/appsuccess' . C('DEFAULT_THEME_SUFFIX');
+        require TEMP_PATH . 'appsuccess' . C('DEFAULT_THEME_SUFFIX');
         echo $content;
      }
  }

@@ -17,7 +17,7 @@ class Config
 {
     static public function get()
     {
-        $config = require(WEB_PATH . 'configure/route.php');
+        $config = require(LOAD_PATH . 'route.php');
         return $config;
     }
 }
