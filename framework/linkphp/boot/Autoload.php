@@ -27,20 +27,24 @@ class Autoload
     /*排序后psr0命名空间*/
     static private $_sort_psr0_map = [];
 
+    /*自动加载方法*/
+    static private $_autoload_func;
+
     /**
      * 自动加载注册方法
      */
-    static public function register($namespace)
+    static public function register()
     {
+        static::autoloadFunc();
         if(is_file(WEB_PATH . 'configure/map.php')){
             static::addNamespace(include(WEB_PATH . 'configure/map.php'));
         }
-        if(is_array($namespace)){
-            foreach($namespace as $k => $v){
+        if(is_array(static::$_autoload_func)){
+            foreach(static::$_autoload_func as $k => $v){
                 spl_autoload_register(array(__CLASS__, $v));
             }
         } else {
-            spl_autoload_register(array(__CLASS__, $namespace));
+            spl_autoload_register(array(__CLASS__, static::$_autoload_func));
         }
         //加载composer等扩展自动加载机制
         static::loadExtendAutoload();
@@ -48,6 +52,12 @@ class Autoload
         static::sortPsr4ByArrAyFirstKey();
         //psr0自动加载机制排序
         static::sortPsr0ByArrAyFirstKey();
+    }
+
+    /*自动加载方法*/
+    static private function autoloadFunc()
+    {
+        static::$_autoload_func = ['LinkSystemAutoload','classMapAutoload','namespaceAutoload','loaderClass'];
     }
 
     /**
