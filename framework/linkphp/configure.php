@@ -67,7 +67,7 @@
    'alidayu_appkey'        =>  '23470347',
    'alidayu_appsecret'     =>  '393f29267c68f9c3a1eeac93af5cc8b7',
    'alidayu_sign_name'     =>  'linkphp框架',
-   'alidayu_phone_number'  =>  '15558040535',
+   'alidayu_phone_number'  =>  '13879337614',
    'alidayu_sms_id'        =>  'SMS_78400009',
    'alidayu_sms_param'           =>  '',
 
