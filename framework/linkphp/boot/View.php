@@ -33,7 +33,7 @@
         //加载视图文件
         // 模板阵列变量分解成为独立变量
         extract($this->_tVar);
-        require CURRENT_VIEW_PATH . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX');
+        require(CURRENT_VIEW_PATH . '/' . CONTROLLER . '/' . ACTION  . C('default_theme_suffix'));
      }
      
      /**
