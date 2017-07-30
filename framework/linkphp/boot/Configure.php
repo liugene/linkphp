@@ -12,6 +12,7 @@
 // |               配置类
 // +----------------------------------------------------------------------
 
+namespace linkphp\boot;
 class Configure
 {
 
@@ -28,24 +29,24 @@ class Configure
      * 分组扩展配置的值不会被之后加载进来的配置值覆盖，当应用模块中的键名不存在
      * 然后加载LinkPHP框架系统配置 -> 网站公共配置
      */
-    public function get($name, $value = null)
+    static public function get($name, $value = null)
     {
         if(self::check('extend_model_config', 'true') == 'true'){
             $platform = isset($_GET[self::check('var_platform','true')]) ? ucfirst($_GET[self::check('var_platform','true')]) : self::check('default_platform','true');
-            $extend_config['extend'] = require APPLICATION_PATH . $platform . '/configure.php';
+            $extend_config['extend'] = require APPLICATION_PATH . 'configure' . $platform . '/configure.php';
             if(array_key_exists($name, $extend_config['extend'])){
                 return $extend_config['extend'][strtoupper($name)];
             }
             elseif(!array_key_exists($name,$extend_config['extend'])){
-                $config['link'] = require LINKPHP_PATH . 'configure.php';
-                $config['common'] = require APPCONF_PATH . 'configure.php';
+                $config['link'] = require BOOT_PATH . 'configure.php';
+                $config['common'] = require LOAD_PATH . 'configure.php';
                 $config['conf'] = array_merge($config['link'], $config['common']);
                 return $config['conf'][strtoupper($name)];
             }
         } else {
             if($value == null){
-                $config['link'] = require LINKPHP_PATH . 'configure.php';
-                $config['common'] = require APPCONF_PATH . 'configure.php';
+                $config['link'] = require BOOT_PATH . 'configure.php';
+                $config['common'] = require LOAD_PATH . 'configure.php';
                 $config['conf'] = array_merge($config['link'], $config['common']);
                 return $config['conf'][strtolower($name)];
             } else {
@@ -63,13 +64,13 @@ class Configure
      */
     static function check($name,$value='false'){
         if($value == 'true'){
-            $config['link'] = require LINKPHP_PATH . 'configure.php';
-            $config['common'] = require APPCONF_PATH . 'configure.php';
+            $config['link'] = require BOOT_PATH . 'configure.php';
+            $config['common'] = require LOAD_PATH . 'configure.php';
             $config['conf'] = array_merge($config['link'], $config['common']);
             return $config['conf'][strtolower($name)];
         } else {
-            $config['link'] = require LINKPHP_PATH . 'configure.php';
-            $config['common'] = require APPCONF_PATH . 'configure.php';
+            $config['link'] = require BOOT_PATH . 'configure.php';
+            $config['common'] = require LOAD_PATH . 'configure.php';
             $config['conf'] = array_merge($config['link'], $config['common']);
             if(in_array(strtoupper($name), $config['conf'])){
                 return TRUE;

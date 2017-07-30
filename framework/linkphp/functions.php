@@ -95,7 +95,7 @@ function C($name, $value = null){
   * @param $p [string] 需要设置跳转的模块名 默认为空获取当前的模块名
   * @return url [string] 返回拼接好的URL跳转地址
   */
- function U($c=null,$a=null,$p=null){
+ function url($c=null,$a=null,$p=null){
     $platform = isset($_GET[C('VAR_PLATFORM')]) ? ucfirst($_GET[C('VAR_PLATFORM')]) : C('DEFAULT_PLATFORM');
     $p = is_null($p) ? $platform : $p;
     $c = is_null($c) ? $_GET[C('VAR_CONTROLLER')] : ucfirst($c);

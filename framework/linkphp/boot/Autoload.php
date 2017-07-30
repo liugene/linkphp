@@ -380,12 +380,9 @@ class Autoload
     {
         ksort(static::$_map['autoload_namespace_psr4']);
         foreach(static::$_map['autoload_namespace_psr4'] as $key => $value){
-            $newPsr4Namespace[$key[0]][static::$_map['autoload_namespace_psr4'][$key[0]]][] = $key;
-            foreach($newPsr4Namespace[$key[0]] as $Psr4NamespaceKey => $Psr4NamespaceValue){
-                $toPsr4Namespace[$key[0]] = $Psr4NamespaceValue;
-            }
+            $newPsr4Namespace[$key[0]][] = $key;
         }
-        static::$_sort_psr4_map = $toPsr4Namespace;
+        static::$_sort_psr4_map = $newPsr4Namespace;
     }
 
     /*对psr0命名空间按照首字母升序排序*/
@@ -393,12 +390,9 @@ class Autoload
     {
         ksort(static::$_map['autoload_namespace_psr0']);
         foreach(static::$_map['autoload_namespace_psr0'] as $key => $value){
-            $newPsr0Namespace[$key[0]][static::$_map['autoload_namespace_psr0'][$key[0]]][] = $key;
-            foreach($newPsr0Namespace[$key[0]] as $Psr0NamespaceKey => $Psr0NamespaceValue){
-                $toPsr0Namespace[$key[0]] = $Psr0NamespaceValue;
-            }
+            $newPsr0Namespace[$key[0]][] = $key;
         }
-        static::$_sort_psr0_map = $toPsr0Namespace;
+        static::$_sort_psr0_map = $newPsr0Namespace;
     }
 
 }
