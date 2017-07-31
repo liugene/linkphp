@@ -8,6 +8,7 @@ use Flc\Alidayu\App;
 use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumSend;
 use system\safe\LoginAuth;
 use util\redis\Redis;
+use util\sms\drives\liugene\alisms\SmsSdk;
 class Home extends Controller
 {
 	public function main()
@@ -61,5 +62,9 @@ class Home extends Controller
         $redis->setex($token,3600,'liugene');
         $result = $redis->get($token);
         dump($result);die;*/
+        $sms = new SmsSdk;
+        $sms->PhoneNumbers = '13879337614';
+        $sms->SignName = 'test';
+        $sms->send();
 	}
 }
