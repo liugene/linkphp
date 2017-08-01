@@ -26,10 +26,10 @@ class CreateSign
     //生成Signature
     static private function createSign($api_prarm)
     {
-        //排序
-        ksort($api_prarm);
+        $stringToSign = RpcRequest::constructSignature($api_prarm);
+        var_dump($stringToSign);die;
         $accessKeySecret = '5515dsfsds545fsdf5s';
-        $Signature = ShaHmacSign::sign($api_prarm,$accessKeySecret . '&');
+        $Signature = ShaHmacSign::sign($stringToSign,$accessKeySecret . '&');
         return $Signature;
     }
 
