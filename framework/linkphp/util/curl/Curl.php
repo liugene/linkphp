@@ -23,8 +23,9 @@ namespace util\curl;
  * CURL操作类
  */
 
-class Curl{
-    public function request($type,$url){
+class Curl
+{
+    static public function request($type,$url){
         
         //模拟GET请求
         $curl = curl_init();

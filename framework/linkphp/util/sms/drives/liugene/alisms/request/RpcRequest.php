@@ -62,7 +62,7 @@ class RpcRequest extends ProfileRequest
     //处理设置信息
     private function mergeProfileName($api_prarm)
     {
-        $SignatureNonce = round(10000,99999);
+        $SignatureNonce = rand(10000,99999);
         date_default_timezone_set('GMT');
         $default_profile_name = ['AccessKeyId' =>  $this->_access_key_id,
                                  'Timestamp' => date('Y-m-d\TH:i:s\Z'),
