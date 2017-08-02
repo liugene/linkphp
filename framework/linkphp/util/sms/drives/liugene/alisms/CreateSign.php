@@ -13,24 +13,25 @@
 // +----------------------------------------------------------------------
 
 namespace util\sms\drives\liugene\alisms;
+use util\sms\drives\liugene\alisms\request\RpcRequest;
 use util\sms\drives\liugene\alisms\auth\ShaHmacSign;
 class CreateSign
 {
     //生成签名
     static public function Create($api_prarm)
     {
-        $api_prarm['Signature'] = static::createSign($api_prarm);
-        return $api_prarm;
+        $Signature = static::createSign($api_prarm);
+        return $Signature;
     }
 
     //生成Signature
     static private function createSign($api_prarm)
     {
-        $stringToSign = RpcRequest::constructSignature($api_prarm);
-        var_dump($stringToSign);die;
-        $accessKeySecret = '5515dsfsds545fsdf5s';
-        $Signature = ShaHmacSign::sign($stringToSign,$accessKeySecret . '&');
-        return $Signature;
+        $RpcRequest = new RpcRequest;
+        $stringToSign = $RpcRequest->constructSignature($api_prarm);
+        $accessKeySecret = $RpcRequest->getAccessKeySecret();
+        $stringToSign['Signature'] = ShaHmacSign::sign($stringToSign['Signature'],$accessKeySecret . '&');
+        return $stringToSign;
     }
 
 }

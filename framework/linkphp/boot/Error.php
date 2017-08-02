@@ -21,6 +21,8 @@ class Error
     //错误处理类注册
     static public function register()
     {
+        // 报告所有错误
+        error_reporting(E_ALL);
         /**
          * 捕获致命错误自定义处理方法
          */

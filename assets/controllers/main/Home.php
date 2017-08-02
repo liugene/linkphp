@@ -63,8 +63,11 @@ class Home extends Controller
         $result = $redis->get($token);
         dump($result);die;*/
         $sms = new SmsSdk;
-        $sms->PhoneNumbers = '13879337614';
-        $sms->SignName = 'test';
-        $sms->send();
+        $sms->PhoneNumbers = '15558040535';
+        $sms->setKeyId('Sendsms');
+        $sms->SignName = '王剑南';
+        $sms->TemplateCode = 'SMS_78590122';
+        $result = $sms->send();
+        var_dump($result);
 	}
 }

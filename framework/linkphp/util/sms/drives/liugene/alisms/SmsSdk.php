@@ -13,8 +13,9 @@
 // +----------------------------------------------------------------------
 
 namespace util\sms\drives\liugene\alisms;
+use util\sms\drives\liugene\alisms\request\ProfileRequest;
 use util\sms\drives\liugene\alisms\send\AlibabaAliqinSendSms;
-class SmsSdk
+class SmsSdk extends ProfileRequest
 {
     //保存sms发送配置
     private $_sms_param = [];
@@ -28,7 +29,7 @@ class SmsSdk
     //发送短信
     public function send()
     {
-        AlibabaAliqinSendSms::request($this->_sms_param);
+        return AlibabaAliqinSendSms::requestUrl($this->_sms_param);
     }
 
 }
