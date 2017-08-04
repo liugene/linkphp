@@ -62,11 +62,13 @@ class Home extends Controller
         $redis->setex($token,3600,'liugene');
         $result = $redis->get($token);
         dump($result);die;*/
-        /*$sms = new SmsSdk;
+        /*$code = rand(100000,999999);
+        $sms = new SmsSdk;
         $sms->PhoneNumbers = '15558040535';
         $sms->setKeyId('Sendsms');
-        $sms->SignName = '王剑南';
-        $sms->TemplateCode = 'SMS_78590122';
+        $sms->SignName = '我飞网';
+        $sms->TemplateCode = 'SMS_81550001';
+        $sms->TemplateParam = "{'number':$code}";
         $result = $sms->send();
         var_dump($result);*/
 	}

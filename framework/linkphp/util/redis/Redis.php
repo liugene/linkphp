@@ -16,17 +16,25 @@ namespace util\redis;
 
 class Redis
 {
+    //私有静态保存链接对象
     static public $_link;
-    public function __construct()
+
+    //私有化构造函数
+    static private function __construct()
     {
-        static::connect();
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1',6379);
     }
 
-    static private function connect()
+    //私有化克隆函数
+    static private function __clone(){}
+
+    static public function getConnect()
     {
-        static::$_link = new \Redis();
-        static::$_link->connect('127.0.0.1',6379);
-        return static::$_link;
+        if(!self::$_link){
+            self::$_link = new self();
+        }
+        return self::$_link;
     }
 
 }

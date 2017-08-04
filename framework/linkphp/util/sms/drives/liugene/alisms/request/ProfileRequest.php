@@ -22,9 +22,9 @@ class ProfileRequest
     //请求类型
     protected $_protocol_type = 'http';
     //key
-    protected $_access_key_id = 'LTAISfj9iRW91OZK';
+    protected $_access_key_id = 'LTAImI0YrC7yf9iF';
     //$accessKeySecret
-    protected $_access_key_secret = 'TksE3Ixo3TAMDJbOy97vKKwi3b17ZK';
+    protected $_access_key_secret = 'VGwZJ71YQwgqH7JiCfus0HaJ2JebSm';
     //没传默认为JSON，可选填值：XML
     protected $_format = 'JSON';
     //建议固定值：HMAC-SHA1
