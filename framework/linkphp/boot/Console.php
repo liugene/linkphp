@@ -23,7 +23,7 @@ class Console
     static private $_env_object;
 
     //控制台初始化
-    static public function initialize(Env $_env_object)
+    static public function initialize($_env_object)
     {
         static::$_env_object = $_env_object;
         //系统引擎机制初始化
