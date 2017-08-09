@@ -1,6 +1,5 @@
 <?php
 
-namespace linkphp\boot;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -10,14 +9,25 @@ namespace linkphp\boot;
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               LinkPHP框架启动文件
+// |               配置类
 // +----------------------------------------------------------------------
 
-//加载自动加载方法
-require(CORE_PATH . 'Autoload.php');
-//注册自动加载方法
-Autoload::register();
-//注册错误和异常处理机制
-Error::register();
-//控制台初始化
-Console::initialize(new Env);
+namespace linkphp\boot;
+use linkphp\boot\interfaces\EnvInterface;
+class Env
+{
+    static protected $_env_object;
+
+    //设置策略
+    static public function setStrategy(EnvInterface $_env_object)
+    {
+        self::$_env_object = $_env_object;
+    }
+
+    //操作相应模式
+    public function selectEnvModel()
+    {
+        self::$_env_object->Env();
+    }
+
+}
