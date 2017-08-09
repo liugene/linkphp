@@ -27,7 +27,7 @@
  //定义框架加载文件夹目录常量
  defined('LOAD_PATH') or define('LOAD_PATH',ROOT_PATH . 'loaders/');
  //定义框架运行产生文件文件夹目录常量
- defined('RUNTIME_PATH') or define('RUNTIME_PATH',ROOT_PATH . 'runtime/');
+ defined('RUNTIME_PATH') or define('RUNTIME_PATH',ROOT_PATH . 'runtimes/');
  defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'assets/');
  //定义Composer目录常量
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
@@ -46,7 +46,7 @@
  //定义LinkPHP框架扩展类库目录常量
  defined('UTIL_PATH') or define('UTIL_PATH', BOOT_PATH . 'util/');
  //定义LinkPHP框架附加文件目录常量
- defined('EXTRA_PATH') or define('EXTRA_PATH', BOOT_PATH . 'extra/');
+ defined('EXTRA_PATH') or define('EXTRA_PATH', LINKPHP_PATH . 'extra/');
  //定义LinkPHP框架系统文件目录常量
  defined('SYSTEM_PATH') or define('SYSTEM_PATH', BOOT_PATH . 'system/');
  //定义LinkPHP框架语言目录常量
