@@ -18,7 +18,6 @@
 	},
   "require":{
     "php": "^5.4 || ^7.0",
-    "linkphp/link-orm":"dev-master",
     "linkphp/link-api":"dev-master",
     "linkphp/link-temp":"dev-master",
     "phpunit/phpunit": "4.8.*",
