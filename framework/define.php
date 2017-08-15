@@ -38,15 +38,15 @@
  //定义公共附件目录常量
  defined('__ATTACH__') or define('__ATTACH__', CACHE_PATH . 'attachment/');
  //定义LinkPHP框架目录常量
- defined('LINKPHP_PATH') or define('LINKPHP_PATH', ROOT_PATH . 'framework/');
+ defined('FRAMEWORK_PATH') or define('FRAMEWORK_PATH', ROOT_PATH . 'framework/');
  //定义LinkPHP框架核心类目录常量
- defined('CORE_PATH') or define('CORE_PATH', LINKPHP_PATH . 'linkphp/boot/');
+ defined('CORE_PATH') or define('CORE_PATH', FRAMEWORK_PATH . 'linkphp/boot/');
  //定义LinkPHP框架启动目录常量
- defined('BOOT_PATH') or define('BOOT_PATH', LINKPHP_PATH . 'linkphp/');
+ defined('BOOT_PATH') or define('BOOT_PATH', FRAMEWORK_PATH . 'linkphp/');
  //定义LinkPHP框架扩展类库目录常量
- defined('UTIL_PATH') or define('UTIL_PATH', BOOT_PATH . 'util/');
+ defined('UTIL_PATH') or define('UTIL_PATH', FRAMEWORK_PATH . 'util/');
  //定义LinkPHP框架附加文件目录常量
- defined('EXTRA_PATH') or define('EXTRA_PATH', LINKPHP_PATH . 'extra/');
+ defined('EXTRA_PATH') or define('EXTRA_PATH', FRAMEWORK_PATH . 'extra/');
  //定义LinkPHP框架系统文件目录常量
  defined('SYSTEM_PATH') or define('SYSTEM_PATH', BOOT_PATH . 'system/');
  //定义LinkPHP框架语言目录常量

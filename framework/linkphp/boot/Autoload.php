@@ -110,7 +110,7 @@ class Autoload
     {
         $name = strstr($class_name, '\\', true);
         if($name == 'boot'){
-            $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
+            $filename = FRAMEWORK_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){
                 //存在引入
