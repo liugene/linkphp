@@ -15,10 +15,11 @@
 return [
     //psr4命名空间注册
     'autoload_namespace_psr4'   =>  [
-        'assets\\controllers\\main\\'         =>  array(APPLICATION_PATH . 'controllers/main'),
-        'assets\\models\\main\\'              =>  array(APPLICATION_PATH . 'models/main'),
-        'assets\\base\\models\\'              =>  array(APPLICATION_PATH . 'base/models'),
-        'assets\\base\\controllers\\'         =>  array(APPLICATION_PATH . 'base/controllers'),
+	    'assets'         =>  array(APPLICATION_PATH),
+        //'assets\\controllers\\main\\'         =>  array(APPLICATION_PATH . 'controllers/main'),
+        //'assets\\models\\main\\'              =>  array(APPLICATION_PATH . 'models/main'),
+        //'assets\\base\\models\\'              =>  array(APPLICATION_PATH . 'base/models'),
+        //'assets\\base\\controllers\\'         =>  array(APPLICATION_PATH . 'base/controllers'),
         'api\\controllers\\main\\'            =>  array(APPLICATION_PATH . 'controllers/main'),
         'api\\models\\main\\'              =>  array(APPLICATION_PATH . 'models/main'),
         'linkphp\\boot\\'               =>  array(BOOT_PATH . 'boot'),

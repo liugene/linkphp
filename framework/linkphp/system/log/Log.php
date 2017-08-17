@@ -15,22 +15,40 @@
  namespace system\log;
  class Log
  {
+
+     //保存日志存储大小
+     static private $_log_size = 1048576;
+
+     //设置日志保存大小
+     static public function setLogSize($size)
+     {
+         if(is_numeric($size)){
+             self::$_log_size = $size;
+         }
+     }
+
      static public function save($message)
      {
          static::write($message);
      }
 
-     static private function write($message)
+     //存储操作日志内容
+     static private function write($message,$path=null)
      {
          $time = date('c');
-         $filename = date('Y_m_d');
-         $logpath = C('log_path') . '_system_log_' . $filename;
-         if(!is_dir($logpath)){
-             mkdir($logpath,0755,true);
+         $data = date('Y-m-d');
+         $logpath = is_null($path) ? C('log_path') . '_system_log_' . $data : $path;
+         $reslpath = str_replace('\\','/',$path);
+         if(!is_dir($reslpath)){
+             mkdir($reslpath,0755,true);
+         }
+         $filename = $reslpath . '/' . $data;
+         if(file_exists($filename) && filesize($filename) >= self::$_log_size){
+             $i = 0;
+             $filename = rename($filename,$reslpath . '/' . $data . '-' . $i++  . '.json');
          }
          error_log("[{$time}] ".$_SERVER['REMOTE_ADDR'].' '.$_SERVER['REQUEST_URI']."\r\n{$message}\r\n", 3,$logpath . '/' . $filename . '.log');
      }
  }
 
 
- ?>
