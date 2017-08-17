@@ -13,7 +13,7 @@
 // +----------------------------------------------------------------------
 
 namespace linkphp\boot;
-use system\core\Engine;
+use linkphp\system\core\Engine;
 use linkphp\boot\env\CommandEnv;
 use linkphp\boot\env\NormalEnv;
 

@@ -12,8 +12,8 @@
 // |               数据库语句解释器
 // +----------------------------------------------------------------------
 
-namespace linkphp\boot;
-use linkphp\boot\db\Drives;
+namespace linkphp\system\db;
+use linkphp\system\db\Drives;
 class Db
 {
     protected $_dao; //存储dao对象的属性，可以在子类中进行访问，使用dao对象

@@ -12,6 +12,6 @@
  * --------------------------------------------------*
  */
 
- namespace system\cache;
+ namespace linkphp\system\cache;
  class Cache
  {}

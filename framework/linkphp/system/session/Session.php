@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
-namespace system\session;
+namespace linkphp\system\session;
 class Session{
     private $_dao;
     

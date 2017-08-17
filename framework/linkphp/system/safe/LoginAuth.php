@@ -12,7 +12,7 @@
 // |               api权限类
 // +----------------------------------------------------------------------
 
-namespace system\safe;
+namespace linkphp\system\safe;
 
 class LoginAuth
 {

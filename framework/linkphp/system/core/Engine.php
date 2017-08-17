@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace system\core;
+ namespace linkphp\system\core;
  class Engine
  {
      static public function initialize()

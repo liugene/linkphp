@@ -23,7 +23,7 @@
  * @param $result [string] MySQL连接资源集
  */
 
-namespace linkphp\boot\db\drives;
+namespace linkphp\system\db\drives;
 class Mysql
 {
 

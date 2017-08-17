@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace system\safe;
+ namespace linkphp\system\safe;
  class Token
  {
 

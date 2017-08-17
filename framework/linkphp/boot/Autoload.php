@@ -59,13 +59,13 @@ class Autoload
     /*自动加载方法*/
     static private function autoloadFunc()
     {
-        static::$_autoload_func = ['LinkSystemAutoload','classMapAutoload','namespaceAutoload','loaderClass'];
+        static::$_autoload_func = ['classMapAutoload','namespaceAutoload','loaderClass'];
     }
 
     /**
      * 系统自动加载方法
     */
-    static public function LinkSystemAutoload($class_name)
+    /**static public function LinkSystemAutoload($class_name)
     {
         $name = strstr($class_name, '\\', true);
         if($name == 'system'){
@@ -73,7 +73,7 @@ class Autoload
             /**
              * 判断文件是否存在
              */
-            if(file_exists($filename)){
+            /**if(file_exists($filename)){
                 //存在引入
                 //Link系统目录下面的命名空间自动定位
                 require($filename);
@@ -83,7 +83,7 @@ class Autoload
                 throw new Exception("无法加载系统类");
             }
         }
-    }
+    }**/
 
     /**
      * 映射类自动加载方法

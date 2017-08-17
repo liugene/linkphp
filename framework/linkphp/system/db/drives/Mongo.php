@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
  
- namespace linkphp\boot\db\drives;
+ namespace linkphp\system\db\drives;
  class Mongo{
     public function test(){
         echo '<br />MongoDB扩展类<br />';

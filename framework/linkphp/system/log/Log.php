@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace system\log;
+ namespace linkphp\system\log;
  class Log
  {
 
