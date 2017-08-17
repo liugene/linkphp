@@ -109,7 +109,7 @@ class Autoload
     static public function namespaceAutoload($class_name)
     {
         $name = strstr($class_name, '\\', true);
-        if($name == 'boot'){
+        /*if($name == 'boot'){
             $filename = FRAMEWORK_PATH . str_replace('\\', '/', $class_name) . EXT;
             //判断文件是否存在
             if(file_exists($filename)){
@@ -121,7 +121,7 @@ class Autoload
                 //抛出异常
                 throw new Exception("无法加载框架核心类");
             }
-        }
+        }*/
         /*
          * elseif($name == 'helper'){
             $filename = LINKPHP_PATH . str_replace('\\', '/', $class_name) . EXT;
@@ -151,7 +151,7 @@ class Autoload
             }
         }
         */
-        elseif($name == 'util'){
+        if($name == 'util'){
             $filename = BOOT_PATH . str_replace('\\', '/', $class_name) . EXT;
             /**
              * 判断文件是否存在
