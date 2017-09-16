@@ -33,7 +33,7 @@ class Dispatch
         }
         //实例化控制器类
         $controller_name = APP_NAMESPACE_NAME  . '\controllers\\' . PLATFORM . '\\' . CONTROLLER;
-        $filename = $config['__APP__'] . 'controllers' . '/' . PLATFORM . '/' . CONTROLLER  . EXT;
+        $filename = str_replace('\\','/',$config['__APP__'] . 'controllers' . '/' . PLATFORM . '/' . CONTROLLER  . EXT);
         if(file_exists($filename)){
             $controller = new $controller_name;
         } else {
