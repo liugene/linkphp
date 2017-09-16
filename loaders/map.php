@@ -22,7 +22,7 @@ return [
         //'assets\\base\\controllers\\'         =>  array(APPLICATION_PATH . 'base/controllers'),
         'api\\controllers\\main\\'            =>  array(APPLICATION_PATH . 'controllers/main'),
         'api\\models\\main\\'              =>  array(APPLICATION_PATH . 'models/main'),
-        'linkphp\\'               =>  array(BOOT_PATH),
+        'linkphp\\'               =>  array(ROOT_PATH . 'framework/linkphp'),
         //'linkphp\\boot\\router\\'               =>  array(BOOT_PATH . 'boot/router'),
         //'linkphp\\boot\\handle\\'               =>  array(BOOT_PATH . 'boot/handle'),
         //'linkphp\\boot\\router\\config\\'               =>  array(BOOT_PATH . 'boot/router/config'),

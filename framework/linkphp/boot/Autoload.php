@@ -341,7 +341,7 @@ class Autoload
         if(array_key_exists($class_name[0],static::$_sort_psr4_map)){
             foreach(static::$_sort_psr4_map[$class_name[0]] as $prefix){
                 if(strpos($class_name,$prefix) === 0){
-                    $filename = str_replace('/', '\\',static::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . EXT;
+                    $filename = str_replace('/', '\\',static::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace('','\\',strrchr($class_name,'\\')) . EXT;
                     if(is_file($filename)){
                         require($filename);
                     } else {
