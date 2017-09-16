@@ -15,7 +15,7 @@
 return [
     //psr4命名空间注册
     'autoload_namespace_psr4'   =>  [
-	    'assets'         =>  array(APPLICATION_PATH),
+	    'assets'         =>  array(ROOT_PATH . 'assets'),
         //'assets\\controllers\\main\\'         =>  array(APPLICATION_PATH . 'controllers/main'),
         //'assets\\models\\main\\'              =>  array(APPLICATION_PATH . 'models/main'),
         //'assets\\base\\models\\'              =>  array(APPLICATION_PATH . 'base/models'),
