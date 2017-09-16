@@ -84,7 +84,7 @@
    * @ var $value 赋值变量
    */
   protected function display($tempfile='',$name='',$value=''){
-      $tempfile = $tempfile == '' ? CURRENT_VIEW_PATH . '/' . CONTROLLER . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX') : $tempfile;
+      $tempfile = $tempfile == '' ? CURRENT_VIEW_PATH . '/' . lcfirst(CONTROLLER) . '/' . ACTION  . C('DEFAULT_THEME_SUFFIX') : $tempfile;
       if(C('TOKEN_TURN_ON')){
           $token = new \System\Safe\Token();
           $token->init($tempfile);
