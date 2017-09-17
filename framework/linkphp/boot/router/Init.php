@@ -122,7 +122,7 @@ class Init
         //定义常量保存操作平台
         define('PLATFORM',isset($_GET[$config['var_platform']]) ? strtolower($_GET[$config['var_platform']]) : static::$_default_platform);
         //定义常量保存控制器
-        define('CONTROLLER',isset($_GET[$config['var_controller']]) ? strtolower($_GET[$config['var_controller']]) : static::$_default_controller);
+        define('CONTROLLER',isset($_GET[$config['var_controller']]) ? ucfirst($_GET[$config['var_controller']]) : static::$_default_controller);
         //定义常量保存操作方法
         define('ACTION',isset($_GET[$config['var_action']]) ? strtolower($_GET[$config['var_action']]) : static::$_default_action);
     }
@@ -135,7 +135,7 @@ class Init
         //定义常量保存操作平台
         define('PLATFORM',isset($param['platform'])&&$param['platform']!='' ? strtolower($param['platform']) : static::$_default_platform);
         //定义常量保存控制器
-        define('CONTROLLER',isset($param['controller'])&&$param['controller']!='' ? strtolower($param['controller']) : static::$_default_controller);
+        define('CONTROLLER',isset($param['controller'])&&$param['controller']!='' ? ucfirst($param['controller']) : static::$_default_controller);
         //定义常量保存操作方法
         define('ACTION',isset($param['action'])&&$param['action']!='' ? strtolower($param['action']) : static::$_default_action);
     }
@@ -143,5 +143,3 @@ class Init
 }
 
 
-
-?>
