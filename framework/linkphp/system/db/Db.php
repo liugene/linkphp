@@ -16,8 +16,10 @@ namespace linkphp\system\db;
 use linkphp\system\db\Drives;
 class Db
 {
-    protected $_dao; //存储dao对象的属性，可以在子类中进行访问，使用dao对象
-    protected $_function=array(
+
+    static private $_self;
+    static  protected $_dao; //存储dao对象的属性，可以在子类中进行访问，使用dao对象
+    static protected $_function=array(
         'table' => '',
         'group' => '',
         'join' => '',
@@ -33,28 +35,30 @@ class Db
      * 初始化DAO
      */
 
-    protected function _initDAO(){
-
+    static  protected function _initDAO()
+    {
+        if(isset(static::$_self)){
+            return static::$_self;
+        } else {
+            static::$_self = new self;
+        }
         //初始化mySQL
         $config = require(LOAD_PATH . 'database.php');
-        if(!isset($this->_dao)){
+        if(!isset(static::$_dao)){
             $dao = Drives::init($config);
             $dao->connect();
-            $this->_dao = $dao;
+            static::$_dao = $dao;
         }
-        return $this->_dao;
+        return static::$_self;
     }
+    private function __construct(){}
 
-    public function __construct(){
-
-        //初始化DAO
-        $this -> _initDAO();
-    }
+    private function __clone(){}
 
     public function __call($function,$args)
     {
-        if(array_key_exists($function,$this->_function)){
-            $this->_function[$function] = $args[0];
+        if(array_key_exists($function,static::$_function)){
+            static::$_function[$function] = $args[0];
         } else {
             throw new \Exception('无法找到对应方法');
         }
@@ -67,8 +71,8 @@ class Db
      */
     public function select()
     {
-        $sql = 'select ' . $this->_function['field'] . ' from ' . $this->_function['table'] . ' ' . $this->_function['where'];
-        $result = $this->_dao->select($sql);
+        $sql = 'select ' . static::$_function['field'] . ' from ' . static::$_function['table'] . ' ' . static::$_function['where'];
+        $result = static::$_dao->select($sql);
         $this->freeFunc();
         return $result;
     }
@@ -79,8 +83,8 @@ class Db
      */
     public function find()
     {
-        $sql = 'SELECT ' . $this->_function['field'] . ' FROM ' . $this->_function['table'] . ' ' . $this->_function['where'];
-        $result = $this->_dao->find($sql);
+        $sql = 'SELECT ' . static::$_function['field'] . ' FROM ' . static::$_function['table'] . ' ' . static::$_function['where'];
+        $result = static::$_dao->find($sql);
         $this->freeFunc();
         return $result;
     }
@@ -91,8 +95,8 @@ class Db
 
     public function add($value)
     {
-        $sql = 'INSERT INTO ' . $this->_function['table'] . '(' . $this->_function['field']  . ') ' . 'VALUES(' . $value . ') ' . $this->_function['where'];
-        $result = $this->_dao->query($sql);
+        $sql = 'INSERT INTO ' . static::$_function['table'] . '(' . static::$_function['field']  . ') ' . 'VALUES(' . $value . ') ' . static::$_function['where'];
+        $result = static::$_dao->query($sql);
         $this->freeFunc();
         return $result;
     }
@@ -112,6 +116,16 @@ class Db
         );
     }
 
-}
+    // 调用驱动类的方法
+    public static function __callStatic($method, $params)
+    {
+        if(array_key_exists($method,static::$_function)){
+            static::$_function[$method] = $params[0];
+        } else {
+            throw new \Exception('无法找到对应方法');
+        }
+        // 自动初始化数据库
+        return self::_initDAO();
+    }
 
-?>
+}
