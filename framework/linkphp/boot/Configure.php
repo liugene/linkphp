@@ -16,6 +16,21 @@ namespace linkphp\boot;
 class Configure
 {
 
+    //保存已经加载的配置信息
+    static private $_config = [];
+
+    static public function load($file)
+    {
+        if(is_file($file)){
+            try{
+                self::$_config = parse_ini_file($file);
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+        return false;
+    }
+
     /**
      * 封装C方法用于动态获取以及配置文件
      * @param [string] $name 配置名

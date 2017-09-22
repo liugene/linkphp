@@ -152,7 +152,7 @@ class Autoload
         }
         */
         if($name == 'util'){
-            $filename = BOOT_PATH . str_replace('\\', '/', $class_name) . EXT;
+            $filename = FRAMEWORK_PATH . str_replace('\\', '/', $class_name) . EXT;
             /**
              * 判断文件是否存在
              */

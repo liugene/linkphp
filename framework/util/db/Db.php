@@ -12,8 +12,8 @@
 // |               数据库语句解释器
 // +----------------------------------------------------------------------
 
-namespace linkphp\system\db;
-use linkphp\system\db\Drives;
+namespace util\db;
+use util\db\Drives;
 class Db
 {
 
@@ -93,6 +93,22 @@ class Db
 
     public function deleted(){}
 
+    public function insert($data)
+    {
+        if(is_array($data)){
+            //是数组将键名以及值用','拼接成字符串形式
+            $value = implode('\',\'', array_values($data));
+            $fileds = implode(',', array_keys($data));
+            //拼接数据库插入语句
+            $sql = "INSERT INTO " . static::$_function['table'] . " ( $fileds ) VALUES ( '$value' )";
+        } else {
+            //字段为字符串是直接拼接数据库插入语句
+            $sql = "INSERT INTO " . static::$_function['table'] . " ( array_keys($data) ) VALUES ( '".array_values($data)."')";
+        }
+        $result = static::$_dao->insert($sql);
+        return $result;
+    }
+
     public function add($value)
     {
         $sql = 'INSERT INTO ' . static::$_function['table'] . '(' . static::$_function['field']  . ') ' . 'VALUES(' . $value . ') ' . static::$_function['where'];
@@ -103,7 +119,7 @@ class Db
 
     private function freeFunc()
     {
-        $this->_function = array(
+        static::$_function = array(
             'table' => '',
             'group' => '',
             'join' => '',

@@ -8,10 +8,16 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                 LinkPHP缓存入口文件               *
+ *                  MongoDB扩展类                    *
  * --------------------------------------------------*
  */
+ 
+ namespace util\db\drives;
+ class Mongo{
+    public function test(){
+        echo '<br />MongoDB扩展类<br />';
+    }
+ }
 
- namespace linkphp\system\cache;
- class Cache
- {}
+
+

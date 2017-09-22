@@ -23,7 +23,7 @@
  * @param $result [string] MySQL连接资源集
  */
 
-namespace linkphp\system\db\drives;
+namespace util\db\drives;
 class Mysql
 {
 
@@ -44,12 +44,12 @@ class Mysql
     public function __construct($config)
     {
 
-        $this->_host = $config['HOST'];
-        $this->_port = $config['PORT'];
-        $this->_dbuser = $config['DBUSER'];
-        $this->_dbpwd = $config['DBPWD'];
-        $this->_charset = $config['CHARSET'];
-        $this->_dbname = $config['DBNAME'];
+        $this->_host = $config['host'];
+        $this->_port = $config['port'];
+        $this->_dbuser = $config['dbuser'];
+        $this->_dbpwd = $config['dbpwd'];
+        $this->_charset = $config['charset'];
+        $this->_dbname = $config['dbname'];
         static::$_debug = C('APP_DEBUG');
         //连接数据库
         $this->connect();
@@ -190,8 +190,10 @@ class Mysql
     public function getOne($sql)
     {
         $result = $this->query($sql);
-        $result = mysqli_fetch_assoc($result);
-        return $result;
+        if(!$result){
+            return false;
+        }
+        return $result = mysqli_fetch_assoc($result);
     }
 
     //获取最近一次SQL操作语句ID

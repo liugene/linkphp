@@ -11,7 +11,7 @@
  *            Sql server srv数据库扩展类             *
  * --------------------------------------------------*
  */
-namespace linkphp\system\db\drives;
+namespace util\db\drives;
 class Sqlsrv
 {
     /**

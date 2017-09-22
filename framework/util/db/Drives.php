@@ -12,9 +12,9 @@
  * --------------------------------------------------*
  */
  
- namespace linkphp\system\db;
- use linkphp\system\db\drives\Mysql;
- use linkphp\system\db\drives\Sqlsrv;
+ namespace util\db;
+ use util\db\drives\Mysql;
+ use util\db\drives\Sqlsrv;
  class Drives
  {
 
