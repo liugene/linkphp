@@ -37,8 +37,8 @@
      {
          $time = date('c');
          $data = date('Y-m-d');
-         $logpath = is_null($path) ? C('log_path') . '_system_log_' . $data : $path;
-         $reslpath = str_replace('\\','/',$path);
+         $logpath = is_null($path) ? C('log_path') . $data : $path;
+         $reslpath = str_replace('\\','/',$logpath);
          if(!is_dir($reslpath)){
              mkdir($reslpath,0755,true);
          }
@@ -47,7 +47,7 @@
              $i = 0;
              $filename = rename($filename,$reslpath . '/' . $data . '-' . $i++  . '.json');
          }
-         error_log("[{$time}] ".$_SERVER['REMOTE_ADDR'].' '.$_SERVER['REQUEST_URI']."\r\n{$message}\r\n", 3,$logpath . '/' . $filename . '.log');
+         error_log("[{$time}] ".$_SERVER['REMOTE_ADDR'].' '.$_SERVER['REQUEST_URI']."\r\n{$message}\r\n", 3, $filename . '.log');
      }
  }
 

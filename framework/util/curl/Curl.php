@@ -25,7 +25,7 @@ namespace util\curl;
 
 class Curl
 {
-    static public function request($type,$url){
+    static public function request($type,$url,$data=''){
         
         //模拟GET请求
         $curl = curl_init();
@@ -35,7 +35,7 @@ class Curl
                 break;
             case 'post';
                 curl_setopt($curl,CURLOPT_POST,true);
-                $post_data = array('username' => 'link','password' => 'link');
+                $post_data = $data;
                 curl_setopt($curl,CURLOPT_POSTFIELDS,$post_data);
                 break;
         }
