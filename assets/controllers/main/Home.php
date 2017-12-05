@@ -21,7 +21,7 @@ class Home extends Controller
 		$this->display();
 		//$model = new \assets\models\main\Index;
         //$model = new \assets\base\models\Common;
-        \assets\base\controllers\Common::test();
+//        \assets\base\controllers\Common::test();
         //$model = new \assets\controllers\main\domore\Index;
         //$config['alidayu_appkey'] = C('alidayu_appkey');
         //$config['alidayu_appsecret'] = C('alidayu_appsecret');
