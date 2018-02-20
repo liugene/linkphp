@@ -26,7 +26,7 @@
  //定义站点入库文件夹目录常量
  defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'www/');
  //定义框架加载文件夹目录常量
- defined('LOAD_PATH') or define('LOAD_PATH',ROOT_PATH . 'loaders/');
+ defined('LOAD_PATH') or define('LOAD_PATH',ROOT_PATH . 'configure/');
  //定义框架运行产生文件文件夹目录常量
  defined('RUNTIME_PATH') or define('RUNTIME_PATH',WEB_PATH . 'runtimes/');
  defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'application/');
