@@ -24,11 +24,11 @@
  //目录基础常量的定义
  defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ ) . '/');
  //定义站点入库文件夹目录常量
- defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'www/');
+ defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'entrance/');
  //定义框架加载文件夹目录常量
  defined('LOAD_PATH') or define('LOAD_PATH',ROOT_PATH . 'configure/');
  //定义框架运行产生文件文件夹目录常量
- defined('RUNTIME_PATH') or define('RUNTIME_PATH',WEB_PATH . 'runtimes/');
+ defined('RUNTIME_PATH') or define('RUNTIME_PATH',WEB_PATH . 'runtime/');
  defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'application/');
  //定义Composer目录常量
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
