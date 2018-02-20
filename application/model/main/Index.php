@@ -6,7 +6,7 @@
  * Time: 12:30
  */
 
- namespace app\models\main;
+ namespace app\model\main;
  use linkphp\boot\Model;
  class Index extends Model
  {}

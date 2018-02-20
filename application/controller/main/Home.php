@@ -1,5 +1,5 @@
 <?php
-namespace app\controllers\main;
+namespace app\controller\main;
 use linkphp\boot\Controller;
 class Home extends Controller
 {

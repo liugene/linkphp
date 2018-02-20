@@ -10,6 +10,4 @@ return [
     'dbname'   => 'AEGCRM', //数据库名称
     'dbprefix' => 'AEG_', //数据库表前缀
     'db_type'  => 'sqlsrv', //数据库类型 默认Mysql
-]
-
-?>
+];

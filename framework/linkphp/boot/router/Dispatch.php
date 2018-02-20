@@ -25,15 +25,15 @@ class Dispatch
     //分发方法
     static private function _dispatch($config)
     {
-        $dir = $config['__APP__'] . 'controllers/' . PLATFORM;
+        $dir = $config['__APP__'] . 'controller/' . PLATFORM;
         //判断模块是否存在
         if(!is_dir($dir)){
             //抛出异常
             throw new \Exception("无法加载模块");
         }
         //实例化控制器类
-        $controller_name = APP_NAMESPACE_NAME  . '\controllers\\' . PLATFORM . '\\' . CONTROLLER;
-        $filename = str_replace('\\','/',$config['__APP__'] . 'controllers' . '/' . PLATFORM . '/' . CONTROLLER  . EXT);
+        $controller_name = APP_NAMESPACE_NAME  . '\controller\\' . PLATFORM . '\\' . CONTROLLER;
+        $filename = str_replace('\\','/',$config['__APP__'] . 'controller' . '/' . PLATFORM . '/' . CONTROLLER  . EXT);
         if(file_exists($filename)){
             $controller = new $controller_name;
         } else {
