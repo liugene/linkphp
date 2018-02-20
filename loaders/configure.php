@@ -20,6 +20,4 @@ return [
     'charset'  => 'utf8', //数据库编码
     'dbname'   => 'AEGCRM', //数据库名称
     'dbprefix' => 'AEG_', //数据库表前缀
-]
-
-?>
+];

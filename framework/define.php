@@ -19,6 +19,7 @@
 
  //版本信息
  define('LINKPHP_VERSION','1.0.0');
+ //声明应用根命名空间
  //声明路径常量
  //目录基础常量的定义
  defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ ) . '/');
@@ -27,8 +28,8 @@
  //定义框架加载文件夹目录常量
  defined('LOAD_PATH') or define('LOAD_PATH',ROOT_PATH . 'loaders/');
  //定义框架运行产生文件文件夹目录常量
- defined('RUNTIME_PATH') or define('RUNTIME_PATH',ROOT_PATH . 'runtimes/');
- defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'assets/');
+ defined('RUNTIME_PATH') or define('RUNTIME_PATH',WEB_PATH . 'runtimes/');
+ defined('APPLICATION_PATH') or define('APPLICATION_PATH', ROOT_PATH . 'application/');
  //定义Composer目录常量
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
  //定义缓存目录常量
@@ -56,7 +57,7 @@
 
  //系统可变常量
  defined('APP_INTERFACE_ON') or define('APP_INTERFACE_ON','FALSE'); //开启接口应用
- defined('APP_NAMESPACE_NAME') or define('APP_NAMESPACE_NAME','assets'); //定义应用名称
+ defined('APP_NAMESPACE_NAME') or define('APP_NAMESPACE_NAME','app'); //定义应用名称
  defined('APP_DEBUG') or define('APP_DEBUG',FALSE); //开启站点调试
  defined('SYSTEM_LANGUAGE') or define('SYSTEM_LANGUAGE','');
  define('IS_CLI',PHP_SAPI == 'cli' ? true : false);

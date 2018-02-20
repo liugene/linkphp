@@ -15,19 +15,8 @@
 return [
     //psr4命名空间注册
     'autoload_namespace_psr4'   =>  [
-	    'assets'         =>  array(ROOT_PATH . 'assets'),
-        //'assets\\controllers\\main\\'         =>  array(APPLICATION_PATH . 'controllers/main'),
-        //'assets\\models\\main\\'              =>  array(APPLICATION_PATH . 'models/main'),
-        //'assets\\base\\models\\'              =>  array(APPLICATION_PATH . 'base/models'),
-        //'assets\\base\\controllers\\'         =>  array(APPLICATION_PATH . 'base/controllers'),
-        'api\\controllers\\main\\'            =>  array(APPLICATION_PATH . 'controllers/main'),
-        'api\\models\\main\\'              =>  array(APPLICATION_PATH . 'models/main'),
+	    'app'         =>  array(ROOT_PATH . 'application'),
         'linkphp\\'               =>  array(ROOT_PATH . 'framework/linkphp'),
-        //'linkphp\\boot\\router\\'               =>  array(BOOT_PATH . 'boot/router'),
-        //'linkphp\\boot\\handle\\'               =>  array(BOOT_PATH . 'boot/handle'),
-        //'linkphp\\boot\\router\\config\\'               =>  array(BOOT_PATH . 'boot/router/config'),
-        //'linkphp\\boot\\cli\\command\\'               =>  array(BOOT_PATH . 'boot/cli/command'),
-        //'linkphp\\boot\\traits\\'                  =>  array(BOOT_PATH . 'boot/traits'),
         //'extend\\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
     ],
     //psr0命名空间

@@ -8,19 +8,14 @@
  * --------------------------------------------------*
  * Copyright (c) 2017 LinkPHP. All rights reserved.  *
  * --------------------------------------------------*
- *                   站点入口文件                    *
+ *                  站点模块配置文件                 *
  * --------------------------------------------------*
  */
  
- namespace assets\base\models;
- use linkphp\boot\Model;
- class Common extends Model{
-    public function test(){
-        echo '<br />站点公共模型类测试方法 <br />';
-    }
- }
 
+ return array(
 
-
-
-?>
+ //'配置项' => '配置值',
+ 'HOST' => '测试Index配置',
+ //'DEFAULT_THEME_SUFFIX' => 'html',
+);

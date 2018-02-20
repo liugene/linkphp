@@ -48,7 +48,7 @@ class Configure
     {
         if(self::check('extend_model_config', 'true') == 'true'){
             $platform = isset($_GET[self::check('var_platform','true')]) ? ucfirst($_GET[self::check('var_platform','true')]) : self::check('default_platform','true');
-            $extend_config['extend'] = require APPLICATION_PATH . 'configure' . $platform . '/configure.php';
+            $extend_config['extend'] = require LOAD_PATH . $platform . '/configure.php';
             if(array_key_exists($name, $extend_config['extend'])){
                 return $extend_config['extend'][strtoupper($name)];
             }

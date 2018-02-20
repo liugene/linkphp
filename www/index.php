@@ -13,7 +13,7 @@
 // +----------------------------------------------------------------------
 
  // 定义应用目录
- define('APPLICATION_PATH', dirname(__DIR__) . '/assets/');
+ define('APPLICATION_PATH', dirname(__DIR__) . '/application/');
  //加载LinkPHP框架常量文件
  require(dirname(__DIR__) . '/framework/define.php');
  //加载LinkPHP框架启动文件
