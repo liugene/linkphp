@@ -57,4 +57,29 @@ class Application
         return $this;
     }
 
+    static public function getRequestMethod()
+    {
+        return Component::get('request')->request()->getRequestMethod();
+    }
+
+    static public function Router()
+    {
+        return Component::get('run');
+    }
+
+    static public function env()
+    {
+        return Component::get('env');
+    }
+
+    static public function httpRequest()
+    {
+        return Component::get('request');
+    }
+
+    static public function get($alias)
+    {
+        return Component::get($alias);
+    }
+
 }

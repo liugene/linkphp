@@ -15,24 +15,6 @@
  
  return [
   //'配置项' => '配置值'，
-  //数据库默认配置
-   'host'     => 'localhost', //一般不需要修改
-   'port'     => '3306', //默认即可
-   'dbuser'   => '', //数据库用户名
-   'dbpwd'    => '', //数据库密码
-   'charset'  => 'utf8', //数据库编码
-   'dbname'   => '', //数据库名称
-   'dbprefix' => '', //数据库表前缀
-   'db_type'  => 'sqlsrv', //数据库类型 默认Mysql
-  
-  //默认分发参数配置
-  'var_platform'       => 'p',      //默认传递模块名
-  'var_controller'     => 'c',      //默认传递控制器名
-  'var_action'         => 'a',      //默认传递方法名
-  'default_platform'   => 'main',  //默认模块名
-  'default_controller' => 'home',  //默认控制器
-  'default_action'     => 'main',  //默认操作方法
-  'url_module'         => '1',      //URL模式 0普通模式 1 pathinfo模式 2 rewrite模式
   
   
   //默认视图文件配置

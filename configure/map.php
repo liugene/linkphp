@@ -15,9 +15,8 @@
 return [
     //psr4命名空间注册
     'autoload_namespace_psr4'   =>  [
-	    'app'         =>  array(ROOT_PATH . 'application'),
+	    'app\\'         =>  array(ROOT_PATH . 'application'),
         'linkphp\\'               =>  array(ROOT_PATH . 'framework/linkphp'),
-        //'extend\\helper\sms'               =>  array(EXTEND_PATH . 'helper/sms'),
     ],
     //psr0命名空间
     'autoload_namespace_psr0' => [
@@ -27,10 +26,10 @@ return [
     'autoload_namespace_file' => [
         //'文件名' => '映射路径地址'
         'app_func'                => LOAD_PATH . 'auto/functions.php',
-        'framework_func'          => BOOT_PATH . 'functions.php'
+        'framework_func'          => FRAMEWORK_PATH . 'functions.php'
     ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
-        'Configure'  => CORE_PATH . 'Configure' . EXT,
+        'Config'  => CORE_PATH . 'Config' . EXT,
     ],
 ];

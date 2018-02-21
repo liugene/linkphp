@@ -1,7 +1,5 @@
 <?php
 
-namespace linkphp\boot;
-use linkphp\boot\cli\command\Output;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -14,9 +12,13 @@ use linkphp\boot\cli\command\Output;
 // |               命令行类
 // +----------------------------------------------------------------------
 
-class Command
+namespace linkphp\boot;
+use linkphp\boot\cli\command\Output;
+use linkphp\boot\interfaces\RunInterface;
+
+class Command implements RunInterface
 {
-    static public function initialize()
+    public function initialize()
     {
         if($_SERVER['argc'] == 1){
             Output::main();

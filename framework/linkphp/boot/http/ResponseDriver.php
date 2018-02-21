@@ -2,6 +2,7 @@
 
 namespace linkphp\boot\http;
 use linkphp\boot\http\response\Json;
+use linkphp\boot\http\response\Xml;
 
 class ResponseDriver
 {
@@ -20,7 +21,7 @@ class ResponseDriver
                 $response_driver = new Json();
                 break;
             default :
-                $response_driver = new Json();
+                $response_driver = new Xml();
         }
         return $response_driver;
     }

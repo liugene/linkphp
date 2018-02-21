@@ -28,7 +28,7 @@ Error::register();
 
 Application::run()->request()->check(
     IS_CLI ?
-    Component::get('env')
+    Application::env()
         ->selectEnvModel(
             Component::bind((new Definition())
             ->setAlias('envmodel')
@@ -42,7 +42,7 @@ Application::run()->request()->check(
                     return Component::get('run');
             })
         )) :
-    Component::get('env')
+    Application::env()
         ->selectEnvModel(
             Component::bind((new Definition())
             ->setAlias('envmodel')

@@ -12,7 +12,11 @@
  * --------------------------------------------------*
  */
 
- namespace linkphp\boot;
+ namespace linkphp;
+
+ use linkphp\boot\View;
+ use linkphp\boot\Smarty;
+
  class Controller{
 
      use \linkphp\traits\Test;
@@ -137,6 +141,4 @@
      $this->_view->show($content);
     }
   
- } 
-
-?>
+ }

@@ -1,8 +1,9 @@
 <?php
 namespace app\controller\main;
-use linkphp\boot\Controller;
+use linkphp\Controller;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
+use linkphp\Application;
 class Home
 {
 
@@ -17,6 +18,9 @@ class Home
         Component::bind((new Definition())->setAlias('test')->setCallBack(function(){
             return 123;
         }));
-        return ['msg' => Component::get('test')];
+//        dump(Component::get('event')->addObserver());
+        dump(Application::Router());
+//        return ['router' => Component::get('run')];
+        return ['method' => Application::getRequestMethod()];
 	}
 }

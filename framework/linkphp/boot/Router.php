@@ -17,14 +17,15 @@ namespace linkphp\boot;
 use linkphp\boot\router\Init;
 use linkphp\boot\router\Dispatch;
 use linkphp\boot\router\config\Config;
+use linkphp\boot\interfaces\RunInterface;
 
-class Router
+class Router implements RunInterface
 {
 
     /**
      * 路由解析启动
      */
-    static public function initialize()
+    public function initialize()
     {
         $config = Config::get();
         Init::init($config);
