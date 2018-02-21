@@ -16,8 +16,6 @@ namespace linkphp;
 
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
-use linkphp\boot\Router;
-use linkphp\boot\Command;
 use linkphp\boot\Autoload;
 use linkphp\boot\Error;
 
@@ -28,7 +26,7 @@ Autoload::register();
 //注册错误和异常处理机制
 Error::register();
 
-Application::run()->check(
+Application::run()->request()->check(
     IS_CLI ?
     Component::get('env')
         ->selectEnvModel(
@@ -38,10 +36,9 @@ Application::run()->check(
                 ->setCallBack(function(){
                     Component::bind((new Definition())
                         ->setAlias('run')
+                        ->setIsEager(true)
                         ->setIsSingleton(true)
-                        ->setCallBack(function(){
-                            return new Command();
-                        }));
+                        ->setClassName('linkphp\boot\Command'));
                     return Component::get('run');
             })
         )) :
@@ -53,11 +50,10 @@ Application::run()->check(
                 ->setCallBack(function(){
                     Component::bind((new Definition())
                         ->setAlias('run')
+                        ->setIsEager(true)
                         ->setIsSingleton(true)
-                        ->setCallBack(function(){
-                            return new Router();
-                        }));
+                        ->setClassName('linkphp\boot\Router'));
                     return Component::get('run');
                 })
         ))
-);
+)->response();

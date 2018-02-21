@@ -8,8 +8,8 @@ class Home
 
     public function __construct(Controller $controller)
     {
-        dump($controller);
-        dump(Component::getContainerInstance());
+//        dump($controller);
+//        dump(Component::getContainerInstance());
     }
 
     public function main()
@@ -17,6 +17,6 @@ class Home
         Component::bind((new Definition())->setAlias('test')->setCallBack(function(){
             return 123;
         }));
-        dump(Component::get('test'));
+        return ['msg' => Component::get('test')];
 	}
 }

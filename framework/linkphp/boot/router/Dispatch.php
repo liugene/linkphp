@@ -16,6 +16,7 @@ namespace linkphp\boot\router;
 
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
+use linkphp\Application;
 
 class Dispatch
 {
@@ -51,7 +52,7 @@ class Dispatch
         $action_name = ACTION;
         $controller = Component::get($controller_name);
         if(method_exists($controller,$action_name)){
-            $controller->$action_name();
+            Application::run()->setData($controller->$action_name());
         } else {
             //抛出异常
             throw new \Exception("无法加载方法");

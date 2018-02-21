@@ -10,6 +10,8 @@ use linkphp\boot\Definition;
 class Application
 {
 
+    private $data;
+
     //保存是否已经初始化
     private static $_init;
     //links启动
@@ -20,6 +22,11 @@ class Application
                 ->setAlias('env')
                 ->setIsSingleton(true)
                 ->setClassName('linkphp\\boot\\Env')
+            );
+            Component::bind((new Definition())
+                ->setAlias('request')
+                ->setIsSingleton(true)
+                ->setClassName('linkphp\\boot\\http\\Restful')
             );
             Engine::initialize();
             //初次初始化执行改变属性值为true
@@ -33,8 +40,21 @@ class Application
         return $this;
     }
 
-    public function request(){}
+    public function request()
+    {
+        Component::get('request')->request()->start();
+        return $this;
+    }
 
-    public function response(){}
+    public function response()
+    {
+        Component::get('request')->request()->setData($this->data)->send();
+    }
+
+    public function setData($data)
+    {
+        $this->data = $data;
+        return $this;
+    }
 
 }
