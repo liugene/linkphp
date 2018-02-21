@@ -48,19 +48,19 @@ class Config
     {
         if(self::check('extend_model_config', 'true') == 'true'){
             $platform = isset($_GET[self::check('var_platform','true')]) ? ucfirst($_GET[self::check('var_platform','true')]) : self::check('default_platform','true');
-            $extend_config['extend'] = require LOAD_PATH . $platform . '/configure.php';
+            $extend_config['extend'] = require APPLICATION_PATH . 'configure' . $platform . '/configure.php';
             if(array_key_exists($name, $extend_config['extend'])){
                 return $extend_config['extend'][strtoupper($name)];
             }
             elseif(!array_key_exists($name,$extend_config['extend'])){
-                $config['link'] = require BOOT_PATH . 'configure.php';
+                $config['link'] = require FRAMEWORK_PATH . 'configure.php';
                 $config['common'] = require LOAD_PATH . 'configure.php';
                 $config['conf'] = array_merge($config['link'], $config['common']);
                 return $config['conf'][strtoupper($name)];
             }
         } else {
             if($value == null){
-                $config['link'] = require BOOT_PATH . 'configure.php';
+                $config['link'] = require FRAMEWORK_PATH . 'configure.php';
                 $config['common'] = require LOAD_PATH . 'configure.php';
                 $config['conf'] = array_merge($config['link'], $config['common']);
                 return $config['conf'][strtolower($name)];
@@ -79,12 +79,12 @@ class Config
      */
     static function check($name,$value='false'){
         if($value == 'true'){
-            $config['link'] = require BOOT_PATH . 'configure.php';
+            $config['link'] = require FRAMEWORK_PATH . 'configure.php';
             $config['common'] = require LOAD_PATH . 'configure.php';
             $config['conf'] = array_merge($config['link'], $config['common']);
             return $config['conf'][strtolower($name)];
         } else {
-            $config['link'] = require BOOT_PATH . 'configure.php';
+            $config['link'] = require FRAMEWORK_PATH . 'configure.php';
             $config['common'] = require LOAD_PATH . 'configure.php';
             $config['conf'] = array_merge($config['link'], $config['common']);
             if(in_array(strtoupper($name), $config['conf'])){

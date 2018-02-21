@@ -31,7 +31,7 @@
 
   //系统语言包设置
   'default_language'     => 'cn', //设置系统语言'cn'简体中文,'tw'繁体中文,'en'英语。默认中文
-  
+
   
   //站点调试
   'app_debug'            => true, //是否打开调试功能
@@ -40,7 +40,7 @@
   'token_turn_on'        => false, //是否打开表单令牌验证
 
   //系统引擎配置
-  'session_on'           => false, //是否开启SESSION机制
+  'session_on'           => true, //是否开启SESSION机制
 
   //系统常用路径设置
   'log_path'             => CACHE_PATH  . 'log/', //系统日志存储路径

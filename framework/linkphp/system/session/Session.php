@@ -99,5 +99,3 @@ function userSessionGC($sess_id){
 }
     
 }
-
-?>

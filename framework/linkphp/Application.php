@@ -6,6 +6,7 @@ use linkphp\boot\Env;
 use linkphp\system\core\Engine;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
+use linkphp\boot\di\InstanceDefinition;
 
 class Application
 {
@@ -82,4 +83,23 @@ class Application
         return Component::get($alias);
     }
 
+    static public function bind(InstanceDefinition $definition)
+    {
+        return Component::bind($definition);
+    }
+
+    static public function definition()
+    {
+        return new Definition();
+    }
+
+    static public function getContainerInstance()
+    {
+        return Component::getContainerInstance();
+    }
+
+    static public function input($param)
+    {
+        return $param;
+    }
 }

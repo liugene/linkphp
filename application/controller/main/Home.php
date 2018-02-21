@@ -1,8 +1,6 @@
 <?php
 namespace app\controller\main;
 use linkphp\Controller;
-use linkphp\boot\Component;
-use linkphp\boot\Definition;
 use linkphp\Application;
 class Home
 {
@@ -10,17 +8,22 @@ class Home
     public function __construct(Controller $controller)
     {
 //        dump($controller);
-//        dump(Component::getContainerInstance());
+//        dump(Application::getContainerInstance());
     }
 
     public function main()
     {
-        Component::bind((new Definition())->setAlias('test')->setCallBack(function(){
-            return 123;
+        Application::bind(
+            Application::definition()
+                ->setAlias('test')
+                ->setCallBack(function(){
+                    return 123;
         }));
+        dump(Application::input('link'));die;
+        dump(Application::get('run'));die;
 //        dump(Component::get('event')->addObserver());
         dump(Application::Router());
-//        return ['router' => Component::get('run')];
+        return ['router' => Application::get('run')];
         return ['method' => Application::getRequestMethod()];
 	}
 }

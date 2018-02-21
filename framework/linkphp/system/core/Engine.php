@@ -13,6 +13,7 @@
  */
 
  namespace linkphp\system\core;
+ use linkphp\boot\Config;
  class Engine
  {
      static public function initialize()
@@ -20,11 +21,8 @@
          /**
           * 开启session机制
           */
-         if(C('session_on')){
+         if(Config::get('session_on')){
              session_start();
          }
      }
  }
-
-
- ?>
