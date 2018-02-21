@@ -13,21 +13,24 @@
 // +----------------------------------------------------------------------
 
 namespace linkphp\boot;
-use linkphp\boot\interfaces\EnvInterface;
 class Env
 {
-    static protected $_env_object;
 
-    //设置策略
-    static public function setStrategy(EnvInterface $_env_object)
+    static private $_instance;
+
+    static public function getInstance()
     {
-        self::$_env_object = $_env_object;
+        if(!isset(self::$_instance)){
+            self::$_instance = new self();
+        }
+        return self::$_instance;
     }
 
     //操作相应模式
-    public function selectEnvModel()
+    public function selectEnvModel($_env_object)
     {
-        self::$_env_object->Env();
+        Component::get('envmodel')->initialize();
+        return $this;
     }
 
 }

@@ -13,6 +13,10 @@
 // +----------------------------------------------------------------------
 
 namespace linkphp\boot\router;
+
+use linkphp\boot\Component;
+use linkphp\boot\Definition;
+
 class Dispatch
 {
 
@@ -35,20 +39,22 @@ class Dispatch
         $controller_name = APP_NAMESPACE_NAME  . '\controller\\' . PLATFORM . '\\' . CONTROLLER;
         $filename = str_replace('\\','/',$config['__APP__'] . 'controller' . '/' . PLATFORM . '/' . CONTROLLER  . EXT);
         if(file_exists($filename)){
-            $controller = new $controller_name;
+            Component::bind((new Definition())
+                ->setAlias($controller_name)
+                ->setIsSingleton(true)
+                ->setClassName($controller_name));
         } else {
             //抛出异常
             throw new \Exception("无法加载控制器");
         }
         //调用方法
         $action_name = ACTION;
+        $controller = Component::get($controller_name);
         if(method_exists($controller,$action_name)){
-            $controller -> $action_name();
+            $controller->$action_name();
         } else {
             //抛出异常
             throw new \Exception("无法加载方法");
         }
     }
 }
-
-?>

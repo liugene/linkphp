@@ -1,13 +1,22 @@
 <?php
 namespace app\controller\main;
 use linkphp\boot\Controller;
-class Home extends Controller
+use linkphp\boot\Component;
+use linkphp\boot\Definition;
+class Home
 {
-	public function main()
+
+    public function __construct(Controller $controller)
     {
-        $this->test();
-        $linkphp = 'linkphp框架';
-        $this->assign('linkphp',$linkphp);
-		$this->display();
+        dump($controller);
+        dump(Component::getContainerInstance());
+    }
+
+    public function main()
+    {
+        Component::bind((new Definition())->setAlias('test')->setCallBack(function(){
+            return 123;
+        }));
+        dump(Component::get('test'));
 	}
 }

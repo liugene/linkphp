@@ -13,7 +13,6 @@ namespace linkphp\boot;
 // |               配置类
 // +----------------------------------------------------------------------
 
-use linkphp\boot\handle\LoadClassException;
 
 class Error
 {

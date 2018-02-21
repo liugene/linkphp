@@ -1,6 +1,5 @@
 <?php
 
-namespace linkphp\boot;
 // +----------------------------------------------------------------------
 // | LinkPHP [ Link All Thing ]
 // +----------------------------------------------------------------------
@@ -13,11 +12,52 @@ namespace linkphp\boot;
 // |               LinkPHP框架启动文件
 // +----------------------------------------------------------------------
 
+namespace linkphp;
+
+use linkphp\boot\Component;
+use linkphp\boot\Definition;
+use linkphp\boot\Router;
+use linkphp\boot\Command;
+use linkphp\boot\Autoload;
+use linkphp\boot\Error;
+
 //加载自动加载方法
 require(CORE_PATH . 'Autoload.php');
 //注册自动加载方法
 Autoload::register();
 //注册错误和异常处理机制
 Error::register();
-//控制台初始化
-Console::initialize(new Env);
+
+Application::run()->check(
+    IS_CLI ?
+    Component::get('env')
+        ->selectEnvModel(
+            Component::bind((new Definition())
+            ->setAlias('envmodel')
+            ->setIsSingleton(true)
+                ->setCallBack(function(){
+                    Component::bind((new Definition())
+                        ->setAlias('run')
+                        ->setIsSingleton(true)
+                        ->setCallBack(function(){
+                            return new Command();
+                        }));
+                    return Component::get('run');
+            })
+        )) :
+    Component::get('env')
+        ->selectEnvModel(
+            Component::bind((new Definition())
+            ->setAlias('envmodel')
+            ->setIsSingleton(true)
+                ->setCallBack(function(){
+                    Component::bind((new Definition())
+                        ->setAlias('run')
+                        ->setIsSingleton(true)
+                        ->setCallBack(function(){
+                            return new Router();
+                        }));
+                    return Component::get('run');
+                })
+        ))
+);
