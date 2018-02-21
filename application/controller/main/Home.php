@@ -19,6 +19,9 @@ class Home
                 ->setCallBack(function(){
                     return 123;
         }));
+        dump(Application::config());
+        dump(Application::httpRequest());
+        dump(Application::url('index','main'));die;
         dump(Application::input('link'));die;
         dump(Application::get('run'));die;
 //        dump(Component::get('event')->addObserver());

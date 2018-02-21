@@ -7,6 +7,7 @@ use linkphp\system\core\Engine;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
 use linkphp\boot\di\InstanceDefinition;
+use Container;
 
 class Application
 {
@@ -24,11 +25,7 @@ class Application
                 ->setIsSingleton(true)
                 ->setClassName('linkphp\\boot\\Env')
             );
-            Component::bind((new Definition())
-                ->setAlias('request')
-                ->setIsSingleton(true)
-                ->setClassName('linkphp\\boot\\http\\Restful')
-            );
+            (new Container())->setup();
             Engine::initialize();
             //初次初始化执行改变属性值为true
             self::$_init = new self();
@@ -75,7 +72,7 @@ class Application
 
     static public function httpRequest()
     {
-        return Component::get('request');
+        return Component::get('request')->request();
     }
 
     static public function get($alias)
@@ -101,5 +98,20 @@ class Application
     static public function input($param)
     {
         return $param;
+    }
+
+    static public function url($c=null,$a=null,$p=null)
+    {
+        return Component::get('make')->url($c,$a,$p);
+    }
+
+    static public function make()
+    {
+        return Component::get('make');
+    }
+
+    static public function config()
+    {
+        return Component::get('config');
     }
 }

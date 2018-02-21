@@ -27,16 +27,16 @@ class Make{
      */
     static public function url($c=null,$a=null,$p=null)
     {
-        switch(Configure::get('url_module')){
+        switch(Config::get('url_module')){
             case 0:
-                $platform = isset($_GET[Configure::get('var_platform')]) ? ucfirst($_GET[Configure::get('var_platform')]) : Configure::get('var_platform');
+                $platform = isset($_GET[Config::get('var_platform')]) ? ucfirst($_GET[Config::get('var_platform')]) : Config::get('var_platform');
                 $p = is_null($p) ? $platform : $p;
-                $c = is_null($c) ? $_GET[Configure::get('var_controller')] : ucfirst($c);
-                $a = is_null($a) ? $_GET[Configure::get('var_action')] : ucfirst($a);
-                $url = 'index.php?' . Configure::get('var_platform') . '=' . $p . '&' . Configure::get('var_controller') . '=' . $c . '&' . Configure::get('var_action') . '=' . strtolower($a);
+                $c = is_null($c) ? $_GET[Config::get('var_controller')] : ucfirst($c);
+                $a = is_null($a) ? $_GET[Config::get('var_action')] : ucfirst($a);
+                $url = 'index.php?' . Config::get('var_platform') . '=' . $p . '&' . Config::get('var_controller') . '=' . $c . '&' . Config::get('var_action') . '=' . strtolower($a);
                 break;
             case 1;
-                $url = 'index.php/' . Configure::get('default_platform') . '/' . $c . '/' . strtolower($a);
+                $url = 'index.php/' . Config::get('default_platform') . '/' . $c . '/' . strtolower($a);
                 break;
         }
         return $url;
