@@ -1,6 +1,6 @@
 .idea/
 vendor/
-entrance/runtime/
+website/runtime/
 application/index/controller/
 application/index/model/
 composer.lock
