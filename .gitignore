@@ -1,5 +1,4 @@
 .idea/
-vendor/
 website/runtime/
 application/index/controller/
 application/index/model/

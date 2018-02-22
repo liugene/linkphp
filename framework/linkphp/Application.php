@@ -3,7 +3,6 @@
 namespace linkphp;
 
 use linkphp\boot\Env;
-use linkphp\system\core\Engine;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
 use linkphp\boot\di\InstanceDefinition;
@@ -26,7 +25,6 @@ class Application
                 ->setClassName('linkphp\\boot\\Env')
             );
             (new Container())->setup();
-            Engine::initialize();
             //初次初始化执行改变属性值为true
             self::$_init = new self();
         }

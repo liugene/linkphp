@@ -54,6 +54,8 @@
  defined('LANG_PATH') or define('LANG_PATH', BOOT_PATH . 'extra/lang/');
  //定义LinkPHP框架附件目录常量
  defined('TEMP_PATH') or define('TEMP_PATH', BOOT_PATH . 'extra/temp/');
+ //定义LinkPHP扩展类库目录常量
+ defined('EXTEND_PATH') or define('EXTEND_PATH', ROOT_PATH . 'extends/');
 
  //系统可变常量
  defined('APP_INTERFACE_ON') or define('APP_INTERFACE_ON','FALSE'); //开启接口应用

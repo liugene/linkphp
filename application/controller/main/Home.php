@@ -2,6 +2,7 @@
 namespace app\controller\main;
 use linkphp\Controller;
 use linkphp\Application;
+use liugene\Test;
 class Home
 {
 
@@ -13,6 +14,7 @@ class Home
 
     public function main()
     {
+        dump(new Test());die;
         Application::bind(
             Application::definition()
                 ->setAlias('test')

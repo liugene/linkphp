@@ -13,10 +13,20 @@
  */
 
 namespace linkphp\system\session;
+
+use linkphp\boot\Config;
+
 class Session{
     private $_dao;
     
-    public function __construct(){
+    public function __construct()
+    {
+        /**
+         * 开启session机制
+         */
+        if(Config::get('session_on')){
+            session_start();
+        }
         //设置session处理器
         ini_set('session.save_handle','user');
         session_set_save_handler(
@@ -27,8 +37,6 @@ class Session{
             array($this,'userSessionDelete'),
             array($this,'userSessionGC')
         );
-        //开启session
-        session_start();
     }
     /**
  * @author liujun

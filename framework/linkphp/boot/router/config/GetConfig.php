@@ -13,7 +13,7 @@
 // +----------------------------------------------------------------------
 
 namespace linkphp\boot\router\config;
-class Config
+class GetConfig
 {
     static public function get()
     {

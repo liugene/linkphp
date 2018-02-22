@@ -36,15 +36,8 @@ class Autoload
     static public function register()
     {
         self::autoloadFunc();
-        if(is_file(LOAD_PATH . 'map.php')){
+        if(file_exists(LOAD_PATH . 'map.php')){
             self::addNamespace(include(LOAD_PATH . 'map.php'));
-        }
-        if(is_array(self::$_autoload_func)){
-            foreach(self::$_autoload_func as $k => $v){
-                spl_autoload_register(array(__CLASS__, $v));
-            }
-        } else {
-            spl_autoload_register(array(__CLASS__, self::$_autoload_func));
         }
         //加载composer等扩展自动加载机制
         self::loadExtendAutoload();
@@ -54,6 +47,13 @@ class Autoload
         self::sortPsr0ByArrAyFirstKey();
         //指定自动加载机制排序
         //static::sortFileByArrAyFirstKey();
+        if(is_array(self::$_autoload_func)){
+            foreach(self::$_autoload_func as $k => $v){
+                spl_autoload_register(array(__CLASS__, $v));
+            }
+        } else {
+            spl_autoload_register(array(__CLASS__, self::$_autoload_func));
+        }
     }
 
     /*自动加载方法*/
@@ -116,28 +116,28 @@ class Autoload
         /**
          * 加载Composer自动加载
          */
-        if (is_file(VENDOR_PATH . 'composer/autoload_namespaces.php')) {
+        if (file_exists(VENDOR_PATH . 'composer/autoload_namespaces.php')) {
             $class_map_psr0 = require VENDOR_PATH . 'composer/autoload_namespaces.php';
             self::addExtendClassPsr0($class_map_psr0);
         }
 
-        if (is_file(VENDOR_PATH . 'composer/autoload_psr4.php')) {
+        if (file_exists(VENDOR_PATH . 'composer/autoload_psr4.php')) {
             $class_map_psr4 = require VENDOR_PATH . 'composer/autoload_psr4.php';
             self::addExtendClassPsr4($class_map_psr4);
         }
 
-        if (is_file(VENDOR_PATH . 'composer/autoload_classmap.php')) {
+        if (file_exists(VENDOR_PATH . 'composer/autoload_classmap.php')) {
             $class_map = require VENDOR_PATH . 'composer/autoload_classmap.php';
             if ($class_map) {
                 self::addExtendClassMap($class_map);
             }
         }
 
-        if (is_file(VENDOR_PATH . 'composer/autoload_files.php')) {
+        if (file_exists(VENDOR_PATH . 'composer/autoload_files.php')) {
             $includeFiles = require VENDOR_PATH . 'composer/autoload_files.php';
             self::addExtendFile($includeFiles);
-            foreach (static::$_map['autoload_namespace_file'] as $fileIdentifier => $file) {
-                if(is_file($file)){
+            foreach (self::$_map['autoload_namespace_file'] as $fileIdentifier => $file) {
+                if(file_exists($file)){
                     __include_file($file);
                 }
             }
@@ -177,6 +177,29 @@ class Autoload
      */
     static public function loaderClass($class_name)
     {
+        if(!empty(self::$_sort_psr4_map)){
+            if(!self::findPsr4($class_name)){
+                if(!empty(self::$_sort_psr0_map)){
+                    if(!self::findPsr0($class_name)){
+                        if(!self::findExtends($class_name)){
+                            //不存在
+                            //抛出异常
+                            throw new Exception("无法加载类" . $class_name);
+                        }
+                    }
+                } else {
+                    if(!self::findExtends($class_name)){
+                        //不存在
+                        //抛出异常
+                        throw new Exception("无法加载类" . $class_name);
+                    }
+                }
+            }
+        }
+    }
+
+    static private function findPsr4($class_name)
+    {
         //查找psr4命名空间类
         if(array_key_exists($class_name[0],self::$_sort_psr4_map)){
             foreach(self::$_sort_psr4_map[$class_name[0]] as $prefix){
@@ -184,40 +207,52 @@ class Autoload
                     $filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . EXT);
                     if(is_file($filename)){
                         __require_file($filename);
+                        return true;
                     } else {
                         //尝试补位查找类文件
-                        $fullfilename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace($prefix,'\\',$class_name) . EXT);
-                        if(is_file($fullfilename)){
-                            __require_file($fullfilename);
+                        $full_filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace($prefix,'\\',$class_name) . EXT);
+                        if(file_exists($full_filename)){
+                            __require_file($full_filename);
+                            return true;
                         }
                     }
                 }
             }
         }
+        return false;
+    }
 
+    static private function findPsr0($class_name)
+    {
         //查找psr0命名空间
         if(array_key_exists($class_name[0],self::$_sort_psr0_map)){
             foreach(self::$_sort_psr0_map[$class_name[0]] as $prefix){
                 if(strpos($class_name,$prefix) === 0){
-                    $filename = str_replace('/', '\\',self::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . EXT;
-                    if(is_file($filename)){
+                    $filename = str_replace('/', '\\',self::$_map['autoload_namespace_psr0'][$prefix][0]) . strrchr($class_name,'\\') . EXT;
+                    if(file_exists($filename)){
                         __require_file($filename);
+                        return true;
                     }
                 }
             }
         }
+        return false;
     }
 
-    /**
-     * 查找文件
-     */
-    static public function findFile()
+    static private function findExtends($class_name)
     {
+        $filename = str_replace('/', '\\',EXTEND_PATH . $class_name) . EXT;
+        if(file_exists($filename)){
+            __require_file($filename);
+            return true;
+        }
+        return false;
     }
 
     /*对psr4命名空间按照首字母升序排序*/
     static private function sortPsr4ByArrAyFirstKey()
     {
+        $newPsr4Namespace = [];
         ksort(self::$_map['autoload_namespace_psr4']);
         foreach(self::$_map['autoload_namespace_psr4'] as $key => $value){
             $newPsr4Namespace[$key[0]][] = $key;
@@ -228,6 +263,7 @@ class Autoload
     /*对psr0命名空间按照首字母升序排序*/
     static private function sortPsr0ByArrAyFirstKey()
     {
+        $newPsr0Namespace= [];
         ksort(self::$_map['autoload_namespace_psr0']);
         foreach(self::$_map['autoload_namespace_psr0'] as $key => $value){
             $newPsr0Namespace[$key[0]][] = $key;

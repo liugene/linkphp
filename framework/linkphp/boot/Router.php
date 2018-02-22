@@ -16,7 +16,7 @@ namespace linkphp\boot;
 
 use linkphp\boot\router\Init;
 use linkphp\boot\router\Dispatch;
-use linkphp\boot\router\config\Config;
+use linkphp\boot\router\config\GetConfig;
 use linkphp\boot\interfaces\RunInterface;
 
 class Router implements RunInterface
@@ -27,7 +27,7 @@ class Router implements RunInterface
      */
     public function initialize()
     {
-        $config = Config::get();
+        $config = GetConfig::get();
         Init::init($config);
         static::_initPlatformPathConst($config);
         Dispatch::init($config);
