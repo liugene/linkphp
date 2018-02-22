@@ -13,6 +13,8 @@ class HttpRequest
 
     private $_response;
 
+    private $queryParam = [];
+
     //请求方法
     private $request_method;
 
@@ -82,6 +84,25 @@ class HttpRequest
         $this->_response->getDriver()->setResponse($this->_response->getDriver()->output($this->data))->send();
     }
 
+    /**
+     * 当前请求 HTTP_CONTENT_TYPE
+     * @access public
+     * @return string
+     */
+    public function contentType()
+    {
+        $contentType = $this->getServer('CONTENT_TYPE');
+        if ($contentType) {
+            if (strpos($contentType, ';')) {
+                list($type) = explode(';', $contentType);
+            } else {
+                $type = $contentType;
+            }
+            return trim($type);
+        }
+        return '';
+    }
+
     public function start()
     {
         $this->cookie = $_COOKIE;
@@ -95,14 +116,87 @@ class HttpRequest
         return $this->env;
     }
 
-    public function getCookie()
+    public function getCookie($param)
     {
-        return $this->cookie;
+        return $this->cookie[$param];
     }
 
-    public function getServer()
+    public function getServer($param)
     {
-        return $this->server;
+        return $this->server[$param];
+    }
+
+    public function isMethod($method)
+    {
+        return $this->getRequestMethod() === $method;
+    }
+
+    public function isGet()
+    {
+        return $this->isMethod('get');
+    }
+
+    public function isPost()
+    {
+        return $this->isMethod('post');
+    }
+
+    public function isDelete()
+    {
+        return $this->isMethod('delete');
+    }
+
+    public function isPut()
+    {
+        return $this->isMethod('put');
+    }
+
+    public function isPatch()
+    {
+        return $this->isMethod('parch');
+    }
+
+    public function isHead()
+    {
+        return $this->isMethod('head');
+    }
+
+    public function isOptions()
+    {
+        return $this->isMethod('options');
+    }
+
+    public function setQueryParam()
+    {
+        $this->queryParam = array_merge($this->get(),$this->post(),$this->file());
+        return $this;
+    }
+
+    public function get($key='')
+    {
+        return $key=='' ? $_GET : $_GET[$key];
+    }
+
+    public function post($key='')
+    {
+        return $key=='' ? $_POST : $_POST[$key];
+    }
+
+    public function file($key='')
+    {
+        return $key=='' ? $_FILES : $_FILES[$key];
+    }
+
+    public function input($key = '')
+    {
+        if ($pos = strpos($key, '.')) {
+            // 指定参数来源
+            list($method, $key) = explode('.', $key, 2);
+            if (in_array($method, ['get', 'post', 'file'])) {
+                return $this->$method($key);
+            }
+        }
+        return $this->queryParam[$key];
     }
 
 }

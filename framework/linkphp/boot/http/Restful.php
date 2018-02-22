@@ -20,7 +20,7 @@ class Restful
     public function __construct()
     {
         //获取请求方式
-        $request_method = strtolower($_SERVER['REQUEST_METHOD']);
+        $request_method = isset($_SERVER['REQUEST_METHOD']) ? strtolower($_SERVER['REQUEST_METHOD']) : '';
         if(!isset($this->_request)){
             self::$_request = (new HttpRequest(new ResponseDriver()))->setRequestMethod($request_method);
         }
