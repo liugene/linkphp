@@ -7,26 +7,22 @@ class Home
 
     public function __construct(Controller $controller)
     {
-        dump($controller);
+//        dump($controller);
     }
 
     public function main()
     {
-        Application::bind(
-            Application::definition()
-                ->setAlias('test')
-                ->setCallBack(function(){
-                    return 123;
-        }));
-//        dump(Application::config());
-//        dump(Application::getContainerInstance());
-        dump(Application::httpRequest()->input());
-        dump(Application::url('index','main'));die;
-        dump(Application::input('link'));die;
-        dump(Application::get('run'));die;
-//        dump(Component::get('event')->addObserver());
-        dump(Application::Router());
-        return ['router' => Application::get('run')];
-        return ['method' => Application::getRequestMethod()];
+//        Application::input('in',function($value){
+//            //闭包实现
+//            //这里写具体的过滤方法
+//            //自定义
+//            //记得返回处理好的
+//            return $value;
+//        });
+
+        dump(Application::input('',function($value){
+            echo 1;
+            return $value;
+        }));die;
 	}
 }

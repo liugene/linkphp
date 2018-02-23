@@ -22,7 +22,7 @@ class Restful
         //获取请求方式
         $request_method = isset($_SERVER['REQUEST_METHOD']) ? strtolower($_SERVER['REQUEST_METHOD']) : '';
         if(!isset($this->_request)){
-            self::$_request = (new HttpRequest(new ResponseDriver()))->setRequestMethod($request_method);
+            self::$_request = (new HttpRequest(new ResponseDriver(),new Input()))->setRequestMethod($request_method);
         }
     }
 

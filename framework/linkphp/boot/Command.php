@@ -13,6 +13,7 @@
 // +----------------------------------------------------------------------
 
 namespace linkphp\boot;
+use linkphp\Application;
 use linkphp\boot\cli\command\Output;
 use linkphp\boot\interfaces\RunInterface;
 
@@ -20,7 +21,7 @@ class Command implements RunInterface
 {
     public function initialize()
     {
-        if($_SERVER['argc'] == 1){
+        if(Application::input('server.argc') == 1){
             Output::main();
         } else {
             Output::noFound();

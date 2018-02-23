@@ -2,7 +2,7 @@
 
 namespace linkphp;
 
-use linkphp\boot\Env;
+use linkphp\boot\Environment;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
 use linkphp\boot\di\InstanceDefinition;
@@ -10,7 +10,6 @@ use Container;
 
 class Application
 {
-
     private $data;
 
     //保存是否已经初始化
@@ -22,7 +21,7 @@ class Application
             Component::bind((new Definition())
                 ->setAlias('env')
                 ->setIsSingleton(true)
-                ->setClassName('linkphp\\boot\\Env')
+                ->setClassName('linkphp\\boot\\Environment')
             );
             (new Container())->setup();
             //初次初始化执行改变属性值为true
@@ -31,7 +30,7 @@ class Application
         return self::$_init;
     }
 
-    public function check(Env $env)
+    public function check(Environment $env)
     {
         return $this;
     }
@@ -58,7 +57,7 @@ class Application
         return Component::get('request')->request()->getRequestMethod();
     }
 
-    static public function Router()
+    static public function router()
     {
         return Component::get('run');
     }
@@ -93,9 +92,14 @@ class Application
         return Component::getContainerInstance();
     }
 
-    static public function input($param)
+    static public function input($param,$filter='')
     {
-        return $param;
+        return self::httpRequest()->input($param,$filter);
+    }
+
+    static public function getInput($filter='')
+    {
+        return self::httpRequest()->input($filter);
     }
 
     static public function url($c=null,$a=null,$p=null)

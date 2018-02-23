@@ -13,10 +13,16 @@
 // +----------------------------------------------------------------------
 
 namespace linkphp\boot;
-class Env
+use linkphp\Application;
+
+class Environment
 {
 
     static private $_instance;
+
+    private $_request;
+
+    private $_env;
 
     static public function getInstance()
     {
@@ -29,7 +35,21 @@ class Env
     //操作相应模式
     public function selectEnvModel($_env_object)
     {
-        Component::get('envmodel')->initialize();
+        $this->_env = Application::get('envmodel');
+        $this->_request = Application::get('request')->request();
+        return $this;
+    }
+
+    public function requestRouterHandle()
+    {
+        $this->_env->initialize();
+        return $this;
+    }
+
+    public function requestCmdHandle()
+    {
+        $this->_request->setCmdParam(Application::input('server.argv'));
+        $this->_env->initialize();
         return $this;
     }
 

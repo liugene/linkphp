@@ -41,7 +41,7 @@ Application::run()->request()->check(
                                 ->setClassName('linkphp\boot\Command'));
                         return Application::get('run');
             })
-        )) :
+        ))->requestCmdHandle() :
     Application::env()
         ->selectEnvModel(
             Application::bind(
@@ -57,5 +57,5 @@ Application::run()->request()->check(
                                 ->setClassName('linkphp\boot\Router'));
                         return Application::get('run');
                 })
-        ))
+        ))->requestRouterHandle()
 )->response();

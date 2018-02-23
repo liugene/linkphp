@@ -5,6 +5,10 @@ namespace linkphp\boot\http;
 class HttpRequest
 {
 
+    private $cmd;
+
+    private $cmd_param = [];
+
     private $cookie;
 
     private $env;
@@ -12,6 +16,8 @@ class HttpRequest
     private $server;
 
     private $_response;
+
+    private $_input;
 
     private $queryParam = [];
 
@@ -23,9 +29,10 @@ class HttpRequest
 
     private $request_http_accept = 'json';
 
-    public function __construct(ResponseDriver $response)
+    public function __construct(ResponseDriver $response,Input $input)
     {
         $this->_response = $response;
+        $this->_input = $input;
     }
 
     public function setData($data)
@@ -91,7 +98,7 @@ class HttpRequest
      */
     public function contentType()
     {
-        $contentType = $this->getServer('CONTENT_TYPE');
+        $contentType = $this->server('CONTENT_TYPE');
         if ($contentType) {
             if (strpos($contentType, ';')) {
                 list($type) = explode(';', $contentType);
@@ -105,25 +112,7 @@ class HttpRequest
 
     public function start()
     {
-        $this->cookie = $_COOKIE;
-        $this->env = $_ENV;
-        $this->server = $_SERVER;
         return $this;
-    }
-
-    public function getEnv()
-    {
-        return $this->env;
-    }
-
-    public function getCookie($param)
-    {
-        return $this->cookie[$param];
-    }
-
-    public function getServer($param)
-    {
-        return $this->server[$param];
     }
 
     public function isMethod($method)
@@ -168,35 +157,70 @@ class HttpRequest
 
     public function setQueryParam()
     {
-        $this->queryParam = array_merge($this->get(),$this->post(),$this->file());
+        $this->queryParam = array_merge($this->get(),$this->post(),$this->file(),$this->server(),$this->cookie(),$this->env());
         return $this;
     }
 
-    public function get($key='')
+    public function get($key='',$filter='')
     {
-        return $key=='' ? $_GET : $_GET[$key];
+        return $this->_input->get($key,$filter);
     }
 
-    public function post($key='')
+    public function post($key='',$filter='')
     {
-        return $key=='' ? $_POST : $_POST[$key];
+        return $this->_input->post($key,$filter);
     }
 
     public function file($key='')
     {
-        return $key=='' ? $_FILES : $_FILES[$key];
+        return $this->_input->file($key);
     }
 
-    public function input($key = '')
+    public function server($key='')
     {
+        return $this->_input->server($key);
+    }
+
+    public function cookie($key='')
+    {
+        return $this->_input->cookie($key);
+    }
+
+    public function env($key='')
+    {
+        return $this->_input->env($key);
+    }
+
+    public function getInput($filter='')
+    {
+        return $this->_input->getInput($filter);
+    }
+
+    public function input($key = '',$filter)
+    {
+        if(empty($this->queryParam)){
+            $this->setQueryParam();
+        }
         if ($pos = strpos($key, '.')) {
             // 指定参数来源
             list($method, $key) = explode('.', $key, 2);
-            if (in_array($method, ['get', 'post', 'file'])) {
-                return $this->$method($key);
+            if (in_array($method, ['get', 'post', 'file', 'server', 'cookie', 'env'])) {
+                return $this->$method($key,$filter);
             }
         }
-        return $this->queryParam[$key];
+        return $key=='' ? $this->queryParam : $this->queryParam[$key];
+    }
+
+    public function setCmdParam($command)
+    {
+        if(is_array($command) && count($command)>1){
+            $this->cmd = $command[1];
+        }
+    }
+
+    public function cmd($key)
+    {
+        return $this->cmd_param[$key];
     }
 
 }
