@@ -99,7 +99,7 @@ class Application
 
     static public function getInput($filter='')
     {
-        return self::httpRequest()->input($filter);
+        return self::httpRequest()->getInput($filter);
     }
 
     static public function url($c=null,$a=null,$p=null)

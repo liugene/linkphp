@@ -19,6 +19,7 @@ class Home
 //            //记得返回处理好的
 //            return $value;
 //        });
+        dump(Application::getInput());die;
 
         dump(Application::input('in',function($value){
             return trim($value);
