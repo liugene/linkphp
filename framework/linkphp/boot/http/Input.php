@@ -110,7 +110,7 @@ class Input
         if (is_string($value)) {
             $value = preg_replace('/^EXP|NEQ|GT|EGT|LT|ELT|OR|XOR|LIKE|NOTLIKE|NOT LIKE|NOT BETWEEN|NOTBETWEEN|BETWEEN|NOTIN|NOT IN|IN$/i','', $value);
         }
-        return trim($value);
+        return $value;
         // TODO 其他安全过滤
     }
 

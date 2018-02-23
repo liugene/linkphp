@@ -20,7 +20,7 @@ class Home
 //            return $value;
 //        });
 
-        dump(Application::input('get.in',function($value){
+        dump(Application::input('in',function($value){
             return trim($value);
         }));die;
 	}
