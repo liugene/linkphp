@@ -20,9 +20,8 @@ class Home
 //            return $value;
 //        });
 
-        dump(Application::input('',function($value){
-            echo 1;
-            return $value;
+        dump(Application::input('get.in',function($value){
+            return trim($value);
         }));die;
 	}
 }

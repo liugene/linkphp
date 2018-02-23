@@ -198,15 +198,15 @@ class HttpRequest
 
     public function input($key = '',$filter)
     {
-        if(empty($this->queryParam)){
-            $this->setQueryParam();
-        }
         if ($pos = strpos($key, '.')) {
             // 指定参数来源
             list($method, $key) = explode('.', $key, 2);
             if (in_array($method, ['get', 'post', 'file', 'server', 'cookie', 'env'])) {
                 return $this->$method($key,$filter);
             }
+        }
+        if(empty($this->queryParam)){
+            $this->setQueryParam();
         }
         return $key=='' ? $this->queryParam : $this->queryParam[$key];
     }
