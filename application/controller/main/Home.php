@@ -12,17 +12,16 @@ class Home
 
     public function main()
     {
-//        Application::input('in',function($value){
-//            //闭包实现
-//            //这里写具体的过滤方法
-//            //自定义
-//            //记得返回处理好的
-//            return $value;
-//        });
-        dump(Application::getInput());die;
-
-        dump(Application::input('in',function($value){
-            return trim($value);
-        }));die;
+        dump(Application::middleware()->begin());
+        Application::input('in',function($value){
+            //闭包实现
+            //这里写具体的过滤方法
+            //自定义
+            //记得返回处理好的
+            return $value;
+        });
+        dump(Application::httpRequest()->isGet());
+        dump(Application::input('get.'));die;
+//        dump(Application::input('server.'));
 	}
 }

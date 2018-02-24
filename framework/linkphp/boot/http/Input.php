@@ -53,7 +53,7 @@ class Input
 
     public function getInput($filter)
     {
-        return $this->param('php://input',$filter);
+        return $this->param(file_get_contents('php://input'),$filter);
     }
 
     public function param($data,$filters)
@@ -106,11 +106,12 @@ class Input
      */
     public function filterExp(&$value)
     {
+        $value = trim($value);
         // 过滤查询特殊字符
         if (is_string($value)) {
             $value = preg_replace('/^EXP|NEQ|GT|EGT|LT|ELT|OR|XOR|LIKE|NOTLIKE|NOT LIKE|NOT BETWEEN|NOTBETWEEN|BETWEEN|NOTIN|NOT IN|IN$/i','', $value);
+            $value = trim($value);
         }
-        return $value;
         // TODO 其他安全过滤
     }
 

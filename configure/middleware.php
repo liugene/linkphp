@@ -9,25 +9,23 @@
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               中间件
+// |               中间件配置文件
 // +----------------------------------------------------------------------
 
-namespace linkphp\boot;
+return [
 
-use linkphp\boot\middleware\Middleware as Middle;
+    'beginMiddleware'          => [
+        \app\controller\main\Index::class,
+    ],
 
-class Middleware extends Middle
-{
+    'appMiddleware'            => [],
 
-    static private $_instance;
+    'modelMiddleware'          => [],
 
-    static public function getInstance()
-    {
-        if (!isset(self::$_instance)) {
-            self::$_instance = new self();
-        }
+    'controllerMiddleware'     => [],
 
-        return self::$_instance;
-    }
+    'actionMiddleware'         => [],
 
-}
+    'destructMiddleware'       => [],
+
+];

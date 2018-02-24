@@ -9,12 +9,6 @@ class HttpRequest
 
     private $cmd_param = [];
 
-    private $cookie;
-
-    private $env;
-
-    private $server;
-
     private $_response;
 
     private $_input;

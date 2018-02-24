@@ -23,6 +23,11 @@ class Container
             ->setIsSingleton(true)
             ->setClassName('linkphp\\boot\\Config')
         );
+        Component::bind((new Definition())
+            ->setAlias('middle')
+            ->setIsSingleton(true)
+            ->setClassName('linkphp\\boot\\Middleware')
+        );
     }
 
 }

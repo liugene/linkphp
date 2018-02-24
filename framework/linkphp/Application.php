@@ -24,7 +24,8 @@ class Application
                 ->setClassName('linkphp\\boot\\Environment')
             );
             (new Container())->setup();
-            //初次初始化执行改变属性值为true
+            Component::get('middle')->import(include LOAD_PATH . 'middleware' . EXT);
+            //初次初始化执行
             self::$_init = new self();
         }
         return self::$_init;
@@ -92,7 +93,7 @@ class Application
         return Component::getContainerInstance();
     }
 
-    static public function input($param,$filter='')
+    static public function input($param='',$filter='')
     {
         return self::httpRequest()->input($param,$filter);
     }
@@ -115,5 +116,10 @@ class Application
     static public function config()
     {
         return Component::get('config');
+    }
+
+    static public function middleware()
+    {
+        return Component::get('middle');
     }
 }
