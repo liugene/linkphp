@@ -52,6 +52,7 @@ class Middleware
                 }
             }
         }
+        return $this;
     }
 
     public function add($tag,$handle)

@@ -24,7 +24,7 @@ class Application
                 ->setClassName('linkphp\\boot\\Environment')
             );
             (new Container())->setup();
-            Component::get('middle')->import(include LOAD_PATH . 'middleware' . EXT);
+            Component::get('middle')->import(include LOAD_PATH . 'middleware' . EXT)->beginMiddleware();
             //初次初始化执行
             self::$_init = new self();
         }
