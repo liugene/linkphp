@@ -4,11 +4,11 @@ namespace app\controller\main;
 
 use Closure;
 
-class Index
+class Test
 {
     public function handle(Closure $next)
     {
-        dump('middleware index');
+        dump('middleware test');
         return $next;
     }
 }

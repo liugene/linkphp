@@ -16,6 +16,8 @@ return [
 
     'beginMiddleware'          => [
         \app\controller\main\Index::class,
+        \app\controller\main\Test::class,
+        \app\controller\main\First::class,
     ],
 
     'appMiddleware'            => [],

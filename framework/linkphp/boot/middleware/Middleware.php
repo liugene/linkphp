@@ -58,51 +58,64 @@ class Middleware
     {
         switch($tag){
             case 'beginMiddleware':
-                $this->beginMiddleware = $handle;
+                if($handle instanceof Closure){
+                    $handleClosure[] = $handle;
+                    $this->beginMiddleware = array_merge($this->beginMiddleware,$handleClosure);
+                    break;
+                }
+                $this->beginMiddleware = array_merge($this->beginMiddleware,$handle);
                 break;
             case 'appMiddleware':
-                $this->appMiddleware = $handle;
+                $this->appMiddleware[] = $handle;
                 break;
             case 'modelMiddleware':
-                $this->modelMiddleware = $handle;
+                $this->modelMiddleware[] = $handle;
                 break;
             case 'controllerMiddleware':
-                $this->controllerMiddleware = $handle;
+                $this->controllerMiddleware[] = $handle;
                 break;
             case 'actionMiddleware':
-                $this->actionMiddleware = $handle;
+                $this->actionMiddleware[] = $handle;
                 break;
             case 'destructMiddleware':
-                $this->destructMiddleware = $handle;
+                $this->destructMiddleware[] = $handle;
                 break;
         }
     }
 
-    private function isValidate($middle)
+    public function isValidate($middle)
     {
         return in_array($middle,$this->validateMiddle);
     }
 
-    public function begin()
+    public function beginMiddleware($middle=null)
     {
-        call_user_func(array_reduce($this->beginMiddleware,$this->exec()));die;
-    }
+        if(!is_null($middle)){
+            $this->add('beginMiddleware',$middle);
+            return;
+        }
+        return call_user_func(array_reduce($this->beginMiddleware,$this->exec()));
+}
 
-    public function app(){}
+    public function appMiddleware(){}
 
-    public function model(){}
+    public function modelMiddleware(){}
 
-    public function controller(){}
+    public function controllerMiddleware(){}
 
-    public function action(){}
+    public function actionMiddleware(){}
 
-    public function destruct(){}
+    public function destructMiddleware(){}
 
     public function exec()
     {
         return function($v1,$v2){
+            if($v2 instanceof Closure){
+                return call_user_func($v2,$v1);
+            }
             return function() use ($v1,$v2) {
-                return (new $v2)->handle($v1);
+                return call_user_func([new $v2,'handle'],function () {
+                });
             };
         };
     }

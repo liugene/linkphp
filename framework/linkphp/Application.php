@@ -118,8 +118,10 @@ class Application
         return Component::get('config');
     }
 
-    static public function middleware()
+    static public function middleware($middle,$middleware=null)
     {
-        return Component::get('middle');
+        if(Component::get('middle')->isValidate($middle)){
+            return Component::get('middle')->$middle($middleware);
+        }
     }
 }
