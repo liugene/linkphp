@@ -14,42 +14,44 @@
 
 namespace linkphp\boot;
 
-use linkphp\boot\router\Init;
-use linkphp\boot\router\Dispatch;
-use linkphp\boot\router\config\GetConfig;
+use linkphp\boot\router\Router as RouterPro;
 use linkphp\boot\interfaces\RunInterface;
 
 class Router implements RunInterface
 {
 
+    private $_instance;
+
+    static private $_router;
+
     /**
      * 路由解析启动
      */
-    public function initialize()
+    public function init()
     {
-        $config = GetConfig::get();
-        Init::init($config);
-        static::_initPlatformPathConst($config);
-        Dispatch::init($config);
+        if (!isset($this->_instance)) {
+            $this->_instance = new self();
+        }
+
+        return $this->_instance;
     }
 
-    /**
-     * 声明当前平台路径常量
-     */
-    static private function _initPlatformPathConst($config)
+    static private function router()
     {
-        /**
-         * 定义控制器路径常量
-         */
-        define('CURRENT_CONTROLLER_PATH',$config['__APP__'] . 'controller/' . PLATFORM);
-        /**
-         * 定义模型路径常量
-         */
-        define('CURRENT_MODEL_PATH', $config['__APP__'] . 'model/' . PLATFORM);
-        /**
-         * 定义视图路径常量
-         */
-        define('CURRENT_VIEW_PATH', $config['__APP__'] . 'view/' . PLATFORM);
+        if (!isset(self::$_router)) {
+            self::$_router = new RouterPro();
+        }
 
+        return self::$_router;
+    }
+
+    static public function __callStatic($method,$param)
+    {
+        return call_user_func_array([self::router(), $method], $param);
+    }
+
+    public function __call($name, $arguments)
+    {
+        return call_user_func_array([self::router(), $name], $arguments);
     }
 }

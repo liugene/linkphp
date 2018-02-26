@@ -46,14 +46,14 @@ class Environment
          * 设置应用启动中间件并监听执行
          */
         Application::hook('appMiddleware');
-        $this->_env->initialize();
+        $this->_env->init()->parser()->dispatch();
         return $this;
     }
 
     public function requestCmdHandle()
     {
         $this->_request->setCmdParam(Application::input('server.argv'));
-        $this->_env->initialize();
+        $this->_env->init();
         return $this;
     }
 

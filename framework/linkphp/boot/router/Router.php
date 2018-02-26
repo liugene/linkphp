@@ -2,7 +2,6 @@
 
 namespace linkphp\boot\router;
 
-use linkphp\boot\Exception;
 use Closure;
 
 class Router
@@ -31,7 +30,7 @@ class Router
      * @param array $path
      * 请求地址
      */
-    private $path = [];
+    private $path;
 
     /**
      * @param string $default_platform
@@ -87,6 +86,10 @@ class Router
 
     private $action;
 
+    private $dir = APPLICATION_PATH;
+
+    private $namespace = APP_NAMESPACE_NAME;
+
     public function import($rules)
     {
         if(is_array($rules)){
@@ -104,6 +107,18 @@ class Router
             $this->rule = array_merge($this->rule,$ruleClosure);
         }
         $this->rule = array_merge($this->rule,$rule);
+        return $this;
+    }
+
+    public function parser()
+    {
+        (new Parser())->parserPath($this);
+        return $this;
+    }
+
+    public function dispatch()
+    {
+        (new Dispatch())->dispatch($this);
         return $this;
     }
 
@@ -191,6 +206,18 @@ class Router
         return $this;
     }
 
+    public function setDir($dir)
+    {
+        $this->dir = $dir;
+        return $this;
+    }
+
+    public function setNamespace($namespace)
+    {
+        $this->namespace = $namespace;
+        return $this;
+    }
+
 
     /////////////////参数获取//////////////////////
 
@@ -267,6 +294,16 @@ class Router
     public function getAction()
     {
         return $this->action;
+    }
+
+    public function getDir()
+    {
+        return $this->dir;
+    }
+
+    public function getNamespace()
+    {
+        return $this->namespace;
     }
 
 }

@@ -4,5 +4,5 @@ namespace linkphp\boot\interfaces;
 
 interface RunInterface
 {
-    public function initialize();
+    public function init();
 }

@@ -18,13 +18,15 @@ class Application
     static public function run()
     {
         if(!isset(self::$_init)){
-            Component::bind((new Definition())
+            self::bind(self::definition()
                 ->setAlias('env')
                 ->setIsSingleton(true)
                 ->setClassName('linkphp\\boot\\Environment')
             );
             (new Container())->setup();
-            Component::get('middle')->import(include LOAD_PATH . 'middleware' . EXT)->beginMiddleware();
+            self::get('middle')
+                ->import(include LOAD_PATH . 'middleware' . EXT)
+                ->beginMiddleware();
             //初次初始化执行
             self::$_init = new self();
         }
@@ -38,13 +40,18 @@ class Application
 
     public function request()
     {
-        Component::get('request')->request()->start();
+        self::get('request')
+            ->request()
+            ->start();
         return $this;
     }
 
     public function response()
     {
-        Component::get('request')->request()->setData($this->data)->send();
+        self::get('request')
+            ->request()
+            ->setData($this->data)
+            ->send();
     }
 
     public function setData($data)
@@ -55,22 +62,24 @@ class Application
 
     static public function getRequestMethod()
     {
-        return Component::get('request')->request()->getRequestMethod();
+        return self::get('request')
+            ->request()
+            ->getRequestMethod();
     }
 
     static public function router()
     {
-        return Component::get('run');
+        return self::get('run');
     }
 
     static public function env()
     {
-        return Component::get('env');
+        return self::get('env');
     }
 
     static public function httpRequest()
     {
-        return Component::get('request')->request();
+        return self::get('request')->request();
     }
 
     static public function get($alias)
@@ -105,30 +114,30 @@ class Application
 
     static public function url($c=null,$a=null,$p=null)
     {
-        return Component::get('make')->url($c,$a,$p);
+        return self::get('make')->url($c,$a,$p);
     }
 
     static public function make()
     {
-        return Component::get('make');
+        return self::get('make');
     }
 
     static public function config()
     {
-        return Component::get('config');
+        return self::get('config');
     }
 
     static public function middleware($middle,$middleware=null)
     {
-        if(Component::get('middle')->isValidate($middle)){
-            return Component::get('middle')->$middle($middleware);
+        if(self::get('middle')->isValidate($middle)){
+            return self::get('middle')->$middle($middleware);
         }
     }
 
     static public function hook($middle)
     {
-        if(Component::get('middle')->isValidate($middle)){
-            return Component::get('middle')->$middle();
+        if(self::get('middle')->isValidate($middle)){
+            return self::get('middle')->$middle();
         }
     }
 }

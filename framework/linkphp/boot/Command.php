@@ -19,7 +19,7 @@ use linkphp\boot\interfaces\RunInterface;
 
 class Command implements RunInterface
 {
-    public function initialize()
+    public function init()
     {
         if(Application::input('server.argc') == 1){
             Output::main();

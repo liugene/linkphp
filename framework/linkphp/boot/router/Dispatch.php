@@ -14,33 +14,25 @@
 
 namespace linkphp\boot\router;
 
-use linkphp\boot\Component;
-use linkphp\boot\Definition;
 use linkphp\Application;
 
 class Dispatch
 {
 
-    //分发类构造函数
-    static public function init($config)
-    {
-        static::_dispatch($config);
-    }
-
     //分发方法
-    static private function _dispatch($config)
+    static public function dispatch(Router $router)
     {
-        $dir = $config['__APP__'] . 'controller/' . PLATFORM;
+        $dir = $router->getDir() . 'controller/' . $router->getPlatform();
         //判断模块是否存在
         if(!is_dir($dir)){
             //抛出异常
             throw new \Exception("无法加载模块");
         }
         //实例化控制器类
-        $controller_name = APP_NAMESPACE_NAME  . '\controller\\' . PLATFORM . '\\' . CONTROLLER;
-        $filename = str_replace('\\','/',$config['__APP__'] . 'controller' . '/' . PLATFORM . '/' . CONTROLLER  . EXT);
+        $controller_name = $router->getNamespace()  . '\controller\\' . $router->getPlatform() . '\\' . $router->getController();
+        $filename = str_replace('\\','/',$dir . '/' . $router->getController()  . '.php');
         if(file_exists($filename)){
-            Component::bind((new Definition())
+            Application::bind(Application::definition()
                 ->setAlias($controller_name)
                 ->setIsSingleton(true)
                 ->setClassName($controller_name));
@@ -49,8 +41,8 @@ class Dispatch
             throw new \Exception("无法加载控制器");
         }
         //调用方法
-        $action_name = ACTION;
-        $controller = Component::get($controller_name);
+        $action_name = $router->getAction();
+        $controller = Application::get($controller_name);
         if(method_exists($controller,$action_name)){
             Application::run()->setData($controller->$action_name());
         } else {
