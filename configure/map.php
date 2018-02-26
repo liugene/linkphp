@@ -30,6 +30,6 @@ return [
     ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
-        'Container'  => ROOT_PATH . 'Container' . EXT,
+        'Container'  => FRAMEWORK_PATH . 'Container' . EXT,
     ],
 ];
