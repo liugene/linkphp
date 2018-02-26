@@ -16,18 +16,28 @@ namespace linkphp\boot;
 
 use linkphp\boot\middleware\Middleware as Middle;
 
-class Middleware extends Middle
+class Middleware
 {
 
     static private $_instance;
 
-    static public function getInstance()
+    static private function middleware()
     {
         if (!isset(self::$_instance)) {
-            self::$_instance = new self();
+            self::$_instance = new Middle();
         }
 
         return self::$_instance;
+    }
+
+    static public function __callStatic($method,$param)
+    {
+        return call_user_func_array([self::middleware(), $method], $param);
+    }
+
+    public function __call($name, $arguments)
+    {
+        return call_user_func_array([self::middleware(), $name], $arguments);
     }
 
 }

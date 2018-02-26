@@ -39,7 +39,7 @@ class Middleware
         'controllerMiddleware',
         'actionMiddleware',
         'destructMiddleware'
-    ];
+    ]; 
 
     public function import($middle)
     {

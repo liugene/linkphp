@@ -1,0 +1,272 @@
+<?php
+
+namespace linkphp\boot\router;
+
+use linkphp\boot\Exception;
+use Closure;
+
+class Router
+{
+
+    /**
+     * @param array $rule
+     * 路由规则
+     */
+    private $rule = [];
+
+    /**
+     * @param string $url_module
+     * url模式
+     * URL模式 0普通模式 1 pathinfo模式 2 rewrite模式
+     */
+    private $url_module = '1';
+
+    /**
+     * @param array $url
+     * 封装后请求地址
+     */
+    private $url = [];
+
+    /**
+     * @param array $path
+     * 请求地址
+     */
+    private $path = [];
+
+    /**
+     * @param string $default_platform
+     * 默认操作平台
+     */
+    private $default_platform = 'main';
+
+    /**
+     * @param string $default_controller
+     * 默认控制器
+     */
+    private $default_controller = 'Home';
+
+    /**
+     * @param string $default_action
+     * 默认操作方法
+     */
+    private $default_action = 'main';
+
+    /**
+     * @param string $var_platform
+     * 默认模块传参变量
+     */
+    private $var_platform = 'm';
+
+    /**
+     * @param string $var_controller
+     * 默认控制器传参变量
+     */
+    private $var_controller = 'c';
+
+    /**
+     * @param string $var_action
+     * 默认方法传参变量
+     */
+    private $var_action = 'a';
+
+    /**
+     * @param bool $route_rules_on
+     * 是否开启路由自定义配置
+     */
+    private $route_rules_on = true;
+
+    /**
+     * @param string $get_param
+     * get参数
+     */
+    private $get_param;
+
+    private $platform;
+
+    private $controller;
+
+    private $action;
+
+    public function import($rules)
+    {
+        if(is_array($rules)){
+            foreach($rules as $tag => $rule){
+                $this->addRule($rule);
+            }
+        }
+        return $this;
+    }
+
+    public function addRule($rule)
+    {
+        if($rule instanceof Closure){
+            $ruleClosure[] = $rule;
+            $this->rule = array_merge($this->rule,$ruleClosure);
+        }
+        $this->rule = array_merge($this->rule,$rule);
+        return $this;
+    }
+
+    public function setUrlModel($model)
+    {
+        $this->url_module = $model;
+        return $this;
+    }
+
+    public function setUrl($url)
+    {
+        $this->url = $url;
+        return $this;
+    }
+
+    public function setPath($path)
+    {
+        $this->path = $path;
+        return $this;
+    }
+
+    public function setDefaultPlatform($platform)
+    {
+        $this->default_platform = $platform;
+        return $this;
+    }
+
+    public function setDefaultController($controller)
+    {
+        $this->default_controller = $controller;
+        return $this;
+    }
+
+    public function setDefaultAction($action)
+    {
+        $this->default_action = $action;
+        return $this;
+    }
+
+    public function setVarPlatform($platform)
+    {
+        $this->var_platform = $platform;
+        return $this;
+    }
+
+    public function setVarController($controller)
+    {
+        $this->var_controller = $controller;
+        return $this;
+    }
+
+    public function setVarAction($action)
+    {
+        $this->var_action = $action;
+        return $this;
+    }
+
+    public function setRouterOn($bool)
+    {
+        $this->route_rules_on = $bool;
+        return $this;
+    }
+
+    public function setGetParam($param)
+    {
+        $this->get_param = $param;
+        return $this;
+    }
+
+    public function setPlatform($platform)
+    {
+        $this->platform = $platform;
+        return $this;
+    }
+
+    public function setController($controller)
+    {
+        $this->controller = $controller;
+        return $this;
+    }
+
+    public function setAction($action)
+    {
+        $this->action = $action;
+        return $this;
+    }
+
+
+    /////////////////参数获取//////////////////////
+
+    public function getUrlModel()
+    {
+        return $this->url_module;
+    }
+
+    public function getUrl($key='')
+    {
+        return $key == '' ? $this->url : $this->url[$key];
+    }
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function getDefaultPlatform()
+    {
+        return $this->default_platform;
+    }
+
+    public function getDefaultController()
+    {
+        return $this->default_controller;
+    }
+
+    public function getDefaultAction()
+    {
+        return $this->default_action;
+    }
+
+    public function getVarPlatform()
+    {
+        return $this->var_platform;
+    }
+
+    public function getVarController()
+    {
+        return $this->var_controller;
+    }
+
+    public function getVarAction()
+    {
+        return $this->var_action;
+    }
+
+    public function getRouterOn()
+    {
+        return $this->route_rules_on;
+    }
+
+    public function getRule()
+    {
+        return $this->rule;
+    }
+
+    public function getGetParam()
+    {
+        return $this->get_param;
+    }
+
+    public function getPlatform()
+    {
+        return $this->platform;
+    }
+
+    public function getController()
+    {
+        return $this->controller;
+    }
+
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+}

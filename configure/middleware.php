@@ -20,9 +20,13 @@ return [
         \app\controller\main\First::class,
     ],
 
-    'appMiddleware'            => [],
+    'appMiddleware'            => [
+        \app\controller\main\Index::class,
+    ],
 
-    'modelMiddleware'          => [],
+    'modelMiddleware'          => [
+        \app\controller\main\Test::class,
+    ],
 
     'controllerMiddleware'     => [],
 

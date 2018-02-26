@@ -38,7 +38,7 @@ class Home
             echo 7;
             return $v;
         });
-        Application::middleware('beginMiddleware');
+        Application::middleware('beginMiddleware');die;
 //        Application::input('get.in',function($value){
 //            //闭包实现
 //            //这里写具体的过滤方法

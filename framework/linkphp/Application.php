@@ -124,4 +124,11 @@ class Application
             return Component::get('middle')->$middle($middleware);
         }
     }
+
+    static public function hook($middle)
+    {
+        if(Component::get('middle')->isValidate($middle)){
+            return Component::get('middle')->$middle();
+        }
+    }
 }

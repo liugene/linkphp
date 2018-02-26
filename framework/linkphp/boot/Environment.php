@@ -42,6 +42,10 @@ class Environment
 
     public function requestRouterHandle()
     {
+        /**
+         * 设置应用启动中间件并监听执行
+         */
+        Application::hook('appMiddleware');
         $this->_env->initialize();
         return $this;
     }
