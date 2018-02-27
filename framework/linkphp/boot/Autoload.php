@@ -30,14 +30,95 @@ class Autoload
     /*自动加载方法*/
     static private $_autoload_func;
 
+    //composer目录
+    static private $vendor_path = VENDOR_PATH;
+
+    //类库映射配置文件目录
+    static private $load_path = LOAD_PATH;
+
+    //框架目录
+    static private $framework_path = FRAMEWORK_PATH;
+
+    //文件后缀名
+    static private $ext = EXT;
+
+    static private $_instance;
+
+    //扩展类库目录
+    static private $extend_path = EXTEND_PATH;
+
+    static public function register(Autoload $autoload){}
+
+    static public function instance()
+    {
+        if (!isset(self::$_instance)) self::$_instance = new self();
+
+        return self::$_instance;
+    }
+
+    public function setVendorPath($path)
+    {
+    self::$vendor_path = $path;
+    return $this;
+    }
+
+    public function setLoadPath($path)
+    {
+        self::$load_path = $path;
+        return$this;
+    }
+
+    public function setFrameWorkPath($path)
+    {
+        self::$framework_path = $path;
+        return $this;
+    }
+
+    public function setExt($ext)
+    {
+        self::$ext = $ext;
+        return $this;
+    }
+
+    public function setExtendPath($path)
+    {
+        self::$extend_path = $path;
+        return $this;
+    }
+
+    static public function getVendorPath()
+    {
+        return self::$vendor_path;
+    }
+
+    static public function getLoadPath()
+    {
+        return self::$load_path;
+    }
+
+    static public function getFrameWorkPath()
+    {
+        return self::$framework_path;
+    }
+
+    static public function getExt()
+    {
+        return self::$ext;
+    }
+
+    static public function getExtendPath()
+    {
+        return self::$extend_path;
+    }
+
     /**
      * 自动加载注册方法
      */
-    static public function register()
+    public function complete()
     {
         self::autoloadFunc();
-        if(file_exists(LOAD_PATH . 'map.php')){
-            self::addNamespace(include(LOAD_PATH . 'map.php'));
+        if(file_exists(self::$load_path . 'map.php')){
+            self::addNamespace(include(self::$load_path . 'map.php'));
         }
         //加载composer等扩展自动加载机制
         self::loadExtendAutoload();
@@ -54,6 +135,7 @@ class Autoload
         } else {
             spl_autoload_register(array(__CLASS__, self::$_autoload_func));
         }
+        return $this;
     }
 
     /*自动加载方法*/
@@ -88,7 +170,7 @@ class Autoload
         $name = strstr($class_name, '\\', true);
 
         if($name == 'util'){
-            $filename = FRAMEWORK_PATH . str_replace('\\', '/', $class_name) . EXT;
+            $filename = self::$framework_path . str_replace('\\', '/', $class_name) . self::$ext;
             /**
              * 判断文件是否存在
              */
@@ -116,25 +198,25 @@ class Autoload
         /**
          * 加载Composer自动加载
          */
-        if (file_exists(VENDOR_PATH . 'composer/autoload_namespaces.php')) {
-            $class_map_psr0 = require VENDOR_PATH . 'composer/autoload_namespaces.php';
+        if (file_exists(self::$vendor_path . 'composer/autoload_namespaces.php')) {
+            $class_map_psr0 = require self::$vendor_path . 'composer/autoload_namespaces.php';
             self::addExtendClassPsr0($class_map_psr0);
         }
 
-        if (file_exists(VENDOR_PATH . 'composer/autoload_psr4.php')) {
-            $class_map_psr4 = require VENDOR_PATH . 'composer/autoload_psr4.php';
+        if (file_exists(self::$vendor_path . 'composer/autoload_psr4.php')) {
+            $class_map_psr4 = require self::$vendor_path . 'composer/autoload_psr4.php';
             self::addExtendClassPsr4($class_map_psr4);
         }
 
-        if (file_exists(VENDOR_PATH . 'composer/autoload_classmap.php')) {
-            $class_map = require VENDOR_PATH . 'composer/autoload_classmap.php';
+        if (file_exists(self::$vendor_path . 'composer/autoload_classmap.php')) {
+            $class_map = require self::$vendor_path . 'composer/autoload_classmap.php';
             if ($class_map) {
                 self::addExtendClassMap($class_map);
             }
         }
 
-        if (file_exists(VENDOR_PATH . 'composer/autoload_files.php')) {
-            $includeFiles = require VENDOR_PATH . 'composer/autoload_files.php';
+        if (file_exists(self::$vendor_path . 'composer/autoload_files.php')) {
+            $includeFiles = require self::$vendor_path . 'composer/autoload_files.php';
             self::addExtendFile($includeFiles);
             foreach (self::$_map['autoload_namespace_file'] as $fileIdentifier => $file) {
                 if(file_exists($file)){
@@ -167,7 +249,7 @@ class Autoload
     /**
      * 注册命名空间名
      */
-    static public function addNamespace($namespace)
+    static public function addNamespace($namespace,$path='')
     {
         return self::$_map = $namespace;
     }
@@ -204,13 +286,13 @@ class Autoload
         if(array_key_exists($class_name[0],self::$_sort_psr4_map)){
             foreach(self::$_sort_psr4_map[$class_name[0]] as $prefix){
                 if(strpos($class_name,$prefix) === 0){
-                    $filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . EXT);
+                    $filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . self::$ext);
                     if(is_file($filename)){
                         __require_file($filename);
                         return true;
                     } else {
                         //尝试补位查找类文件
-                        $full_filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace($prefix,'\\',$class_name) . EXT);
+                        $full_filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace($prefix,'\\',$class_name) . self::$ext);
                         if(file_exists($full_filename)){
                             __require_file($full_filename);
                             return true;
@@ -241,7 +323,7 @@ class Autoload
 
     static private function findExtends($class_name)
     {
-        $filename = str_replace('/', '\\',EXTEND_PATH . $class_name) . EXT;
+        $filename = str_replace('/', '\\',self::$extend_path . $class_name) . EXT;
         if(file_exists($filename)){
             __require_file($filename);
             return true;

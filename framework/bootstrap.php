@@ -21,7 +21,15 @@ use linkphp\boot\Config;
 //加载自动加载方法
 require(CORE_PATH . 'Autoload.php');
 //注册自动加载方法
-Autoload::register();
+Autoload::register(
+    Autoload::instance()
+        ->setVendorPath(VENDOR_PATH)
+        ->setLoadPath(LOAD_PATH)
+        ->setExtendPath(EXTEND_PATH)
+        ->setFrameWorkPath(FRAMEWORK_PATH)
+        ->setExt(EXT)
+        ->complete()
+);
 //注册错误和异常处理机制
 Error::register();
 //配置文件加载

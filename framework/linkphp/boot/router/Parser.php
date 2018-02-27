@@ -10,11 +10,11 @@ class Parser
     public function parserPath(Router $router)
     {
         $this->_router = $router;
-        $path = '';
+        $path = $this->_router->getPath();
         /**
          * 检测URL模式以及是否开启自定义路由配置
          */
-        if($this->_router->getUrl() != '0' && $this->_router->getRouterOn()){
+        if($this->_router->getUrlModel() != '0' && $this->_router->getRouterOn()){
             if(array_key_exists($this->_router->getPath(),$this->_router->getRule())){
                 $rule = $this->_router->getRule();
                 $path = $rule[$path];
@@ -82,7 +82,8 @@ class Parser
     /**
      * pathinfo 模式下拼接分发参数
      */
-    private function initDispatchParamByPathInfo(){
+    private function initDispatchParamByPathInfo()
+    {
         //定义常量保存操作平台
         $this->_router->setPlatform(
             $this->_router->getUrl('platform') == ''

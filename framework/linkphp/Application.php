@@ -6,6 +6,7 @@ use linkphp\boot\Environment;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
 use linkphp\boot\di\InstanceDefinition;
+use linkphp\boot\Autoload;
 use Container;
 
 class Application
@@ -48,6 +49,7 @@ class Application
 
     public function response()
     {
+        Application::hook('destructMiddleware');
         self::get('request')
             ->request()
             ->setData($this->data)
@@ -140,4 +142,12 @@ class Application
             return self::get('middle')->$middle();
         }
     }
+
+    static public function autoload()
+    {
+        return Autoload::instance();
+    }
+
+    static public function loader($method){}
+
 }

@@ -28,10 +28,16 @@ return [
         \app\controller\main\Test::class,
     ],
 
-    'controllerMiddleware'     => [],
+    'controllerMiddleware'     => [
+        \app\controller\main\Test::class,
+    ],
 
-    'actionMiddleware'         => [],
+    'actionMiddleware'         => [
+        \app\controller\main\Test::class,
+    ],
 
-    'destructMiddleware'       => [],
+    'destructMiddleware'       => [
+        \app\controller\main\Test::class,
+    ],
 
 ];

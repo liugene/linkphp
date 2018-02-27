@@ -90,6 +90,13 @@ class Router
 
     private $namespace = APP_NAMESPACE_NAME;
 
+    public function run(Router $router){}
+
+    public function set(Router $router)
+    {
+        return $this;
+    }
+
     public function import($rules)
     {
         if(is_array($rules)){

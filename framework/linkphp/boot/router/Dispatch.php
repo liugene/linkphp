@@ -22,6 +22,7 @@ class Dispatch
     //分发方法
     static public function dispatch(Router $router)
     {
+        Application::hook('modelMiddleware');
         $dir = $router->getDir() . 'controller/' . $router->getPlatform();
         //判断模块是否存在
         if(!is_dir($dir)){
@@ -42,8 +43,10 @@ class Dispatch
         }
         //调用方法
         $action_name = $router->getAction();
+        Application::hook('controllerMiddleware');
         $controller = Application::get($controller_name);
         if(method_exists($controller,$action_name)){
+            Application::hook('actionMiddleware');
             Application::run()->setData($controller->$action_name());
         } else {
             //抛出异常
