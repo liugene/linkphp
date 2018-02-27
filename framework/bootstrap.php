@@ -33,7 +33,7 @@ Autoload::register(
 //注册错误和异常处理机制
 Error::register();
 //配置文件加载
-Config::import(require FRAMEWORK_PATH . 'configure' . EXT);
+Config::import(require FRAMEWORK_PATH . 'configure.php');
 
 Application::run()->request()->check(
     IS_CLI ?

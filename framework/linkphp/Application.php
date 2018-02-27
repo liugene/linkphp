@@ -26,7 +26,7 @@ class Application
             );
             (new Container())->setup();
             self::get('middle')
-                ->import(include LOAD_PATH . 'middleware' . EXT)
+                ->import(include LOAD_PATH . 'middleware.php')
                 ->beginMiddleware();
             //初次初始化执行
             self::$_init = new self();
