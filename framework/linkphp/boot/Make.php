@@ -15,7 +15,12 @@ namespace linkphp\boot;
 
 
 class Make{
+
     static public function dir(){}
+
+    static public function file(){}
+
+    static public function module(){}
 
     //创建URL
     /**
@@ -41,6 +46,24 @@ class Make{
         }
         return $url;
     }
+
+    /**
+     * 创建目录
+     * @access protected
+     * @param  array $list 目录列表
+     * @return void
+     */
+    public static function buildDir($list)
+    {
+        foreach ($list as $dir) {
+            // 目录不存在则创建目录
+            !is_dir(APPLICATION_PATH . $dir) && mkdir(APPLICATION_PATH . $dir, 0755, true);
+        }
+    }
+
+    static private function buildFile(){}
+
+    static private function buildModule(){}
 
 }
 

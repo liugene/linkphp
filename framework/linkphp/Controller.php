@@ -19,7 +19,6 @@
 
  class Controller{
 
-     use \linkphp\traits\Test;
     /**
      * Smarty视图实例对象
      * @var smarty
@@ -37,7 +36,7 @@
                 break;
             case 1:
                 //将实例化后的smarty类保存到$_smarty 对象中  直接使用该对象调用父类中方法对象
-                $this->_smarty = new Smarty;
+//                $this->_smarty = new Smarty;
                 break;
             case 2:
                 $this->_links = new \link\temp\LinkTemp();

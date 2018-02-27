@@ -13,6 +13,7 @@ class Home
 
     public function main()
     {
+        dump(Application::config('app_debug'));
         Application::middleware('beginMiddleware',function (Closure $v) {
             $v();
             echo 3;

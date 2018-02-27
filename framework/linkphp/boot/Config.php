@@ -16,26 +16,32 @@ namespace linkphp\boot;
 class Config
 {
 
-    //保存已经加载的配置信息
-    static private $_config = [];
+    private $platform;
 
-    static public function load($file)
+    //保存已经加载的配置信息
+    static private $config = [];
+
+    static public function import($file)
     {
-        if(is_file($file)){
-            try{
-                self::$_config = parse_ini_file($file);
-            } catch (Exception $e) {
-                return $e->getMessage();
-            }
-        }
-        return false;
+        if(is_array($file)) self::$config = $file;
+    }
+
+    static public function set($name='')
+    {
+        $config = require LOAD_PATH . 'configure.php';
+        self::$config = array_merge(self::$config,$config);
+    }
+
+    public function setPlatform($platform)
+    {
+        $this->platform = $platform;
+        return $this;
     }
 
     /**
-     * 封装C方法用于动态获取以及配置文件
      * @param [string] $name 配置名
      * @param [string] $value 配置值
-     * return [string] 返回指定键名的键值
+     * @return [string] 返回指定键名的键值
      * 未传入$value时默认null，进行获取项目配置
      * 传入$value时此时为动态配置
      * array_merge() 将2个以及多个数组合并成一个数组，重复的键名在后传入的键值
@@ -46,52 +52,26 @@ class Config
      */
     static public function get($name, $value = null)
     {
-        if(self::check('extend_model_config', 'true') == 'true'){
-            $platform = isset($_GET[self::check('var_platform','true')]) ? ucfirst($_GET[self::check('var_platform','true')]) : self::check('default_platform','true');
-            $extend_config['extend'] = require APPLICATION_PATH . 'configure' . $platform . '/configure.php';
-            if(array_key_exists($name, $extend_config['extend'])){
-                return $extend_config['extend'][strtoupper($name)];
-            }
-            elseif(!array_key_exists($name,$extend_config['extend'])){
-                $config['link'] = require FRAMEWORK_PATH . 'configure.php';
-                $config['common'] = require LOAD_PATH . 'configure.php';
-                $config['conf'] = array_merge($config['link'], $config['common']);
-                return $config['conf'][strtoupper($name)];
-            }
-        } else {
-            if($value == null){
-                $config['link'] = require FRAMEWORK_PATH . 'configure.php';
-                $config['common'] = require LOAD_PATH . 'configure.php';
-                $config['conf'] = array_merge($config['link'], $config['common']);
-                return $config['conf'][strtolower($name)];
-            } else {
-
-            }
+        if(array_key_exists($name, self::$config)){
+            $value = self::$config[strtolower($name)];
         }
+        return $value;
     }
 
     /**
-     * 应用模块检测扩展配置方法
-     * @param [string] $name 需要检测配置名称
-     * @value [boolean] 默认为flase ck方法为检测是否存在配置项如果为TRUE则返回配置项的值CK方法获取不到
-     * 应用扩展配置项，只能获取项目以及框架公共配置项，如果开启扩展配置项请使用C方法获取
-     * @return [bool] 返回检测
+     * 检测配置是否存在
+     * @access public
+     * @param  string $name 配置参数名（支持二级配置 . 号分割）
+     * @return bool
      */
-    static function check($name,$value='false'){
-        if($value == 'true'){
-            $config['link'] = require FRAMEWORK_PATH . 'configure.php';
-            $config['common'] = require LOAD_PATH . 'configure.php';
-            $config['conf'] = array_merge($config['link'], $config['common']);
-            return $config['conf'][strtolower($name)];
-        } else {
-            $config['link'] = require FRAMEWORK_PATH . 'configure.php';
-            $config['common'] = require LOAD_PATH . 'configure.php';
-            $config['conf'] = array_merge($config['link'], $config['common']);
-            if(in_array(strtoupper($name), $config['conf'])){
-                return TRUE;
-            } else {
-                return FALSE;
-            }
+    static public function has($name)
+    {
+        if (!strpos($name, '.')) {
+            return isset(self::$config[strtolower($name)]);
         }
+
+        // 二维数组设置和获取支持
+        $name = explode('.', $name, 2);
+        return isset(self::$config[strtolower($name[0])][$name[1]]);
     }
 }

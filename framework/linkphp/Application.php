@@ -122,9 +122,9 @@ class Application
         return self::get('make');
     }
 
-    static public function config()
+    static public function config($key='')
     {
-        return self::get('config');
+        return $key=='' ? self::get('config') : self::get('config')->get($key);
     }
 
     static public function middleware($middle,$middleware=null)

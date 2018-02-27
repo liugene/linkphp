@@ -16,6 +16,7 @@ namespace linkphp;
 
 use linkphp\boot\Autoload;
 use linkphp\boot\Error;
+use linkphp\boot\Config;
 
 //加载自动加载方法
 require(CORE_PATH . 'Autoload.php');
@@ -23,6 +24,8 @@ require(CORE_PATH . 'Autoload.php');
 Autoload::register();
 //注册错误和异常处理机制
 Error::register();
+//配置文件加载
+Config::import(require FRAMEWORK_PATH . 'configure' . EXT);
 
 Application::run()->request()->check(
     IS_CLI ?
