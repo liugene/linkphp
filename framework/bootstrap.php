@@ -32,9 +32,9 @@ Autoload::register(
 //注册错误和异常处理机制
 Error::set(
     Error::instance()
-        ->setNormalView(EXTRA_PATH . 'tpl/error.html')
-        ->setFatalView(EXTRA_PATH . 'tpl/fatalerror.html')
-        ->setExceptionView(EXTRA_PATH . 'tpl/Exception.html')
+        ->setErrorView(EXTRA_PATH . 'tpl/error.html')
+        ->setDebug(true)
+        ->setErrHandle('')
 )->register();
 //配置文件加载
 Config::set(
