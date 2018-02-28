@@ -12,7 +12,7 @@
  * --------------------------------------------------*
  */
 
- namespace linkphp\system\safe;
- class Core
- {}
+namespace linkphp\system\safe;
+class Core
+{}
 

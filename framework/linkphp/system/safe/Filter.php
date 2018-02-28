@@ -12,9 +12,6 @@
  * --------------------------------------------------*
  */
 
- namespace linkphp\system\safe;
- class Filter
- {}
-
-
- ?>
+namespace linkphp\system\safe;
+class Filter
+{}
