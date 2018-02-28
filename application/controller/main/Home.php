@@ -14,7 +14,7 @@ class Home
     public function main()
     {
         dump(Application::autoload());
-        dump(Application::config('app_debug'));
+        dump(Application::config()->getLoadPath());
         Application::middleware('beginMiddleware',function (Closure $v) {
             $v();
             echo 3;

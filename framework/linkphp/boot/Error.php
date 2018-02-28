@@ -17,6 +17,88 @@ namespace linkphp\boot;
 class Error
 {
 
+    /**
+     * 一般错误页面
+     */
+    static private $normal_view;
+
+    /**
+     * 致命错误页面
+     */
+    static private $fatal_view;
+
+    /**
+     * 异常错误页面
+     */
+    static private $exception_view;
+
+    static private $_instance;
+
+    static public function instance()
+    {
+        if(is_null(self::$_instance)) self::$_instance = new self();
+
+        return self::$_instance;
+    }
+
+    /**
+     * 设置错误处理相关配置
+     * @param Object Error $error
+     * @return Object Error $error
+     */
+    static public function set(Error $error)
+    {
+        return $error;
+    }
+
+    /**
+     * 设置一般错误页面
+     * @param string $view
+     * @return Object $this
+     */
+    public function setNormalView($view)
+    {
+        self::$normal_view = $view;
+        return $this;
+    }
+
+    /**
+     * 设置致命错误页面
+     * @param string $view
+     * @return Object $this
+     */
+    public function setFatalView($view)
+    {
+        self::$fatal_view = $view;
+        return $this;
+    }
+
+    /**
+     * 设置异常错误页面
+     * @param string $view
+     * @return Object $this
+     */
+    public function setExceptionView($view)
+    {
+        self::$exception_view = $view;
+        return $this;
+    }
+
+    public function getNormalView()
+    {
+        return self::$normal_view;
+    }
+
+    public function getFatalView()
+    {
+        return self::$fatal_view;
+    }
+
+    public function getExceptionView()
+    {
+        return self::$exception_view;
+    }
+
     //错误处理类注册
     static public function register()
     {
@@ -26,12 +108,10 @@ class Error
          * 捕获致命错误自定义处理方法
          */
         register_shutdown_function([__CLASS__,'dealFatalError']);
-
         /**
          * 捕获普通自定义处理方法
          */
         set_error_handler([__CLASS__,'dealNormalError']);
-
         /**
          * 捕获异常自定义处理方法
          */
@@ -47,14 +127,12 @@ class Error
      * @param [string] $line 错误行
      **/
     static public function dealNormalError($error,$msg,$filename,$line){
-
         switch($error){
             //错误级别：提醒
             case E_NOTICE:
             case E_USER_NOTICE:
                 $error_type = 'NOTICE';
                 break;
-
             //错误级别：警告
             case E_WARNING:
             case E_USER_WARNING:
@@ -71,16 +149,13 @@ class Error
         <B>产生{$error_type}错误文件&nbsp:</B> &nbsp&nbsp {$filename}<br /><br />
         <B>产生{$error_type}错误信息&nbsp:</B> &nbsp&nbsp {$msg}<br /><br />
         <B>产生{$error_type}错误信息行&nbsp:</B> &nbsp&nbsp {$line}
-
 EOT;
         //ob_start();
         //header("Content-type:text/html;charset=utf-8");
         //ob_end_flush();
-
-        require(EXTRA_PATH . 'tpl/error' . C('default_theme_suffix'));
+        require(self::$normal_view);
         die;
     }
-
     /**
      * 致命错误捕获
      * */
@@ -106,17 +181,12 @@ EOT;
         类名&nbsp: &nbsp&nbsp {$trace[0]['class']}<br /><br />
         方法名&nbsp: &nbsp&nbsp {$trace[0]['function']}<br /><br />
         调用类型&nbsp: &nbsp&nbsp {$trace[0]['type']}
-
 EOT;
-                //ob_start();
-                //header("Content-type:text/html;charset=utf-8");
-                //ob_end_flush();
-                require(EXTRA_PATH . 'tpl/fatalerror' . C('default_theme_suffix'));
+                require(self::$fatal_view);
                 die;
                 break;
         }
     }
-
     /**
      *自定义异常错误处理函数
      */
@@ -131,12 +201,11 @@ EOT;
         <B>{$info}错误&nbsp:</B><br /><br />
         <B>产生{$info}错误文件&nbsp:</B> &nbsp&nbsp {$file}<br /><br />
         <B>产生{$info}错误信息行&nbsp:</B> &nbsp&nbsp {$line}
-
 EOT;
         //ob_start();
         //header("Content-type:text/html;charset=utf-8");
         //ob_end_flush();
-        require EXTRA_PATH . 'tpl/Exception' . C('default_theme_suffix');
+        require(self::$exception_view);
         die;
     }
 

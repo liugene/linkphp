@@ -47,7 +47,10 @@ class Autoload
     //扩展类库目录
     static private $extend_path = EXTEND_PATH;
 
-    static public function register(Autoload $autoload){}
+    static public function register(Autoload $autoload)
+    {
+        return $autoload;
+    }
 
     static public function instance()
     {

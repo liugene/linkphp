@@ -18,17 +18,41 @@ class Config
 
     private $platform;
 
+    private static $load_path = LOAD_PATH;
+
     //保存已经加载的配置信息
     static private $config = [];
+
+    static private $instance;
+
+    static public function instance()
+    {
+        if(is_null(self::$instance)) self::$instance = new self();
+
+        return self::$instance;
+    }
+
+    public function setLoadPath($path)
+    {
+        self::$load_path = $path;
+        return $this;
+    }
+
+    public function getLoadPath()
+    {
+        return self::$load_path;
+    }
 
     static public function import($file)
     {
         if(is_array($file)) self::$config = $file;
+        return;
     }
 
     static public function set($name='')
     {
-        $config = require LOAD_PATH . 'configure.php';
+        if(is_object($name)) return self::instance();
+        $config = require self::$load_path . 'configure.php';
         self::$config = array_merge(self::$config,$config);
     }
 

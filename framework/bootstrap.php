@@ -28,12 +28,19 @@ Autoload::register(
         ->setExtendPath(EXTEND_PATH)
         ->setFrameWorkPath(FRAMEWORK_PATH)
         ->setExt(EXT)
-        ->complete()
-);
+)->complete();
 //注册错误和异常处理机制
-Error::register();
+Error::set(
+    Error::instance()
+        ->setNormalView(EXTRA_PATH . 'tpl/error.html')
+        ->setFatalView(EXTRA_PATH . 'tpl/fatalerror.html')
+        ->setExceptionView(EXTRA_PATH . 'tpl/Exception.html')
+)->register();
 //配置文件加载
-Config::import(require FRAMEWORK_PATH . 'configure.php');
+Config::set(
+    Config::instance()
+        ->setLoadPath(LOAD_PATH)
+)->import(require FRAMEWORK_PATH . 'configure.php');
 
 Application::run()->request()->check(
     IS_CLI ?
