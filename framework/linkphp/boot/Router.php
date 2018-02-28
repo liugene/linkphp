@@ -26,6 +26,7 @@ class Router implements RunInterface
 
     /**
      * 路由解析启动
+     * @return Router
      */
     public function init()
     {
@@ -45,11 +46,23 @@ class Router implements RunInterface
         return self::$_router;
     }
 
+    /**
+     * 静态调用Router类方法
+     * @param string $method
+     * @param array $param
+     * @return RouterPro
+     */
     static public function __callStatic($method,$param)
     {
         return call_user_func_array([self::router(), $method], $param);
     }
 
+    /**
+     * 实例后调用router类方法
+     * @param string $name
+     * @param array $arguments
+     * @return RouterPro
+     */
     public function __call($name, $arguments)
     {
         return call_user_func_array([self::router(), $name], $arguments);

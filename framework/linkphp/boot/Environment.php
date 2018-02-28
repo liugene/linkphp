@@ -20,10 +20,6 @@ class Environment
 
     static private $_instance;
 
-    private $_request;
-
-    private $_env;
-
     static public function getInstance()
     {
         if(!isset(self::$_instance)){
@@ -35,8 +31,6 @@ class Environment
     //操作相应模式
     public function selectEnvModel($_env_object)
     {
-        $this->_env = Application::get('envmodel');
-        $this->_request = Application::get('request')->request();
         return $this;
     }
 
@@ -46,13 +40,17 @@ class Environment
          * 设置应用启动中间件并监听执行
          */
         Application::hook('appMiddleware');
-        $this->_env->init()->run(
+        Application::get('envmodel')
+            ->init()
+            ->run(
             Application::router()
                 ->import(LOAD_PATH . 'router.php')
                 ->set(
                     Application::router()
                         ->setUrlModel('1')
-                        ->setPath(Application::input('server.REQUEST_URI'))
+                        ->setPath(
+                            Application::input('server.REQUEST_URI')
+                        )
                         ->setDefaultPlatform('main')
                         ->setDefaultController('Home')
                         ->setDefaultAction('main')
@@ -75,8 +73,11 @@ class Environment
 
     public function requestCmdHandle()
     {
-        $this->_request->setCmdParam(Application::input('server.argv'));
-        $this->_env->init();
+        Application::httpRequest()
+            ->setCmdParam(
+                Application::input('server.argv')
+            );
+        Application::get('envmodel')->init();
         return $this;
     }
 

@@ -223,7 +223,7 @@ class Error
     /**
      * 设置错误处理相关配置
      * @param Object Error $error
-     * @return Object Error $error
+     * @return Error Object
      */
     static public function set(Error $error)
     {
@@ -233,7 +233,7 @@ class Error
     /**
      * 设置一般错误页面
      * @param string $view
-     * @return Object $this
+     * @return Error Object
      */
     public function setErrorView($view)
     {
