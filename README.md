@@ -1,5 +1,5 @@
 ###开发使用帮助文档：http://wiki.linkphp.cn
-#### LinkPHP (临克) 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架 ，遵循Apache2开源协议发布。 开发者可以基于LinkPHP框架开发任何免费或者商用项目。
+#### LinkPHP (临克) 是一个免费开源的，快速、简单的面向对象的 轻量级PHP API开发框架 ，遵循Apache2开源协议发布。 开发者可以基于LinkPHP框架开发任何免费或者商用项目。
 
 <table><thead><tr><th><a href="https://github.com/osnote/LinkPHP" rel="nofollow noopener external">Master</a></th>
 <th><a href="https://github.com/osnote/LinkPHP" rel="nofollow noopener external">2.5</a></th>
@@ -24,7 +24,7 @@ BUG反馈：www.linkphp.cn
 ###目前框架空目录都是必须创建的目录根据命名规范即可自动寻址加载相关文件
 
 ## **部署条件**
-1、PHP版本不能小于5.3版本
+1、PHP版本不能小于5.5版本建议7.0版本(框架作者可能会发疯强制升级到php7)
 
 ## **支持的服务器和数据库环境**
 
