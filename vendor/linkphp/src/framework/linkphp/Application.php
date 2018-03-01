@@ -7,7 +7,7 @@ use linkphp\boot\Environment;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
 use linkphp\boot\di\InstanceDefinition;
-use linkphp\boot\Autoload;
+use bootstrap\Autoload;
 use Container;
 use linkphp\boot\http\HttpRequest;
 use linkphp\boot\Make;

@@ -12,7 +12,9 @@
 // |               LinkPHP框架自动化加载类
 // +----------------------------------------------------------------------
 
-namespace linkphp\boot;
+namespace bootstrap;
+
+use linkphp\boot\Exception;
 
 class Autoload
 {
@@ -62,8 +64,8 @@ class Autoload
 
     public function setVendorPath($path)
     {
-    self::$vendor_path = $path;
-    return $this;
+        self::$vendor_path = $path;
+        return $this;
     }
 
     public function setLoadPath($path)

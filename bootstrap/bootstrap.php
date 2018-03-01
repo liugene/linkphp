@@ -12,14 +12,14 @@
 // |               LinkPHP框架启动文件
 // +----------------------------------------------------------------------
 
-namespace linkphp;
+namespace bootstrap;
 
-use linkphp\boot\Autoload;
 use linkphp\boot\Error;
 use linkphp\boot\Config;
+use linkphp\Application;
 
 //加载自动加载方法
-require(CORE_PATH . 'Autoload.php');
+require('Autoload.php');
 //注册自动加载方法
 Autoload::register(
     Autoload::instance()

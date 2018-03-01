@@ -26,7 +26,7 @@ class Component
 
     /**
      * 容器初始化，并取得容器类实例
-     * @return mixed
+     * @return Component
      */
     static public function instance()
     {

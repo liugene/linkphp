@@ -1,17 +1,5 @@
 <?php
 
-/**
- * --------------------------------------------------*
- *  LhinkPHP遵循Apache2开源协议发布  Link ALL Thing  *
- * --------------------------------------------------*
- *  @author LiuJun     Mail-To:liujun2199@vip.qq.com *
- * --------------------------------------------------*
- * Copyright (c) 2017 LinkPHP. All rights reserved.  *
- * --------------------------------------------------*
- *                 LinkPHP框架入口文件               *
- * --------------------------------------------------*
- */
-
  //类文件后缀常量
  const EXT = '.php';
  const SYS = '.php';
@@ -21,8 +9,7 @@
  define('LINKPHP_VERSION','1.0.0');
  //声明应用根命名空间
  //声明路径常量
- //目录基础常量的定义
- defined('ROOT_PATH') or define('ROOT_PATH',dirname(__DIR__ ) . '/');
+
  //定义站点入库文件夹目录常量
  defined('WEB_PATH') or define('WEB_PATH',ROOT_PATH . 'website/');
  //定义框架加载文件夹目录常量
@@ -34,12 +21,10 @@
  defined('VENDOR_PATH') or define('VENDOR_PATH', ROOT_PATH . 'vendor/');
  //定义缓存目录常量
  defined('CACHE_PATH') or define('CACHE_PATH', ROOT_PATH . 'resource/');
- //定义应用公共目录常量
- defined('COMMON_PATH') or define('COMMON_PATH', APPLICATION_PATH . 'common/');
  //定义公共附件目录常量
  defined('__ATTACH__') or define('__ATTACH__', CACHE_PATH . 'attachment/');
  //定义LinkPHP框架目录常量
- defined('FRAMEWORK_PATH') or define('FRAMEWORK_PATH', ROOT_PATH . 'framework/');
+ defined('FRAMEWORK_PATH') or define('FRAMEWORK_PATH', VENDOR_PATH . 'linkphp/src/framework/');
  //定义LinkPHP框架核心类目录常量
  defined('CORE_PATH') or define('CORE_PATH', FRAMEWORK_PATH . 'linkphp/boot/');
  //定义LinkPHP框架启动目录常量

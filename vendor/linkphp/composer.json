@@ -15,7 +15,8 @@
   },
   "autoload": {
     "psr-4": {
-      "linkphp\\": "src/framework/linkphp"
+      "linkphp\\": "src/framework/linkphp",
+      "link\\util\\": "src/util"
     }
   }
 }
