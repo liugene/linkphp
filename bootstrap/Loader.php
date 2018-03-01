@@ -16,7 +16,7 @@ namespace bootstrap;
 
 use linkphp\boot\Exception;
 
-class Autoload
+class Loader
 {
 
     /**
@@ -50,7 +50,7 @@ class Autoload
     //扩展类库目录
     static private $extend_path = EXTEND_PATH;
 
-    static public function register(Autoload $autoload)
+    static public function register(Loader $autoload)
     {
         return $autoload;
     }

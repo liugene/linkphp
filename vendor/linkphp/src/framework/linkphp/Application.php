@@ -7,7 +7,7 @@ use linkphp\boot\Environment;
 use linkphp\boot\Component;
 use linkphp\boot\Definition;
 use linkphp\boot\di\InstanceDefinition;
-use bootstrap\Autoload;
+use bootstrap\Loader;
 use Container;
 use linkphp\boot\http\HttpRequest;
 use linkphp\boot\Make;
@@ -183,13 +183,11 @@ class Application
 
     /**
      * 获取装载类实例
-     * @return Autoload Object
+     * @return Loader Object
      */
-    static public function autoload()
+    static public function Loader()
     {
-        return Autoload::instance();
+        return Loader::instance();
     }
-
-    static public function loader($method){}
 
 }

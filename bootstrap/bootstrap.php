@@ -19,10 +19,10 @@ use linkphp\boot\Config;
 use linkphp\Application;
 
 //加载自动加载方法
-require('Autoload.php');
+require('Loader.php');
 //注册自动加载方法
-Autoload::register(
-    Autoload::instance()
+Loader::register(
+    Loader::instance()
         ->setVendorPath(VENDOR_PATH)
         ->setLoadPath(LOAD_PATH)
         ->setExtendPath(EXTEND_PATH)
