@@ -90,6 +90,11 @@ class Router
 
     private $namespace = APP_NAMESPACE_NAME;
 
+    /**
+     * 返回的数据
+     */
+    private $return_data;
+
     public function run(Router $router){}
 
     public function set(Router $router)
@@ -100,20 +105,16 @@ class Router
     public function import($rules)
     {
         if(is_array($rules)){
-            foreach($rules as $tag => $rule){
-                $this->addRule($rule);
-            }
+            $this->rule($rules);
         }
         return $this;
     }
 
-    public function addRule($rule)
+    public function rule($rule,$tag='')
     {
-        if($rule instanceof Closure){
-            $ruleClosure[] = $rule;
-            $this->rule = array_merge($this->rule,$ruleClosure);
-        }
-        $this->rule = array_merge($this->rule,$rule);
+        if(is_array($rule)) $this->rule = array_merge($this->rule,$rule);
+        if($tag instanceof Closure) $this->rule = array_merge($this->rule,[$rule => $tag]);
+        if($tag!='') $this->rule = array_merge($this->rule,[$rule => $tag]);
         return $this;
     }
 
@@ -126,6 +127,12 @@ class Router
     public function dispatch()
     {
         (new Dispatch())->dispatch($this);
+        return $this;
+    }
+
+    public function setReturnData($data)
+    {
+        $this->return_data = $data;
         return $this;
     }
 
@@ -227,6 +234,11 @@ class Router
 
 
     /////////////////参数获取//////////////////////
+
+    public function getReturnData()
+    {
+        return $this->return_data;
+    }
 
     public function getUrlModel()
     {

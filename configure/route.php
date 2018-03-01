@@ -1,5 +1,7 @@
 <?php
 
 return [
-    '/Index/Index'   =>  '/Index/Api',
+    '/main/home/main'   =>  function(\linkphp\boot\router\Router $router){
+        return '/main/home/main';
+    },
 ];

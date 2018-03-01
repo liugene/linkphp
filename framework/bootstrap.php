@@ -30,12 +30,12 @@ Autoload::register(
         ->setExt(EXT)
 )->complete();
 //注册错误和异常处理机制
-Error::set(
+Error::register(
     Error::instance()
         ->setErrorView(EXTRA_PATH . 'tpl/error.html')
         ->setDebug(true)
         ->setErrHandle('')
-)->register();
+)->complete();
 //配置文件加载
 Config::set(
     Config::instance()

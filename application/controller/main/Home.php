@@ -13,6 +13,9 @@ class Home
 
     public function main()
     {
+        Application::router('index/getUser',function(){
+            return 1;
+        });
         dump(Application::autoload());
         dump(Application::config()->getLoadPath());
         Application::middleware('beginMiddleware',function (Closure $v) {

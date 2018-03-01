@@ -2,9 +2,15 @@
 
 namespace linkphp\boot\router;
 
+use Closure;
+
 class Parser
 {
 
+    /**
+     * router类实例
+     * @var \linkphp\boot\router\Router
+     */
     private $_router;
 
     public function parserPath(Router $router)
@@ -15,8 +21,8 @@ class Parser
          * 检测URL模式以及是否开启自定义路由配置
          */
         if($this->_router->getUrlModel() != '0' && $this->_router->getRouterOn()){
-            if(array_key_exists($this->_router->getPath(),$this->_router->getRule())){
-                $rule = $this->_router->getRule();
+            $rule = $this->_router->getRule();
+            if(array_key_exists($this->_router->getPath(),$rule)){
                 $path = $rule[$path];
             }
         }
@@ -28,10 +34,16 @@ class Parser
 
     public function parserParam($path)
     {
-        $url = preg_replace('/\.html$/','',$path);
+        if($path instanceof Closure){
+            $url = call_user_func($path,$this->_router);
+        } elseif(is_array($path)) {
+            $url = preg_replace('/\.html$/','',$path);
+        } else {
+            $url = preg_replace('/\.html$/','',$path);
+        }
         switch($this->_router->getUrlModel()){
             case 0:
-                $this->initDispatchParamByNormal();
+                $this->initDispatchParamByNormal($url);
                 break;
             case 1:
                 $dispatch = explode('/',trim($url,'/'));
@@ -50,7 +62,7 @@ class Parser
                 $this->initDispatchParamByPathInfo();
                 break;
             case 2:
-                $this->initDispatchParamByNormal();
+                $this->initDispatchParamByNormal($url);
                 break;
         }
     }
@@ -70,13 +82,32 @@ class Parser
     /**
      * 默认模式下初拼接分发参数
      */
-    private function initDispatchParamByNormal(){
+    private function initDispatchParamByNormal($url){
+        $get_param = $this->_router->getGetParam();
         //定义常量保存操作平台
-        define('PLATFORM',isset($_GET[$config['var_platform']]) ? strtolower($_GET[$config['var_platform']]) : static::$_default_platform);
+        $this->_router->setPlatform(
+            isset($get_param[$this->_router->getVarPlatform()])
+                ?
+                strtolower($get_param[$this->_router->getVarPlatform()])
+                :
+                $this->_router->getDefaultPlatform()
+        );
         //定义常量保存控制器
-        define('CONTROLLER',isset($_GET[$config['var_controller']]) ? ucfirst($_GET[$config['var_controller']]) : static::$_default_controller);
+        $this->_router->setController(
+            isset($get_param[$this->_router->getVarController()])
+                ?
+                strtolower($get_param[$this->_router->getVarController()])
+                :
+                $this->_router->getDefaultController()
+        );
         //定义常量保存操作方法
-        define('ACTION',isset($_GET[$config['var_action']]) ? strtolower($_GET[$config['var_action']]) : static::$_default_action);
+        $this->_router->setAction(
+            isset($get_param[$this->_router->getVarAction()])
+                ?
+                strtolower($get_param[$this->_router->getVarAction()])
+                :
+                $this->_router->getDefaultAction()
+        );
     }
 
     /**

@@ -20,7 +20,7 @@ class Dispatch
 {
 
     //分发方法
-    static public function dispatch(Router $router)
+    public function dispatch(Router $router)
     {
         Application::hook('modelMiddleware');
         $dir = $router->getDir() . 'controller/' . $router->getPlatform();
@@ -47,7 +47,7 @@ class Dispatch
         $controller = Application::get($controller_name);
         if(method_exists($controller,$action_name)){
             Application::hook('actionMiddleware');
-            Application::run()->setData($controller->$action_name());
+            $router->setReturnData($controller->$action_name());
         } else {
             //抛出异常
             throw new \Exception("无法加载方法");

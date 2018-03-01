@@ -11,6 +11,7 @@ use linkphp\boot\Autoload;
 use Container;
 use linkphp\boot\http\HttpRequest;
 use linkphp\boot\Make;
+use linkphp\boot\router\Router;
 
 class Application
 {
@@ -52,6 +53,7 @@ class Application
 
     public function response()
     {
+        $this->setData(Application::router()->getReturnData());
         Application::hook('destructMiddleware');
         self::get('request')
             ->request()
@@ -74,11 +76,14 @@ class Application
 
     /**
      * 获取环境实例
-     * @return \linkphp\boot\router\Router Object
+     * @param string $rule
+     * @param string $tag
+     * @return Router Object
      */
-    static public function router()
+    static public function router($rule='',$tag='')
     {
-        return self::get('run');
+        if($rule=='' || $tag=='') return self::get('run');
+        return self::get('run')->rule($rule,$tag);
     }
 
     /**

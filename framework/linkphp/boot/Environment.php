@@ -44,7 +44,7 @@ class Environment
             ->init()
             ->run(
             Application::router()
-                ->import(LOAD_PATH . 'router.php')
+                ->import(require LOAD_PATH . 'route.php')
                 ->set(
                     Application::router()
                         ->setUrlModel('1')

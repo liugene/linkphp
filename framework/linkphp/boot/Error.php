@@ -225,7 +225,7 @@ class Error
      * @param Object Error $error
      * @return Error Object
      */
-    static public function set(Error $error)
+    static public function register(Error $error)
     {
         return $error;
     }
@@ -247,7 +247,7 @@ class Error
     }
 
     //错误处理类注册
-    static public function register()
+    static public function complete()
     {
         // 报告所有错误
         error_reporting(E_ALL);
