@@ -22,7 +22,7 @@
  //定义缓存目录常量
  defined('CACHE_PATH') or define('CACHE_PATH', ROOT_PATH . 'resource/');
  //定义公共附件目录常量
- defined('__ATTACH__') or define('__ATTACH__', CACHE_PATH . 'attachment/');
+ defined('__ATTACH__') or define('__ATTACH__', ROOT_PATH . 'attachment/');
  //定义LinkPHP框架目录常量
  defined('FRAMEWORK_PATH') or define('FRAMEWORK_PATH', VENDOR_PATH . 'linkphp/src/framework/');
  //定义LinkPHP框架核心类目录常量
