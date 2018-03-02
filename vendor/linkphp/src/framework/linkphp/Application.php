@@ -190,4 +190,6 @@ class Application
         return Loader::instance();
     }
 
+    static public function event(){}
+
 }

@@ -9,16 +9,31 @@
 // +----------------------------------------------------------------------
 // | Author: liugene <liujun2199@vip.qq.com>
 // +----------------------------------------------------------------------
-// |               站点应用入口文件
+// |               配置类
 // +----------------------------------------------------------------------
 
- //目录基础常量的定义
- define('ROOT_PATH', dirname(__DIR__) . '/');
- //加载LinkPHP框架常量文件
- require(ROOT_PATH . '/vendor/linkphp/src/framework/define.php');
- //加载LinkPHP框架启动文件
- require(ROOT_PATH . '/bootstrap/bootstrap.php');
+namespace bootstrap;
 
- //只需要这么几句话就可以运行 !><!
- //是不是很轻便呀 喵~
- 
+use linkphp\Application;
+
+class Provider
+{
+
+    static private $_instance;
+
+    static public function instance()
+    {
+        if(is_null(self::$_instance)) self::$_instance = new self();
+        return self::$_instance;
+    }
+
+    static public function register(Provider $provider)
+    {
+        return $provider;
+    }
+
+    public function complete()
+    {
+        return $this;
+    }
+}

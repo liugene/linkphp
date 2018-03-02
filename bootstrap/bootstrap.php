@@ -12,14 +12,14 @@
 // |               LinkPHP框架启动文件
 // +----------------------------------------------------------------------
 
-namespace bootstrap;
-
 use linkphp\boot\Error;
 use linkphp\boot\Config;
 use linkphp\Application;
+use bootstrap\Loader;
+use bootstrap\Provider;
 
 //加载自动加载方法
-require('Loader.php');
+require('bootstrap/Loader.php');
 //注册自动加载方法
 Loader::register(
     Loader::instance()
@@ -41,6 +41,10 @@ Config::set(
     Config::instance()
         ->setLoadPath(LOAD_PATH)
 )->import(require FRAMEWORK_PATH . 'configure.php');
+//注册服务提供者
+Provider::register(
+    Provider::instance()
+)->complete();
 
 Application::run()->request()->check(
     IS_CLI ?

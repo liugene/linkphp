@@ -2,7 +2,7 @@
 
 namespace linkphp\boot\di;
 
-use linkphp\boot\exception\ContainerException;
+use linkphp\boot\Exception;
 
 use Closure;
 use ReflectionClass;
@@ -357,13 +357,13 @@ class Container
             /**
              * 不合法抛出 异常
              */
-            throw new ContainerException('别名不合法!');
+            throw new Exception('别名不合法!');
         }
         if(isset($this->definition_map[$alias])){
             /**
              * 不合法抛出 异常
              */
-            throw new ContainerException('别名已经设置!');
+            throw new Exception($alias . '别名已经设置');
         }
     }
 
@@ -378,7 +378,7 @@ class Container
             /**
              * 不合法抛出 异常
              */
-            throw new ContainerException('类名未设置!');
+            throw new Exception('类名未设置!');
         }
     }
 

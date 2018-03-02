@@ -1,8 +1,10 @@
 <?php
 namespace app\controller\main;
+use linkphp\boot\event\EventDefinition;
 use linkphp\Controller;
 use linkphp\Application;
 use Closure;
+use linkphp\boot\Event;
 class Home
 {
 
@@ -13,6 +15,11 @@ class Home
 
     public function main()
     {
+        Event::getInstance()->provider(
+            (new EventDefinition())
+                ->setServer('test')
+                ->register(new \app\controller\main\Event()));
+        Event::getInstance()->target('test');
         Application::router('index/getUser',function(){
             return 1;
         });
