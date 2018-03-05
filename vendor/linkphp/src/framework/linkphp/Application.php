@@ -13,6 +13,8 @@ use linkphp\boot\http\HttpRequest;
 use linkphp\boot\Make;
 use linkphp\boot\router\Router;
 use bootstrap\Provider;
+use linkphp\boot\Event;
+use linkphp\boot\event\EventDefinition;
 
 class Application
 {
@@ -29,14 +31,15 @@ class Application
                 Config::instance()
                     ->setLoadPath(LOAD_PATH)
             )->import(require FRAMEWORK_PATH . 'configure.php');
-//注册服务提供者
+            //注册服务提供者
             Provider::register(
                 Provider::instance()
             )->complete();
-            self::bind(self::definition()
-                ->setAlias('env')
-                ->setIsSingleton(true)
-                ->setClassName('linkphp\\boot\\Environment')
+            self::bind(
+                self::definition()
+                    ->setAlias('env')
+                    ->setIsSingleton(true)
+                    ->setClassName('linkphp\\boot\\Environment')
             );
             (new Container())->setup();
             self::get('middle')
@@ -63,7 +66,7 @@ class Application
 
     public function response()
     {
-        $this->setData(Application::router()->getReturnData());
+        $this->setData(self::router()->getReturnData());
         Application::hook('destructMiddleware');
         self::get('request')
             ->request()
@@ -128,6 +131,8 @@ class Application
     {
         return Component::instance()->bind($definition);
     }
+
+    static public function singleton(){}
 
     /**
      * 获取实例
@@ -200,7 +205,23 @@ class Application
         return Loader::instance();
     }
 
-    static public function event(){}
+    /**
+     * 获取事件类实例
+     * @return Event Object
+     */
+    static public function event()
+    {
+        return Event::instance();
+    }
+
+    /**
+     * 获取事件定义类实例
+     * @return EventDefinition Object
+     */
+    static public function eventDefinition()
+    {
+        return new EventDefinition();
+    }
 
 
 }

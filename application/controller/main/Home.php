@@ -15,11 +15,15 @@ class Home
 
     public function main()
     {
-        Event::getInstance()->provider(
-            (new EventDefinition())
-                ->setServer('test')
-                ->register(new \app\controller\main\Event()));
-        Event::getInstance()->target('test');
+        Application::event()
+            ->provider(
+                Application::eventDefinition()
+                    ->setServer('test')
+                    ->register(new \app\controller\main\Event())
+                    ->register(new \app\controller\main\Event())
+                    ->register(new \app\controller\main\Event())
+            );
+        Application::event()->target('test');
         Application::router('index/getUser',function(){
             return 1;
         });

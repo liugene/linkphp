@@ -9,7 +9,7 @@ class Event  implements EventSubject
 {
 
     /**
-     * @var EventDefinition
+     * @array EventDefinition
      */
     private $event_map = [];
 
@@ -23,22 +23,45 @@ class Event  implements EventSubject
         return $this->event_map;
     }
 
-    static public function getInstance()
+    static public function instance()
     {
-        if(is_null(self::$_instance)){
-            self::$_instance = new self();
-            return self::$_instance;
-        }
+        if(is_null(self::$_instance)) self::$_instance = new self();
         return self::$_instance;
+    }
+
+    public function import($events)
+    {
+        if(is_array($events)){
+            foreach($events as $server => $handle){
+                if($this->has($server)){
+                    $this->event_map[$server]->register(new $handle());
+                } else {
+                    $this->event_map[$server] = $this->provider(
+                        (new EventDefinition())
+                            ->setServer($server)
+                            ->register(new $handle())
+                    );
+                }
+            }
+        }
+        return $this;
     }
 
     public function provider(EventDefinition $eventDefinition)
     {
-        $this->event_map[$eventDefinition->getServer()] = $eventDefinition;
+        if($this->has($eventDefinition->getServer())){
+            throw new Exception('已经存在相同的事件名称');
+        } else {
+            $this->event_map[$eventDefinition->getServer()] = $eventDefinition;
+        }
+        return $eventDefinition;
     }
 
     public function target($server)
     {
+        /**
+         * @var EventDefinition
+         */
         $observers = $this->event_map[$server];
         foreach($observers->getObservers() as $observer){
             call_user_func([$observer,'update'],$observers);
@@ -46,5 +69,10 @@ class Event  implements EventSubject
     }
 
     public function remove($server){}
+
+    public function has($server)
+    {
+        return isset($this->event_map[$server]);
+    }
 
 }
