@@ -13,10 +13,8 @@
 // +----------------------------------------------------------------------
 
 use linkphp\boot\Error;
-use linkphp\boot\Config;
 use linkphp\Application;
 use bootstrap\Loader;
-use bootstrap\Provider;
 
 //加载自动加载方法
 require('bootstrap/Loader.php');
@@ -35,15 +33,6 @@ Error::register(
         ->setErrorView(EXTRA_PATH . 'tpl/error.html')
         ->setDebug(true)
         ->setErrHandle('')
-)->complete();
-//配置文件加载
-Config::set(
-    Config::instance()
-        ->setLoadPath(LOAD_PATH)
-)->import(require FRAMEWORK_PATH . 'configure.php');
-//注册服务提供者
-Provider::register(
-    Provider::instance()
 )->complete();
 
 Application::run()->request()->check(

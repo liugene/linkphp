@@ -12,6 +12,7 @@ use Container;
 use linkphp\boot\http\HttpRequest;
 use linkphp\boot\Make;
 use linkphp\boot\router\Router;
+use bootstrap\Provider;
 
 class Application
 {
@@ -23,6 +24,15 @@ class Application
     static public function run()
     {
         if(!isset(self::$_init)){
+            //配置文件加载
+            Config::set(
+                Config::instance()
+                    ->setLoadPath(LOAD_PATH)
+            )->import(require FRAMEWORK_PATH . 'configure.php');
+//注册服务提供者
+            Provider::register(
+                Provider::instance()
+            )->complete();
             self::bind(self::definition()
                 ->setAlias('env')
                 ->setIsSingleton(true)
