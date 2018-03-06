@@ -17,9 +17,12 @@ class Event  implements EventSubject
 
     /**
      * 获得所有绑定的实例结果
+     * @param string $server
+     * @return EventDefinition
      */
-    public function getEventMap()
+    public function getEventMap($server='')
     {
+        if($server != '') return $this->event_map[$server];
         return $this->event_map;
     }
 
@@ -63,8 +66,11 @@ class Event  implements EventSubject
          * @var EventDefinition
          */
         $observers = $this->event_map[$server];
-        foreach($observers->getObservers() as $observer){
-            call_user_func([$observer,'update'],$observers);
+        $observers->rewind();
+        while($observers->valid()) {
+            $object = $observers->current();
+            call_user_func([$object,'update'],$observers);
+            $observers->next();
         }
     }
 

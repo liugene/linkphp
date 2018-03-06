@@ -1,6 +1,5 @@
 <?php
 namespace app\controller\main;
-use linkphp\boot\event\EventDefinition;
 use linkphp\Controller;
 use linkphp\Application;
 use Closure;
@@ -15,15 +14,15 @@ class Home
 
     public function main()
     {
-        Application::event()
-            ->provider(
-                Application::eventDefinition()
-                    ->setServer('test')
-                    ->register(new \app\controller\main\Event())
-                    ->register(new \app\controller\main\Event())
-                    ->register(new \app\controller\main\Event())
-            );
-        Application::event()->target('test');
+        Application::event(
+            'test',
+            [
+                \app\controller\main\Event::class,
+                \app\controller\main\Event::class,
+                \app\controller\main\Event::class
+            ]
+        );
+        Application::event('test');
         Application::router('index/getUser',function(){
             return 1;
         });
@@ -53,7 +52,7 @@ class Home
             echo 7;
             return $v;
         });
-        Application::middleware('beginMiddleware');die;
+        Application::middleware('beginMiddleware');
 //        Application::input('get.in',function($value){
 //            //闭包实现
 //            //这里写具体的过滤方法
@@ -62,7 +61,7 @@ class Home
 //            return $value;
 //        });
 //        dump(Application::httpRequest()->isGet());
-//        dump(Application::input('get.'));die;
-//        dump(Application::input('server.'));
+        dump(Application::input('get.'));
+        dump(Application::input('server.'));
 	}
 }

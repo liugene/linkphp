@@ -40,6 +40,31 @@ class EventDefinition
         return $this->server;
     }
 
+    public function current()
+    {
+        return $this->observers->current();
+    }
+
+    public function valid()
+    {
+        return $this->observers->valid();
+    }
+
+    public function rewind()
+    {
+        $this->observers->rewind();
+    }
+
+    public function key()
+    {
+        return $this->observers->key();
+    }
+
+    public function next()
+    {
+        $this->observers->next();
+    }
+
     public function getCurrent()
     {
         return $this->observers->current();

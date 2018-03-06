@@ -239,5 +239,3 @@ class Mysql
         mysqli_close($this->_result);
     }
 }
-
-?>

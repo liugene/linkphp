@@ -35,13 +35,7 @@ class Application
             Provider::register(
                 Provider::instance()
             )->complete();
-            self::bind(
-                self::definition()
-                    ->setAlias('env')
-                    ->setIsSingleton(true)
-                    ->setClassName('linkphp\\boot\\Environment')
-            );
-            (new Container())->setup();
+            Container::setup();
             self::get('middle')
                 ->import(include LOAD_PATH . 'middleware.php')
                 ->beginMiddleware();
@@ -207,11 +201,41 @@ class Application
 
     /**
      * 获取事件类实例
-     * @return Event Object
+     * @param string $server
+     * @param string|array $events
+     * @return Event|mixed
      */
-    static public function event()
+    static public function event($server='',$events='')
     {
-        return Event::instance();
+        if($server == '') return Event::instance();
+        if($events != ''){
+            if(is_array($events)){
+                $first = false;
+                $instance = Event::instance();
+                foreach($events as $event){
+                    if($first){
+                        $instance->getEventMap($server)
+                            ->register(new $event);
+                        continue;
+                    }
+                    $instance->provider(
+                        self::eventDefinition()
+                            ->setServer($server)
+                            ->register(new $event)
+                    );
+                    $first=true;
+                }
+                return;
+            } else {
+                Event::instance()->provider(
+                    self::eventDefinition()
+                        ->setServer($server)
+                        ->register(new $events)
+                );
+                return;
+            }
+        }
+        return Event::instance()->target($server);
     }
 
     /**

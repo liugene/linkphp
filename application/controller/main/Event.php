@@ -20,7 +20,7 @@ class Event implements EventServerProvider
 {
     public function update(EventDefinition $definition)
     {
-        dump(1);
+        dump(2);
         return $definition;
         // TODO: Implement update() method.
     }
