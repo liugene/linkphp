@@ -8,11 +8,9 @@ use linkphp\boot\Component;
 use linkphp\boot\Definition;
 use linkphp\boot\di\InstanceDefinition;
 use bootstrap\Loader;
-use Container;
 use linkphp\boot\http\HttpRequest;
 use linkphp\boot\Make;
 use linkphp\boot\router\Router;
-use bootstrap\Provider;
 use linkphp\boot\Event;
 use linkphp\boot\event\EventDefinition;
 
@@ -31,12 +29,7 @@ class Application
                 Config::instance()
                     ->setLoadPath(LOAD_PATH)
             )->import(require FRAMEWORK_PATH . 'configure.php');
-            //注册服务提供者
-            Provider::register(
-                Provider::instance()
-            )->complete();
-            Container::setup();
-            self::get('middle')
+            self::get('linkphp\boot\Middleware')
                 ->import(include LOAD_PATH . 'middleware.php')
                 ->beginMiddleware();
             //初次初始化执行
@@ -52,8 +45,7 @@ class Application
 
     public function request()
     {
-        self::get('request')
-            ->request()
+        self::httpRequest()
             ->start();
         return $this;
     }
@@ -62,8 +54,7 @@ class Application
     {
         $this->setData(self::router()->getReturnData());
         Application::hook('destructMiddleware');
-        self::get('request')
-            ->request()
+        self::httpRequest()
             ->setData($this->data)
             ->send();
     }
@@ -76,9 +67,7 @@ class Application
 
     static public function getRequestMethod()
     {
-        return self::get('request')
-            ->request()
-            ->getRequestMethod();
+        return self::httpRequest()->getRequestMethod();
     }
 
     /**
@@ -99,7 +88,7 @@ class Application
      */
     static public function env()
     {
-        return self::get('env');
+        return self::get('linkphp\boot\Environment');
     }
 
     /**
@@ -108,7 +97,7 @@ class Application
      */
     static public function httpRequest()
     {
-        return self::get('request')->request();
+        return self::get('linkphp\boot\http\Restful')->request();
     }
 
     /**
@@ -163,7 +152,7 @@ class Application
      */
     static public function make()
     {
-        return self::get('make');
+        return self::get('linkphp\boot\Make');
     }
 
     /**
@@ -173,20 +162,20 @@ class Application
      */
     static public function config($key='')
     {
-        return $key=='' ? self::get('config') : self::get('config')->get($key);
+        return $key=='' ? self::get('linkphp\boot\Config') : self::get('linkphp\boot\Config')->get($key);
     }
 
     static public function middleware($middle,$middleware=null)
     {
-        if(self::get('middle')->isValidate($middle)){
-            return self::get('middle')->$middle($middleware);
+        if(self::get('linkphp\boot\Middleware')->isValidate($middle)){
+            return self::get('linkphp\boot\Middleware')->$middle($middleware);
         }
     }
 
     static public function hook($middle)
     {
-        if(self::get('middle')->isValidate($middle)){
-            return self::get('middle')->$middle();
+        if(self::get('linkphp\boot\Middleware')->isValidate($middle)){
+            return self::get('linkphp\boot\Middleware')->$middle();
         }
     }
 

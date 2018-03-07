@@ -29,7 +29,7 @@
     protected $_links = null;
     
     public function __construct(){
-        switch(C('DEFAULT_TEMP_TYPE')){
+        switch(config('DEFAULT_TEMP_TYPE')){
             case 0:
                 //将实例化后的VIEW 类保存到 $_view 对象中 直接使用该对象调用父类中方法对象
                 $this->_view = new View();

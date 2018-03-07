@@ -178,6 +178,21 @@ class Container
     private function build($alias)
     {
         /**
+         * 判断是否存在
+         * 不存在执行立即自动注入功能并返回实例对象
+         */
+        if(!isset($this->definition_map[$alias])){
+            $this->assertClassNameAvailable($alias);
+            $this->bind(
+                (new InstanceDefinition())
+                    ->setAlias($alias)
+                    ->setIsEager(true)
+                    ->setClassName($alias)
+                    ->setIsSingleton(true)
+            );
+            return $this->build($alias);
+        }
+        /**
          * 通过别名获得实例定义的信息
          * 返回实例对象
          */

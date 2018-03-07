@@ -31,6 +31,5 @@ return [
     ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
-        'Container'  => FRAMEWORK_PATH . 'Container' . EXT,
     ],
 ];
