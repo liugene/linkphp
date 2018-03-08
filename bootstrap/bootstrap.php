@@ -35,6 +35,11 @@ Error::register(
         ->setErrHandle('')
 )->complete();
 
+Application::event('system',[
+    \linkphp\boot\event\provider\DatabaseProvider::class,
+    \linkphp\boot\event\provider\ConfigProvider::class
+]);
+
 Application::run()->request()->check(
     IS_CLI ?
     Application::env()

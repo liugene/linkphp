@@ -2,6 +2,7 @@
 
 
 return [
+    'dns'      => 'mysql:host=127.0.0.1;dbname=zuanqun_main',
     'host'     => '192.168.1.188', //一般不需要修改
     'port'     => '1433', //默认即可
     'dbuser'   => 'sa', //数据库用户名

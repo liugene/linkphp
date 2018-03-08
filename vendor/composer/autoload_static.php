@@ -6,13 +6,30 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitb70d235c24c4c56e82c990d351d7b3d9
 {
-    public static $files = array (
-        'f084d01b0a599f67676cffef638aa95b' => __DIR__ . '/..' . '/smarty/smarty/libs/bootstrap.php',
+    public static $prefixLengthsPsr4 = array (
+        'l' => 
+        array (
+            'linkphp\\' => 8,
+            'link\\util\\' => 10,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'linkphp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linkphp/framework/src/framework/linkphp',
+        ),
+        'link\\util\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linkphp/framework/src/util',
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb70d235c24c4c56e82c990d351d7b3d9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb70d235c24c4c56e82c990d351d7b3d9::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
