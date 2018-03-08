@@ -6,24 +6,24 @@
         "source": {
             "type": "git",
             "url": "https://github.com/liugene/framework.git",
-            "reference": "07aba83013a75d9714776cb7251467d547265f79"
+            "reference": "ff831ea4770490771523930d7bdede37d4772c4f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/liugene/framework/07aba83013a75d9714776cb7251467d547265f79.zip",
-            "reference": "07aba83013a75d9714776cb7251467d547265f79",
+            "url": "https://files.phpcomposer.com/files/liugene/framework/ff831ea4770490771523930d7bdede37d4772c4f.zip",
+            "reference": "ff831ea4770490771523930d7bdede37d4772c4f",
             "shasum": ""
         },
         "require": {
             "php": "^5.5 || ^7.0"
         },
-        "time": "2018-03-08T09:00:05+00:00",
+        "time": "2018-03-08T09:47:31+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "linkphp\\": "src/framework/linkphp",
-                "link\\util\\": "src/util"
+                "link\\": "src/framework"
             }
         },
         "notification-url": "https://packagist.org/downloads/",

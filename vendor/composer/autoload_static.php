@@ -10,7 +10,7 @@ class ComposerStaticInitb70d235c24c4c56e82c990d351d7b3d9
         'l' => 
         array (
             'linkphp\\' => 8,
-            'link\\util\\' => 10,
+            'link\\' => 5,
         ),
     );
 
@@ -19,9 +19,9 @@ class ComposerStaticInitb70d235c24c4c56e82c990d351d7b3d9
         array (
             0 => __DIR__ . '/..' . '/linkphp/framework/src/framework/linkphp',
         ),
-        'link\\util\\' => 
+        'link\\' => 
         array (
-            0 => __DIR__ . '/..' . '/linkphp/framework/src/util',
+            0 => __DIR__ . '/..' . '/linkphp/framework/src/framework',
         ),
     );
 

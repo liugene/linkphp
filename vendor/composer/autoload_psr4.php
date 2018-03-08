@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'linkphp\\' => array($vendorDir . '/linkphp/framework/src/framework/linkphp'),
-    'link\\util\\' => array($vendorDir . '/linkphp/framework/src/util'),
+    'link\\' => array($vendorDir . '/linkphp/framework/src'),
 );
