@@ -27,6 +27,7 @@ Loader::register(
         ->setFrameWorkPath(FRAMEWORK_PATH)
         ->setExt(EXT)
 )->complete();
+
 //注册错误和异常处理机制
 Error::register(
     Error::instance()
