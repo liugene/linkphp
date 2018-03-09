@@ -122,16 +122,17 @@ class Loader
      */
     public function complete()
     {
-        self::autoloadFunc();
+        $this->autoloadFunc();
         if(file_exists(self::$load_path . 'map.php')){
-            self::addNamespace(include(self::$load_path . 'map.php'));
+            $this->addNamespace(include(self::$load_path . 'map.php'));
         }
         //加载composer等扩展自动加载机制
-        self::loadExtendAutoload();
+        $this->loadExtendAutoload();
+        $this->loadFile();
         //psr4自动加载机制排序
-        self::sortPsr4ByArrAyFirstKey();
+        $this->sortPsr4ByArrAyFirstKey();
         //psr0自动加载机制排序
-        self::sortPsr0ByArrAyFirstKey();
+        $this->sortPsr0ByArrAyFirstKey();
         //指定自动加载机制排序
         //static::sortFileByArrAyFirstKey();
         if(is_array(self::$_autoload_func)){
@@ -145,7 +146,7 @@ class Loader
     }
 
     /*自动加载方法*/
-    static private function autoloadFunc()
+    private function autoloadFunc()
     {
         self::$_autoload_func = ['classMapAutoload','namespaceAutoload','loaderClass'];
     }
@@ -198,7 +199,7 @@ class Loader
     /*
      * composer自动加载
      * */
-    static public function loadExtendAutoload()
+    private function loadExtendAutoload()
     {
 
         /**
@@ -224,31 +225,26 @@ class Loader
         if (file_exists(self::$vendor_path . 'composer/autoload_files.php')) {
             $includeFiles = require self::$vendor_path . 'composer/autoload_files.php';
             self::addExtendFile($includeFiles);
-            foreach (self::$_map['autoload_namespace_file'] as $fileIdentifier => $file) {
-                if(file_exists($file)){
-                    __include_file($file);
-                }
-            }
         }
     }
 
     /*追加扩展Psr0标准类库自动加载*/
-    static private function addExtendClassPsr0($namespace){
+    private function addExtendClassPsr0($namespace){
         self::$_map['autoload_namespace_psr0'] = array_merge(self::$_map['autoload_namespace_psr0'],$namespace);
     }
 
     /*追加扩展Psr4标准类库自动加载*/
-    static private function addExtendClassPsr4($namespace){
+    private function addExtendClassPsr4($namespace){
         self::$_map['autoload_namespace_psr4'] = array_merge(self::$_map['autoload_namespace_psr4'],$namespace);
     }
 
     /*追加扩展标准类库自动映射自动加载*/
-    static private function addExtendClassMap($class_map){
+    private function addExtendClassMap($class_map){
         self::$_map['class_autoload_map'] = array_merge(self::$_map['class_autoload_map'],$class_map);
     }
 
     /*追加扩展标准类库自动映射自动加载*/
-    static private function addExtendFile($includeFiles){
+    private function addExtendFile($includeFiles){
         self::$_map['autoload_namespace_file'] = array_merge(self::$_map['autoload_namespace_file'],$includeFiles);
     }
 
@@ -337,8 +333,17 @@ class Loader
         return false;
     }
 
+    public function loadFile()
+    {
+        foreach (self::$_map['autoload_namespace_file'] as $fileIdentifier => $file) {
+            if(file_exists($file)){
+                __include_file($file);
+            }
+        }
+    }
+
     /*对psr4命名空间按照首字母升序排序*/
-    static private function sortPsr4ByArrAyFirstKey()
+    private function sortPsr4ByArrAyFirstKey()
     {
         $newPsr4Namespace = [];
         ksort(self::$_map['autoload_namespace_psr4']);
@@ -349,7 +354,7 @@ class Loader
     }
 
     /*对psr0命名空间按照首字母升序排序*/
-    static private function sortPsr0ByArrAyFirstKey()
+    private function sortPsr0ByArrAyFirstKey()
     {
         $newPsr0Namespace= [];
         ksort(self::$_map['autoload_namespace_psr0']);

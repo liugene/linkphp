@@ -28,17 +28,10 @@ Loader::register(
         ->setExt(EXT)
 )->complete();
 
-//注册错误和异常处理机制
-Error::register(
-    Error::instance()
-        ->setErrorView(EXTRA_PATH . 'tpl/error.html')
-        ->setDebug(true)
-        ->setErrHandle('')
-)->complete();
-
 Application::event('system',[
+    \linkphp\boot\event\provider\ErrorProvider::class,
+    \linkphp\boot\event\provider\ConfigProvider::class,
     \linkphp\boot\event\provider\DatabaseProvider::class,
-    \linkphp\boot\event\provider\ConfigProvider::class
 ]);
 
 Application::run()->request()->check(

@@ -4,6 +4,7 @@ use linkphp\Controller;
 use linkphp\Application;
 use Closure;
 use linkphp\boot\Event;
+use link\db\D;
 class Home
 {
 
@@ -14,6 +15,7 @@ class Home
 
     public function main()
     {
+        dump(D::select('select * from zq_user'));die;
         Application::event(
             'test',
             [
