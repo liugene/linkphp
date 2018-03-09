@@ -12,7 +12,6 @@
 // |               LinkPHP框架启动文件
 // +----------------------------------------------------------------------
 
-use linkphp\boot\Error;
 use linkphp\Application;
 use bootstrap\Loader;
 
