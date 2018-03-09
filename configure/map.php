@@ -15,9 +15,15 @@
 return [
     //psr4命名空间注册
     'autoload_namespace_psr4'   =>  [
-	    'app\\'         =>  array(ROOT_PATH . 'application'),
-        'bootstrap\\'         =>  array(ROOT_PATH . 'bootstrap/bootstrap'),
-        'linkphp\\'               =>  array(FRAMEWORK_PATH . 'linkphp'),
+	    'app\\'         =>  [
+            ROOT_PATH . 'application'
+        ],
+        'bootstrap\\'         =>  [
+            ROOT_PATH . 'bootstrap/bootstrap'
+        ],
+        'linkphp\\'               =>  [
+            FRAMEWORK_PATH . 'linkphp'
+        ],
     ],
     //psr0命名空间
     'autoload_namespace_psr0' => [

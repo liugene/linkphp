@@ -27,12 +27,15 @@ Loader::register(
         ->setExt(EXT)
 )->complete();
 //注册服务提供者
-Application::event('system',[
+Application::event(
+    'system',
+    [
     \linkphp\boot\event\provider\ErrorProvider::class,
     \linkphp\boot\event\provider\ConfigProvider::class,
     \linkphp\boot\event\provider\MiddleProvider::class,
     \linkphp\boot\event\provider\DatabaseProvider::class,
-]);
+    ]
+);
 //应用周期
 Application::run()->request()->check(
     IS_CLI ?

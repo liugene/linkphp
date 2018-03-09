@@ -15,6 +15,11 @@ class Home
 
     public function main()
     {
+        dump(Db::table('zq_user')->insertAll([['id' => 1],['id' => 1]]));die;
+        dump(Db::insert('insert into zq_user id values 1'));die;
+        dump(Db::table('zq_user')->insert(['id' => 1]));die;
+        dump(Db::table('zq_user')->field('id')->where('id = 11')->select());
+        dump(Db::table('zq_user')->getLastSql());die;
         dump(Db::select('select * from zq_user'));
         Application::event(
             'test',
