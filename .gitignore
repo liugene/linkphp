@@ -3,4 +3,3 @@ application/index/controller/
 application/index/model/
 composer.lock
 resource/
-vendor/
