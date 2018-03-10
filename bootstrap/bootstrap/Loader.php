@@ -31,7 +31,7 @@ class Loader
     static private $_sort_psr0_map = [];
 
     /*自动加载方法*/
-    static private $_autoload_func;
+    private $_autoload_func = ['classMapAutoload','namespaceAutoload','loaderClass'];
 
     //composer目录
     static private $vendor_path = VENDOR_PATH;
@@ -122,10 +122,6 @@ class Loader
      */
     public function complete()
     {
-        $this->autoloadFunc();
-        if(file_exists(self::$load_path . 'map.php')){
-            $this->addNamespace(include(self::$load_path . 'map.php'));
-        }
         //加载composer等扩展自动加载机制
         $this->loadExtendAutoload();
         $this->loadFile();
@@ -135,20 +131,14 @@ class Loader
         $this->sortPsr0ByArrAyFirstKey();
         //指定自动加载机制排序
         //static::sortFileByArrAyFirstKey();
-        if(is_array(self::$_autoload_func)){
-            foreach(self::$_autoload_func as $k => $v){
+        if(is_array($this->_autoload_func)){
+            foreach($this->_autoload_func as $k => $v){
                 spl_autoload_register(array(__CLASS__, $v));
             }
         } else {
-            spl_autoload_register(array(__CLASS__, self::$_autoload_func));
+            spl_autoload_register(array(__CLASS__, $this->_autoload_func));
         }
         return $this;
-    }
-
-    /*自动加载方法*/
-    private function autoloadFunc()
-    {
-        self::$_autoload_func = ['classMapAutoload','namespaceAutoload','loaderClass'];
     }
 
     /**
@@ -246,6 +236,12 @@ class Loader
     /*追加扩展标准类库自动映射自动加载*/
     private function addExtendFile($includeFiles){
         self::$_map['autoload_namespace_file'] = array_merge(self::$_map['autoload_namespace_file'],$includeFiles);
+    }
+
+    public function import($file)
+    {
+        self::$_map = $file;
+        return $this;
     }
 
     /**

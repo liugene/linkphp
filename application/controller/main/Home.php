@@ -15,7 +15,12 @@ class Home
 
     public function main()
     {
-        dump(Db::table('zq_user')->insertAll([['id' => 1],['id' => 1]]));die;
+        return view('main/home/main',[
+            'linkphp' => 'linkphp'
+        ]);
+        dump(Db::table('zq_user')->where('id=11')->update());die;
+        dump(Db::table('zq_user')->where('id=11')->delete());die;
+        dump(Db::table('zq_user')->insertAll([['id' => 1,'test' => 'test'],['id' => 1,'test' => 'test']]));die;
         dump(Db::insert('insert into zq_user id values 1'));die;
         dump(Db::table('zq_user')->insert(['id' => 1]));die;
         dump(Db::table('zq_user')->field('id')->where('id = 11')->select());

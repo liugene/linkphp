@@ -20,6 +20,7 @@ require('bootstrap/Loader.php');
 //注册自动加载方法
 Loader::register(
     Loader::instance()
+        ->import(include_once(LOAD_PATH . 'map.php'))
         ->setVendorPath(VENDOR_PATH)
         ->setLoadPath(LOAD_PATH)
         ->setExtendPath(EXTEND_PATH)
