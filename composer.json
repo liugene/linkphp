@@ -30,6 +30,7 @@
     "linkphp/curl":"dev-master",
     "linkphp/router":"dev-master",
     "linkphp/event":"dev-master",
-    "linkphp/config":"dev-master"
+    "linkphp/config":"dev-master",
+    "linkphp/error":"dev-master"
   }
 }
