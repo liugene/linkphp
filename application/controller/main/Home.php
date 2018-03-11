@@ -15,15 +15,19 @@ class Home
 
     public function main()
     {
-        return view('main/home/main',[
+        dump(db());die;
+        dump(Application::db());die;
+        dump(Application::cache('test'));die;
+        dump(Application::cache('test','test'));die;
+        Application::view('main/home/main',[
             'linkphp' => 'linkphp'
-        ]);
+        ]);die;
         dump(Db::table('zq_user')->where('id=11')->update());die;
         dump(Db::table('zq_user')->where('id=11')->delete());die;
         dump(Db::table('zq_user')->insertAll([['id' => 1,'test' => 'test'],['id' => 1,'test' => 'test']]));die;
         dump(Db::insert('insert into zq_user id values 1'));die;
         dump(Db::table('zq_user')->insert(['id' => 1]));die;
-        dump(Db::table('zq_user')->field('id')->where('id = 11')->select());
+        dump(Db::table('zq_user')->field('id')->where('id = 11')->select());die;
         dump(Db::table('zq_user')->getLastSql());die;
         dump(Db::select('select * from zq_user'));
         Application::event(

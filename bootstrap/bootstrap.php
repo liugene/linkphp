@@ -38,38 +38,32 @@ Application::event(
     ]
 );
 //应用周期
-Application::run()->request()->check(
-    IS_CLI ?
-    Application::env()
-        ->selectEnvModel(
-            Application::bind(
-                Application::definition()
-                    ->setAlias('envmodel')
-                    ->setIsSingleton(true)
-                    ->setCallBack(function(){
-                        Application::bind(
-                            Application::definition()
-                                ->setAlias('run')
-                                ->setIsEager(true)
-                                ->setIsSingleton(true)
-                                ->setClassName('linkphp\boot\Command'));
-                        return Application::get('run');
-            })
-        ))->requestCmdHandle() :
-    Application::env()
-        ->selectEnvModel(
-            Application::bind(
-                Application::definition()
-                    ->setAlias('envmodel')
-                    ->setIsSingleton(true)
-                    ->setCallBack(function(){
-                        Application::bind(
-                            Application::definition()
-                                ->setAlias('run')
-                                ->setIsEager(true)
-                                ->setIsSingleton(true)
-                                ->setClassName('linkphp\boot\Router'));
-                        return Application::get('run');
-                })
-        ))->requestRouterHandle()
-)->response();
+Application::run()
+    ->request()
+    ->check(
+        IS_CLI ?
+            Application::env()
+                ->selectEnvModel(
+                    Application::singleton(
+                        'envmodel',
+                        function(){
+                            Application::singletonEager(
+                                'run',
+                                'linkphp\boot\Command'
+                            );
+                            return Application::get('run');
+                        })
+                )->requestCmdHandle() :
+            Application::env()
+                ->selectEnvModel(
+                    Application::singleton(
+                        'envmodel',
+                        function(){
+                            Application::singletonEager(
+                                'run',
+                                'linkphp\boot\Router'
+                            );
+                            return Application::get('run');
+                        })
+                )->requestRouterHandle()
+    )->response();
