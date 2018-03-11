@@ -15,7 +15,7 @@
  //目录基础常量的定义
  define('ROOT_PATH', dirname(__DIR__) . '/');
  //加载LinkPHP框架常量文件
- require(ROOT_PATH . '/vendor/linkphp/framework/src/framework/define.php');
+ require(ROOT_PATH . '/vendor/linkphp/framework/src/define.php');
  //加载LinkPHP框架启动文件
  require(ROOT_PATH . '/bootstrap/bootstrap.php');
 

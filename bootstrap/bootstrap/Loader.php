@@ -284,15 +284,18 @@ class Loader
         if(array_key_exists($class_name[0],self::$_sort_psr4_map)){
             foreach(self::$_sort_psr4_map[$class_name[0]] as $prefix){
                 if(strpos($class_name,$prefix) === 0){
-                    $filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . self::$ext);
-                    if(is_file($filename)){
-                        __require_file($filename);
+                    //尝试补位查找类文件
+
+                    $full_filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace($prefix,'\\',$class_name) . self::$ext);
+
+                    if(is_file($full_filename)){
+                        __require_file($full_filename);
                         return true;
                     } else {
-                        //尝试补位查找类文件
-                        $full_filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . str_replace($prefix,'\\',$class_name) . self::$ext);
-                        if(file_exists($full_filename)){
-                            __require_file($full_filename);
+                        $filename = str_replace('\\','/',str_replace('\\', '/',self::$_map['autoload_namespace_psr4'][$prefix][0]) . strrchr($class_name,'\\') . self::$ext);
+
+                        if(file_exists($filename)){
+                            __require_file($filename);
                             return true;
                         }
                     }

@@ -61,7 +61,7 @@ Application::run()
                         function(){
                             Application::singletonEager(
                                 'run',
-                                'linkphp\boot\Router'
+                                'linkphp\router\Router'
                             );
                             return Application::get('run');
                         })

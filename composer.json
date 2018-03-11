@@ -18,6 +18,16 @@
 	},
   "require":{
     "php": "^5.4 || ^7.0",
-    "linkphp/framework":"dev-master"
+    "linkphp/framework":"dev-master",
+    "linkphp/db":"dev-master",
+    "linkphp/cache":"dev-master",
+    "linkphp/log":"dev-master",
+    "linkphp/jwt":"dev-master",
+    "linkphp/page":"dev-master",
+    "linkphp/upload":"dev-master",
+    "linkphp/verify":"dev-master",
+    "linkphp/image":"dev-master",
+    "linkphp/curl":"dev-master",
+    "linkphp/router":"dev-master"
   }
 }
