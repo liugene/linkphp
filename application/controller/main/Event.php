@@ -13,8 +13,8 @@
 // +----------------------------------------------------------------------
 namespace app\controller\main;
 
-use linkphp\boot\event\EventDefinition;
-use linkphp\boot\event\EventServerProvider;
+use linkphp\event\EventDefinition;
+use linkphp\event\EventServerProvider;
 
 class Event implements EventServerProvider
 {

@@ -3,7 +3,7 @@ namespace app\controller\main;
 use linkphp\Controller;
 use linkphp\Application;
 use Closure;
-use linkphp\boot\Event;
+use linkphp\event\Event;
 use linkphp\db\Db;
 class Home
 {
@@ -15,8 +15,8 @@ class Home
 
     public function main()
     {
-//        dump(db());die;
-//        dump(Application::db());die;
+        dump(db());die;
+        dump(Application::db());die;
         dump(Application::cache('test'));die;
         dump(Application::cache('test','test'));die;
         Application::view('main/home/main',[

@@ -31,10 +31,10 @@ Loader::register(
 Application::event(
     'system',
     [
-    \linkphp\boot\event\provider\ErrorProvider::class,
-    \linkphp\boot\event\provider\ConfigProvider::class,
-    \linkphp\boot\event\provider\MiddleProvider::class,
-    \linkphp\boot\event\provider\DatabaseProvider::class,
+    \linkphp\event\provider\ErrorProvider::class,
+    \linkphp\event\provider\ConfigProvider::class,
+    \linkphp\event\provider\MiddleProvider::class,
+    \linkphp\event\provider\DatabaseProvider::class,
     ]
 );
 //应用周期
