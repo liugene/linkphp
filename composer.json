@@ -1,5 +1,5 @@
 {
-  "name": "liugene/linkphp",
+  "name": "linkphp/linkphp",
   "type": "project",
   "license": "Apache2",
   "description": "php Web mvc/api框架 ",
@@ -33,6 +33,11 @@
     "linkphp/config":"dev-master",
     "linkphp/error":"dev-master",
     "linkphp/console":"dev-master",
-    "linkphp/http":"dev-master"
+    "linkphp/http":"dev-master",
+    "linkphp/session":"dev-master",
+    "linkphp/filter":"dev-master",
+    "linkphp/form":"dev-master",
+    "linkphp/di":"dev-master",
+    "linkphp/middleware":"dev-master"
   }
 }
