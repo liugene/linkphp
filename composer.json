@@ -38,6 +38,7 @@
     "linkphp/filter":"dev-master",
     "linkphp/form":"dev-master",
     "linkphp/di":"dev-master",
-    "linkphp/middleware":"dev-master"
+    "linkphp/middleware":"dev-master",
+    "linkphp/template":"dev-master"
   }
 }
