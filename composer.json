@@ -31,6 +31,8 @@
     "linkphp/router":"dev-master",
     "linkphp/event":"dev-master",
     "linkphp/config":"dev-master",
-    "linkphp/error":"dev-master"
+    "linkphp/error":"dev-master",
+    "linkphp/console":"dev-master",
+    "linkphp/http":"dev-master"
   }
 }

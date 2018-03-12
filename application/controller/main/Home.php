@@ -15,6 +15,7 @@ class Home
 
     public function main()
     {
+        dump(request());
         dump(db());die;
         dump(Application::db());die;
         dump(Application::cache('test'));die;

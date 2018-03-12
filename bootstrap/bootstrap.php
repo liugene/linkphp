@@ -49,7 +49,7 @@ Application::run()
                         function(){
                             Application::singletonEager(
                                 'run',
-                                'linkphp\boot\Command'
+                                'linkphp\console\Command'
                             );
                             return Application::get('run');
                         })
