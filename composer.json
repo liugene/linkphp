@@ -1,7 +1,7 @@
 {
   "name": "linkphp/linkphp",
   "type": "project",
-  "license": "Apache2",
+  "license": "apache-2.0",
   "description": "php Web mvc/api框架 ",
   "keywords": ["framework","linkphp","MVC","api"],
   "authors": [
