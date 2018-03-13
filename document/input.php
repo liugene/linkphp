@@ -29,4 +29,20 @@ input('test');
 
 input('get.');
 
-input('get.test');
+input('get.test',function($value){
+    //闭包实现
+    //这里写具体的过滤方法
+    //自定义
+    //记得返回处理好的
+    return $value;
+});
+
+request()->input('get.');
+
+request()->input('get.',function($value){
+    //闭包实现
+    //这里写具体的过滤方法
+    //自定义
+    //记得返回处理好的
+    return $value;
+});
