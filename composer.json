@@ -39,6 +39,7 @@
     "linkphp/form":"dev-master",
     "linkphp/di":"dev-master",
     "linkphp/middleware":"dev-master",
-    "linkphp/template":"dev-master"
+    "linkphp/template":"dev-master",
+    "liugene/links":"dev-master"
   }
 }

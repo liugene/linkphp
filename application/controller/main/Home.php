@@ -5,6 +5,7 @@ use linkphp\Application;
 use Closure;
 use linkphp\event\Event;
 use linkphp\db\Db;
+use links\Links;
 class Home
 {
 
@@ -15,6 +16,7 @@ class Home
 
     public function main()
     {
+//        dump(Links::run()->server()->start());die;
         dump(request());
         dump(db());die;
         dump(Application::db());die;
