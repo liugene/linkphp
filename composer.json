@@ -40,6 +40,7 @@
     "linkphp/di":"dev-master",
     "linkphp/middleware":"dev-master",
     "linkphp/template":"dev-master",
-    "liugene/links":"dev-master"
+    "liugene/links":"dev-master",
+    "linkphp/loader":"dev-master"
   }
 }

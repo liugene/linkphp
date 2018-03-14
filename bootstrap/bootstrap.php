@@ -13,10 +13,8 @@
 // +----------------------------------------------------------------------
 
 use linkphp\Application;
-use bootstrap\Loader;
+use linkphp\loader\Loader;
 
-//加载自动加载方法
-require('bootstrap/Loader.php');
 //注册自动加载方法
 Loader::register(
     Loader::instance()
