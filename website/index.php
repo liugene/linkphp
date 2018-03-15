@@ -19,7 +19,7 @@ require_once(ROOT_PATH . '/vendor/linkphp/framework/src/define.php');
 //加载自动加载方法
 require_once(VENDOR_PATH . 'linkphp/loader/src/Loader.php');
 //加载LinkPHP框架启动文件
-require_once(ROOT_PATH . '/bootstrap/bootstrap.php');
+require_once(ROOT_PATH . '/bootstrap.php');
 
 //只需要这么几句话就可以运行 !><!
 //是不是很轻便呀 喵~
