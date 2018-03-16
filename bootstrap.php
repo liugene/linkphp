@@ -12,12 +12,9 @@
 // |               LinkPHP框架启动文件
 // +----------------------------------------------------------------------
 
-use linkphp\Application;
-use linkphp\loader\Loader;
-
 //注册自动加载方法
-Loader::register(
-    Loader::instance()
+\linkphp\loader\Loader::register(
+    \linkphp\loader\Loader::instance()
         ->import(include_once(LOAD_PATH . 'map.php'))
         ->setVendorPath(VENDOR_PATH)
         ->setLoadPath(LOAD_PATH)
@@ -26,7 +23,7 @@ Loader::register(
         ->setExt(EXT)
 )->complete();
 //注册服务提供者
-Application::event(
+\linkphp\Application::event(
     'system',
     [
     \linkphp\event\provider\ErrorProvider::class,
@@ -36,32 +33,32 @@ Application::event(
     ]
 );
 //应用周期
-Application::run()
+\linkphp\Application::run()
     ->request()
     ->check(
         IS_CLI ?
-            Application::env()
+            \linkphp\Application::env()
                 ->selectEnvModel(
-                    Application::singleton(
+                    \linkphp\Application::singleton(
                         'envmodel',
                         function(){
-                            Application::singletonEager(
+                            \linkphp\Application::singletonEager(
                                 'run',
                                 'linkphp\console\Command'
                             );
-                            return Application::get('run');
+                            return \linkphp\Application::get('run');
                         })
                 )->requestCmdHandle() :
-            Application::env()
+            \linkphp\Application::env()
                 ->selectEnvModel(
-                    Application::singleton(
+                    \linkphp\Application::singleton(
                         'envmodel',
                         function(){
-                            Application::singletonEager(
+                            \linkphp\Application::singletonEager(
                                 'run',
                                 'linkphp\router\Router'
                             );
-                            return Application::get('run');
+                            return \linkphp\Application::get('run');
                         })
                 )->requestRouterHandle()
     )->response();
