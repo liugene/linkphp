@@ -5,18 +5,17 @@ use linkphp\Application;
 use Closure;
 use linkphp\event\Event;
 use linkphp\db\Db;
-use links\Links;
-class Home
+class Home extends Controller
 {
 
-    public function __construct(Controller $controller)
-    {
+//    public function __construct(Controller $controller)
+//    {
 //        dump($controller);
-    }
+//    }
 
     public function main()
     {
-//        dump(Links::run()->server()->start());die;
+        dump($this->view('main/home/main',['linkphp' => 'linkphp']));die;
         dump(request());
         dump(db());die;
         dump(Application::db());die;
