@@ -15,6 +15,7 @@ class Home extends Controller
 
     public function main()
     {
+        dump(confirm_zeeyer_compiled('zeeyer'));die;
         dump($this->view('main/home/main',['linkphp' => 'linkphp']));die;
         dump(request());
         dump(db());die;

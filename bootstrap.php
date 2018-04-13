@@ -35,30 +35,5 @@
 //应用周期
 \linkphp\Application::run()
     ->request()
-    ->check(
-        IS_CLI ?
-            \linkphp\Application::env()
-                ->selectEnvModel(
-                    \linkphp\Application::singleton(
-                        'envmodel',
-                        function(){
-                            \linkphp\Application::singletonEager(
-                                'run',
-                                'linkphp\console\Command'
-                            );
-                            return \linkphp\Application::get('run');
-                        })
-                )->requestCmdHandle() :
-            \linkphp\Application::env()
-                ->selectEnvModel(
-                    \linkphp\Application::singleton(
-                        'envmodel',
-                        function(){
-                            \linkphp\Application::singletonEager(
-                                'run',
-                                'linkphp\router\Router'
-                            );
-                            return \linkphp\Application::get('run');
-                        })
-                )->requestRouterHandle()
-    )->response();
+    ->check()
+    ->response();
