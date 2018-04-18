@@ -15,29 +15,21 @@
 return [
 
     'beginMiddleware'          => [
-        \app\controller\main\Index::class,
-        \app\controller\main\Test::class,
-        \app\controller\main\First::class,
     ],
 
     'appMiddleware'            => [
-        \app\controller\main\Index::class,
     ],
 
     'modelMiddleware'          => [
-        \app\controller\main\Test::class,
     ],
 
     'controllerMiddleware'     => [
-        \app\controller\main\Test::class,
     ],
 
     'actionMiddleware'         => [
-        \app\controller\main\Test::class,
     ],
 
     'destructMiddleware'       => [
-        \app\controller\main\Test::class,
     ],
 
 ];
