@@ -1,5 +1,5 @@
 <?php
 
 return [
-    '/main/home/main'   =>  [],
+    '/main/home/main1'   =>  [],
 ];

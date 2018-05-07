@@ -15,6 +15,8 @@ class Home extends Controller
 
     public function main()
     {
+//        dump(Application::db()->select('select id from lp_forum '));die;
+//        dump(Application::db()->table('lp_forum')->field('id')->select());die;
         return ['code' => 1,'msg' => 'test'];
         dump(confirm_zeeyer_compiled('zeeyer'));die;
         dump($this->view('main/home/main',['linkphp' => 'linkphp']));die;
