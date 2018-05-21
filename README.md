@@ -16,6 +16,12 @@ LinkPHP开发动态：www.linkphp.cn
 可运行于包括Apache、IIS和nginx在内的多种WEB服务器和模式
 框架默认只支持Mysql数据库后期可扩展,需安装相关Pdo扩展
 
+## **支持的服务器和数据库环境**
+
+请确保服务器环境支持composer
+
+在linkphp项目根目录执行 composer install命令，安装框架执行所需的所有依赖库
+
 ## **使用方法**
 
 ####事件使用
