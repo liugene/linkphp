@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'bin\Test',
-    'bin\WebSocket',
+    'bin\command\Test',
+    'bin\command\WebSocket',
 ];

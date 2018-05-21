@@ -1,6 +1,6 @@
 <?php
 
-namespace bin;
+namespace bin\command;
 
 use swoole_websocket_server;
 use linkphp\Application;
@@ -38,6 +38,7 @@ class WebSocket extends Command
 
     //操作命名
     public function commandHandle($command) {
+        dump($this->webscoket);die;
         if ($command == 'status') {
             $stats = $this->webscoket->stats();
             Application::get('linkphp\console\command\Output')->writeln("查看状态: {$stats}\n");
