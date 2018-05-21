@@ -1,6 +1,6 @@
 <?php
 
-namespace app\command\main;
+namespace bin;
 
 use swoole_websocket_server;
 use linkphp\Application;
@@ -39,17 +39,17 @@ class WebSocket extends Command
     //操作命名
     public function commandHandle($command) {
         if ($command == 'status') {
-            $stats = $this->server->stats();
+            $stats = $this->webscoket->stats();
             Application::get('linkphp\console\command\Output')->writeln("查看状态: {$stats}\n");
             return;
         }
         if ($command == 'restart') {
-            $reload = $this->server->reload();
+            $reload = $this->webscoket->reload();
             Application::get('linkphp\console\command\Output')->writeln("重启成功: {$reload}\n");
             return;
         }
         if ($command == 'stop') {
-            $this->server->stop() && $this->server->shutdown();
+            $this->webscoket->stop() && $this->webscoket->shutdown();
             Application::get('linkphp\console\command\Output')->writeln('成功停止');
             return;
         }

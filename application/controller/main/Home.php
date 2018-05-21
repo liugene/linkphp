@@ -15,6 +15,27 @@ class Home extends Controller
 
     public function main()
     {
+//        dump(Db::table('lp_download')->sum('id'));die;
+//        dump(Db::table('lp_download')->count('id'));die;
+//        dump(Db::select('select * from lp_download a
+//left join lp_down_item b on a.id = b.down_id
+//left join lp_user c on a.u_id = c.id where a.id = ?',[1])->get());die;
+        dump(Db::table('lp_download a')
+            ->join('left join lp_down_item b on a.id = b.down_id')
+//            ->join('left join lp_user c on a.u_id = c.id')
+            ->leftJoin('lp_user c on a.u_id = c.id')
+            ->where('a.id>1')
+            ->select());
+            dump(Db::table('lp_download')->getLastSql());die;
+//        dump(Db::select('select * from lp_user where id = ?',[1])->get());die;
+//        dump(Db::table('lp_user')->where('id=3')->delete());die;
+//        dump(Db::table('lp_user')->where('id = 1')->setInc('pass_word'));die;
+//        dump(Db::table('lp_user')->where('id=1')->update(
+//            ['user_name' => 'bananabook','pass_word' => '123']
+//        ));
+//        dump(Db::getTable());die;
+        dump(Db::table('lp_user')->field('id')->where('id = 1')->find());
+        dump(Db::table('lp_user')->field('id')->where('id = 1')->select());die;
 //        dump(Application::db()->select('select id from lp_forum '));die;
 //        dump(Application::db()->table('lp_forum')->field('id')->select());die;
         return ['code' => 1,'msg' => 'test'];

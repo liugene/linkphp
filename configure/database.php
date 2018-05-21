@@ -2,13 +2,14 @@
 
 
 return [
-    'dns'      => 'mysql:host=127.0.0.1;dbname=zuanqun_main',
-    'host'     => '192.168.1.188', //一般不需要修改
-    'port'     => '1433', //默认即可
-    'dbuser'   => 'sa', //数据库用户名
-    'dbpwd'    => 'JRadmin123', //数据库密码
+//    'dns'      => 'mysql:host=127.0.0.1;dbname=linkphp',
+    'dns'      => '',
+    'host'     => '127.0.0.1', //一般不需要修改
+    'port'     => '3306', //默认即可
+    'dbuser'   => 'root', //数据库用户名
+    'dbpwd'    => '', //数据库密码
     'charset'  => 'utf8', //数据库编码
-    'dbname'   => 'AEGCRM', //数据库名称
-    'dbprefix' => 'AEG_', //数据库表前缀
-    'db_type'  => 'sqlsrv', //数据库类型 默认Mysql
+    'dbname'   => 'linkphp', //数据库名称
+    'dbprefix' => 'lp_', //数据库表前缀
+    'db_type'  => 'mysql', //数据库类型 默认Mysql
 ];

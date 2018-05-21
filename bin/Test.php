@@ -1,6 +1,6 @@
 <?php
 
-namespace app\command\main;
+namespace bin;
 
 use linkphp\Application;
 use linkphp\console\Command;

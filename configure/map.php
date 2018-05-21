@@ -18,8 +18,8 @@ return [
 	    'app\\'         =>  [
             ROOT_PATH . 'application'
         ],
-        'bootstrap\\'         =>  [
-            ROOT_PATH . 'bootstrap/bootstrap'
+        'bin\\'         =>  [
+            ROOT_PATH . 'bin'
         ],
         'linkphp\\'               =>  [
             FRAMEWORK_PATH . 'linkphp'
