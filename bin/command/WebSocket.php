@@ -81,8 +81,8 @@ class WebSocket extends Command
             return;
         }
         if ($command == 'stop') {
-            dump($this->process->stop());die;
-            $this->webscoket->stop() && $this->webscoket->shutdown() && $this->process->stop();
+//            dump($this->process->stop());die;
+            $this->webscoket->stop() && $this->webscoket->shutdown();
             Application::get('linkphp\console\command\Output')->writeln('成功停止');
             return;
         }
