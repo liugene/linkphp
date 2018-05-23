@@ -16,7 +16,7 @@ return [
     //psr4命名空间注册
     'autoload_namespace_psr4'   =>  [
 	    'app\\'         =>  [
-            ROOT_PATH . 'application'
+            ROOT_PATH . 'src/application'
         ],
         'bin\\'         =>  [
             ROOT_PATH . 'bin'
