@@ -1,5 +1,4 @@
 .idea/
 composer.lock
-resource/
 vendor/
 swoole-ide-helper.phar/
