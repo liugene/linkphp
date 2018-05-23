@@ -37,5 +37,7 @@ return [
     ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
+        'Db'    =>   FRAMEWORK_PATH . 'linkphp/facade/Db.php',
+        'Console'    =>   FRAMEWORK_PATH . 'linkphp/facade/Console.php',
     ],
 ];

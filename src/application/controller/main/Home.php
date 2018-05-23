@@ -4,7 +4,8 @@ use linkphp\Controller;
 use linkphp\Application;
 use Closure;
 use linkphp\event\Event;
-use linkphp\db\Db;
+use Db;
+use Console;
 class Home extends Controller
 {
 
@@ -15,6 +16,8 @@ class Home extends Controller
 
     public function main()
     {
+        $i = 1;
+        dump(Console::import($i));die;
 //        dump(Db::table('lp_download')->sum('id'));die;
 //        dump(Db::table('lp_download')->count('id'));die;
 //        dump(Db::select('select * from lp_download a
