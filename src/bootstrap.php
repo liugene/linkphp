@@ -12,28 +12,41 @@
 // |               LinkPHP框架启动文件
 // +----------------------------------------------------------------------
 
+$loader = new \linkphp\loader\Loader();
+
 //注册自动加载方法
-\linkphp\loader\Loader::register(
-    \linkphp\loader\Loader::instance()
-        ->import(include_once(LOAD_PATH . 'map.php'))
+$loader->register(
+    $loader->import(include_once(LOAD_PATH . 'map.php'))
         ->setVendorPath(VENDOR_PATH)
         ->setLoadPath(LOAD_PATH)
         ->setExtendPath(EXTEND_PATH)
         ->setFrameWorkPath(FRAMEWORK_PATH)
         ->setExt(EXT)
 )->complete();
-//注册服务提供者
-\linkphp\Application::event(
+
+$app = new \linkphp\Application();
+
+$app->event(
     'system',
     [
-    \linkphp\event\provider\ErrorProvider::class,
-    \linkphp\event\provider\ConfigProvider::class,
-    \linkphp\event\provider\MiddleProvider::class,
-    \linkphp\event\provider\DatabaseProvider::class,
+        \linkphp\event\provider\ErrorProvider::class,
+        \linkphp\event\provider\ConfigProvider::class,
+        \linkphp\event\provider\MiddleProvider::class,
+        \linkphp\event\provider\DatabaseProvider::class,
     ]
 );
+
+$app->containerInstance(
+    \linkphp\loader\Loader::class,
+    $loader
+);
+
+$app->containerInstance(
+    \linkphp\Application::class,
+    $app
+);
+
 //应用周期
-\linkphp\Application::run()
-    ->request()
-    ->check()
-    ->response();
+$app->run();
+
+return $app;

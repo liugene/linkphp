@@ -39,5 +39,11 @@ return [
         //'类名' => '类文件地址'
         'Db'    =>   FRAMEWORK_PATH . 'linkphp/facade/Db.php',
         'Console'    =>   FRAMEWORK_PATH . 'linkphp/facade/Console.php',
+        'Component'  =>   FRAMEWORK_PATH . 'linkphp/facade/Component.php',
+        'Definition'  =>   FRAMEWORK_PATH . 'linkphp/facade/Definition.php',
+        'Event'  =>   FRAMEWORK_PATH . 'linkphp/facade/Event.php',
+        'EventDefinition'  =>   FRAMEWORK_PATH . 'linkphp/facade/EventDefinition.php',
+        'HttpRequest'  =>   FRAMEWORK_PATH . 'linkphp/facade/HttpRequest.php',
+        'Config'  =>   FRAMEWORK_PATH . 'linkphp/facade/Config.php',
     ],
 ];

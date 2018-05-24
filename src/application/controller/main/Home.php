@@ -6,6 +6,7 @@ use Closure;
 use linkphp\event\Event;
 use Db;
 use Console;
+use Config;
 class Home extends Controller
 {
 
@@ -16,8 +17,8 @@ class Home extends Controller
 
     public function main()
     {
-        $i = 1;
-        dump(Console::import($i));die;
+        dump(Application::getContainerInstance());die;
+//        dump(Config::get(''));die;
 //        dump(Db::table('lp_download')->sum('id'));die;
 //        dump(Db::table('lp_download')->count('id'));die;
 //        dump(Db::select('select * from lp_download a
