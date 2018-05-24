@@ -17,6 +17,9 @@ class Home extends Controller
 
     public function main()
     {
+//        Application::view('main/home/main',[
+//            'linkphp' => 'linkphp'
+//        ]);die;
         dump(Application::getContainerInstance());die;
 //        dump(Config::get(''));die;
 //        dump(Db::table('lp_download')->sum('id'));die;
