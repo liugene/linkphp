@@ -22,7 +22,7 @@ return [
             ROOT_PATH . 'bin'
         ],
         'linkphp\\'               =>  [
-            FRAMEWORK_PATH . 'linkphp'
+            ROOT_PATH . 'vendor/linkphp/framework/src/linkphp'
         ],
     ],
     //psr0命名空间
@@ -32,18 +32,19 @@ return [
     //指定自动加载机制排序
     'autoload_namespace_file' => [
         //'文件名' => '映射路径地址'
-        'app_func'                => LOAD_PATH . 'common.php',
-        'framework_func'          => FRAMEWORK_PATH . 'helper.php'
+        'defined'                 => ROOT_PATH . 'vendor/linkphp/framework/src/define.php',
+        'app_func'                => ROOT_PATH . 'conf/common.php',
+        'framework_func'          => ROOT_PATH . 'vendor/linkphp/framework/src/helper.php'
     ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
-        'Db'    =>   FRAMEWORK_PATH . 'linkphp/facade/Db.php',
-        'Console'    =>   FRAMEWORK_PATH . 'linkphp/facade/Console.php',
-        'Component'  =>   FRAMEWORK_PATH . 'linkphp/facade/Component.php',
-        'Definition'  =>   FRAMEWORK_PATH . 'linkphp/facade/Definition.php',
-        'Event'  =>   FRAMEWORK_PATH . 'linkphp/facade/Event.php',
-        'EventDefinition'  =>   FRAMEWORK_PATH . 'linkphp/facade/EventDefinition.php',
-        'HttpRequest'  =>   FRAMEWORK_PATH . 'linkphp/facade/HttpRequest.php',
-        'Config'  =>   FRAMEWORK_PATH . 'linkphp/facade/Config.php',
+        'Db'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Db.php',
+        'Console'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Console.php',
+        'Component'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Component.php',
+        'Definition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Definition.php',
+        'Event'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Event.php',
+        'EventDefinition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/EventDefinition.php',
+        'HttpRequest'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/HttpRequest.php',
+        'Config'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Config.php',
     ],
 ];

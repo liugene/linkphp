@@ -18,9 +18,9 @@ return [
             // 设置 worker 进程的最大任务数
             'max_request' => 10000,
             // PID 文件
-            'pid_file'    => '/var/run/link-httpd.pid',
+            'pid_file'    => RUNTIME_PATH . 'run/link-httpd.pid',
             // 日志文件路径
-            'log_file'    => '/tmp/link-httpd.log',
+            'log_file'    => RUNTIME_PATH . 'tmp/link-httpd.log',
             // 子进程运行用户
             /* 'user'        => 'www', */
         ],

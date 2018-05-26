@@ -16,12 +16,12 @@ $loader = new \linkphp\loader\Loader();
 
 //注册自动加载方法
 $loader->register(
-    $loader->import(include_once(LOAD_PATH . 'map.php'))
-        ->setVendorPath(VENDOR_PATH)
-        ->setLoadPath(LOAD_PATH)
-        ->setExtendPath(EXTEND_PATH)
-        ->setFrameWorkPath(FRAMEWORK_PATH)
-        ->setExt(EXT)
+    $loader->import(require_once(ROOT_PATH . 'conf/map.php'))
+        ->setVendorPath(ROOT_PATH . 'vendor/')
+        ->setLoadPath(ROOT_PATH . 'conf/')
+        ->setExtendPath(ROOT_PATH . 'ext/')
+        ->setFrameWorkPath(ROOT_PATH . 'vendor/linkphp/framework/src/')
+        ->setExt('.php')
 )->complete();
 
 $app = new \linkphp\Application();
