@@ -24,6 +24,11 @@ $request = $app->make(
         \linkphp\http\HttpRequest::class
 );
 
+$app->event(
+    'console',
+    \bin\provider\ConsoleProvider::class
+);
+
 $request->setRequestHttpAccept('console');
 
 $app->request()

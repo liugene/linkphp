@@ -42,6 +42,7 @@
     "linkphp/template":"dev-master",
     "liugene/links":"dev-master",
     "linkphp/loader":"dev-master",
-    "linkphp/process":"dev-master"
+    "linkphp/process":"dev-master",
+    "linkphp/swoole":"dev-master"
   }
 }

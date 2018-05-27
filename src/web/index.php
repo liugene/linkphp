@@ -19,6 +19,11 @@ require(ROOT_PATH . 'vendor/linkphp/loader/src/Loader.php');
 //加载LinkPHP框架启动文件
 $app = require_once(ROOT_PATH . 'src/bootstrap.php');
 
+$app->event(
+    'router',
+    \app\provider\RouterProvider::class
+);
+
 $app->request()
     ->response();
 

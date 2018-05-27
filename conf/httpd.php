@@ -2,7 +2,8 @@
 
 return [
     // HttpServer
-    'httpServer' => [
+    'daemon' =>  'linkphp\\console\\daemon\\HttpServer',
+    'server' => [
         // 类路径
         'class'        => 'linkphp\swoole\HttpServer',
         // 主机
