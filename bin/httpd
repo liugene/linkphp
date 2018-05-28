@@ -21,6 +21,11 @@ require(ROOT_PATH . 'vendor/linkphp/loader/src/Loader.php');
 $app = require_once(ROOT_PATH . 'src/bootstrap.php');
 
 $app->event(
+    'error',
+    \bin\provider\ErrorProvider::class
+);
+
+$app->event(
     'console',
     \bin\provider\DaemonProvider::class
 );

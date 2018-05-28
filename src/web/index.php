@@ -20,6 +20,11 @@ require(ROOT_PATH . 'vendor/linkphp/loader/src/Loader.php');
 $app = require_once(ROOT_PATH . 'src/bootstrap.php');
 
 $app->event(
+    'error',
+    \app\provider\ErrorProvider::class
+);
+
+$app->event(
     'router',
     \app\provider\RouterProvider::class
 );

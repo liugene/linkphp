@@ -46,5 +46,6 @@ return [
         'EventDefinition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/EventDefinition.php',
         'HttpRequest'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/HttpRequest.php',
         'Config'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Config.php',
+        'Router'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Router.php',
     ],
 ];

@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'bin\command\Test',
+    'app\command\Test',
 ];

@@ -17,6 +17,7 @@ class Home extends Controller
 
     public function main()
     {
+        d;
 //        Application::view('main/home/main',[
 //            'linkphp' => 'linkphp'
 //        ]);die;
