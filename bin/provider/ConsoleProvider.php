@@ -4,7 +4,7 @@ namespace bin\provider;
 
 use linkphp\event\EventDefinition;
 use linkphp\event\EventServerProvider;
-use linkphp\boot\Exception;
+use linkphp\Exception;
 use linkphp\Application;
 
 class ConsoleProvider implements  EventServerProvider
@@ -19,7 +19,7 @@ class ConsoleProvider implements  EventServerProvider
             ->setCmdParam(
                 Application::input('server.argv')
             );
-        Application::get('mode')
+        Application::make(\linkphp\console\Console::class)
             ->import(
                 require LOAD_PATH . 'command.php'
             )->init();

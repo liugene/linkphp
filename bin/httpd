@@ -25,6 +25,11 @@ $app->event(
     \bin\provider\DaemonProvider::class
 );
 
+$app->event(
+    'router',
+    \app\provider\RouterProvider::class
+);
+
 $request = $app->make(
         \linkphp\http\HttpRequest::class
 );
@@ -32,5 +37,5 @@ $request = $app->make(
 $request->setRequestHttpAccept('console');
 
 $app->request(LOAD_PATH . 'httpd.php')
-    ->response();
+    ->response('linkphp\\console\\Console');
 //这是命令行执行入口文件

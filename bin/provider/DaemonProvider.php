@@ -4,10 +4,10 @@ namespace bin\provider;
 
 use linkphp\event\EventDefinition;
 use linkphp\event\EventServerProvider;
-use linkphp\boot\Exception;
+use linkphp\Exception;
 use linkphp\Application;
 
-class DaemonProvide implements  EventServerProvider
+class DaemonProvider implements  EventServerProvider
 {
 
     public function update(EventDefinition $definition)
@@ -20,7 +20,7 @@ class DaemonProvide implements  EventServerProvider
             ->setCmdParam(
                 Application::input('server.argv')
             );
-        Application::get('mode')->init();
+        Application::make(\linkphp\console\Console::class)->init();
         return $definition;
         // TODO: Implement update() method.
     }

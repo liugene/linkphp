@@ -32,5 +32,5 @@ $app->event(
 $request->setRequestHttpAccept('console');
 
 $app->request()
-    ->response();
+    ->response('linkphp\\console\\Console');
 //这是命令行执行入口文件

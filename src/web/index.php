@@ -25,7 +25,7 @@ $app->event(
 );
 
 $app->request()
-    ->response();
+    ->response('linkphp\\router\\Router');
 
 //只需要这么几句话就可以运行 !><!
 //是不是很轻便呀 喵~

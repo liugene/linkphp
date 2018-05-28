@@ -4,7 +4,7 @@ namespace app\provider;
 
 use linkphp\event\EventDefinition;
 use linkphp\event\EventServerProvider;
-use linkphp\boot\Exception;
+use linkphp\Exception;
 use linkphp\Application;
 
 class RouterProvider implements  EventServerProvider
@@ -16,14 +16,12 @@ class RouterProvider implements  EventServerProvider
          * 设置应用启动中间件并监听执行
          */
         Application::hook('appMiddleware');
-        Application::get('mode')
-            ->init()
+        $router = Application::make(\linkphp\router\Router::class);
+        $router->init()
             ->run(
-                Application::router()
-                    ->import(require LOAD_PATH . 'route.php')
+                $router->import(require LOAD_PATH . 'route.php')
                     ->set(
-                        Application::router()
-                            ->setUrlModel('1')
+                        $router->setUrlModel('1')
                             ->setPath(
                                 Application::input('server.PATH_INFO')
                             )

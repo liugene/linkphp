@@ -24,6 +24,6 @@ return [
             'log_file'    => RUNTIME_PATH . 'tmp/link-httpd.log',
             // 子进程运行用户
             /* 'user'        => 'www', */
-        ],
+        ]
     ]
 ];
