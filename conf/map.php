@@ -43,9 +43,9 @@ return [
         'Component'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Component.php',
         'Definition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Definition.php',
         'Event'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Event.php',
-        'EventDefinition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/EventDefinition.php',
         'HttpRequest'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/HttpRequest.php',
         'Config'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Config.php',
         'Router'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Router.php',
+        'Error'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Error.php',
     ],
 ];

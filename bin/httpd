@@ -41,6 +41,5 @@ $request = $app->make(
 
 $request->setRequestHttpAccept('console');
 
-$app->request(LOAD_PATH . 'httpd.php')
-    ->response('linkphp\\console\\Console');
+$app->request(LOAD_PATH . 'httpd.php');
 //这是命令行执行入口文件

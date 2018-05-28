@@ -17,11 +17,10 @@ class Home extends Controller
 
     public function main()
     {
-        d;
 //        Application::view('main/home/main',[
 //            'linkphp' => 'linkphp'
 //        ]);die;
-        dump(Application::getContainerInstance());die;
+        dump(app()->getContainerInstance());die;
 //        dump(Config::get(''));die;
 //        dump(Db::table('lp_download')->sum('id'));die;
 //        dump(Db::table('lp_download')->count('id'));die;
