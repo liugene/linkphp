@@ -10,7 +10,6 @@
 
 ```
 
-
 ###开发使用帮助文档：http://wiki.linkphp.cn
 #### LinkPHP (临克) 是面向对象的轻量级常驻内存型PHP API开发框架 ，遵循Apache2开源协议发布。 开发者可以基于LinkPHP框架开发任何免费或者商用项目。
 
