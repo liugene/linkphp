@@ -29,8 +29,16 @@ $app->event(
     \app\provider\RouterProvider::class
 );
 
-$app->request()
-    ->response('linkphp\\router\\Router',true);
+$kernel = $app->make(app\Kernel::class);
+
+$kernel->request();
+
+$httpRequest = $app->make('linkphp\http\HttpRequest');
+
+$httpRequest->setData(
+    $app->make(linkphp\router\Router::class)
+        ->getReturnData()
+)->send();
 
 //只需要这么几句话就可以运行 !><!
 //是不是很轻便呀 喵~

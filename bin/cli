@@ -20,8 +20,6 @@ require(ROOT_PATH . 'vendor/linkphp/loader/src/Loader.php');
 //加载LinkPHP框架启动文件
 $app = require_once(ROOT_PATH . 'src/bootstrap.php');
 
-$request = $app->make(\linkphp\http\HttpRequest::class);
-
 $app->event(
     'error',
     \bin\provider\ErrorProvider::class
@@ -32,8 +30,16 @@ $app->event(
     \bin\provider\ConsoleProvider::class
 );
 
-$request->setRequestHttpAccept('console');
+$kernel = $app->make(bin\console\Kernel::class);
 
-$app->request()
-    ->response('linkphp\\console\\Console');
+$kernel->request();
+
+$httpRequest = $app->make(linkphp\http\HttpRequest::class);
+
+$httpRequest->setRequestHttpAccept('console');
+
+$httpRequest->setData(
+    $app->make(linkphp\console\Console::class)
+        ->getReturnData()
+)->send();
 //这是命令行执行入口文件
