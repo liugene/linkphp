@@ -31,14 +31,11 @@ $app->event(
 
 $kernel = $app->make(app\Kernel::class);
 
-$kernel->request();
-
-$httpRequest = $app->make('linkphp\http\HttpRequest');
-
-$httpRequest->setData(
-    $app->make(linkphp\router\Router::class)
-        ->getReturnData()
-)->send();
+$kernel->use()
+    ->then(function () use ($kernel,$app){
+        $kernel->setData($app->make(linkphp\router\Router::class)
+            ->getReturnData());
+    })->complete();
 
 //只需要这么几句话就可以运行 !><!
 //是不是很轻便呀 喵~

@@ -17,6 +17,8 @@ class Home extends Controller
 
     public function main()
     {
+        return 'linkphp start';
+        return ['code' => 1, 'msg' => 'linkphp start'];
 //        Application::view('main/home/main',[
 //            'linkphp' => 'linkphp'
 //        ]);die;

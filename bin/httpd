@@ -35,11 +35,7 @@ $app->event(
     \app\provider\RouterProvider::class
 );
 
-$httpRequest = $app->make(linkphp\http\HttpRequest::class);
-
-$httpRequest->setRequestHttpAccept('console');
-
 $kernel = $app->make(bin\console\Kernel::class);
 
-$kernel->request(LOAD_PATH . 'httpd.php');
+$kernel->use(LOAD_PATH . 'httpd.php');
 //这是命令行执行入口文件
