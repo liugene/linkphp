@@ -1,6 +1,6 @@
 <?php
 
-namespace bin\console;
+namespace bin\http;
 
 use linkphp\Kernel as ConsoleKernel;
 
@@ -12,6 +12,13 @@ class Kernel extends ConsoleKernel
         // TODO: Implement request() method.
         $this->_app->event('error');
         // TODO: Implement use() method.
+        $this->_app->make(\linkphp\console\Console::class)
+            ->setDaemon(true)
+            ->setDaemonConfig($config);
+        /**
+         * 设置应用启动中间件并监听执行
+         */
+        app()->hook('appMiddleware');
         $this->_app->event('console');
         // TODO: Implement response() method.
         return $this;
@@ -19,9 +26,8 @@ class Kernel extends ConsoleKernel
 
     public function complete()
     {
-        $httpRequest = $this->_app->make('linkphp\http\HttpRequest');
-        $httpRequest->setRequestHttpAccept('console');
-        $httpRequest->setData($this->data)->send();
+        $httpRequest = $this->_app->make(\linkphp\http\HttpRequest::class);
+        return $httpRequest->setData($this->data)->send(true);
         // TODO: Implement complete() method.
     }
 

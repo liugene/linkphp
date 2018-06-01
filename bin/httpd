@@ -22,7 +22,7 @@ $app = require_once(ROOT_PATH . 'src/bootstrap.php');
 
 $app->event(
     'error',
-    \bin\provider\ErrorProvider::class
+    \app\provider\ErrorProvider::class
 );
 
 $app->event(
@@ -35,7 +35,7 @@ $app->event(
     \app\provider\RouterProvider::class
 );
 
-$kernel = $app->make(bin\console\Kernel::class);
+$kernel = $app->make(bin\http\Kernel::class);
 
 $kernel->use(LOAD_PATH . 'httpd.php');
 //这是命令行执行入口文件

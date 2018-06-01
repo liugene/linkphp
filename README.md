@@ -32,6 +32,26 @@ php httpd stop  //停止
 将会由非内存形式启动，请求一次则会进行释放，无法使用常驻内存形式提高性能
 ```
 
+### Nginx + httpd使用
+
+```php
+
+server {
+    root /wwwroot/;
+    server_name www.linkphp.cn;
+
+    location / {
+        proxy_http_version 1.1;
+        proxy_set_header Connection "keep-alive";
+        proxy_set_header X-Real-IP $remote_addr;
+        if (!-e $request_filename) {
+             proxy_pass http://127.0.0.1:9508;
+        }
+    }
+}
+
+```
+
 ## **使用交流**
 LinkPHP开发动态：www.linkphp.cn
 

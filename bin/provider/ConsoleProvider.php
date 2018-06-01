@@ -11,10 +11,6 @@ class ConsoleProvider implements  EventServerProvider
 {
     public function update(EventDefinition $definition)
     {
-        /**
-         * 设置应用启动中间件并监听执行
-         */
-        Application::hook('appMiddleware');
         Application::httpRequest()
             ->setCmdParam(
                 Application::input('server.argv')
