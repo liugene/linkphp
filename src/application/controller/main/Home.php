@@ -18,17 +18,23 @@ class Home extends Controller
     public function main()
     {
 //        return 'linkphp start';
-        return ['code' => 1, 'msg' => 'linkphp start'];
+//        return ['code' => 1, 'msg' => 'linkphp start'];
 //        Application::view('main/home/main',[
 //            'linkphp' => 'linkphp'
 //        ]);die;
-        dump(app()->getContainerInstance());die;
+//        dump(app()->getContainerInstance());die;
 //        dump(Config::get(''));die;
 //        dump(Db::table('lp_download')->sum('id'));die;
 //        dump(Db::table('lp_download')->count('id'));die;
 //        dump(Db::select('select * from lp_download a
 //left join lp_down_item b on a.id = b.down_id
 //left join lp_user c on a.u_id = c.id where a.id = ?',[1])->get());die;
+        return Db::table('lp_download a')
+            ->join('left join lp_down_item b on a.id = b.down_id')
+//            ->join('left join lp_user c on a.u_id = c.id')
+            ->leftJoin('lp_user c on a.u_id = c.id')
+            ->where('a.id>1')
+            ->select();
         dump(Db::table('lp_download a')
             ->join('left join lp_down_item b on a.id = b.down_id')
 //            ->join('left join lp_user c on a.u_id = c.id')

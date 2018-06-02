@@ -1,0 +1,18 @@
+[2018-06-02T07:45:43+00:00] 
+run NOTICE: 
+message: Use of undefined constant g - assumed 'g' 
+file: /Users/liujun/workspace/php/linkphp/src/application/controller/main/Home.php 
+line: 20 
+
+[2018-06-02T07:45:43+00:00] 
+run Exception: 
+message: 无法加载模块 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 30 
+
+[2018-06-02T07:46:15+00:00] 
+run Exception: 
+message: 无法加载模块 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 30 
+
