@@ -7,6 +7,8 @@ use linkphp\event\Event;
 use Db;
 use Console;
 use Config;
+use phprpc\PhpRpcClient;
+
 class Home extends Controller
 {
 
@@ -17,6 +19,8 @@ class Home extends Controller
 
     public function main()
     {
+        dump(new PhpRpcClient());die;
+        dump(Config::get('app.app_debug'));
 //        return 'linkphp start';
 //        return ['code' => 1, 'msg' => 'linkphp start'];
 //        Application::view('main/home/main',[

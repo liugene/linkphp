@@ -14,7 +14,7 @@ class ErrorProvider implements  EventServerProvider
             Error::instance()
                 ->setErrorView(EXTRA_PATH . 'tpl/error.html')
                 ->setDebug(true)
-                ->setErrHandle('app\\exception\\exception\\View')
+                ->setErrHandle('app\\exception\\Handle')
         )->complete();
         app()->containerInstance(
             'linkphp\error\Error',

@@ -14,7 +14,7 @@ class RouterProvider implements  EventServerProvider
     {
         $router = Application::make(\linkphp\router\Router::class);
         $router->init()
-            ->import(require LOAD_PATH . 'route.php')
+            ->import(require ROOT_PATH . 'src/route.php')
             ->setUrlModel('1')
             ->setDefaultPlatform('main')
             ->setDefaultController('Home')

@@ -24,6 +24,9 @@ return [
         'linkphp\\'               =>  [
             ROOT_PATH . 'vendor/linkphp/framework/src/linkphp'
         ],
+        'phprpc\\'               =>  [
+            ROOT_PATH . 'vendor/phprpc/src'
+        ],
     ],
     //psr0命名空间
     'autoload_namespace_psr0' => [
