@@ -87,6 +87,28 @@ php phprpc stop  //停止
 
 ```
 
+## **PhpRpc注册中心启动(常驻内存模式)**
+
+```php
+
+php phprpc_center start //启动
+php phprpc_center stop  //停止
+
+        _                  
+  ___  | |      ___     ___     ___     ___
+/  _  \| |_   /  _  \ /  _  \ /  _  \ /  __ \
+| |_| ||  _ \ | |_| | | |_| | | |_| | | | 
+| .___/| | | || .___/ | .\ \. | .___/ \ .__
+| |    | | | || |     | |  \ \| |      \___/
+
+[2018-06-01 15:43:12] Server    Name: phprpc-center
+[2018-06-01 15:43:12] PHP    Version: 7.1.7
+[2018-06-01 15:43:12] Swoole Version: 2.1.3
+[2018-06-01 15:43:12] Listen    Address: 127.0.0.1
+[2018-06-01 15:43:12] Listen    Port: 9520
+
+```
+
 ## **使用交流**
 LinkPHP开发动态：www.linkphp.cn
 

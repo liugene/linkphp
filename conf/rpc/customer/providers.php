@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: liujun
- * Date: 2018/6/5
- * Time: 下午7:03
- */
+
+return [
+    'app_name' => 'msm-center',                      //服务名称
+    'ip' => "0.0.0.0",
+    'port' => 9600,
+    'notify_port' => 9601,
+    'services' => [
+        'MessageService' => [
+
+        ],
+    ]
+];
