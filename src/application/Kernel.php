@@ -20,8 +20,12 @@ class Kernel extends RouterKernel
         $this->_app->hook('appMiddleware');
         $this->_app->get(\linkphp\router\Router::class)
             ->setPath(
-                $this->_app->input('server.PATH_INFO')
-            )->setGetParam($this->_app->input('get.'))
+                $this->_app->input('server.PATH_INFO'))
+            ->setGetParam(
+                $this->_app->input('get.'))
+            ->setMethod(
+                $this->_request->getRequestMethod()
+            )
             ->parser()
             ->dispatch();
         return $this;
@@ -30,9 +34,8 @@ class Kernel extends RouterKernel
     public function complete()
     {
         $this->_app->hook('destructMiddleware');
-        $httpRequest = $this->_app->make('linkphp\http\HttpRequest');
 
-        $httpRequest->setData($this->data)->send();
+        $this->_request->setData($this->data)->send();
     }
 
 }

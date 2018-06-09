@@ -1,5 +1,7 @@
 <?php
 
+Router::get(':id/:test', '/main/home/main');
+
 return [
-    '/main/home/main1'   =>  [],
+//    ':id/:test'   =>  ['/main/home/main',['method' => 'get']],
 ];

@@ -19,6 +19,7 @@ class HttpdHandle extends ErrorHandle
             'trace'    => $error->getTrace()
         ];
         extract($data);
+//        app()->get(\bin\http\Kernel::class)->setData();
         include($error->getErrorView());
     }
 

@@ -3,6 +3,8 @@
 return [
     // HttpServer
     'daemon' =>  'phprpc\\server\\PhpRpcCenterServer',
+    'enable_static_handler' => true,
+    'document_root' => VENDOR_PATH . 'phprpc/src/center/web',
     'server' => [
         // 类路径
         'class'        => 'phprpc\swoole\PhpRpcCenterServer',

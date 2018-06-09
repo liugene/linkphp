@@ -22,7 +22,7 @@ $app = require_once(ROOT_PATH . 'src/bootstrap.php');
 
 $app->event(
     'error',
-    \app\provider\ErrorProvider::class
+    \bin\provider\ErrorProvider::class
 );
 
 $app->event(

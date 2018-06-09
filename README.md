@@ -495,12 +495,10 @@ Application::middleware('beginMiddleware',function (Closure $v) {
 use linkphp\Application;
 //路由使用
 
-//在configure目录下route.php路由配置文件中进行配置使用
+//在src目录下route.php路由配置文件中进行配置使用
 
 return [
-    '/main/home/main'   =>  function(\linkphp\router\Router $router){
-        return '/main/home/main';
-    },
+    'index/:id'   =>  '/main/home/main',
 ];
 
 //键名为当前请求的路径
@@ -509,7 +507,7 @@ return [
 
 //闭包使用方法
 
-Application::router('index/getUser',function(){
+Router::get('index/:id',function(){
     return 1;
 });
 

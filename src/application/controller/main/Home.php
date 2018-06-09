@@ -7,7 +7,9 @@ use linkphp\event\Event;
 use Db;
 use Console;
 use Config;
+use linkphp\Exception;
 use phprpc\PhpRpcClient;
+use Router;
 
 class Home extends Controller
 {
@@ -17,15 +19,31 @@ class Home extends Controller
 //        dump($controller);
 //    }
 
+    public function main1()
+    {
+        return Application::view('main/home/main',[
+            'linkphp' => 'linkphp'
+        ]);
+    }
+
     public function main()
     {
-        dump(new PhpRpcClient());die;
-        dump(Config::get('app.app_debug'));
+        dump(app()->input('get.'));die;
+        Router::get('/index/index/index', '/index/api/index');
+        Router::post('/index/index/index', '/index/api/index');
+        Router::delete('/index/index/index', '/index/api/index');
+        Router::patch('/index/index/index', '/index/api/index');
+        Router::put('/index/index/index', '/index/api/index');
+//        throw new Exception('test');
+//        dump(new PhpRpcClient());die;
+//        dump(Config::get('app.app_debug'));
 //        return 'linkphp start';
 //        return ['code' => 1, 'msg' => 'linkphp start'];
-//        Application::view('main/home/main',[
-//            'linkphp' => 'linkphp'
-//        ]);die;
+//        $filename = ROOT_PATH . 'src/resource/view/main/home/main.html';
+//        return file_get_contents($filename);
+        Application::view('main/home/main',[
+            'linkphp' => 'linkphp'
+        ]);
 //        dump(app()->getContainerInstance());die;
 //        dump(Config::get(''));die;
 //        dump(Db::table('lp_download')->sum('id'));die;

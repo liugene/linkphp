@@ -12,8 +12,9 @@ class ErrorProvider implements  EventServerProvider
     {
         Error::register(
             Error::instance()
+                ->setErrorView(EXTRA_PATH . 'tpl/error.html')
                 ->setDebug(true)
-                ->setErrHandle('linkphp\\error\\exception\\Console')
+                ->setErrHandle('bin\\exception\\HttpdHandle')
         )->complete();
         return $definition;
         // TODO: Implement update() method.

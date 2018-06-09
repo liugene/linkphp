@@ -3,9 +3,11 @@
 return [
     // HttpServer
     'daemon' =>  'linkphp\\console\\daemon\\HttpServer',
+    'enable_static_handler' => true,
+    'document_root' => ROOT_PATH . 'src/web',
     'server' => [
         // 类路径
-        'class'        => 'linkphp\swoole\HttpServer',
+        'class'        => 'linkphp\swoole\http\HttpdServer',
         // 主机
         'host'         => '127.0.0.1',
         // 端口
