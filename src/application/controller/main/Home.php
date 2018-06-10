@@ -1,13 +1,13 @@
 <?php
 namespace app\controller\main;
-use linkphp\Controller;
-use linkphp\Application;
+use framework\Controller;
+use framework\Application;
 use Closure;
 use linkphp\event\Event;
 use Db;
 use Console;
 use Config;
-use linkphp\Exception;
+use framework\Exception;
 use phprpc\PhpRpcClient;
 use Router;
 

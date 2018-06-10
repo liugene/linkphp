@@ -2,7 +2,7 @@
 
 namespace bin\console;
 
-use linkphp\Kernel as ConsoleKernel;
+use framework\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {

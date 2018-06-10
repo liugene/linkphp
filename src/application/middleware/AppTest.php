@@ -1,16 +1,15 @@
 <?php
 
-namespace bin;
+namespace app\middleware;
 
 use Closure;
 
 class AppTest
 {
 
-    public function handle(Closure $next)
+    public function handle()
     {
         dump('middleware app test');
-        return $next;
     }
 
 }

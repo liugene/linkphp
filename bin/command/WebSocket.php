@@ -4,7 +4,7 @@ namespace bin\command;
 
 use linkphp\process\Process;
 use swoole_websocket_server;
-use linkphp\Application;
+use framework\Application;
 use linkphp\console\Command;
 use linkphp\process\drives\Swoole;
 

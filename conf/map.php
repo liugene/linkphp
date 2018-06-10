@@ -21,8 +21,8 @@ return [
         'bin\\'         =>  [
             ROOT_PATH . 'bin'
         ],
-        'linkphp\\'               =>  [
-            ROOT_PATH . 'vendor/linkphp/framework/src/linkphp'
+        'framework\\'               =>  [
+            ROOT_PATH . 'vendor/linkphp/framework/src'
         ],
         'phprpc\\'               =>  [
             ROOT_PATH . 'vendor/phprpc/src'
@@ -41,14 +41,14 @@ return [
     ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
-        'Db'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Db.php',
-        'Console'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Console.php',
-        'Component'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Component.php',
-        'Definition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Definition.php',
-        'Event'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Event.php',
-        'HttpRequest'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/HttpRequest.php',
-        'Config'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Config.php',
-        'Router'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Router.php',
-        'Error'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/linkphp/facade/Error.php',
+        'Db'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Db.php',
+        'Console'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Console.php',
+        'Component'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Component.php',
+        'Definition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Definition.php',
+        'Event'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Event.php',
+        'HttpRequest'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/HttpRequest.php',
+        'Config'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Config.php',
+        'Router'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Router.php',
+        'Error'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Error.php',
     ],
 ];

@@ -2,7 +2,7 @@
 
 namespace app;
 
-use linkphp\Kernel as RouterKernel;
+use framework\Kernel as RouterKernel;
 
 class Kernel extends RouterKernel
 {
@@ -17,6 +17,7 @@ class Kernel extends RouterKernel
         /**
          * 设置应用启动中间件并监听执行
          */
+
         $this->_app->hook('appMiddleware');
         $this->_app->get(\linkphp\router\Router::class)
             ->setPath(

@@ -4,8 +4,7 @@ namespace app\provider;
 
 use linkphp\event\EventDefinition;
 use linkphp\event\EventServerProvider;
-use linkphp\Exception;
-use linkphp\Application;
+use framework\Application;
 
 class RouterProvider implements  EventServerProvider
 {
@@ -26,7 +25,6 @@ class RouterProvider implements  EventServerProvider
             ->setPlatform('')
             ->setController('')
             ->setAction('')
-            ->setDir(APPLICATION_PATH)
             ->setNamespace(APP_NAMESPACE_NAME);
         return $definition;
         // TODO: Implement update() method.

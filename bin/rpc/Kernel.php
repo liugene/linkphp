@@ -2,7 +2,7 @@
 
 namespace bin\phprpc;
 
-use linkphp\Kernel as PhpRpcKernel;
+use framework\Kernel as PhpRpcKernel;
 
 class Kernel extends PhpRpcKernel
 {

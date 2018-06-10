@@ -136,7 +136,7 @@ LinkPHP开发动态：www.linkphp.cn
 
 ```php
 
-use linkphp\Application;
+use framework\Application;
 
 //接收两个参数，第一个参数为标签，第二个参数可以一组类的数组也可以为类名
 
@@ -191,7 +191,7 @@ return [
 
 ```php
 use linkphp\db\Db;
-use linkphp\Application;
+use framework\Application;
 
 //助手函数链式操作方法
 db()->table('')->where('')->select();
@@ -258,7 +258,7 @@ return [
 #### restful使用说明
 
 ```php
-use linkphp\Application;
+use framework\Application;
 
 //使用linkphp开发api应用
 
@@ -301,7 +301,7 @@ request()->isPatch();
 namespace app\controller\main;
 
 use linkphp\http\HttpRequest;
-use linkphp\Application;
+use framework\Application;
 
 class Home
 {
@@ -356,7 +356,7 @@ Application::bind(
 
 ```php
 
-use linkphp\Application;
+use framework\Application;
 
 //获取缓存
 cache('test');
@@ -373,7 +373,7 @@ Application::cache('test','test');
 ```php
 
 
-use linkphp\Application;
+use framework\Application;
 
 //input参数接收操作
 
@@ -426,7 +426,7 @@ request()->input('get.',function($value){
 
 ```php
 
-use linkphp\Application;
+use framework\Application;
 //中间件使用
 
 //框架中实现了6个中间件
@@ -492,7 +492,7 @@ Application::middleware('beginMiddleware',function (Closure $v) {
 
 ```php
 
-use linkphp\Application;
+use framework\Application;
 //路由使用
 
 //在src目录下route.php路由配置文件中进行配置使用
@@ -517,7 +517,7 @@ Router::get('index/:id',function(){
 
 ```php
 
-use linkphp\Application;
+use framework\Application;
 //view层使用
 
 Application::view('main/home/main',[
@@ -551,7 +551,7 @@ php cli +命令名
 
 namespace app\command\main;
 
-use linkphp\Application;
+use framework\Application;
 use linkphp\console\Command;
 
 class Test extends Command

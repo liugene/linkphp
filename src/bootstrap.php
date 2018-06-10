@@ -24,7 +24,7 @@ $loader->register(
         ->setExt('.php')
 )->complete();
 
-$app = new \linkphp\Application();
+$app = new \framework\Application();
 
 $app->event(
     'system',
@@ -41,7 +41,7 @@ $app->containerInstance(
 );
 
 $app->containerInstance(
-    \linkphp\Application::class,
+    \framework\Application::class,
     $app
 );
 

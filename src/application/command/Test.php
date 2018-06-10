@@ -2,7 +2,7 @@
 
 namespace app\command;
 
-use linkphp\Application;
+use framework\Application;
 use linkphp\console\Command;
 
 class Test extends Command
