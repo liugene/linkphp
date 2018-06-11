@@ -35,8 +35,7 @@
     "linkphp/console":"dev-master",
     "linkphp/http":"dev-master",
     "linkphp/session":"dev-master",
-    "linkphp/filter":"dev-master",
-    "linkphp/form":"dev-master",
+    "linkphp/validator":"dev-master",
     "linkphp/di":"dev-master",
     "linkphp/middleware":"dev-master",
     "linkphp/template":"dev-master",
@@ -44,6 +43,7 @@
     "linkphp/loader":"dev-master",
     "linkphp/process":"dev-master",
     "linkphp/swoole":"dev-master",
-    "phprpc/phprpc":"dev-master"
+    "phprpc/phprpc":"dev-master",
+    "linkphp/cookie":"dev-master"
   }
 }

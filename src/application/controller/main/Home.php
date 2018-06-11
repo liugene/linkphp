@@ -10,6 +10,7 @@ use Config;
 use framework\Exception;
 use phprpc\PhpRpcClient;
 use Router;
+use Validator;
 
 class Home extends Controller
 {
@@ -28,6 +29,21 @@ class Home extends Controller
 
     public function main()
     {
+        dump(app()->input('get.'));
+        Validator::data('www.linkphp.com/1/100') //需要验证的数据集合
+            ->withValidator('url', function ($validator, $input){ //使用验证器闭包
+                $validator->addValidator($input,[//添加验证器规则信息
+                    'rule' => [
+                        'class' => 'url', 'param' => []
+                    ], 'errorMessage' => '非法URL地址'
+                ]);
+            });
+        //检测数据
+        if(!Validator::check()){
+            //出错获取错误信息
+            dump(Validator::geterror());die;
+        }
+        dump(true);die;
         dump(app()->input('get.'));die;
         Router::get('/index/index/index', '/index/api/index');
         Router::post('/index/index/index', '/index/api/index');

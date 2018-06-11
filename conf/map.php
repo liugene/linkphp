@@ -27,6 +27,9 @@ return [
         'phprpc\\'               =>  [
             ROOT_PATH . 'vendor/phprpc/src'
         ],
+        'linkphp\\validator'               =>  [
+            ROOT_PATH . 'vendor/linkphp/validator/src'
+        ],
     ],
     //psr0命名空间
     'autoload_namespace_psr0' => [
@@ -50,5 +53,7 @@ return [
         'Config'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Config.php',
         'Router'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Router.php',
         'Error'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Error.php',
+        'Session'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Session.php',
+        'Validator'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Validator.php',
     ],
 ];

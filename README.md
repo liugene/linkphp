@@ -534,6 +534,23 @@ view('main/home/main',['linkphp' => 'linkphp']);
 
 ```
 
+#### 验证器使用
+
+```php
+
+Validator::data('w')
+            ->withValidator('url', function ($validator, $input){
+                $validator->addValidator($input,['rule' => [
+         'class' => 'url', 'param' => []
+        ], 'errorMessage' => '非法URL地址'
+       ]);
+            });
+        if(!Validator::check()){
+            dump(Validator::geterror());die;
+        }
+
+```
+
 #### 命令行使用说明
 
 ```php
