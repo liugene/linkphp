@@ -8,6 +8,7 @@ use Db;
 use Console;
 use Config;
 use framework\Exception;
+use linkphp\http\HttpRequest;
 use phprpc\PhpRpcClient;
 use Router;
 use Validator;
@@ -15,21 +16,25 @@ use Validator;
 class Home extends Controller
 {
 
-//    public function __construct(Controller $controller)
-//    {
-//        dump($controller);
-//    }
+    public function __construct(Controller $controller, HttpRequest $httpRequest)
+    {
+        parent::__construct($httpRequest);
+        dump($controller);
+    }
+
+    public function main(HttpRequest $httpRequest)
+    {
+        dump($httpRequest);
+        dump(app()->input('get.'));
+    }
 
     public function main1()
     {
         return Application::view('main/home/main',[
             'linkphp' => 'linkphp'
         ]);
-    }
-
-    public function main()
-    {
-        dump(app()->input('get.'));
+//        dump($httpRequest);
+//        dump(app()->input('get.'));
         Validator::data('www.linkphp.com/1/100') //需要验证的数据集合
             ->withValidator('url', function ($validator, $input){ //使用验证器闭包
                 $validator->addValidator($input,[//添加验证器规则信息
