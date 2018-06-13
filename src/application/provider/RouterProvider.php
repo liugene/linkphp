@@ -22,9 +22,6 @@ class RouterProvider implements  EventServerProvider
             ->setVarController('c')
             ->setVarAction('a')
             ->setRouterOn('true')
-            ->setPlatform('')
-            ->setController('')
-            ->setAction('')
             ->setNamespace(APP_NAMESPACE_NAME);
         return $definition;
         // TODO: Implement update() method.

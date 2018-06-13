@@ -1,5 +1,5 @@
 <?php
-namespace app\controller\main;
+namespace app\http\controller;
 use framework\Controller;
 use framework\Application;
 use Closure;
@@ -25,7 +25,7 @@ class Home extends Controller
     public function main(HttpRequest $httpRequest)
     {
         dump($httpRequest);
-        dump(app()->input('get.'));
+        return app()->input('get.');
     }
 
     public function main1()

@@ -18,6 +18,9 @@ return [
 	    'app\\'         =>  [
             ROOT_PATH . 'src/application'
         ],
+        'addons\\'         =>  [
+            ROOT_PATH . 'src/addons'
+        ],
         'bin\\'         =>  [
             ROOT_PATH . 'bin'
         ],

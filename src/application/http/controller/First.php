@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controller\main;
+namespace app\http\controller;
 
 use Closure;
 

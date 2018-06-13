@@ -11,7 +11,7 @@
 // +----------------------------------------------------------------------
 // |               配置类
 // +----------------------------------------------------------------------
-namespace app\controller\main;
+namespace app\http\controller;
 
 use linkphp\event\EventDefinition;
 use linkphp\event\EventServerProvider;

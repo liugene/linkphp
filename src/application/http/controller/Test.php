@@ -1,14 +1,14 @@
 <?php
 
-namespace app\controller\main;
+namespace app\http\controller;
 
 use Closure;
 
-class Index
+class Test
 {
     public function handle(Closure $next)
     {
-        dump('middleware index');
+        dump('middleware test');
         return $next;
     }
 }

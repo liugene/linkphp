@@ -21,7 +21,7 @@ class Kernel extends RouterKernel
         $this->_app->hook('appMiddleware');
         $this->_app->get(\linkphp\router\Router::class)
             ->setPath(
-                $this->_app->input('server.PATH_INFO'))
+                $this->_app->input('server.REQUEST_URI'))
             ->setGetParam(
                 $this->_app->input('get.'))
             ->setMethod(
