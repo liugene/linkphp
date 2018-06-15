@@ -497,8 +497,11 @@ use framework\Application;
 
 //在src目录下route.php路由配置文件中进行配置使用
 
+//Router::get(':id/:test', '/addons/test/Test@main');
+Router::get('/', '/http/home/main');
+
 return [
-    'index/:id'   =>  '/main/home/main',
+//    ':id/:test'   =>  ['/main/home/main',['method' => 'get']],
 ];
 
 //键名为当前请求的路径
@@ -507,8 +510,12 @@ return [
 
 //闭包使用方法
 
-Router::get('index/:id',function(){
-    return 1;
+use linkphp\http\HttpRequest;
+
+Router::get(':id/:test', function(HttpRequest $httpRequest,$id){
+    dump($id);
+    dump($httpRequest);
+    return '闭包路由';
 });
 
 ```
@@ -548,6 +555,23 @@ Validator::data('w')
         if(!Validator::check()){
             dump(Validator::geterror());die;
         }
+
+```
+
+#### 分页器使用
+
+```php
+
+use linkphp\page\Paginator;
+
+//查出待分页的总数
+$count = Db::table('lp_user')->count('id');
+//实例化分页器传入总数以及每页数量
+$page = new Paginator($count,2);
+//获取limit参数
+$data = Db::table('lp_user')->limit($page->limit())->select();
+//渲染分页条
+$page->render();
 
 ```
 

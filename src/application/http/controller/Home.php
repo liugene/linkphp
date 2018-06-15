@@ -12,49 +12,56 @@ use linkphp\http\HttpRequest;
 use phprpc\PhpRpcClient;
 use Router;
 use Validator;
+use linkphp\page\Paginator;
 
 class Home extends Controller
 {
 
-    public function __construct(Controller $controller, HttpRequest $httpRequest)
-    {
-        parent::__construct($httpRequest);
-        dump($controller);
-    }
+//    public function __construct(Controller $controller, HttpRequest $httpRequest)
+//    {
+//        parent::__construct($httpRequest);
+//        dump($controller);
+//    }
 
-    public function main(HttpRequest $httpRequest)
+    public function main1(HttpRequest $httpRequest)
     {
         dump($httpRequest);
-        return app()->input('get.');
-    }
-
-    public function main1()
-    {
         return Application::view('main/home/main',[
             'linkphp' => 'linkphp'
         ]);
+        return app()->input('get.');
+    }
+
+    public function main()
+    {
+        $count = Db::table('lp_user')->count('id');
+        $page = new Paginator($count,2);
+        $data = Db::table('lp_user')->limit($page->limit())->select();
+        $page->render();
+        dump($page->render());die;
+        return Db::select(['select * from lp_user where id > ? and id < ?',[1,3]])->get();
 //        dump($httpRequest);
 //        dump(app()->input('get.'));
-        Validator::data('www.linkphp.com/1/100') //需要验证的数据集合
-            ->withValidator('url', function ($validator, $input){ //使用验证器闭包
-                $validator->addValidator($input,[//添加验证器规则信息
-                    'rule' => [
-                        'class' => 'url', 'param' => []
-                    ], 'errorMessage' => '非法URL地址'
-                ]);
-            });
-        //检测数据
-        if(!Validator::check()){
-            //出错获取错误信息
-            dump(Validator::geterror());die;
-        }
-        dump(true);die;
-        dump(app()->input('get.'));die;
-        Router::get('/index/index/index', '/index/api/index');
-        Router::post('/index/index/index', '/index/api/index');
-        Router::delete('/index/index/index', '/index/api/index');
-        Router::patch('/index/index/index', '/index/api/index');
-        Router::put('/index/index/index', '/index/api/index');
+//        Validator::data('www.linkphp.com/1/100') //需要验证的数据集合
+//            ->withValidator('url', function ($validator, $input){ //使用验证器闭包
+//                $validator->addValidator($input,[//添加验证器规则信息
+//                    'rule' => [
+//                        'class' => 'url', 'param' => []
+//                    ], 'errorMessage' => '非法URL地址'
+//                ]);
+//            });
+//        //检测数据
+//        if(!Validator::check()){
+//            //出错获取错误信息
+//            dump(Validator::geterror());die;
+//        }
+//        dump(true);die;
+//        dump(app()->input('get.'));die;
+//        Router::get('/index/index/index', '/index/api/index');
+//        Router::post('/index/index/index', '/index/api/index');
+//        Router::delete('/index/index/index', '/index/api/index');
+//        Router::patch('/index/index/index', '/index/api/index');
+//        Router::put('/index/index/index', '/index/api/index');
 //        throw new Exception('test');
 //        dump(new PhpRpcClient());die;
 //        dump(Config::get('app.app_debug'));
@@ -62,9 +69,9 @@ class Home extends Controller
 //        return ['code' => 1, 'msg' => 'linkphp start'];
 //        $filename = ROOT_PATH . 'src/resource/view/main/home/main.html';
 //        return file_get_contents($filename);
-        Application::view('main/home/main',[
-            'linkphp' => 'linkphp'
-        ]);
+//        Application::view('main/home/main',[
+//            'linkphp' => 'linkphp'
+//        ]);
 //        dump(app()->getContainerInstance());die;
 //        dump(Config::get(''));die;
 //        dump(Db::table('lp_download')->sum('id'));die;

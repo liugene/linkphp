@@ -43,7 +43,8 @@
     "linkphp/loader":"dev-master",
     "linkphp/process":"dev-master",
     "linkphp/swoole":"dev-master",
-    "phprpc/phprpc":"dev-master",
-    "linkphp/cookie":"dev-master"
+    "linkphp/cookie":"dev-master",
+    "linkphp/addons":"dev-master",
+    "phprpc/phprpc":"dev-master"
   }
 }

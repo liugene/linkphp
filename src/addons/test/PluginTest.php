@@ -16,6 +16,11 @@ class PluginTest extends Addons
         'version'       => '0.1'
     ];
 
+    public function execute()
+    {
+        return $this->info;
+    }
+
     public function install()
     {
         // TODO: Implement install() method.

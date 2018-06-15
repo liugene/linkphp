@@ -18,20 +18,8 @@ return [
 	    'app\\'         =>  [
             ROOT_PATH . 'src/application'
         ],
-        'addons\\'         =>  [
-            ROOT_PATH . 'src/addons'
-        ],
         'bin\\'         =>  [
             ROOT_PATH . 'bin'
-        ],
-        'framework\\'               =>  [
-            ROOT_PATH . 'vendor/linkphp/framework/src'
-        ],
-        'phprpc\\'               =>  [
-            ROOT_PATH . 'vendor/phprpc/src'
-        ],
-        'linkphp\\validator'               =>  [
-            ROOT_PATH . 'vendor/linkphp/validator/src'
         ],
     ],
     //psr0命名空间
