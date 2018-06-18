@@ -34,11 +34,44 @@ class Home extends Controller
 
     public function main()
     {
+        function xrange ()
+        {
+            while (1) {
+                $a = (yield '11'); //yield 表达式
+                echo $a;
+            }
+        }
+        $a = xrange();//返回一个生成器
+        echo $a->current();//返回当前产生的值
+        echo '<br>';
+        $a->send('33');//向生成器中传入一个值，并且当做 yield 表达式的结果，然后继续执行生成器。
+        echo '<br>';
+        echo $a->current();
+        echo '<br>';
+        $a->send('22');
+        echo '<br>';
+        echo $a->current();
+        die;
+        function xrange($start, $limit) {
+            if ($start < $limit) {
+                for ($i = $start; $i <= $limit; ++$i) {
+                    yield $i;
+                }
+            }
+        }
+        foreach (xrange(1, 9) as $number) {
+            echo "$number ";
+        }
+        die;
+//        dump($gen);die;
         $count = Db::table('lp_user')->count('id');
         $page = new Paginator($count,2);
         $data = Db::table('lp_user')->limit($page->limit())->select();
         $page->render();
-        dump($page->render());die;
+        foreach ($data as $row) {
+            var_dump($row);
+        }
+//        dump($data);die;
         return Db::select(['select * from lp_user where id > ? and id < ?',[1,3]])->get();
 //        dump($httpRequest);
 //        dump(app()->input('get.'));

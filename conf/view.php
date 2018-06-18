@@ -9,5 +9,6 @@ return [//默认视图文件配置
     'view_replace_str'     => [],
 
     'storage_drive'        => 'File',
-    'cache_time'           => '1800'
+    'cache_time'           => '1800',
+    'tpl_replace_string'   => []
 ];

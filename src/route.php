@@ -10,6 +10,12 @@ $event = [
 //设置路由中间件
 app()->event('routerMiddleware', $event);
 
+//Router::get('/', function(HttpRequest $httpRequest){
+//    view('main/home/main',[
+//        'linkphp' => 'linkphp'
+//    ]);
+//});
+
 Router::get(':id/:test', function($id, $test, HttpRequest $httpRequest){
 //    dump($id);
 //    dump($httpRequest);

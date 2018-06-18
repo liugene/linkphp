@@ -30,7 +30,7 @@ return [
     'autoload_namespace_file' => [
         //'文件名' => '映射路径地址'
         'defined'                 => ROOT_PATH . 'vendor/linkphp/framework/src/define.php',
-        'app_func'                => ROOT_PATH . 'conf/common.php',
+        'app_func'                => ROOT_PATH . 'src/common.php',
         'framework_func'          => ROOT_PATH . 'vendor/linkphp/framework/src/helper.php'
     ],
     'class_autoload_map' => [

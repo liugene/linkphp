@@ -32,6 +32,7 @@ $app->event(
         \linkphp\event\provider\ConfigProvider::class,
         \linkphp\event\provider\MiddleProvider::class,
         \linkphp\event\provider\DatabaseProvider::class,
+        \app\provider\TemplateProvider::class,
     ]
 );
 

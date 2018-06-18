@@ -4,14 +4,13 @@ namespace app\provider;
 
 use linkphp\event\EventDefinition;
 use linkphp\event\EventServerProvider;
-use framework\Application;
 
 class RouterProvider implements  EventServerProvider
 {
 
     public function update(EventDefinition $definition)
     {
-        $router = Application::make(\linkphp\router\Router::class);
+        $router = app()->make(\linkphp\router\Router::class);
         $router->init()
             ->import(require ROOT_PATH . 'src/route.php')
             ->setUrlModel('1')
