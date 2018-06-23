@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+//目录基础常量的定义
+define('ROOT_PATH', dirname(__DIR__) . '/');
+//加载自动加载方法
+require(ROOT_PATH . 'vendor/linkphp/loader/src/Loader.php');
+//加载LinkPHP框架启动文件
+$app = require_once(ROOT_PATH . 'src/bootstrap.php');
+
+$app->event(
+    'error',
+    \bin\provider\ErrorProvider::class
+);
+
+$app->event(
+    'console',
+    \bin\provider\ConsoleProvider::class
+);
+
+$kernel = $app->make(bin\console\Kernel::class);
+
+$kernel->daemon(function () use($app){
+    // TODO: Implement request() method.
+    $app->event('error');
+    // TODO: Implement use() method.
+    $app->make(\linkphp\console\Console::class)
+        ->setDaemon(true)
+        ->setDaemonConfig(LOAD_PATH . 'bin/reload.php');
+    $app->event('console');
+});
+
+//这是命令行执行入口文件
