@@ -3,10 +3,9 @@
 return [
     // HttpServer
     'daemon' =>  'linkphp\\console\\daemon\\WS',
-    'ws' =>  'app\\ws\\Handle',
     'server' => [
         // 类路径
-        'class'        => 'linkphp\swoole\http\WebSocketServer',
+        'class'        => 'linkphp\swoole\websocket\WebSocketServer',
         // 主机
         'host'         => '127.0.0.1',
         // 端口

@@ -18,6 +18,11 @@ $app->event(
     \bin\provider\ConsoleProvider::class
 );
 
+$app->event(
+    'router',
+    \app\provider\RouterProvider::class
+);
+
 $kernel = $app->make(bin\console\Kernel::class);
 
 $kernel->daemon(function () use($app){
