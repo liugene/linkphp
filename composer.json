@@ -17,7 +17,7 @@
     	}
 	},
   "require":{
-    "php": "^5.4 || ^7.0",
+    "php": "^5.5 || ^7.0",
     "linkphp/framework":"dev-master",
     "linkphp/db":"dev-master",
     "linkphp/cache":"dev-master",
@@ -26,7 +26,6 @@
     "linkphp/page":"dev-master",
     "linkphp/upload":"dev-master",
     "linkphp/verify":"dev-master",
-    "linkphp/image":"dev-master",
     "linkphp/curl":"dev-master",
     "linkphp/router":"dev-master",
     "linkphp/event":"dev-master",
@@ -44,7 +43,6 @@
     "linkphp/process":"dev-master",
     "linkphp/swoole":"dev-master",
     "linkphp/cookie":"dev-master",
-    "linkphp/addons":"dev-master",
     "phprpc/phprpc":"dev-master"
   }
 }

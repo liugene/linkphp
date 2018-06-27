@@ -14,7 +14,7 @@ class RouterProvider implements  EventServerProvider
         $router->init()
             ->import(require ROOT_PATH . 'src/route.php')
             ->setUrlModel('1')
-            ->setDefaultPlatform('main')
+            ->setDefaultPlatform('http')
             ->setDefaultController('Home')
             ->setDefaultAction('main')
             ->setVarPlatform('m')
