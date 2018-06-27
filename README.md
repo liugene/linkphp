@@ -67,6 +67,60 @@ server {
 
 ```
 
+## **WebSocket服务端启动(常驻内存模式)**
+
+```php
+
+首先注册一个websocket路由
+
+Router::ws('chat','/app/ws/Handle#ws');
+
+在Handle控制器继承WebSocketInterface接口实现接口中的方法
+
+use linkphp\swoole\websocket\WebSocketInterface;
+use swoole_http_response;
+use swoole_websocket_server;
+use swoole_http_request;
+use swoole_server;
+use swoole_websocket_frame;
+
+class Handle implements WebSocketInterface
+{
+
+    public function HandShake(swoole_http_request $request, swoole_http_response $response)
+    {
+        echo "server: handshake success with fd{$request->fd}\n";
+    }
+
+    public function open(swoole_websocket_server $svr, swoole_http_request $req)
+    {
+        echo "server: open success with fd{$req->fd}\n";
+    }
+
+    public function message(swoole_server $server, swoole_websocket_frame $frame)
+    {
+        echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";
+        $server->push($frame->fd, "this is server");
+    }
+
+    public function close($ser, $fd)
+    {
+        echo "client {$fd} closed\n";
+    }
+
+}
+
+然后进入bin目录
+
+php ws start //启动
+php ws stop  //停止
+
+websocket相关配置在conf/bin/ws.php内
+
+之后客户端发起 ws://127.0.0.1:9510/chat 连接将会触发注册的websocket路由
+
+```
+
 ## **PhpRpc服务端启动(常驻内存模式)**
 
 ```php
