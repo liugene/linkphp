@@ -1,0 +1,304 @@
+[2018-06-24 18:49:11 *57831.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 18:50:12 #57829.1]	NOTICE	Server is shutdown now.
+[2018-06-24 18:50:24 *57847.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 18:50:41 #57845.1]	NOTICE	Server is shutdown now.
+[2018-06-24 18:54:12 *57870.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 18:54:22 #57868.1]	NOTICE	Server is shutdown now.
+[2018-06-24 18:54:45 *57887.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 18:55:22 #57885.1]	NOTICE	Server is shutdown now.
+[2018-06-24 18:55:27 *57900.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 18:59:24 #57898.1]	NOTICE	Server is shutdown now.
+[2018-06-24 18:59:27 *57914.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:00:19 #57912.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:00:26 *57930.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught TypeError: Argument 2 passed to linkphp\router\Parser::match() must be of the type array, null given, called in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php on line 166 and defined in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php:26
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php(166): linkphp\router\Parser->match('chat', NULL, Array)
+#1 /Users/liujun/works
+[2018-06-24 19:00:26 $57929.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 19:01:09 #57928.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:01:13 *57942.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught TypeError: Argument 2 passed to linkphp\router\Parser::match() must be of the type array, null given, called in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php on line 166 and defined in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php:26
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php(166): linkphp\router\Parser->match('chat', NULL, Array)
+#1 /Users/liujun/works
+[2018-06-24 19:01:13 $57941.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 19:02:01 #57940.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:02:16 *57954.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught TypeError: Argument 2 passed to linkphp\router\Parser::match() must be of the type array, null given, called in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php on line 167 and defined in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php:26
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php(167): linkphp\router\Parser->match('chat', NULL, Array)
+#1 /Users/liujun/works
+[2018-06-24 19:02:16 $57953.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 19:02:32 #57952.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:05:20 *57978.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:06:41 #57976.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:06:47 *57991.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught TypeError: Argument 2 passed to linkphp\router\Parser::match() must be of the type array, null given, called in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php on line 166 and defined in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php:26
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php(166): linkphp\router\Parser->match('chat', NULL, Array)
+#1 /Users/liujun/works
+[2018-06-24 19:06:47 $57990.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 19:10:45 #57989.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:10:50 *58007.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:12:43 #58004.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:12:47 *58026.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:13:22 #58024.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:13:26 *58038.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:14:06 #58036.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:14:11 *58053.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:14:51 #58051.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:14:54 *58063.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:15:09 #58061.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:15:13 *58075.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:16:16 #58073.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:16:20 *58088.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:16:29 #58086.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:21:04 *58102.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:21:45 #58100.1]	NOTICE	Server is shutdown now.
+[2018-06-24 19:21:50 *58115.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 19:21:57 #58113.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:01:43 #58164.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:02:23 #58177.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:02:35 #58186.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:06:22 #58199.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:36:23 #58220.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:40:55 #58273.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:44:54 #58289.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:50:17 *58311.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function open() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:52
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 52.
+[2018-06-24 20:50:17 $58310.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 20:50:17 *58312.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function message() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:60
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 60.
+[2018-06-24 20:50:17 $58310.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 20:50:20 *58313.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function message() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:60
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 60.
+[2018-06-24 20:50:20 $58310.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 20:50:21 *58314.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function message() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:60
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 60.
+[2018-06-24 20:50:21 $58310.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 20:50:25 #58309.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:51:01 #58325.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:54:57 #58339.1]	NOTICE	Server is shutdown now.
+[2018-06-24 20:57:29 #58353.1]	NOTICE	Server is shutdown now.
+[2018-06-24 21:57:10 #58423.1]	NOTICE	Server is shutdown now.
+[2018-06-24 21:58:14 #58437.1]	NOTICE	Server is shutdown now.
+[2018-06-24 21:58:26 #58451.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:00:31 *58478.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function HandShake() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:27
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 27.
+[2018-06-24 22:00:31 $58477.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 22:00:55 #58476.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:01:56 #58489.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:06:34 #58509.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:06:39 *58531.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function message() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:94
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 94.
+[2018-06-24 22:06:39 $58529.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 22:09:02 #58528.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:09:08 *58546.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:09:16 #58543.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:18:59 *58578.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function message() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:95
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 95.
+[2018-06-24 22:18:59 $58576.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 22:19:15 #58575.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:19:30 *58592.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:20:14 #58589.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:20:20 *58606.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:21:59 #58603.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:22:03 *58620.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function HandShake() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:93
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 93.
+[2018-06-24 22:22:03 $58619.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 22:32:02 #58618.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:34:41 *58661.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:36:51 #58658.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:36:57 *58681.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:37:46 #58678.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:37:50 *58695.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:39:47 #58692.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:39:55 *58711.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:47:16 #58708.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:47:23 *58745.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:47:32 #58742.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:49:01 *58770.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-24 22:49:06 #58767.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:51:08 *58789.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught TypeError: Argument 1 passed to linkphp\swoole\websocket\WebSocketServer::linkphp\swoole\websocket\{closure}() must be an instance of Swoole\Http\Request, instance of Swoole\WebSocket\Server given in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:92
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 92.
+[2018-06-24 22:51:08 $58787.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 22:52:10 #58786.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:52:14 *58805.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught ArgumentCountError: Too few arguments to function linkphp\swoole\websocket\WebSocketServer::linkphp\swoole\websocket\{closure}(), 2 passed and exactly 3 expected in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:92
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 92.
+[2018-06-24 22:52:14 $58803.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-24 22:52:22 #58802.1]	NOTICE	Server is shutdown now.
+[2018-06-24 22:54:04 *58837.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 15:12:16 #58834.1]	NOTICE	Server is shutdown now.
+[2018-06-25 15:12:27 *59541.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function message() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:94
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 94.
+[2018-06-25 15:12:27 $59539.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-25 15:12:45 #59538.1]	NOTICE	Server is shutdown now.
+[2018-06-25 15:13:42 *59557.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 15:13:57 #59554.1]	NOTICE	Server is shutdown now.
+[2018-06-25 15:55:33 *59649.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 15:56:00 #59647.1]	NOTICE	Server is shutdown now.
+[2018-06-25 15:56:06 *59663.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:20:19 #59660.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:22:49 *59734.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:23:16 #59731.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:28:57 $59777.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-25 16:32:12 #59776.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:32:18 *59801.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function HandShake() on boolean in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:73
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 73.
+[2018-06-25 16:32:18 $59800.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-25 16:32:51 #59799.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:45:29 *59836.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:49:27 #59833.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:49:34 *59857.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:50:11 *59861.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:51:50 #59854.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:57:44 #59874.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:57:54 *59910.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught TypeError: Argument 1 passed to app\ws\controller\Handle::HandShake() must be an instance of Swoole\Http\Request, instance of Swoole\WebSocket\Server given, called in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 94 and defined in /Users/liujun/workspace/php/linkphp/src/application/ws/controller/Handle.php:20
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/We
+[2018-06-25 16:57:54 $59909.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-25 16:58:19 #59908.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:58:46 *59927.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:58:54 #59924.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:59:16 *59942.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:59:22 #59939.1]	NOTICE	Server is shutdown now.
+[2018-06-25 16:59:54 *59955.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 16:59:59 #59952.1]	NOTICE	Server is shutdown now.
+[2018-06-25 17:18:56 *59994.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 17:20:50 #59990.1]	NOTICE	Server is shutdown now.
+[2018-06-25 17:21:15 *60009.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 17:22:05 #60006.1]	NOTICE	Server is shutdown now.
+[2018-06-25 17:22:14 *60022.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 17:34:05 #60019.1]	NOTICE	Server is shutdown now.
+[2018-06-25 17:34:14 *60057.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to a member function rewind() on null in /Users/liujun/workspace/php/linkphp/vendor/linkphp/event/src/Event.php:69
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/Application.php(245): linkphp\event\Event->target('routerMiddlewar...')
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Parser.php(92): framework\Application::event('routerMiddlewar...')
+#2 /Users/liujun/workspace/php/linkphp/vend
+[2018-06-25 17:34:14 $60055.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-25 17:34:34 #60054.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:30:33 #60069.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:30:52 *60367.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:31:36 #60364.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:32:13 *60387.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:32:33 #60384.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:32:39 *60403.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:32:40 *60404.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:32:55 #60400.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:37:08 *60430.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:37:50 #60427.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:38:06 *60447.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:38:41 #60444.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:38:46 *60463.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:40:05 #60460.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:40:12 *60477.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:40:41 #60474.1]	NOTICE	Server is shutdown now.
+[2018-06-25 23:42:09 *60497.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-25 23:43:28 #60494.1]	NOTICE	Server is shutdown now.
+[2018-06-26 00:17:07 *60565.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-26 16:13:20 #60562.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:13:37 *61363.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-26 16:16:32 #61360.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:17:31 *61395.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-26 16:17:37 #61392.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:36:24 *61429.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Call to undefined method linkphp\swoole\websocket\WebSocketContext::context() in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:75
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 75.
+[2018-06-26 16:36:24 $61428.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-26 16:39:09 #61427.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:42:01 #61445.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:45:04 #61462.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:45:29 #61478.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:46:33 #61492.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:47:23 #61504.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:48:44 #61520.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:48:57 #61537.1]	NOTICE	Server is shutdown now.
+[2018-06-26 16:49:39 #61550.1]	NOTICE	Server is shutdown now.
+[2018-06-26 17:11:20 *61598.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-26 17:12:18 #61595.1]	NOTICE	Server is shutdown now.
+[2018-06-26 17:12:25 *61613.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-26 17:12:34 #61610.1]	NOTICE	Server is shutdown now.
+[2018-06-26 17:12:54 *61629.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-26 17:15:48 #61625.1]	NOTICE	Server is shutdown now.
+[2018-06-26 17:16:10 *61647.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Undefined class constant 'getContext' in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketContext.php:42
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php(125): linkphp\swoole\websocket\WebSocketContext::get(1, 'meta')
+#1 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketContext.php on line 42.
+[2018-06-26 17:16:10 $61645.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-26 17:16:25 #61644.1]	NOTICE	Server is shutdown now.
+[2018-06-26 17:16:42 *61663.0]	NOTICE	zm_deactivate_swoole (ERROR 9003): worker process is terminated by exit()/die().
+[2018-06-26 17:17:40 #61660.1]	NOTICE	Server is shutdown now.
+[2018-06-26 18:16:35 *61838.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught ArgumentCountError: Too few arguments to function linkphp\swoole\websocket\Dispatcher::handshake(), 0 passed in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 61 and exactly 2 expected in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/Dispatcher.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php(61): linkphp\swo
+[2018-06-26 18:16:35 $61837.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-26 18:16:54 #61836.1]	NOTICE	Server is shutdown now.
+[2018-06-26 18:18:17 *61852.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught framework\Exception in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/Dispatcher.php:42
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php(61): linkphp\swoole\websocket\Dispatcher->handshake(Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#1 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/Dispatcher.php on line 42.
+[2018-06-26 18:18:17 $61851.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-26 18:18:56 #61850.1]	NOTICE	Server is shutdown now.
+[2018-06-26 18:19:21 #61872.1]	NOTICE	Server is shutdown now.
+[2018-06-26 18:20:17 #61889.1]	NOTICE	Server is shutdown now.
+[2018-06-26 18:21:25 #61907.1]	NOTICE	Server is shutdown now.
+[2018-06-26 18:29:39 #61922.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:01:22 #61945.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:01:50 #62026.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:03:16 #62042.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:40:13 #62061.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:40:20 $62192.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:41:03 #62191.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:41:12 *62205.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Access to undeclared static property: linkphp\swoole\websocket\WebSocketServer::$fds in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php:36
+Stack trace:
+#0 {main}
+  thrown in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 36.
+[2018-06-26 19:41:12 $62204.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-26 19:41:26 #62203.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:41:38 $62219.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:41:45 #62218.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:42:27 $62237.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:42:31 #62236.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:42:55 $62249.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:42:59 #62248.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:43:21 $62262.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:43:29 #62261.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:44:08 $62278.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:44:12 #62277.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:44:23 $62291.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:44:28 #62290.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:45:05 $62307.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 19:45:10 #62306.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:45:30 #62323.1]	NOTICE	Server is shutdown now.
+[2018-06-26 19:47:25 *62352.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Swoole\Table::set(): the swoole table does not exist. in /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/websocket/WebSocketServer.php on line 37.
+[2018-06-26 19:47:25 $62351.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2018-06-26 20:13:19 #62350.1]	NOTICE	Server is shutdown now.
+[2018-06-26 20:13:33 $62465.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=0, signal=11
+[2018-06-26 20:13:54 #62464.1]	NOTICE	Server is shutdown now.
+[2018-06-26 20:19:20 #62488.1]	NOTICE	Server is shutdown now.
+[2018-06-26 20:20:00 #62504.1]	NOTICE	Server is shutdown now.
+[2018-06-26 20:25:09 #62528.1]	NOTICE	Server is shutdown now.

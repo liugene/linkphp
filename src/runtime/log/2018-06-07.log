@@ -1,0 +1,324 @@
+[2018-06-07T10:10:34+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:30
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 30 
+
+[2018-06-07T10:19:26+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T10:20:52+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T10:22:52+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T10:23:39+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T10:24:20+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T11:02:23+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T11:07:36+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T11:08:09+00:00] 
+run NOTICE: 
+message: Undefined index: default_theme_suffix 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/config/src/Config.php 
+line: 127 
+
+[2018-06-07T11:08:09+00:00] 
+run WARNING: 
+message: file_get_contents(/Users/liujun/workspace/php/linkphp/src/resource/view/main/home/main): failed to open stream: No such file or directory 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/template/src/view/engine/Link.php 
+line: 49 
+
+[2018-06-07T11:08:09+00:00] 
+run NOTICE: 
+message: Undefined index: set_left_limiter 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/config/src/Config.php 
+line: 127 
+
+[2018-06-07T11:08:09+00:00] 
+run NOTICE: 
+message: Undefined index: set_right_limiter 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/config/src/Config.php 
+line: 127 
+
+[2018-06-07T11:08:09+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T11:08:17+00:00] 
+run NOTICE: 
+message: Undefined index: default_theme_suffix 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/config/src/Config.php 
+line: 127 
+
+[2018-06-07T11:08:17+00:00] 
+run WARNING: 
+message: file_get_contents(/Users/liujun/workspace/php/linkphp/src/resource/view/main/home/main): failed to open stream: No such file or directory 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/template/src/view/engine/Link.php 
+line: 49 
+
+[2018-06-07T11:08:17+00:00] 
+run NOTICE: 
+message: Undefined index: set_left_limiter 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/config/src/Config.php 
+line: 127 
+
+[2018-06-07T11:08:17+00:00] 
+run NOTICE: 
+message: Undefined index: set_right_limiter 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/config/src/Config.php 
+line: 127 
+
+[2018-06-07T11:08:17+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T11:10:21+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T11:10:56+00:00] 
+run Fatal Error: 
+message: Uncaught Exception: 无法加载模块 in /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php:31
+Stack trace:
+#0 /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Router.php(138): linkphp\router\Dispatch->dispatch(Object(linkphp\router\Router))
+#1 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(79): linkphp\router\Router->dispatch()
+#2 [internal function]: linkphp\swoole\http\HttpdServer->linkphp\swoole\http\{closure}()
+#3 /Users/liujun/workspace/php/linkphp/vendor/linkphp/framework/src/linkphp/Kernel.php(32): call_user_func(Object(Closure))
+#4 /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php(85): linkphp\Kernel->then(Object(Closure))
+#5 {main}
+  thrown 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/router/src/Dispatch.php 
+line: 31 
+
+[2018-06-07T11:22:44+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 61 
+
+[2018-06-07T11:22:44+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 61 
+
+[2018-06-07T11:24:51+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 61 
+
+[2018-06-07T11:24:51+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 61 
+
+[2018-06-07T11:25:28+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 48 
+
+[2018-06-07T11:25:28+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 62 
+
+[2018-06-07T11:25:28+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 48 
+
+[2018-06-07T11:25:28+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 62 
+
+[2018-06-07T11:26:10+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 62 
+
+[2018-06-07T11:26:10+00:00] 
+run NOTICE: 
+message: Undefined index: query_uri 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 62 
+
+[2018-06-07T11:30:00+00:00] 
+run WARNING: 
+message: Swoole\Http\Response::status(): Http request is finished. 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 87 
+
+[2018-06-07T11:30:00+00:00] 
+run WARNING: 
+message: Swoole\Http\Response::end(): Http request is finished. 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 88 
+
+[2018-06-07T11:35:58+00:00] 
+run WARNING: 
+message: Swoole\Http\Response::status(): Http request is finished. 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 83 
+
+[2018-06-07T11:35:58+00:00] 
+run WARNING: 
+message: Swoole\Http\Response::end(): Http request is finished. 
+file: /Users/liujun/workspace/php/linkphp/vendor/linkphp/swoole/src/http/HttpdServer.php 
+line: 84 
+
+[2018-06-07T11:49:45+00:00] 
+run NOTICE: 
+message: Use of undefined constant d - assumed 'd' 
+file: /Users/liujun/workspace/php/linkphp/src/application/controller/main/Home.php 
+line: 23 
+
+[2018-06-07T11:51:39+00:00] 
+run NOTICE: 
+message: Use of undefined constant d - assumed 'd' 
+file: /Users/liujun/workspace/php/linkphp/src/application/controller/main/Home.php 
+line: 23 
+
+[2018-06-07T11:52:21+00:00] 
+run NOTICE: 
+message: Use of undefined constant d - assumed 'd' 
+file: /Users/liujun/workspace/php/linkphp/src/application/controller/main/Home.php 
+line: 23 
+
+[2018-06-07T11:53:42+00:00] 
+run NOTICE: 
+message: Use of undefined constant d - assumed 'd' 
+file: /Users/liujun/workspace/php/linkphp/src/application/controller/main/Home.php 
+line: 23 
+
