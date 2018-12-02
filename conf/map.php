@@ -35,16 +35,5 @@ return [
     ],
     'class_autoload_map' => [
         //'类名' => '类文件地址'
-        'Db'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Db.php',
-        'Console'    =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Console.php',
-        'Component'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Component.php',
-        'Definition'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Definition.php',
-        'Event'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Event.php',
-        'HttpRequest'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/HttpRequest.php',
-        'Config'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Config.php',
-        'Router'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Router.php',
-        'Error'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Error.php',
-        'Session'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Session.php',
-        'Validator'  =>   ROOT_PATH . 'vendor/linkphp/framework/src/facade/Validator.php',
     ],
 ];

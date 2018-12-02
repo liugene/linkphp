@@ -15,6 +15,7 @@
 return [
 
     'beginMiddleware'          => [
+        \app\middleware\App::class
     ],
 
     'appMiddleware'            => [

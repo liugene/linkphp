@@ -27,6 +27,12 @@ $loader->register(
 $app = new \framework\Application();
 
 $app->event(
+    'loader',
+    \linkphp\loader\provider\RegisterProvider::class,
+    true
+);
+
+$app->event(
     'system',
     [
         \linkphp\event\provider\ConfigProvider::class,

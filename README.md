@@ -12,7 +12,7 @@
 
 QQ: 750688237  有兴趣的可以一起探讨，项目还需要完善
 
-#### LinkPHP (临克) 是面向对象的轻量级常驻内存型PHP API开发框架 。
+#### linkphp (临克) 是面向对象的轻量级常驻内存型PHP API开发框架 。
 
 
 ## **http服务器启动(常驻内存模式) [需要swoole扩展]**
@@ -35,7 +35,7 @@ php httpd stop  //停止
 | |_| |\ V |\ \  | .___/| | | || .___/
 |_____| \ _' \_\ | |    | | | || |
 
-[2018-06-01 15:43:12] Server    Name: link-httpd
+[2018-06-01 15:43:12] Server    Name: linkphp-httpd
 [2018-06-01 15:43:12] PHP    Version: 7.1.7
 [2018-06-01 15:43:12] Swoole Version: 2.1.3
 [2018-06-01 15:43:12] Listen    Address: 127.0.0.1
@@ -166,7 +166,7 @@ php phprpc_center stop  //停止
 ```
 
 ## **使用交流**
-LinkPHP开发动态：www.linkphp.cn
+linkphp开发动态：www.linkphp.cn
 
 
 ###目前框架空目录都是必须创建的目录根据命名规范即可自动寻址加载相关文件

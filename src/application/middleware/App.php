@@ -2,14 +2,11 @@
 
 namespace app\middleware;
 
-use Closure;
-
-class AppTest
+class App
 {
 
     public function handle()
     {
-        dump('middleware app test');
     }
 
 }
