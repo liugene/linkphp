@@ -9,8 +9,7 @@ class Home extends Controller
     public function main()
     {
         $model = new HomeModel();
-        dump($model->select());die;
-        return ['code' => 200, 'msg' => 'linkphp 创建成功!'];
+        return ['code' => 200, 'msg' => $model->find()->toArray()];
     }
 
 }

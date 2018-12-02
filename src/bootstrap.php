@@ -35,6 +35,7 @@ $app->event(
 $app->event(
     'system',
     [
+        \linkphp\event\provider\EnvProvider::class,
         \linkphp\event\provider\ConfigProvider::class,
         \linkphp\event\provider\MiddleProvider::class,
         \linkphp\event\provider\DatabaseProvider::class,
