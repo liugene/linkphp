@@ -7,7 +7,7 @@ use framework\Model;
 class Home extends Model
 {
 
-    protected $field = ['id'];
+    protected $field = ['id', 'title', 'c_id', 'post_time', 'up_time', 'is_on'];
 
     protected $name = 'forum';
 
