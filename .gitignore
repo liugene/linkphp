@@ -1,4 +1,1 @@
 .idea/
-composer.lock
-vendor/
-swoole-ide-helper.phar/
