@@ -1,0 +1,12 @@
+sudo: false
+
+language: php
+
+before_install:
+  - composer self-update
+
+install:
+  - composer install --no-dev --no-interaction --ignore-platform-reqs
+
+script:
+  - php bin/cli test
