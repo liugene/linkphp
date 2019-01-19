@@ -25,7 +25,7 @@ return [
     //系统常用路径设置
     'log_path'             => CACHE_PATH  . 'log/', //系统日志存储路径
 
-    'default_return_type' => 'view',
+    'default_return_type' => 'view', //view json console xml jsonp
 
     'dispatch_error_tmpl'  => 'tpl/dispatch_jump',
 

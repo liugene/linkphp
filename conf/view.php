@@ -8,6 +8,9 @@ return [//默认视图文件配置
     'set_right_limiter'    => '}>',  //设置模板引擎右侧解析标签
     'view_replace_str'     => [],
 
+    // 模板路径
+    'view_path'    => '',
+
     'storage_drive'        => 'File',
     'cache_time'           => '1800',
     'tpl_replace_string'   => []

@@ -11,9 +11,12 @@ class TemplateProvider implements  EventServerProvider
 
     public function update(EventDefinition $eventDefinition)
     {
-        $view = new View(app()->get(\linkphp\http\HttpRequest::class),[]);
+        $view = new View([]);
         $view->engine();
-        $view->config(require ROOT_PATH . 'conf/view.php');
+        $view->config(require ROOT_PATH . 'conf/view.php')
+            ->viewPath(CACHE_PATH . 'view/')
+            ->root('')
+            ->baseFile('');
         app()->containerInstance(
             'linkphp\template\View',
             $view

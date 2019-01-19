@@ -32,7 +32,7 @@ $app->event(
 
 $kernel = $app->make(bin\console\Kernel::class);
 
-$kernel->use()
+$kernel->start()
     ->then(function () use ($kernel,$app){
         $kernel->setData($app->make(linkphp\console\Console::class)
             ->getReturnData());

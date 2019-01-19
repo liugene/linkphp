@@ -31,7 +31,7 @@ $app->event(
 
 $kernel = $app->make(app\Kernel::class);
 
-$kernel->use()
+$kernel->start()
     ->then(function () use ($kernel,$app){
         $kernel->setData($app->make(linkphp\router\Router::class)
             ->getReturnData());
