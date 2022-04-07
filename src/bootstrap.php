@@ -14,7 +14,7 @@
 
 $loader = new \linkphp\loader\Loader();
 
-//注册自动加载方法
+//注册自动加载方法/合并conposer
 $loader->register(
     $loader->import(require_once(ROOT_PATH . 'conf/map.php'))
         ->setVendorPath(ROOT_PATH . 'vendor/')
